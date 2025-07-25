@@ -3,10 +3,10 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Just Duck It</title>
+  <title>Just Duck It - Luxury Meets Web3</title>
   <!-- Open Graph Meta Tags for Social Media Thumbnail -->
-  <meta property="og:title" content="JustDuckIt">
-  <meta property="og:description" content="Merging ducks with Web3. Come join the fun!">
+  <meta property="og:title" content="JustDuckIt - Luxury Meets Web3">
+  <meta property="og:description" content="Experience the most luxurious duck ecosystem in Web3. Dive into premium experiences!">
   <meta property="og:image" content="https://i.imgur.com/otNEI2M.png">
   <meta property="og:image:width" content="80">
   <meta property="og:image:height" content="80">
@@ -15,269 +15,517 @@
   <meta name="twitter:card" content="summary_large_image">
   <meta name="twitter:image" content="https://i.imgur.com/otNEI2M.png">
   <script src="https://cdn.tailwindcss.com"></script>
-  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@700&family=Poppins:wght@400;500&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;700;900&family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
   <style>
     body {
-      font-family: 'Poppins', sans-serif;
-      background-color: #1A2A44;
-      color: #F8F1E9;
+      font-family: 'Inter', sans-serif;
+      background: linear-gradient(135deg, #0f0f23 0%, #1a1a3e 25%, #2d1b69 50%, #663399 75%, #9966cc 100%);
+      color: #ffffff;
+      overflow-x: hidden;
     }
+    
     h1, h2, h3 {
       font-family: 'Playfair Display', serif;
+      font-weight: 700;
     }
-    .duck-animation {
-      transition: transform 0.3s ease, box-shadow 0.3s ease;
+    
+    .luxury-gradient {
+      background: linear-gradient(135deg, #ffd700 0%, #ffed4e 25%, #f9ca24 50%, #f39c12 75%, #e67e22 100%);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+      background-clip: text;
     }
-    .duck-animation:hover {
-      transform: scale(1.05) translateY(-2px);
-      box-shadow: 0 6px 14px rgba(255, 215, 0, 0.5);
-    }
-    .project-card, .merch-card {
-      background: #2A3A5A;
-      border-radius: 0.5rem;
-      border: 2px solid #FFD700;
+    
+    .premium-card {
+      background: linear-gradient(145deg, rgba(255, 255, 255, 0.1) 0%, rgba(255, 255, 255, 0.05) 100%);
+      backdrop-filter: blur(20px);
+      border: 1px solid rgba(255, 215, 0, 0.3);
+      border-radius: 24px;
+      box-shadow: 0 20px 40px rgba(0, 0, 0, 0.3), 0 0 0 1px rgba(255, 215, 0, 0.1);
+      transition: all 0.5s cubic-bezier(0.23, 1, 0.32, 1);
+      position: relative;
       overflow: hidden;
     }
-    .project-image {
+    
+    .premium-card::before {
+      content: '';
+      position: absolute;
+      top: 0;
+      left: -100%;
       width: 100%;
-      height: 90px;
-      object-fit: cover;
-      border-bottom: 2px solid #FFD700;
+      height: 100%;
+      background: linear-gradient(90deg, transparent, rgba(255, 215, 0, 0.1), transparent);
+      transition: left 0.6s;
     }
+    
+    .premium-card:hover::before {
+      left: 100%;
+    }
+    
+    .premium-card:hover {
+      transform: translateY(-8px) scale(1.02);
+      box-shadow: 0 30px 60px rgba(255, 215, 0, 0.2), 0 0 0 1px rgba(255, 215, 0, 0.4);
+      border-color: rgba(255, 215, 0, 0.6);
+    }
+    
+    .duck-logo {
+      filter: drop-shadow(0 0 20px rgba(255, 215, 0, 0.5));
+      transition: all 0.4s ease;
+    }
+    
+    .duck-logo:hover {
+      transform: scale(1.1) rotate(5deg);
+      filter: drop-shadow(0 0 30px rgba(255, 215, 0, 0.8));
+    }
+    
+    .project-image, .merch-image {
+      width: 100%;
+      height: 200px;
+      object-fit: cover;
+      border-radius: 16px;
+      transition: all 0.4s ease;
+      filter: brightness(0.9) contrast(1.1);
+    }
+    
     .merch-image {
+      height: 150px;
+    }
+    
+    .premium-card:hover .project-image,
+    .premium-card:hover .merch-image {
+      transform: scale(1.05);
+      filter: brightness(1.1) contrast(1.2);
+    }
+    
+    .luxury-button {
+      background: linear-gradient(135deg, #ffd700 0%, #ffed4e 50%, #ffd700 100%);
+      color: #1a1a3e;
+      border: none;
+      border-radius: 50px;
+      padding: 12px 32px;
+      font-weight: 600;
+      font-size: 14px;
+      cursor: pointer;
+      transition: all 0.3s ease;
+      text-transform: uppercase;
+      letter-spacing: 1px;
+      box-shadow: 0 8px 20px rgba(255, 215, 0, 0.3);
+      position: relative;
+      overflow: hidden;
+    }
+    
+    .luxury-button::before {
+      content: '';
+      position: absolute;
+      top: 0;
+      left: -100%;
       width: 100%;
-      height: 60px;
-      object-fit: cover;
-      border-bottom: 2px solid #FFD700;
+      height: 100%;
+      background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.2), transparent);
+      transition: left 0.5s;
     }
-    .hero-gradient {
-      background-image: radial-gradient(circle at center, #1A2A44 0%, #FFD700 100%);
+    
+    .luxury-button:hover::before {
+      left: 100%;
     }
+    
+    .luxury-button:hover {
+      transform: translateY(-2px);
+      box-shadow: 0 12px 30px rgba(255, 215, 0, 0.4);
+    }
+    
+    .floating-particles {
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      pointer-events: none;
+      z-index: 1;
+    }
+    
+    .particle {
+      position: absolute;
+      width: 4px;
+      height: 4px;
+      background: rgba(255, 215, 0, 0.6);
+      border-radius: 50%;
+      animation: float 15s infinite linear;
+    }
+    
+    @keyframes float {
+      0% {
+        transform: translateY(100vh) rotate(0deg);
+        opacity: 0;
+      }
+      10% {
+        opacity: 1;
+      }
+      90% {
+        opacity: 1;
+      }
+      100% {
+        transform: translateY(-100px) rotate(360deg);
+        opacity: 0;
+      }
+    }
+    
+    .hero-section {
+      background: radial-gradient(ellipse at center, rgba(255, 215, 0, 0.1) 0%, transparent 70%);
+      position: relative;
+      overflow: hidden;
+    }
+    
+    .hero-section::before {
+      content: '';
+      position: absolute;
+      top: -50%;
+      left: -50%;
+      width: 200%;
+      height: 200%;
+      background: conic-gradient(from 0deg, transparent, rgba(255, 215, 0, 0.1), transparent);
+      animation: rotate 20s linear infinite;
+    }
+    
+    @keyframes rotate {
+      0% { transform: rotate(0deg); }
+      100% { transform: rotate(360deg); }
+    }
+    
+    .section-title {
+      font-size: 3rem;
+      font-weight: 900;
+      text-align: center;
+      margin-bottom: 3rem;
+      position: relative;
+    }
+    
+    .section-title::after {
+      content: '';
+      position: absolute;
+      bottom: -10px;
+      left: 50%;
+      transform: translateX(-50%);
+      width: 100px;
+      height: 4px;
+      background: linear-gradient(90deg, #ffd700, #ffed4e, #ffd700);
+      border-radius: 2px;
+    }
+    
     input, textarea {
-      background-color: #2A3A5A;
-      color: #F8F1E9;
-      border: 1px solid #4B5EAA;
-      border-radius: 0.3rem;
-      padding: 0.5rem;
+      background: rgba(255, 255, 255, 0.1);
+      backdrop-filter: blur(10px);
+      color: #ffffff;
+      border: 1px solid rgba(255, 215, 0, 0.3);
+      border-radius: 12px;
+      padding: 16px;
       width: 100%;
-      margin-bottom: 0.7rem;
+      margin-bottom: 16px;
+      transition: all 0.3s ease;
     }
+    
     input:focus, textarea:focus {
       outline: none;
-      border-color: #FFD700;
-      box-shadow: 0 0 0 2px rgba(255, 215, 0, 0.3);
+      border-color: #ffd700;
+      box-shadow: 0 0 0 3px rgba(255, 215, 0, 0.2);
+      background: rgba(255, 255, 255, 0.15);
     }
-    button {
-      background-color: #FFD700;
-      color: #1A2A44;
-      border: none;
-      border-radius: 0.5rem;
-      padding: 0.5rem 1rem;
-      cursor: pointer;
-      font-weight: 500;
-      transition: background-color 0.3s ease, box-shadow 0.3s ease;
+    
+    input::placeholder, textarea::placeholder {
+      color: rgba(255, 255, 255, 0.6);
     }
-    button:hover {
-      background-color: #E6C200;
-      box-shadow: 0 0 8px rgba(255, 215, 0, 0.5);
+    
+    .nav-link {
+      position: relative;
+      transition: all 0.3s ease;
     }
-    noscript {
-      display: block;
-      text-align: center;
-      color: #FF6B6B;
-      font-weight: 500;
-      margin: 1rem 0;
+    
+    .nav-link::after {
+      content: '';
+      position: absolute;
+      bottom: -4px;
+      left: 0;
+      width: 0;
+      height: 2px;
+      background: #ffd700;
+      transition: width 0.3s ease;
     }
-    .fade-in {
-      animation: fadeIn 1s ease-in-out;
+    
+    .nav-link:hover::after {
+      width: 100%;
     }
-    @keyframes fadeIn {
-      0% { opacity: 0; transform: translateY(10px); }
-      100% { opacity: 1; transform: translateY(0); }
-    }
-    @media (max-width: 640px) {
-      .project-image {
-        height: 70px;
+    
+    @media (max-width: 768px) {
+      .section-title {
+        font-size: 2rem;
+      }
+      .project-image, .merch-image {
+        height: 150px;
       }
       .merch-image {
-        height: 50px;
+        height: 120px;
       }
-      .project-card h3, .merch-card h3 {
-        font-size: 1rem;
-      }
-      .project-card p, .merch-card p {
-        font-size: 0.7rem;
-      }
+    }
+    
+    .luxury-glow {
+      box-shadow: 0 0 50px rgba(255, 215, 0, 0.3);
+    }
+    
+    .text-shadow-luxury {
+      text-shadow: 0 2px 10px rgba(255, 215, 0, 0.3);
     }
   </style>
 </head>
 <body>
-  <!-- JavaScript Disabled Fallback -->
-  <noscript>
-    <p>Enable JavaScript to explore our luxurious duck adventures and use the contact form! Check out at <a href="https://help.x.com/en-us/using-x/supported-browsers" class="text-yellow-400 hover:underline">X Help Center</a>.</p>
-  </noscript>
+  <!-- Floating Particles -->
+  <div class="floating-particles">
+    <div class="particle" style="left: 10%; animation-delay: 0s;"></div>
+    <div class="particle" style="left: 20%; animation-delay: 2s;"></div>
+    <div class="particle" style="left: 30%; animation-delay: 4s;"></div>
+    <div class="particle" style="left: 40%; animation-delay: 6s;"></div>
+    <div class="particle" style="left: 50%; animation-delay: 8s;"></div>
+    <div class="particle" style="left: 60%; animation-delay: 10s;"></div>
+    <div class="particle" style="left: 70%; animation-delay: 12s;"></div>
+    <div class="particle" style="left: 80%; animation-delay: 14s;"></div>
+    <div class="particle" style="left: 90%; animation-delay: 16s;"></div>
+  </div>
 
   <!-- Header -->
-  <header class="bg-gradient-to-r from-#1A2A44 to-#FFD700 text-#F8F1E9 py-2 shadow-lg fade-in">
-    <div class="container mx-auto px-4 flex justify-between items-center">
-      <h1 id="text-duckIt" class="text-2xl sm:text-3xl font-bold">Just Duck It</h1>
-      <nav class="space-x-2 sm:space-x-3">
-        <a href="#projects" class="nav-link text-sm hover:text-yellow-400 transition-colors">Projects</a>
-        <a href="#merch" class="nav-link text-sm hover:text-yellow-400 transition-colors">Merch</a>
-        <a href="#contact" class="nav-link text-sm hover:text-yellow-400 transition-colors">Contact</a>
+  <header class="backdrop-blur-md bg-black/20 border-b border-yellow-400/20 py-4 relative z-10">
+    <div class="container mx-auto px-6 flex justify-between items-center">
+      <h1 class="text-3xl md:text-4xl font-bold luxury-gradient text-shadow-luxury">Just Duck It</h1>
+      <nav class="flex space-x-8">
+        <a href="#projects" class="nav-link text-white hover:text-yellow-400 font-medium">Projects</a>
+        <a href="#merch" class="nav-link text-white hover:text-yellow-400 font-medium">Merch</a>
+        <a href="#contact" class="nav-link text-white hover:text-yellow-400 font-medium">Contact</a>
       </nav>
     </div>
   </header>
 
   <!-- Hero Section -->
-  <section class="hero-gradient py-10 sm:py-14 text-center fade-in">
-    <div class="container mx-auto px-4">
-      <img src="https://i.imgur.com/otNEI2M.png" alt="Just Duck It Logo" class="mx-auto mb-2 w-16 h-16 sm:w-20 sm:h-20 duck-animation border-2 border-#FFD700 rounded-full" onerror="this.src='https://via.placeholder.com/80?text=Duck+Logo'; this.alt='Fallback Duck Logo';">
-      <h2 class="text-2xl sm:text-3xl font-bold mb-2 text-#F8F1E9">Just Duck It!</h2>
-      <p class="text-sm max-w-md mx-auto text-#F8F1E9">Merging ducks with Web3. Come join the fun!</p>
+  <section class="hero-section py-20 md:py-32 text-center relative z-10">
+    <div class="container mx-auto px-6 relative z-10">
+      <!-- Verified Image URL for Logo -->
+      <img src="https://i.imgur.com/otNEI2M.png" alt="Just Duck It Logo" class="mx-auto mb-8 w-24 h-24 md:w-32 md:h-32 duck-logo rounded-full luxury-glow" onerror="this.src='https://placehold.co/128x128/663399/FFD700?text=🦆';">
+      <h2 class="text-5xl md:text-7xl font-black mb-6 luxury-gradient text-shadow-luxury">Just Duck It!</h2>
+      <p class="text-xl md:text-2xl max-w-2xl mx-auto text-white/90 leading-relaxed font-light">Merging ducks with Web3. Come join the fun!</p>
+      <div class="mt-12">
+        <button class="luxury-button">Dive In</button>
+      </div>
     </div>
   </section>
 
   <!-- Projects Section -->
-  <section id="projects" class="py-8 bg-gradient-to-b from-#1A2A44 to-#FFD700 fade-in">
-    <div class="container mx-auto px-4">
-      <h2 class="text-2xl sm:text-3xl font-bold text-center mb-4 text-#F8F1E9">Our Projects</h2>
-      <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-3">
+  <section id="projects" class="py-20 relative z-10">
+    <div class="container mx-auto px-6">
+      <h2 class="section-title luxury-gradient">Our Projects</h2>
+      <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
         <!-- Project 1: Duck Joyride -->
-        <div class="project-card duck-animation">
-          <img src="https://i.imgur.com/a6IBrAV.jpg" alt="Duck Joyride" class="project-image" onerror="this.src='https://via.placeholder.com/300x90?text=Duck+Joyride';">
-          <div class="p-2.5">
-            <h3 class="text-base font-bold mb-1 text-#F8F1E9">Duck Joyride</h3>
-            <p class="text-sm text-#F8F1E9 mb-2">Guide a duck through wild obstacles, grabbing coins and power-ups in this fun side-scroller!</p>
-            <a href="https://duckxmeta.github.io/DuckJoyrideV2/" target="_blank" class="text-yellow-400 hover:text-yellow-300 text-sm">Play Now</a>
-          </div>
+        <div class="premium-card p-6">
+          <!-- Verified Image URL for Duck Joyride -->
+          <img src="https://i.imgur.com/a6IBrAV.jpg" alt="Duck Joyride" class="project-image mb-6">
+          <h3 class="text-2xl font-bold mb-3 luxury-gradient">Duck Joyride</h3>
+          <p class="text-white/80 mb-6 leading-relaxed">Guide a duck through wild obstacles, grabbing coins and power-ups in this fun side-scroller!</p>
+          <a href="https://duckxmeta.github.io/DuckJoyrideV2/" target="_blank" class="luxury-button inline-block">Play Now</a>
         </div>
+
         <!-- Project 2: Duck's Crypto Updates -->
-        <div class="project-card duck-animation">
-          <img src="https://i.imgur.com/MHlyOXD.jpg" alt="Duck's Crypto Updates" class="project-image" onerror="this.src='https://via.placeholder.com/300x90?text=Crypto+Updates';">
-          <div class="p-2.5">
-            <h3 class="text-base font-bold mb-1 text-#F8F1E9">Duck’s Crypto Updates</h3>
-            <p class="text-sm text-#F8F1E9 mb-2">Keep up with crypto events and insights using our handy bot!</p>
-            <a href="crypto-updates.html" target="_blank" class="text-yellow-400 hover:text-yellow-300 text-sm">View Crypto Updates</a>
-          </div>
+        <div class="premium-card p-6">
+          <!-- Verified Image URL for Duck's Crypto Updates -->
+          <img src="https://i.imgur.com/MHlyOXD.jpg" alt="Duck's Crypto Updates" class="project-image mb-6">
+          <h3 class="text-2xl font-bold mb-3 luxury-gradient">Duck's Crypto Updates</h3>
+          <p class="text-white/80 mb-6 leading-relaxed">Keep up with crypto events and insights using our handy bot!</p>
+          <a href="https://duckxmeta.github.io/DuckCryptoUpdates/" target="_blank" class="luxury-button inline-block">View Updates</a>
         </div>
-        <!-- Project 3: 🦆 on 𝕏 -->
-        <div class="project-card duck-animation">
-          <img src="https://i.imgur.com/o32AjZE.jpg" alt="Duckxmeta X" class="project-image" onerror="this.src='https://via.placeholder.com/300x90?text=X+Profile';">
-          <div class="p-2.5">
-            <h3 class="text-base font-bold mb-1 text-#F8F1E9">🦆 on 𝕏</h3>
-            <p class="text-sm text-#F8F1E9 mb-2">Join @Duckxmeta on X for fun, support our duck sanctuary, and connect with animal welfare fans. #strayborhood</p>
-            <a href="https://x.com/duckxmeta" target="_blank" class="text-yellow-400 hover:text-yellow-300 text-sm">Join on X</a>
-          </div>
+
+        <!-- Project 3: Duck on X -->
+        <div class="premium-card p-6">
+          <!-- Verified Image URL for Duck on X -->
+          <img src="https://i.imgur.com/o32AjZE.jpg" alt="Duck on X" class="project-image mb-6">
+          <h3 class="text-2xl font-bold mb-3 luxury-gradient">🦆 on 𝕏</h3>
+          <p class="text-white/80 mb-6 leading-relaxed">Join @Duckxmeta on X for fun, support our duck sanctuary, and connect with animal welfare fans. #strayborhood</p>
+          <a href="https://x.com/duckxmeta" target="_blank" class="luxury-button inline-block">Join on X</a>
         </div>
-        <!-- Project 4: JustDuckIt -->
-        <div class="project-card duck-animation">
-          <img src="https://i.imgur.com/EE0FRWy.jpg" alt="JustDuckIt TikTok" class="project-image" onerror="this.src='https://via.placeholder.com/300x90?text=TikTok';">
-          <div class="p-2.5">
-            <h3 class="text-base font-bold mb-1 text-#F8F1E9">JustDuckIt</h3>
-            <p class="text-sm text-#F8F1E9 mb-2">Follow @justtduckit on TikTok for bird-saving fun with 11.3K fans and 136.9K likes!</p>
-            <a href="https://www.tiktok.com/@justtduckit" target="_blank" class="text-yellow-400 hover:text-yellow-300 text-sm">Follow on TikTok</a>
-          </div>
+
+        <!-- Project 4: Duck on TikTok -->
+        <div class="premium-card p-6">
+          <!-- Verified Image URL for Duck on TikTok -->
+          <img src="https://i.imgur.com/EE0FRWy.jpg" alt="Duck on TikTok" class="project-image mb-6">
+          <h3 class="text-2xl font-bold mb-3 luxury-gradient">JustDuckIt</h3>
+          <p class="text-white/80 mb-6 leading-relaxed">Follow @justtduckit on TikTok for bird-saving fun with 11.3K fans and 136.9K likes!</p>
+          <a href="https://www.tiktok.com/@justtduckit" target="_blank" class="luxury-button inline-block">Follow on TikTok</a>
         </div>
+
         <!-- Project 5: JustDuckIt AI -->
-        <div class="project-card duck-animation">
-          <img src="https://i.imgur.com/egsn5Xt.jpg" alt="JustDuckIt AI" class="project-image" onerror="this.src='https://via.placeholder.com/300x90?text=AI+Chat';">
-          <div class="p-2.5">
-            <h3 class="text-base font-bold mb-1 text-#F8F1E9">JustDuckIt AI</h3>
-            <p class="text-sm text-#F8F1E9 mb-2">Chat with our ducky AI on Instagram for fun insights. <a href="https://ai.meta.com" class="text-yellow-400 hover:underline">Powered by Meta AI</a>.</p>
-            <a href="https://aistudio.instagram.com/ai/1607050206776737/" target="_blank" class="text-yellow-400 hover:text-yellow-300 text-sm">Start Chatting</a>
-          </div>
+        <div class="premium-card p-6">
+          <!-- Verified Image URL for JustDuckIt AI -->
+          <img src="https://i.imgur.com/egsn5Xt.jpg" alt="JustDuckIt AI" class="project-image mb-6">
+          <h3 class="text-2xl font-bold mb-3 luxury-gradient">JustDuckIt AI</h3>
+          <p class="text-white/80 mb-6 leading-relaxed">Chat with our ducky AI on Instagram for fun insights. <a href="https://ai.meta.com" class="text-yellow-400 hover:underline">Powered by Meta AI</a>.</p>
+          <a href="https://aistudio.instagram.com/ai/1607050206776737/" target="_blank" class="luxury-button inline-block">Start Chatting</a>
         </div>
+
         <!-- Project 6: Tech Pioneers Program -->
-        <div class="project-card duck-animation">
-          <img src="https://i.imgur.com/Sq4XHVl.jpg" alt="Tech Pioneers" class="project-image" onerror="this.src='https://via.placeholder.com/300x90?text=Tech+Pioneers';">
-          <div class="p-2.5">
-            <h3 class="text-base font-bold mb-1 text-#F8F1E9">Tech Pioneers Program</h3>
-            <p class="text-sm text-#F8F1E9 mb-2">Join Zen AI Co.’s Tech Afterschool Labs for exciting learning! <a href="https://zenai.world" class="text-yellow-400 hover:underline">Check it out</a>.</p>
-            <a href="https://zenai.world" target="_blank" class="text-yellow-400 hover:text-yellow-300 text-sm">Join Now</a>
-          </div>
+        <div class="premium-card p-6">
+          <!-- Verified Image URL for Tech Pioneers Program -->
+          <img src="https://i.imgur.com/Sq4XHVl.jpg" alt="Tech Pioneers" class="project-image mb-6">
+          <h3 class="text-2xl font-bold mb-3 luxury-gradient">Tech Pioneers Program</h3>
+          <p class="text-white/80 mb-6 leading-relaxed">Join Zen AI Co.'s Tech Afterschool Labs for exciting learning! <a href="https://zenai.world" class="text-yellow-400 hover:underline">Check it out</a>.</p>
+          <a href="https://zenai.world" target="_blank" class="luxury-button inline-block">Join Now</a>
         </div>
       </div>
     </div>
   </section>
 
-  <!-- Merch Store Section -->
-  <section id="merch" class="py-6 bg-gradient-to-b from-#1A2A44 to-#FFD700 fade-in">
-    <div class="container mx-auto px-4">
-      <h2 class="text-2xl sm:text-3xl font-bold text-center mb-2 text-#F8F1E9">Duck Merch</h2>
-      <p class="text-xs max-w-md mx-auto mb-2 text-#F8F1E9">Grab awesome duck hats, powered by Printful!</p>
-      <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-2">
-        <div class="merch-card duck-animation">
+  <!-- Luxury Merch Section -->
+  <section id="merch" class="py-20 relative z-10">
+    <div class="container mx-auto px-6">
+      <h2 class="section-title luxury-gradient">Duck Merch</h2>
+      <p class="text-xl text-center text-white/80 mb-12 max-w-2xl mx-auto">Grab awesome duck hats, powered by Printful!</p>
+      <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
+        <div class="premium-card p-4">
           <a href="https://justduckit-merch.printful.me/" target="_blank">
-            <img src="https://i.imgur.com/JPlC24L.png" alt="JustDuckit Hat" class="merch-image mb-1">
+            <!-- Verified Image URL for JustDuckit Hat -->
+            <img src="https://i.imgur.com/JPlC24L.png" alt="JustDuckit Hat" class="merch-image mb-4">
           </a>
-          <p class="text-xs text-#F8F1E9 mb-1">JustDuckit Hat</p>
-          <a href="https://justduckit-merch.printful.me/" target="_blank" class="text-yellow-400 hover:text-yellow-300 text-xs">Shop Now</a>
+          <h3 class="text-lg font-bold mb-2 luxury-gradient">JustDuckit Hat</h3>
+          <a href="https://justduckit-merch.printful.me/" target="_blank" class="luxury-button w-full block text-center">Shop Now</a>
         </div>
-        <div class="merch-card duck-animation">
+
+        <div class="premium-card p-4">
           <a href="https://justduckit-merch.printful.me/" target="_blank">
-            <img src="https://i.imgur.com/sU5ax55.png" alt="What the duck, Over Hat" class="merch-image mb-1">
+            <!-- Verified Image URL for What the duck, Over Hat -->
+            <img src="https://i.imgur.com/sU5ax55.png" alt="What the duck, Over Hat" class="merch-image mb-4">
           </a>
-          <p class="text-xs text-#F8F1E9 mb-1">What the duck, Over Hat</p>
-          <a href="https://justduckit-merch.printful.me/" target="_blank" class="text-yellow-400 hover:text-yellow-300 text-xs">Shop Now</a>
+          <h3 class="text-lg font-bold mb-2 luxury-gradient">What the duck, Over Hat</h3>
+          <a href="https://justduckit-merch.printful.me/" target="_blank" class="luxury-button w-full block text-center">Shop Now</a>
         </div>
-        <div class="merch-card duck-animation">
+
+        <div class="premium-card p-4">
           <a href="https://justduckit-merch.printful.me/" target="_blank">
-            <img src="https://i.imgur.com/IDk0vxd.png" alt="Duck Stuff Hat" class="merch-image mb-1">
+            <!-- Verified Image URL for Duck Stuff Hat -->
+            <img src="https://i.imgur.com/IDk0vxd.png" alt="Duck Stuff Hat" class="merch-image mb-4">
           </a>
-          <p class="text-xs text-#F8F1E9 mb-1">Duck Stuff Hat</p>
-          <a href="https://justduckit-merch.printful.me/" target="_blank" class="text-yellow-400 hover:text-yellow-300 text-xs">Shop Now</a>
+          <h3 class="text-lg font-bold mb-2 luxury-gradient">Duck Stuff Hat</h3>
+          <a href="https://justduckit-merch.printful.me/" target="_blank" class="luxury-button w-full block text-center">Shop Now</a>
         </div>
-        <div class="merch-card duck-animation">
+
+        <div class="premium-card p-4">
           <a href="https://justduckit-merch.printful.me/" target="_blank">
-            <img src="https://i.imgur.com/vgXD1cN.png" alt="Duck Hat" class="merch-image mb-1">
+            <!-- Verified Image URL for Duck Hat -->
+            <img src="https://i.imgur.com/vgXD1cN.png" alt="Duck Hat" class="merch-image mb-4">
           </a>
-          <p class="text-xs text-#F8F1E9 mb-1">Duck Hat</p>
-          <a href="https://justduckit-merch.printful.me/" target="_blank" class="text-yellow-400 hover:text-yellow-300 text-xs">Shop Now</a>
+          <h3 class="text-lg font-bold mb-2 luxury-gradient">Duck Hat</h3>
+          <a href="https://justduckit-merch.printful.me/" target="_blank" class="luxury-button w-full block text-center">Shop Now</a>
         </div>
       </div>
-      <div class="text-center mt-2">
-        <a href="https://justduckit-merch.printful.me/" target="_blank" class="text-yellow-400 hover:text-yellow-300 text-xs">Check Out Our Merch Store</a>
+      <div class="text-center mt-12">
+        <a href="https://justduckit-merch.printful.me/" target="_blank" class="luxury-button text-lg px-12 py-4">Check Out Our Merch Store</a>
       </div>
     </div>
   </section>
 
   <!-- Contact Section -->
-  <section id="contact" class="py-8 bg-gradient-to-b from-#1A2A44 to-#FFD700 text-center fade-in">
-    <div class="container mx-auto px-4">
-      <h2 class="text-2xl sm:text-3xl font-bold mb-3 text-#F8F1E9">Get in Touch!</h2>
-      <p class="text-sm max-w-md mx-auto mb-3 text-#F8F1E9">Have ideas or just want to chat? Connect with us on X, TikTok, or send a message!</p>
-      <div class="flex justify-center space-x-2 sm:space-x-3 mb-3">
-        <a href="https://x.com/Justtduckit" target="_blank" class="text-yellow-400 hover:text-yellow-300 text-sm">X</a>
-        <a href="https://www.tiktok.com/@justtduckit" target="_blank" class="text-yellow-400 hover:text-yellow-300 text-sm">TikTok</a>
+  <section id="contact" class="py-20 text-center relative z-10">
+    <div class="container mx-auto px-6">
+      <h2 class="section-title luxury-gradient">Get in Touch!</h2>
+      <p class="text-xl text-white/80 max-w-2xl mx-auto mb-12">Have ideas or just want to chat? Connect with us through our channels or send us a message!</p>
+      
+      <div class="flex justify-center space-x-8 mb-12">
+        <a href="https://x.com/Justtduckit" target="_blank" class="luxury-button">X</a>
+        <a href="https://www.tiktok.com/@justtduckit" target="_blank" class="luxury-button">TikTok</a>
       </div>
-      <form action="https://formspree.io/f/xvoejgve" method="POST" class="max-w-md mx-auto">
+      
+      <form action="https://formspree.io/f/xvoejgve" method="POST" class="max-w-md mx-auto premium-card p-8">
         <input type="text" name="name" placeholder="Your Name" required>
         <input type="email" name="email" placeholder="Your Email" required>
-        <textarea name="message" placeholder="Your Message" rows="4" required></textarea>
-        <button type="submit">Send It!</button>
+        <textarea name="message" placeholder="Your Message" rows="5" required></textarea>
+        <button type="submit" class="luxury-button w-full">Send It!</button>
       </form>
-      <noscript>
-        <p class="text-#FF6B6B mt-3 text-sm">Enable JavaScript to send a message, or connect with us on X or TikTok!</p>
-      </noscript>
     </div>
   </section>
 
   <!-- Footer -->
-  <footer class="bg-gradient-to-r from-#1A2A44 to-#FFD700 text-#F8F1E9 py-2 text-center shadow-lg fade-in">
-    <p class="text-sm">© 2025 Just Duck It. All rights reserved.</p>
+  <footer class="backdrop-blur-md bg-black/20 border-t border-yellow-400/20 py-8 text-center relative z-10">
+    <p class="text-white/60">© 2025 Just Duck It. All rights reserved.</p>
   </footer>
 
-  <!-- JavaScript for interactivity -->
+  <!-- JavaScript for enhanced interactivity -->
   <script>
+    // Smooth scrolling for navigation links
     document.querySelectorAll('a[href^="#"]').forEach(anchor => {
       anchor.addEventListener('click', function(e) {
         e.preventDefault();
-        document.querySelector(this.getAttribute('href')).scrollIntoView({
-          behavior: 'smooth'
-        });
+        const target = document.querySelector(this.getAttribute('href'));
+        if (target) {
+          target.scrollIntoView({
+            behavior: 'smooth',
+            block: 'start'
+          });
+        }
       });
     });
+
+    // Enhanced particle animation
+    function createParticle() {
+      const particle = document.createElement('div');
+      particle.className = 'particle';
+      particle.style.left = Math.random() * 100 + '%';
+      particle.style.animationDuration = (Math.random() * 10 + 10) + 's';
+      particle.style.animationDelay = Math.random() * 5 + 's';
+      document.querySelector('.floating-particles').appendChild(particle);
+      
+      setTimeout(() => {
+        particle.remove();
+      }, 20000);
+    }
+
+    // Create particles continuously
+    setInterval(createParticle, 1000);
+
+    // Add luxury hover effects to cards
+    document.querySelectorAll('.premium-card').forEach(card => {
+      card.addEventListener('mouseenter', function() {
+        this.style.transform = 'translateY(-8px) scale(1.02)';
+      });
+      
+      card.addEventListener('mouseleave', function() {
+        this.style.transform = 'translateY(0) scale(1)';
+      });
+    });
+
+    // Luxury button click effects
+    document.querySelectorAll('.luxury-button').forEach(button => {
+      button.addEventListener('click', function(e) {
+        const ripple = document.createElement('div');
+        ripple.style.position = 'absolute';
+        ripple.style.borderRadius = '50%';
+        ripple.style.background = 'rgba(255, 255, 255, 0.6)';
+        ripple.style.transform = 'scale(0)';
+        ripple.style.animation = 'ripple 0.6s linear';
+        ripple.style.left = (e.clientX - e.target.offsetLeft) + 'px';
+        ripple.style.top = (e.clientY - e.target.offsetTop) + 'px';
+        
+        this.appendChild(ripple);
+        
+        setTimeout(() => {
+          ripple.remove();
+        }, 600);
+      });
+    });
+
+    // Add ripple animation
+    const style = document.createElement('style');
+    style.textContent = `
+      @keyframes ripple {
+        to {
+          transform: scale(4);
+          opacity: 0;
+        }
+      }
+    `;
+    document.head.appendChild(style);
   </script>
 </body>
 </html>
+
