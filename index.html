@@ -4,162 +4,197 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Just Duck It</title>
+  <!-- Open Graph Meta Tags for Social Media Thumbnail -->
+  <meta property="og:title" content="JustDuckIt">
+  <meta property="og:description" content="Merging ducks with Web3. Come join the fun!">
+  <meta property="og:image" content="https://i.imgur.com/otNEI2M.png">
+  <meta property="og:image:width" content="80">
+  <meta property="og:image:height" content="80">
+  <meta property="og:url" content="https://justduckit.org">
+  <meta property="og:type" content="website">
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:image" content="https://i.imgur.com/otNEI2M.png">
   <script src="https://cdn.tailwindcss.com"></script>
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@700&family=Poppins:wght@400;500&display=swap" rel="stylesheet">
   <style>
     body {
-      font-family: 'Arial', sans-serif;
+      font-family: 'Poppins', sans-serif;
+      background-color: #1A2A44;
+      color: #F8F1E9;
+    }
+    h1, h2, h3 {
+      font-family: 'Playfair Display', serif;
     }
     .duck-animation {
-      transition: transform 0.2s ease, box-shadow 0.2s ease;
+      transition: transform 0.3s ease, box-shadow 0.3s ease;
     }
     .duck-animation:hover {
-      transform: scale(1.05);
-      box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);
+      transform: scale(1.05) translateY(-2px);
+      box-shadow: 0 6px 14px rgba(255, 215, 0, 0.5);
     }
     .project-card, .merch-card {
-      background: #374151;
+      background: #2A3A5A;
       border-radius: 0.5rem;
+      border: 2px solid #FFD700;
       overflow: hidden;
     }
-    .project-image, .merch-image {
+    .project-image {
       width: 100%;
-      height: 100px;
+      height: 90px;
       object-fit: cover;
-      border-bottom: 2px solid #facc15;
+      border-bottom: 2px solid #FFD700;
+    }
+    .merch-image {
+      width: 100%;
+      height: 60px;
+      object-fit: cover;
+      border-bottom: 2px solid #FFD700;
     }
     .hero-gradient {
-      background-image: radial-gradient(circle at center, #000000 0%, #ca8a04 100%);
+      background-image: radial-gradient(circle at center, #1A2A44 0%, #FFD700 100%);
     }
     input, textarea {
-      background-color: #4b5563;
-      color: #e5e7eb;
-      border: 1px solid #6b7280;
-      border-radius: 0.375rem;
+      background-color: #2A3A5A;
+      color: #F8F1E9;
+      border: 1px solid #4B5EAA;
+      border-radius: 0.3rem;
       padding: 0.5rem;
       width: 100%;
-      margin-bottom: 0.75rem;
+      margin-bottom: 0.7rem;
     }
     input:focus, textarea:focus {
       outline: none;
-      border-color: #facc15;
-      box-shadow: 0 0 0 2px rgba(250, 204, 21, 0.3);
+      border-color: #FFD700;
+      box-shadow: 0 0 0 2px rgba(255, 215, 0, 0.3);
     }
     button {
-      background-color: #facc15;
-      color: #1f2937;
+      background-color: #FFD700;
+      color: #1A2A44;
       border: none;
-      border-radius: 0.375rem;
+      border-radius: 0.5rem;
       padding: 0.5rem 1rem;
       cursor: pointer;
-      font-weight: bold;
+      font-weight: 500;
+      transition: background-color 0.3s ease, box-shadow 0.3s ease;
     }
     button:hover {
-      background-color: #eab308;
+      background-color: #E6C200;
+      box-shadow: 0 0 8px rgba(255, 215, 0, 0.5);
     }
     noscript {
       display: block;
       text-align: center;
-      color: #f87171;
-      font-weight: bold;
+      color: #FF6B6B;
+      font-weight: 500;
       margin: 1rem 0;
     }
+    .fade-in {
+      animation: fadeIn 1s ease-in-out;
+    }
+    @keyframes fadeIn {
+      0% { opacity: 0; transform: translateY(10px); }
+      100% { opacity: 1; transform: translateY(0); }
+    }
     @media (max-width: 640px) {
-      .project-image, .merch-image {
-        height: 80px;
+      .project-image {
+        height: 70px;
+      }
+      .merch-image {
+        height: 50px;
       }
       .project-card h3, .merch-card h3 {
         font-size: 1rem;
       }
       .project-card p, .merch-card p {
-        font-size: 0.75rem;
+        font-size: 0.7rem;
       }
     }
   </style>
 </head>
-<body class="bg-gray-900 text-gray-100">
+<body>
   <!-- JavaScript Disabled Fallback -->
   <noscript>
-    <p>Enable JavaScript to quack up the fun and use the contact form! Check supported browsers at <a href="https://help.x.com/en/using-x/supported-browsers" class="text-yellow-500 hover:underline">X Help Center</a>.</p>
+    <p>Enable JavaScript to explore our luxurious duck adventures and use the contact form! Check out at <a href="https://help.x.com/en-us/using-x/supported-browsers" class="text-yellow-400 hover:underline">X Help Center</a>.</p>
   </noscript>
 
   <!-- Header -->
-  <header class="bg-yellow-400 text-white py-4">
+  <header class="bg-gradient-to-r from-#1A2A44 to-#FFD700 text-#F8F1E9 py-2 shadow-lg fade-in">
     <div class="container mx-auto px-4 flex justify-between items-center">
-      <h1 class="text-2xl sm:text-3xl font-bold">Just Duck It</h1>
-      <nav class="space-x-2 sm:space-x-4">
-        <a href="#projects" class="text-sm sm:text-base hover:text-gray-200">Projects</a>
-        <a href="#merch" class="text-sm sm:text-base hover:text-gray-200">Merch</a>
-        <a href="#contact" class="text-sm sm:text-base hover:text-gray-200">Contact</a>
+      <h1 id="text-duckIt" class="text-2xl sm:text-3xl font-bold">Just Duck It</h1>
+      <nav class="space-x-2 sm:space-x-3">
+        <a href="#projects" class="nav-link text-sm hover:text-yellow-400 transition-colors">Projects</a>
+        <a href="#merch" class="nav-link text-sm hover:text-yellow-400 transition-colors">Merch</a>
+        <a href="#contact" class="nav-link text-sm hover:text-yellow-400 transition-colors">Contact</a>
       </nav>
     </div>
   </header>
 
   <!-- Hero Section -->
-  <section class="hero-gradient py-16 sm:py-20 text-center">
+  <section class="hero-gradient py-10 sm:py-14 text-center fade-in">
     <div class="container mx-auto px-4">
-      <img src="https://i.imgur.com/otNEI2M.png" alt="Just Duck It Logo" class="mx-auto mb-3 w-16 h-16 sm:w-20 sm:h-20 duck-animation" onerror="this.src='https://via.placeholder.com/80?text=Duck+Logo'; this.alt='Fallback Duck Logo';">
-      <h2 class="text-2xl sm:text-3xl font-bold mb-2 text-gray-100">Just Duck It!</h2>
-      <p class="text-sm sm:text-base max-w-md mx-auto text-gray-200">Dive into duck-tastic adventures! Play games, track crypto, join our flock on X and TikTok, chat with our AI, grab merch, and explore tech partnerships!</p>
+      <img src="https://i.imgur.com/otNEI2M.png" alt="Just Duck It Logo" class="mx-auto mb-2 w-16 h-16 sm:w-20 sm:h-20 duck-animation border-2 border-#FFD700 rounded-full" onerror="this.src='https://via.placeholder.com/80?text=Duck+Logo'; this.alt='Fallback Duck Logo';">
+      <h2 class="text-2xl sm:text-3xl font-bold mb-2 text-#F8F1E9">Just Duck It!</h2>
+      <p class="text-sm max-w-md mx-auto text-#F8F1E9">Merging ducks with Web3. Come join the fun!</p>
     </div>
   </section>
 
   <!-- Projects Section -->
-  <section id="projects" class="py-12 bg-gray-800">
+  <section id="projects" class="py-8 bg-gradient-to-b from-#1A2A44 to-#FFD700 fade-in">
     <div class="container mx-auto px-4">
-      <h2 class="text-2xl sm:text-3xl font-bold text-center mb-6 text-gray-100">Duck-Tastic Projects</h2>
-      <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4">
+      <h2 class="text-2xl sm:text-3xl font-bold text-center mb-4 text-#F8F1E9">Our Projects</h2>
+      <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-3">
         <!-- Project 1: Duck Joyride -->
         <div class="project-card duck-animation">
-          <img src="https://i.imgur.com/a6IBrAV.jpg" alt="Duck Joyride" class="project-image" onerror="this.src='https://via.placeholder.com/300x100?text=Duck+Joyride';">
-          <div class="p-4">
-            <h3 class="text-base sm:text-lg font-semibold mb-1 text-gray-100">Duck Joyride</h3>
-            <p class="text-xs sm:text-sm text-gray-300 mb-2">Race a duck through epic obstacles! Snag coins, peas, and power-ups in this wild side-scroller.</p>
-            <a href="https://duckxmeta.github.io/DuckJoyrideV2/" target="_blank" class="text-yellow-500 hover:text-yellow-600 text-xs sm:text-sm">Play Now</a>
+          <img src="https://i.imgur.com/a6IBrAV.jpg" alt="Duck Joyride" class="project-image" onerror="this.src='https://via.placeholder.com/300x90?text=Duck+Joyride';">
+          <div class="p-2.5">
+            <h3 class="text-base font-bold mb-1 text-#F8F1E9">Duck Joyride</h3>
+            <p class="text-sm text-#F8F1E9 mb-2">Guide a duck through wild obstacles, grabbing coins and power-ups in this fun side-scroller!</p>
+            <a href="https://duckxmeta.github.io/DuckJoyrideV2/" target="_blank" class="text-yellow-400 hover:text-yellow-300 text-sm">Play Now</a>
           </div>
         </div>
         <!-- Project 2: Duck's Crypto Updates -->
         <div class="project-card duck-animation">
-          <img src="https://i.imgur.com/MHlyOXD.jpg" alt="Duck's Crypto Updates" class="project-image" onerror="this.src='https://via.placeholder.com/300x100?text=Crypto+Updates';">
-          <div class="p-4">
-            <h3 class="text-base sm:text-lg font-semibold mb-1 text-gray-100">Duck’s Crypto Updates</h3>
-            <p class="text-xs sm:text-sm text-gray-300 mb-2">Stay sharp with crypto events! Get crypto insights with our bot!</p>
-            <a href="https://duckxmeta.github.io/Ducks-Crypto-Update-/" target="_blank" class="text-yellow-500 hover:text-yellow-600 text-xs sm:text-sm">Check It Out</a>
+          <img src="https://i.imgur.com/MHlyOXD.jpg" alt="Duck's Crypto Updates" class="project-image" onerror="this.src='https://via.placeholder.com/300x90?text=Crypto+Updates';">
+          <div class="p-2.5">
+            <h3 class="text-base font-bold mb-1 text-#F8F1E9">Duck’s Crypto Updates</h3>
+            <p class="text-sm text-#F8F1E9 mb-2">Keep up with crypto events and insights using our handy bot!</p>
+            <a href="https://duckxmeta.github.io/Ducks-Crypto-Update-/" target="_blank" class="text-yellow-400 hover:text-yellow-300 text-sm">Check It Out</a>
           </div>
         </div>
         <!-- Project 3: 🦆 on 𝕏 -->
         <div class="project-card duck-animation">
-          <img src="https://i.imgur.com/o32AjZE.jpg" alt="Duckxmeta X" class="project-image" onerror="this.src='https://via.placeholder.com/300x100?text=X+Profile';">
-          <div class="p-4">
-            <h3 class="text-base sm:text-lg font-semibold mb-1 text-gray-100">🦆 on 𝕏</h3>
-            <p class="text-xs sm:text-sm text-gray-300 mb-2">Quack it up with @Duckxmeta on X! Support our duck sanctuary and vibe with animal welfare heroes. #strayborhood</p>
-            <a href="https://x.com/duckxmeta" target="_blank" class="text-yellow-500 hover:text-yellow-600 text-xs sm:text-sm">Join on X</a>
+          <img src="https://i.imgur.com/o32AjZE.jpg" alt="Duckxmeta X" class="project-image" onerror="this.src='https://via.placeholder.com/300x90?text=X+Profile';">
+          <div class="p-2.5">
+            <h3 class="text-base font-bold mb-1 text-#F8F1E9">🦆 on 𝕏</h3>
+            <p class="text-sm text-#F8F1E9 mb-2">Join @Duckxmeta on X for fun, support our duck sanctuary, and connect with animal welfare fans. #strayborhood</p>
+            <a href="https://x.com/duckxmeta" target="_blank" class="text-yellow-400 hover:text-yellow-300 text-sm">Join on X</a>
           </div>
         </div>
         <!-- Project 4: JustDuckIt -->
         <div class="project-card duck-animation">
-          <img src="https://i.imgur.com/EE0FRWy.jpg" alt="JustDuckIt TikTok" class="project-image" onerror="this.src='https://via.placeholder.com/300x100?text=TikTok';">
-          <div class="p-4">
-            <h3 class="text-base sm:text-lg font-semibold mb-1 text-gray-100">JustDuckIt</h3>
-            <p class="text-xs sm:text-sm text-gray-300 mb-2">Hit up @justtduckit on TikTok! Save birds and vibe with 11.3K fans and 136.9K likes.</p>
-            <a href="https://www.tiktok.com/@justtduckit" target="_blank" class="text-yellow-500 hover:text-yellow-600 text-xs sm:text-sm">Follow on TikTok</a>
+          <img src="https://i.imgur.com/EE0FRWy.jpg" alt="JustDuckIt TikTok" class="project-image" onerror="this.src='https://via.placeholder.com/300x90?text=TikTok';">
+          <div class="p-2.5">
+            <h3 class="text-base font-bold mb-1 text-#F8F1E9">JustDuckIt</h3>
+            <p class="text-sm text-#F8F1E9 mb-2">Follow @justtduckit on TikTok for bird-saving fun with 11.3K fans and 136.9K likes!</p>
+            <a href="https://www.tiktok.com/@justtduckit" target="_blank" class="text-yellow-400 hover:text-yellow-300 text-sm">Follow on TikTok</a>
           </div>
         </div>
         <!-- Project 5: JustDuckIt AI -->
         <div class="project-card duck-animation">
-          <img src="https://i.imgur.com/egsn5Xt.jpg" alt="JustDuckIt AI" class="project-image" onerror="this.src='https://via.placeholder.com/300x100?text=AI+Chat';">
-          <div class="p-4">
-            <h3 class="text-base sm:text-lg font-semibold mb-1 text-gray-100">JustDuckIt AI</h3>
-            <p class="text-xs sm:text-sm text-gray-300 mb-2">Chat with our ducky AI on Instagram! Get quacky insights. <a href="https://ai.meta.com" class="text-yellow-500 hover:underline">Powered by Meta AI</a>.</p>
-            <a href="https://aistudio.instagram.com/ai/1607050206776737/" target="_blank" class="text-yellow-500 hover:text-yellow-600 text-xs sm:text-sm">Start Chatting</a>
+          <img src="https://i.imgur.com/egsn5Xt.jpg" alt="JustDuckIt AI" class="project-image" onerror="this.src='https://via.placeholder.com/300x90?text=AI+Chat';">
+          <div class="p-2.5">
+            <h3 class="text-base font-bold mb-1 text-#F8F1E9">JustDuckIt AI</h3>
+            <p class="text-sm text-#F8F1E9 mb-2">Chat with our ducky AI on Instagram for fun insights. <a href="https://ai.meta.com" class="text-yellow-400 hover:underline">Powered by Meta AI</a>.</p>
+            <a href="https://aistudio.instagram.com/ai/1607050206776737/" target="_blank" class="text-yellow-400 hover:text-yellow-300 text-sm">Start Chatting</a>
           </div>
         </div>
-        <!-- Project 6: AI Pioneers Program -->
+        <!-- Project 6: Tech Pioneers Program -->
         <div class="project-card duck-animation">
-          <img src="https://i.imgur.com/Sq4XHVl.jpg" alt="AI Pioneers" class="project-image" onerror="this.src='https://via.placeholder.com/300x100?text=AI+Pioneers';">
-          <div class="p-4">
-            <h3 class="text-base sm:text-lg font-semibold mb-1 text-gray-100">AI Pioneers Program</h3>
-            <p class="text-xs sm:text-sm text-gray-300 mb-2">Join Zen AI Co.’s AI Afterschool Labs! Partnered for epic AI learning. <a href="https://zenai.world" class="text-yellow-500 hover:underline">Check it out</a>.</p>
-            <a href="https://zenai.world" target="_blank" class="text-yellow-500 hover:text-yellow-600 text-xs sm:text-sm">Join Now</a>
+          <img src="https://i.imgur.com/Sq4XHVl.jpg" alt="Tech Pioneers" class="project-image" onerror="this.src='https://via.placeholder.com/300x90?text=Tech+Pioneers';">
+          <div class="p-2.5">
+            <h3 class="text-base font-bold mb-1 text-#F8F1E9">Tech Pioneers Program</h3>
+            <p class="text-sm text-#F8F1E9 mb-2">Join Zen AI Co.’s Tech Afterschool Labs for exciting learning! <a href="https://zenai.world" class="text-yellow-400 hover:underline">Check it out</a>.</p>
+           scriv class="text-yellow-400 hover:text-yellow-300 text-sm">Join Now</a>
           </div>
         </div>
       </div>
@@ -167,54 +202,54 @@
   </section>
 
   <!-- Merch Store Section -->
-  <section id="merch" class="py-12 bg-gray-800">
+  <section id="merch" class="py-6 bg-gradient-to-b from-#1A2A44 to-#FFD700 fade-in">
     <div class="container mx-auto px-4">
-      <h2 class="text-2xl sm:text-3xl font-bold text-center mb-6 text-gray-100">Duck Merch</h2>
-      <p class="text-sm sm:text-base max-w-md mx-auto mb-4 text-gray-300">Snag epic duck hats! No minimums, all quack-tastic, powered by Printful.</p>
-      <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4">
+      <h2 class="text-2xl sm:text-3xl font-bold text-center mb-2 text-#F8F1E9">Duck Merch</h2>
+      <p class="text-xs max-w-md mx-auto mb-2 text-#F8F1E9">Grab awesome duck hats, powered by Printful!</p>
+      <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-2">
         <div class="merch-card duck-animation">
           <a href="https://justduckit-merch.printful.me/" target="_blank">
-            <img src="https://i.imgur.com/JPlC24L.png" alt="JustDuckit Hat" class="merch-image mb-2 w-24 h-24 sm:w-32 sm:h-32">
+            <img src="https://i.imgur.com/JPlC24L.png" alt="JustDuckit Hat" class="merch-image mb-1">
           </a>
-          <p class="text-xs sm:text-sm text-gray-300 mb-2">JustDuckit Hat</p>
-          <a href="https://justduckit-merch.printful.me/" target="_blank" class="text-yellow-500 hover:text-yellow-600 text-xs sm:text-sm">Shop Now</a>
+          <p class="text-xs text-#F8F1E9 mb-1">JustDuckit Hat</p>
+          <a href="https://justduckit-merch.printful.me/" target="_blank" class="text-yellow-400 hover:text-yellow-300 text-xs">Shop Now</a>
         </div>
         <div class="merch-card duck-animation">
           <a href="https://justduckit-merch.printful.me/" target="_blank">
-            <img src="https://i.imgur.com/sU5ax55.png" alt="What the duck, Over Hat" class="merch-image mb-2 w-24 h-24 sm:w-32 sm:h-32">
+            <img src="https://i.imgur.com/sU5ax55.png" alt="What the duck, Over Hat" class="merch-image mb-1">
           </a>
-          <p class="text-xs sm:text-sm text-gray-300 mb-2">What the duck, Over Hat</p>
-          <a href="https://justduckit-merch.printful.me/" target="_blank" class="text-yellow-500 hover:text-yellow-600 text-xs sm:text-sm">Shop Now</a>
+          <p class="text-xs text-#F8F1E9 mb-1">What the duck, Over Hat</p>
+          <a href="https://justduckit-merch.printful.me/" target="_blank" class="text-yellow-400 hover:text-yellow-300 text-xs">Shop Now</a>
         </div>
         <div class="merch-card duck-animation">
           <a href="https://justduckit-merch.printful.me/" target="_blank">
-            <img src="https://i.imgur.com/IDk0vxd.png" alt="Duck Stuff Hat" class="merch-image mb-2 w-24 h-24 sm:w-32 sm:h-32">
+            <img src="https://i.imgur.com/IDk0vxd.png" alt="Duck Stuff Hat" class="merch-image mb-1">
           </a>
-          <p class="text-xs sm:text-sm text-gray-300 mb-2">Duck Stuff Hat</p>
-          <a href="https://justduckit-merch.printful.me/" target="_blank" class="text-yellow-500 hover:text-yellow-600 text-xs sm:text-sm">Shop Now</a>
+          <p class="text-xs text-#F8F1E9 mb-1">Duck Stuff Hat</p>
+          <a href="https://justduckit-merch.printful.me/" target="_blank" class="text-yellow-400 hover:text-yellow-300 text-xs">Shop Now</a>
         </div>
         <div class="merch-card duck-animation">
           <a href="https://justduckit-merch.printful.me/" target="_blank">
-            <img src="https://i.imgur.com/vgXD1cN.png" alt="Duck Hat" class="merch-image mb-2 w-24 h-24 sm:w-32 sm:h-32">
+            <img src="https://i.imgur.com/vgXD1cN.png" alt="Duck Hat" class="merch-image mb-1">
           </a>
-          <p class="text-xs sm:text-sm text-gray-300 mb-2">Duck Hat</p>
-          <a href="https://justduckit-merch.printful.me/" target="_blank" class="text-yellow-500 hover:text-yellow-600 text-xs sm:text-sm">Shop Now</a>
+          <p class="text-xs text-#F8F1E9 mb-1">Duck Hat</p>
+          <a href="https://justduckit-merch.printful.me/" target="_blank" class="text-yellow-400 hover:text-yellow-300 text-xs">Shop Now</a>
         </div>
       </div>
-      <div class="text-center mt-4">
-        <a href="https://justduckit-merch.printful.me/" target="_blank" class="text-yellow-500 hover:text-yellow-600 text-sm sm:text-base">Hit Up Our Merch Store</a>
+      <div class="text-center mt-2">
+        <a href="https://justduckit-merch.printful.me/" target="_blank" class="text-yellow-400 hover:text-yellow-300 text-xs">Check Out Our Merch Store</a>
       </div>
     </div>
   </section>
 
   <!-- Contact Section -->
-  <section id="contact" class="py-12 bg-gray-700 text-center">
+  <section id="contact" class="py-8 bg-gradient-to-b from-#1A2A44 to-#FFD700 text-center fade-in">
     <div class="container mx-auto px-4">
-      <h2 class="text-2xl sm:text-3xl font-bold mb-4 text-gray-100">Quack Back!</h2>
-      <p class="text-sm sm:text-base max-w-md mx-auto mb-4 text-gray-300">Got ideas or just wanna chat? Hit us up on X, TikTok, or drop a message!</p>
-      <div class="flex justify-center space-x-2 sm:space-x-4 mb-4">
-        <a href="https://x.com/Justtduckit" target="_blank" class="text-yellow-500 hover:text-yellow-600 text-xs sm:text-sm">X</a>
-        <a href="https://www.tiktok.com/@justtduckit" target="_blank" class="text-yellow-500 hover:text-yellow-600 text-xs sm:text-sm">TikTok</a>
+      <h2 class="text-2xl sm:text-3xl font-bold mb-3 text-#F8F1E9">Get in Touch!</h2>
+      <p class="text-sm max-w-md mx-auto mb-3 text-#F8F1E9">Have ideas or just want to chat? Connect with us on X, TikTok, or send a message!</p>
+      <div class="flex justify-center space-x-2 sm:space-x-3 mb-3">
+        <a href="https://x.com/Justtduckit" target="_blank" class="text-yellow-400 hover:text-yellow-300 text-sm">X</a>
+        <a href="https://www.tiktok.com/@justtduckit" target="_blank" class="text-yellow-400 hover:text-yellow-300 text-sm">TikTok</a>
       </div>
       <form action="https://formspree.io/f/xvoejgve" method="POST" class="max-w-md mx-auto">
         <input type="text" name="name" placeholder="Your Name" required>
@@ -223,13 +258,13 @@
         <button type="submit">Send It!</button>
       </form>
       <noscript>
-        <p class="text-gray-400 mt-4">Enable JavaScript to send a message, or quack at us on X or TikTok!</p>
+        <p class="text-#FF6B6B mt-3 text-sm">Enable JavaScript to send a message, or connect with us on X or TikTok!</p>
       </noscript>
     </div>
   </section>
 
   <!-- Footer -->
-  <footer class="bg-yellow-400 text-white py-3 text-center">
+  <footer class="bg-gradient-to-r from-#1A2A44 to-#FFD700 text-#F8F1E9 py-2 text-center shadow-lg fade-in">
     <p class="text-sm">© 2025 Just Duck It. All rights reserved.</p>
   </footer>
 
