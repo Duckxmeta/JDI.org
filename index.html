@@ -111,7 +111,7 @@
       color: #1a1a3e;
       border: none;
       border-radius: 50px;
-      padding: 12px 32px;
+      padding: 12px 24px;
       font-weight: 600;
       font-size: 14px;
       cursor: pointer;
@@ -121,6 +121,7 @@
       box-shadow: 0 8px 20px rgba(255, 215, 0, 0.3);
       position: relative;
       overflow: hidden;
+      white-space: nowrap;
     }
     
     .luxury-button::before {
@@ -188,30 +189,6 @@
       height: 4px;
       background: linear-gradient(90deg, #ffd700, #ffed4e, #ffd700);
       border-radius: 2px;
-    }
-    
-    /* Form Input Styles */
-    input, textarea {
-      background: rgba(255, 255, 255, 0.1);
-      backdrop-filter: blur(10px);
-      color: #ffffff;
-      border: 1px solid rgba(255, 215, 0, 0.3);
-      border-radius: 12px;
-      padding: 16px;
-      width: 100%;
-      margin-bottom: 16px;
-      transition: all 0.3s ease;
-    }
-    
-    input:focus, textarea:focus {
-      outline: none;
-      border-color: #ffd700;
-      box-shadow: 0 0 0 3px rgba(255, 215, 0, 0.2);
-      background: rgba(255, 255, 255, 0.15);
-    }
-    
-    input::placeholder, textarea::placeholder {
-      color: rgba(255, 255, 255, 0.6);
     }
     
     .luxury-glow {
@@ -374,17 +351,12 @@
   <section id="contact" class="py-20 text-center relative z-10">
     <div class="container mx-auto px-6">
       <h2 class="section-title text-4xl md:text-5xl luxury-gradient">Get in Touch!</h2>
-      <p class="text-xl text-white/80 max-w-2xl mx-auto mb-12">Have ideas or just want to chat? Connect with us through our channels or send us a message!</p>
-      <div class="flex justify-center space-x-4 md:space-x-8 mb-12">
-        <a href="https://x.com/duckxmeta" target="_blank" class="luxury-button">X</a>
-        <a href="https://www.tiktok.com/@justtduckit" target="_blank" class="luxury-button">TikTok</a>
+      <p class="text-xl text-white/80 max-w-2xl mx-auto mb-12">Have ideas or just want to chat? The best way to reach us is through our social channels!</p>
+      <div class="flex flex-wrap justify-center gap-4 mb-12">
+        <a href="https://x.com/duckxmeta" target="_blank" class="luxury-button">Connect on X</a>
+        <a href="https://www.tiktok.com/@justtduckit" target="_blank" class="luxury-button">Follow on TikTok</a>
+        <a href="https://www.instagram.com/duckxmeta?igsh=MWlqa3F1dGc1d24wdg%3D%3D&utm_source=qr" target="_blank" class="luxury-button">Find on Instagram</a>
       </div>
-      <form action="https://formspree.io/f/xvoejgve" method="POST" class="max-w-md mx-auto premium-card p-6 md:p-8">
-        <input type="text" name="name" placeholder="Your Name" required>
-        <input type="email" name="email" placeholder="Your Email" required>
-        <textarea name="message" placeholder="Your Message" rows="5" required></textarea>
-        <button type="submit" class="luxury-button w-full">Send It!</button>
-      </form>
     </div>
   </section>
 
@@ -392,8 +364,8 @@
   <footer class="backdrop-blur-md bg-black/20 border-t border-yellow-400/20 py-8 text-center relative z-10">
     <p class="text-white/60">© 2025 Just Duck It. All rights reserved.</p>
     <p class="text-white/70 mt-4 text-sm px-4">
-      Want your own website like this? Get in touch & find 
-      <a href="https://x.com/duckxmeta?s=21" target="_blank" class="text-yellow-400 hover:underline">🦆 on 𝕏</a>.
+      Want your own website like this? 
+      <a href="#contact" class="text-yellow-400 hover:underline">Get in touch!</a>
     </p>
   </footer>
 
