@@ -233,6 +233,195 @@
       .project-image { height: 150px; }
       .merch-image { height: 120px; }
     }
+
+    /* --- QUACKBOT CHATBOT STYLES --- */
+    .chatbot-container {
+        position: fixed;
+        bottom: 20px;
+        right: 20px;
+        z-index: 1000;
+    }
+
+    #chatbot-toggle {
+        width: 60px;
+        height: 60px;
+        background: linear-gradient(135deg, #ffd700, #f9ca24);
+        border-radius: 50%;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        font-size: 32px;
+        cursor: pointer;
+        box-shadow: 0 8px 20px rgba(255, 215, 0, 0.4);
+        transition: all 0.3s ease;
+    }
+
+    #chatbot-toggle:hover {
+        transform: scale(1.1) rotate(10deg);
+        box-shadow: 0 12px 30px rgba(255, 215, 0, 0.6);
+    }
+
+    #chat-window {
+        position: absolute;
+        bottom: 80px;
+        right: 0;
+        width: 350px;
+        max-width: 90vw;
+        height: 500px;
+        max-height: 80vh;
+        display: flex;
+        flex-direction: column;
+        /* Inherit premium-card styles */
+        background: linear-gradient(145deg, rgba(255, 255, 255, 0.1) 0%, rgba(255, 255, 255, 0.05) 100%);
+        backdrop-filter: blur(20px);
+        border: 1px solid rgba(255, 215, 0, 0.3);
+        border-radius: 24px;
+        box-shadow: 0 20px 40px rgba(0, 0, 0, 0.3);
+        overflow: hidden;
+        transform: translateY(20px) scale(0.95);
+        opacity: 0;
+        pointer-events: none;
+        transition: all 0.4s cubic-bezier(0.23, 1, 0.32, 1);
+    }
+
+    #chat-window.active {
+        transform: translateY(0) scale(1);
+        opacity: 1;
+        pointer-events: auto;
+    }
+
+    .chat-header {
+        padding: 16px;
+        border-bottom: 1px solid rgba(255, 215, 0, 0.2);
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+    }
+    
+    .chat-header h3 {
+        font-size: 20px;
+    }
+    
+    #chat-close-btn {
+        background: none;
+        border: none;
+        color: white;
+        font-size: 24px;
+        cursor: pointer;
+        opacity: 0.7;
+        transition: opacity 0.2s;
+    }
+    #chat-close-btn:hover {
+        opacity: 1;
+    }
+
+    #chat-messages {
+        flex-grow: 1;
+        padding: 16px;
+        overflow-y: auto;
+        display: flex;
+        flex-direction: column;
+        gap: 12px;
+    }
+    /* Scrollbar styling */
+    #chat-messages::-webkit-scrollbar {
+        width: 6px;
+    }
+    #chat-messages::-webkit-scrollbar-track {
+        background: transparent;
+    }
+    #chat-messages::-webkit-scrollbar-thumb {
+        background: rgba(255, 215, 0, 0.5);
+        border-radius: 3px;
+    }
+
+    .chat-message {
+        padding: 10px 15px;
+        border-radius: 18px;
+        max-width: 80%;
+        line-height: 1.5;
+    }
+
+    .user-message {
+        background: linear-gradient(135deg, #663399, #834dcc);
+        color: white;
+        align-self: flex-end;
+        border-bottom-right-radius: 4px;
+    }
+
+    .bot-message {
+        background: rgba(255, 255, 255, 0.1);
+        color: white;
+        align-self: flex-start;
+        border-bottom-left-radius: 4px;
+    }
+    
+    .bot-typing {
+        align-self: flex-start;
+        display: flex;
+        gap: 4px;
+        padding: 12px 15px;
+    }
+    
+    .bot-typing span {
+        width: 8px;
+        height: 8px;
+        background-color: rgba(255, 215, 0, 0.6);
+        border-radius: 50%;
+        animation: typing-bubble 1.2s infinite ease-in-out;
+    }
+    .bot-typing span:nth-child(2) { animation-delay: 0.2s; }
+    .bot-typing span:nth-child(3) { animation-delay: 0.4s; }
+    
+    @keyframes typing-bubble {
+        0%, 80%, 100% { transform: scale(0); }
+        40% { transform: scale(1.0); }
+    }
+
+    .chat-input-area {
+        padding: 16px;
+        border-top: 1px solid rgba(255, 215, 0, 0.2);
+        display: flex;
+        gap: 10px;
+    }
+
+    #chat-input {
+        flex-grow: 1;
+        background: rgba(0, 0, 0, 0.2);
+        border: 1px solid rgba(255, 255, 255, 0.2);
+        border-radius: 50px;
+        padding: 10px 18px;
+        color: white;
+        outline: none;
+        transition: border-color 0.3s;
+    }
+
+    #chat-input:focus {
+        border-color: rgba(255, 215, 0, 0.6);
+    }
+
+    #chat-send-btn {
+        width: 44px;
+        height: 44px;
+        flex-shrink: 0;
+        /* Inherit luxury-button styles */
+        background: linear-gradient(135deg, #ffd700 0%, #ffed4e 50%, #ffd700 100%);
+        color: #1a1a3e;
+        border: none;
+        border-radius: 50%;
+        font-weight: 600;
+        cursor: pointer;
+        transition: all 0.3s ease;
+        box-shadow: 0 4px 10px rgba(255, 215, 0, 0.3);
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        font-size: 20px;
+    }
+     #chat-send-btn:hover {
+        transform: scale(1.1);
+        box-shadow: 0 6px 15px rgba(255, 215, 0, 0.4);
+     }
   </style>
 </head>
 <body>
@@ -369,6 +558,32 @@
     </p>
   </footer>
 
+  <!-- QUACKBOT CHATBOT HTML -->
+  <div class="chatbot-container">
+      <div id="chat-window">
+          <div class="chat-header">
+              <h3 class="luxury-gradient">QuackBot</h3>
+              <button id="chat-close-btn">&times;</button>
+          </div>
+          <div id="chat-messages">
+             <!-- Messages will be injected here -->
+             <div class="chat-message bot-message">
+                Quack! What's shakin', feather-friend? Ask me anything about our luxurious duck world.
+             </div>
+          </div>
+          <div class="chat-input-area">
+              <input type="text" id="chat-input" placeholder="Ask a duck...">
+              <button id="chat-send-btn">
+                <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-send"><line x1="22" y1="2" x2="11" y2="13"></line><polygon points="22 2 15 22 11 13 2 9 22 2"></polygon></svg>
+              </button>
+          </div>
+      </div>
+      <div id="chatbot-toggle">
+          <span>🦆</span>
+      </div>
+  </div>
+
+
   <!-- JavaScript for enhanced interactivity -->
   <script>
     // --- Interactive Duck Particle Logic ---
@@ -482,6 +697,129 @@
       }
     `;
     document.head.appendChild(style);
+
+    // --- QUACKBOT CHATBOT LOGIC ---
+    document.addEventListener('DOMContentLoaded', () => {
+        const chatbotToggle = document.getElementById('chatbot-toggle');
+        const chatWindow = document.getElementById('chat-window');
+        const closeBtn = document.getElementById('chat-close-btn');
+        const sendBtn = document.getElementById('chat-send-btn');
+        const chatInput = document.getElementById('chat-input');
+        const messagesContainer = document.getElementById('chat-messages');
+
+        // IMPORTANT: Storing API keys in client-side code is not secure.
+        // This is for demonstration purposes only. In a production environment,
+        // you should make API calls from a backend server to protect your key.
+        const API_KEY = 'AIzaSyCFzQEefz1PLz9RgzOWt-tmuCJwPwQu-Mw';
+        const API_URL = `https://generativelanguage.googleapis.com/v1beta/models/gemini-2.0-flash:generateContent?key=${API_KEY}`;
+        
+        let chatHistory = [];
+
+        // Toggle chat window visibility
+        chatbotToggle.addEventListener('click', () => {
+            chatWindow.classList.toggle('active');
+        });
+
+        closeBtn.addEventListener('click', () => {
+            chatWindow.classList.remove('active');
+        });
+
+        // Send message on button click
+        sendBtn.addEventListener('click', sendMessage);
+        
+        // Send message on 'Enter' key press
+        chatInput.addEventListener('keydown', (e) => {
+            if (e.key === 'Enter') {
+                e.preventDefault();
+                sendMessage();
+            }
+        });
+
+        function sendMessage() {
+            const userInput = chatInput.value.trim();
+            if (userInput === '') return;
+
+            addMessage(userInput, 'user');
+            chatInput.value = '';
+            
+            showTypingIndicator();
+            getBotResponse(userInput);
+        }
+
+        function addMessage(text, sender) {
+            const messageElement = document.createElement('div');
+            messageElement.classList.add('chat-message', `${sender}-message`);
+            messageElement.textContent = text;
+            messagesContainer.appendChild(messageElement);
+            scrollToBottom();
+        }
+        
+        function showTypingIndicator() {
+            const typingElement = document.createElement('div');
+            typingElement.classList.add('bot-typing');
+            typingElement.id = 'typing-indicator';
+            typingElement.innerHTML = `<span></span><span></span><span></span>`;
+            messagesContainer.appendChild(typingElement);
+            scrollToBottom();
+        }
+        
+        function removeTypingIndicator() {
+            const typingElement = document.getElementById('typing-indicator');
+            if (typingElement) {
+                typingElement.remove();
+            }
+        }
+
+        function scrollToBottom() {
+            messagesContainer.scrollTop = messagesContainer.scrollHeight;
+        }
+
+        async function getBotResponse(userInput) {
+            const systemPrompt = "You are QuackBot, a sophisticated and friendly duck who is an expert on the 'Just Duck It' brand, luxury, and Web3. Your personality is charming and a little bit sassy. You end most of your sentences with a fun duck-related word or sound, like 'quack!', 'waddle on', or 'splash!'. Keep your answers helpful but also entertaining. Do not mention that you are an AI or language model. You are a duck.";
+
+            // Add user message to history
+            chatHistory.push({ role: "user", parts: [{ text: userInput }] });
+
+            const payload = {
+                contents: [
+                    { role: "model", parts: [{ text: systemPrompt }] },
+                    ...chatHistory
+                ]
+            };
+
+            try {
+                const response = await fetch(API_URL, {
+                    method: 'POST',
+                    headers: {
+                        'Content-Type': 'application/json',
+                    },
+                    body: JSON.stringify(payload)
+                });
+
+                if (!response.ok) {
+                    throw new Error(`API request failed with status ${response.status}`);
+                }
+
+                const data = await response.json();
+                
+                removeTypingIndicator();
+
+                if (data.candidates && data.candidates.length > 0) {
+                    const botResponse = data.candidates[0].content.parts[0].text;
+                    addMessage(botResponse, 'bot');
+                    // Add bot response to history
+                    chatHistory.push({ role: "model", parts: [{ text: botResponse }] });
+                } else {
+                    addMessage("This ducky is a bit puzzled right now. Try again later, quack!", 'bot');
+                }
+
+            } catch (error) {
+                console.error("Error fetching bot response:", error);
+                removeTypingIndicator();
+                addMessage("Oh no, my pond seems to have lost connection! Please try again in a bit. Waddle on.", 'bot');
+            }
+        }
+    });
   </script>
 </body>
 </html>
