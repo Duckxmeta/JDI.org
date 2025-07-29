@@ -1,825 +1,831 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Just Duck It - Luxury Meets Web3</title>
-  <!-- Open Graph Meta Tags for Social Media Thumbnail -->
-  <meta property="og:title" content="JustDuckIt - Luxury Meets Web3">
-  <meta property="og:description" content="Experience the most luxurious duck ecosystem in Web3. Dive into premium experiences!">
-  <meta property="og:image" content="https://i.imgur.com/otNEI2M.png">
-  <meta property="og:image:width" content="80">
-  <meta property="og:image:height" content="80">
-  <meta property="og:url" content="https://justduckit.org">
-  <meta property="og:type" content="website">
-  <meta name="twitter:card" content="summary_large_image">
-  <meta name="twitter:image" content="https://i.imgur.com/otNEI2M.png">
-  <script src="https://cdn.tailwindcss.com"></script>
-  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;700;900&family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
-  <style>
-    /* General Body and Font Styles */
-    html {
-      scroll-behavior: smooth;
-    }
-    body {
-      font-family: 'Inter', sans-serif;
-      background: linear-gradient(135deg, #0f0f23 0%, #1a1a3e 25%, #2d1b69 50%, #663399 75%, #9966cc 100%);
-      color: #ffffff;
-      overflow-x: hidden;
-    }
-    
-    h1, h2, h3 {
-      font-family: 'Playfair Display', serif;
-      font-weight: 700;
-    }
-    
-    /* Gradient Text Style */
-    .luxury-gradient {
-      background: linear-gradient(135deg, #ffd700 0%, #ffed4e 25%, #f9ca24 50%, #f39c12 75%, #e67e22 100%);
-      -webkit-background-clip: text;
-      -webkit-text-fill-color: transparent;
-      background-clip: text;
-    }
-    
-    /* Frosted Glass Card Style */
-    .premium-card {
-      background: linear-gradient(145deg, rgba(255, 255, 255, 0.1) 0%, rgba(255, 255, 255, 0.05) 100%);
-      backdrop-filter: blur(20px);
-      border: 1px solid rgba(255, 215, 0, 0.3);
-      border-radius: 24px;
-      box-shadow: 0 20px 40px rgba(0, 0, 0, 0.3), 0 0 0 1px rgba(255, 215, 0, 0.1);
-      transition: all 0.5s cubic-bezier(0.23, 1, 0.32, 1);
-      position: relative;
-      overflow: hidden;
-    }
-    
-    .premium-card::before {
-      content: '';
-      position: absolute;
-      top: 0;
-      left: -100%;
-      width: 100%;
-      height: 100%;
-      background: linear-gradient(90deg, transparent, rgba(255, 215, 0, 0.1), transparent);
-      transition: left 0.6s;
-    }
-    
-    .premium-card:hover::before {
-      left: 100%;
-    }
-    
-    .premium-card:hover {
-      transform: translateY(-8px) scale(1.02);
-      box-shadow: 0 30px 60px rgba(255, 215, 0, 0.2), 0 0 0 1px rgba(255, 215, 0, 0.4);
-      border-color: rgba(255, 215, 0, 0.6);
-    }
-    
-    /* Logo Styles */
-    .duck-logo {
-      filter: drop-shadow(0 0 20px rgba(255, 215, 0, 0.5));
-      transition: all 0.4s ease;
-    }
-    
-    .duck-logo:hover {
-      transform: scale(1.1) rotate(5deg);
-      filter: drop-shadow(0 0 30px rgba(255, 215, 0, 0.8));
-    }
-    
-    /* Image Styles */
-    .project-image, .merch-image {
-      width: 100%;
-      height: 200px;
-      object-fit: cover;
-      border-radius: 16px;
-      transition: all 0.4s ease;
-      filter: brightness(0.9) contrast(1.1);
-    }
-    
-    .merch-image {
-      height: 150px;
-    }
-    
-    .premium-card:hover .project-image,
-    .premium-card:hover .merch-image {
-      transform: scale(1.05);
-      filter: brightness(1.1) contrast(1.2);
-    }
-    
-    /* General Button Style */
-    .luxury-button {
-      background: linear-gradient(135deg, #ffd700 0%, #ffed4e 50%, #ffd700 100%);
-      color: #1a1a3e;
-      border: none;
-      border-radius: 50px;
-      padding: 12px 24px;
-      font-weight: 600;
-      font-size: 14px;
-      cursor: pointer;
-      transition: all 0.3s ease;
-      text-transform: uppercase;
-      letter-spacing: 1px;
-      box-shadow: 0 8px 20px rgba(255, 215, 0, 0.3);
-      position: relative;
-      overflow: hidden;
-      white-space: nowrap;
-    }
-    
-    .luxury-button::before {
-      content: '';
-      position: absolute;
-      top: 0;
-      left: -100%;
-      width: 100%;
-      height: 100%;
-      background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.2), transparent);
-      transition: left 0.5s;
-    }
-    
-    .luxury-button:hover::before {
-      left: 100%;
-    }
-    
-    .luxury-button:hover {
-      transform: translateY(-2px);
-      box-shadow: 0 12px 30px rgba(255, 215, 0, 0.4);
-    }
-    
-    /* Floating Duck Particles */
-    .floating-particles {
-      position: fixed;
-      top: 0;
-      left: 0;
-      width: 100%;
-      height: 100%;
-      pointer-events: none;
-      z-index: 0;
-    }
-    
-    .particle {
-      position: absolute;
-      animation: float 15s infinite linear;
-      user-select: none;
-      pointer-events: auto;
-      cursor: grab;
-      text-shadow: 0 0 4px #ffd700, 0 0 8px #ffd700;
-      transition: opacity 0.5s ease;
-    }
+ <meta charset="UTF-8">
+ <meta name="viewport" content="width=device-width, initial-scale=1.0">
+ <title>Just Duck It - Luxury Meets Web3</title>
+ <!-- Open Graph Meta Tags for Social Media Thumbnail -->
+ <meta property="og:title" content="JustDuckIt - Luxury Meets Web3">
+ <meta property="og:description" content="Experience the most luxurious duck ecosystem in Web3. Dive into premium experiences!">
+ <meta property="og:image" content="https://i.imgur.com/otNEI2M.png">
+ <meta property="og:image:width" content="80">
+ <meta property="og:image:height" content="80">
+ <meta property="og:url" content="https://justduckit.org">
+ <meta property="og:type" content="website">
+ <meta name="twitter:card" content="summary_large_image">
+ <meta name="twitter:image" content="https://i.imgur.com/otNEI2M.png">
+ <script src="https://cdn.tailwindcss.com"></script>
+ <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;700;900&family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+ <style>
+   /* General Body and Font Styles */
+   html {
+     scroll-behavior: smooth;
+   }
+   body {
+     font-family: 'Inter', sans-serif;
+     background: linear-gradient(135deg, #0f0f23 0%, #1a1a3e 25%, #2d1b69 50%, #663399 75%, #9966cc 100%);
+     color: #ffffff;
+     overflow-x: hidden;
+   }
+   
+   h1, h2, h3 {
+     font-family: 'Playfair Display', serif;
+     font-weight: 700;
+   }
+   
+   /* Gradient Text Style */
+   .luxury-gradient {
+     background: linear-gradient(135deg, #ffd700 0%, #ffed4e 25%, #f9ca24 50%, #f39c12 75%, #e67e22 100%);
+     -webkit-background-clip: text;
+     -webkit-text-fill-color: transparent;
+     background-clip: text;
+   }
+   
+   /* Frosted Glass Card Style */
+   .premium-card {
+     background: linear-gradient(145deg, rgba(255, 255, 255, 0.1) 0%, rgba(255, 255, 255, 0.05) 100%);
+     backdrop-filter: blur(20px);
+     border: 1px solid rgba(255, 215, 0, 0.3);
+     border-radius: 24px;
+     box-shadow: 0 20px 40px rgba(0, 0, 0, 0.3), 0 0 0 1px rgba(255, 215, 0, 0.1);
+     transition: all 0.5s cubic-bezier(0.23, 1, 0.32, 1);
+     position: relative;
+     overflow: hidden;
+   }
+   
+   .premium-card::before {
+     content: '';
+     position: absolute;
+     top: 0;
+     left: -100%;
+     width: 100%;
+     height: 100%;
+     background: linear-gradient(90deg, transparent, rgba(255, 215, 0, 0.1), transparent);
+     transition: left 0.6s;
+   }
+   
+   .premium-card:hover::before {
+     left: 100%;
+   }
+   
+   .premium-card:hover {
+     transform: translateY(-8px) scale(1.02);
+     box-shadow: 0 30px 60px rgba(255, 215, 0, 0.2), 0 0 0 1px rgba(255, 215, 0, 0.4);
+     border-color: rgba(255, 215, 0, 0.6);
+   }
+   
+   /* Logo Styles */
+   .duck-logo {
+     filter: drop-shadow(0 0 20px rgba(255, 215, 0, 0.5));
+     transition: all 0.4s ease;
+   }
+   
+   .duck-logo:hover {
+     transform: scale(1.1) rotate(5deg);
+     filter: drop-shadow(0 0 30px rgba(255, 215, 0, 0.8));
+   }
+   
+   /* Image Styles */
+   .project-image, .merch-image {
+     width: 100%;
+     height: 200px;
+     object-fit: cover;
+     border-radius: 16px;
+     transition: all 0.4s ease;
+     filter: brightness(0.9) contrast(1.1);
+   }
+   
+   .merch-image {
+     height: 150px;
+   }
+   
+   .premium-card:hover .project-image,
+   .premium-card:hover .merch-image {
+     transform: scale(1.05);
+     filter: brightness(1.1) contrast(1.2);
+   }
+   
+   /* General Button Style */
+   .luxury-button {
+     background: linear-gradient(135deg, #ffd700 0%, #ffed4e 50%, #ffd700 100%);
+     color: #1a1a3e;
+     border: none;
+     border-radius: 50px;
+     padding: 12px 24px;
+     font-weight: 600;
+     font-size: 14px;
+     cursor: pointer;
+     transition: all 0.3s ease;
+     text-transform: uppercase;
+     letter-spacing: 1px;
+     box-shadow: 0 8px 20px rgba(255, 215, 0, 0.3);
+     position: relative;
+     overflow: hidden;
+     white-space: nowrap;
+   }
+   
+   .luxury-button::before {
+     content: '';
+     position: absolute;
+     top: 0;
+     left: -100%;
+     width: 100%;
+     height: 100%;
+     background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.2), transparent);
+     transition: left 0.5s;
+   }
+   
+   .luxury-button:hover::before {
+     left: 100%;
+   }
+   
+   .luxury-button:hover {
+     transform: translateY(-2px);
+     box-shadow: 0 12px 30px rgba(255, 215, 0, 0.4);
+   }
+   
+   /* Floating Duck Particles */
+   .floating-particles {
+     position: fixed;
+     top: 0;
+     left: 0;
+     width: 100%;
+     height: 100%;
+     pointer-events: none;
+     z-index: 0;
+   }
+   
+   .particle {
+     position: absolute;
+     animation: float 15s infinite linear;
+     user-select: none;
+     pointer-events: auto;
+     cursor: grab;
+     text-shadow: 0 0 4px #ffd700, 0 0 8px #ffd700;
+     transition: opacity 0.5s ease;
+   }
 
-    .particle.dragging {
-        cursor: grabbing;
-        animation: none !important;
-        opacity: 0.8;
-    }
-    
-    @keyframes float {
-      0% { transform: translateY(100vh) rotate(0deg); opacity: 0; }
-      10% { opacity: 1; }
-      90% { opacity: 1; }
-      100% { transform: translateY(-100px) rotate(360deg); opacity: 0; }
-    }
-    
-    /* Section Title Styling */
-    .section-title::after {
-      content: '';
-      position: absolute;
-      bottom: -10px;
-      left: 50%;
-      transform: translateX(-50%);
-      width: 100px;
-      height: 4px;
-      background: linear-gradient(90deg, #ffd700, #ffed4e, #ffd700);
-      border-radius: 2px;
-    }
-    
-    .luxury-glow {
-      box-shadow: 0 0 50px rgba(255, 215, 0, 0.3);
-    }
-    
-    .text-shadow-luxury {
-      text-shadow: 0 2px 10px rgba(255, 215, 0, 0.3);
-    }
+   .particle.dragging {
+       cursor: grabbing;
+       animation: none !important;
+       opacity: 0.8;
+   }
+   
+   @keyframes float {
+     0% { transform: translateY(100vh) rotate(0deg); opacity: 0; }
+     10% { opacity: 1; }
+     90% { opacity: 1; }
+     100% { transform: translateY(-100px) rotate(360deg); opacity: 0; }
+   }
+   
+   /* Section Title Styling */
+   .section-title::after {
+     content: '';
+     position: absolute;
+     bottom: -10px;
+     left: 50%;
+     transform: translateX(-50%);
+     width: 100px;
+     height: 4px;
+     background: linear-gradient(90deg, #ffd700, #ffed4e, #ffd700);
+     border-radius: 2px;
+   }
+   
+   .luxury-glow {
+     box-shadow: 0 0 50px rgba(255, 215, 0, 0.3);
+   }
+   
+   .text-shadow-luxury {
+     text-shadow: 0 2px 10px rgba(255, 215, 0, 0.3);
+   }
 
-    /* Main Menu Button Styles */
-    .main-menu-button {
-        background: linear-gradient(145deg, rgba(255, 255, 255, 0.1) 0%, rgba(255, 255, 255, 0.05) 100%);
-        backdrop-filter: blur(10px);
-        border: 1px solid rgba(255, 215, 0, 0.4);
-        color: #fff;
-        border-radius: 16px;
-        font-weight: 600;
-        cursor: pointer;
-        transition: all 0.3s cubic-bezier(0.23, 1, 0.32, 1);
-        text-transform: uppercase;
-        letter-spacing: 2px;
-        position: relative;
-        overflow: hidden;
-        width: 100%;
-        max-width: 320px;
-        text-align: center;
-        display: block;
-        text-decoration: none;
-    }
+   /* Main Menu Button Styles */
+   .main-menu-button {
+       background: linear-gradient(145deg, rgba(255, 255, 255, 0.1) 0%, rgba(255, 255, 255, 0.05) 100%);
+       backdrop-filter: blur(10px);
+       border: 1px solid rgba(255, 215, 0, 0.4);
+       color: #fff;
+       border-radius: 16px;
+       font-weight: 600;
+       cursor: pointer;
+       transition: all 0.3s cubic-bezier(0.23, 1, 0.32, 1);
+       text-transform: uppercase;
+       letter-spacing: 2px;
+       position: relative;
+       overflow: hidden;
+       width: 100%;
+       max-width: 320px;
+       text-align: center;
+       display: block;
+       text-decoration: none;
+   }
 
-    .main-menu-button:hover {
-        transform: translateY(-5px) scale(1.05);
-        background: linear-gradient(145deg, rgba(255, 215, 0, 0.2) 0%, rgba(255, 215, 0, 0.1) 100%);
-        border-color: rgba(255, 215, 0, 0.8);
-        color: #ffd700;
-        box-shadow: 0 15px 30px rgba(0, 0, 0, 0.3);
-    }
+   .main-menu-button:hover {
+       transform: translateY(-5px) scale(1.05);
+       background: linear-gradient(145deg, rgba(255, 215, 0, 0.2) 0%, rgba(255, 215, 0, 0.1) 100%);
+       border-color: rgba(255, 215, 0, 0.8);
+       color: #ffd700;
+       box-shadow: 0 15px 30px rgba(0, 0, 0, 0.3);
+   }
 
-    /* Responsive adjustments for smaller image heights */
-    @media (max-width: 768px) {
-      .project-image { height: 150px; }
-      .merch-image { height: 120px; }
-    }
+   /* Responsive adjustments for smaller image heights */
+   @media (max-width: 768px) {
+     .project-image { height: 150px; }
+     .merch-image { height: 120px; }
+   }
 
-    /* --- QUACKBOT CHATBOT STYLES --- */
-    .chatbot-container {
-        position: fixed;
-        bottom: 20px;
-        right: 20px;
-        z-index: 1000;
-    }
+   /* --- QUACKBOT CHATBOT STYLES --- */
+   .chatbot-container {
+       position: fixed;
+       bottom: 20px;
+       right: 20px;
+       z-index: 1000;
+   }
 
-    #chatbot-toggle {
-        width: 60px;
-        height: 60px;
-        background: linear-gradient(135deg, #ffd700, #f9ca24);
-        border-radius: 50%;
-        display: flex;
-        align-items: center;
-        justify-content: center;
-        font-size: 32px;
-        cursor: pointer;
-        box-shadow: 0 8px 20px rgba(255, 215, 0, 0.4);
-        transition: all 0.3s ease;
-    }
+   #chatbot-toggle {
+       width: 60px;
+       height: 60px;
+       background: linear-gradient(135deg, #ffd700, #f9ca24);
+       border-radius: 50%;
+       display: flex;
+       align-items: center;
+       justify-content: center;
+       font-size: 32px;
+       cursor: pointer;
+       box-shadow: 0 8px 20px rgba(255, 215, 0, 0.4);
+       transition: all 0.3s ease;
+   }
 
-    #chatbot-toggle:hover {
-        transform: scale(1.1) rotate(10deg);
-        box-shadow: 0 12px 30px rgba(255, 215, 0, 0.6);
-    }
+   #chatbot-toggle:hover {
+       transform: scale(1.1) rotate(10deg);
+       box-shadow: 0 12px 30px rgba(255, 215, 0, 0.6);
+   }
 
-    #chat-window {
-        position: absolute;
-        bottom: 80px;
-        right: 0;
-        width: 350px;
-        max-width: 90vw;
-        height: 500px;
-        max-height: 80vh;
-        display: flex;
-        flex-direction: column;
-        /* Inherit premium-card styles */
-        background: linear-gradient(145deg, rgba(255, 255, 255, 0.1) 0%, rgba(255, 255, 255, 0.05) 100%);
-        backdrop-filter: blur(20px);
-        border: 1px solid rgba(255, 215, 0, 0.3);
-        border-radius: 24px;
-        box-shadow: 0 20px 40px rgba(0, 0, 0, 0.3);
-        overflow: hidden;
-        transform: translateY(20px) scale(0.95);
-        opacity: 0;
-        pointer-events: none;
-        transition: all 0.4s cubic-bezier(0.23, 1, 0.32, 1);
-    }
+   #chat-window {
+       position: absolute;
+       bottom: 80px;
+       right: 0;
+       width: 350px;
+       max-width: 90vw;
+       height: 500px;
+       max-height: 80vh;
+       display: flex;
+       flex-direction: column;
+       /* Inherit premium-card styles */
+       background: linear-gradient(145deg, rgba(255, 255, 255, 0.1) 0%, rgba(255, 255, 255, 0.05) 100%);
+       backdrop-filter: blur(20px);
+       border: 1px solid rgba(255, 215, 0, 0.3);
+       border-radius: 24px;
+       box-shadow: 0 20px 40px rgba(0, 0, 0, 0.3);
+       overflow: hidden;
+       transform: translateY(20px) scale(0.95);
+       opacity: 0;
+       pointer-events: none;
+       transition: all 0.4s cubic-bezier(0.23, 1, 0.32, 1);
+   }
 
-    #chat-window.active {
-        transform: translateY(0) scale(1);
-        opacity: 1;
-        pointer-events: auto;
-    }
+   #chat-window.active {
+       transform: translateY(0) scale(1);
+       opacity: 1;
+       pointer-events: auto;
+   }
 
-    .chat-header {
-        padding: 16px;
-        border-bottom: 1px solid rgba(255, 215, 0, 0.2);
-        display: flex;
-        justify-content: space-between;
-        align-items: center;
-    }
-    
-    .chat-header h3 {
-        font-size: 20px;
-    }
-    
-    #chat-close-btn {
-        background: none;
-        border: none;
-        color: white;
-        font-size: 24px;
-        cursor: pointer;
-        opacity: 0.7;
-        transition: opacity 0.2s;
-    }
-    #chat-close-btn:hover {
-        opacity: 1;
-    }
+   .chat-header {
+       padding: 16px;
+       border-bottom: 1px solid rgba(255, 215, 0, 0.2);
+       display: flex;
+       justify-content: space-between;
+       align-items: center;
+   }
+   
+   .chat-header h3 {
+       font-size: 20px;
+   }
+   
+   #chat-close-btn {
+       background: none;
+       border: none;
+       color: white;
+       font-size: 24px;
+       cursor: pointer;
+       opacity: 0.7;
+       transition: opacity 0.2s;
+   }
+   #chat-close-btn:hover {
+       opacity: 1;
+   }
 
-    #chat-messages {
-        flex-grow: 1;
-        padding: 16px;
-        overflow-y: auto;
-        display: flex;
-        flex-direction: column;
-        gap: 12px;
-    }
-    /* Scrollbar styling */
-    #chat-messages::-webkit-scrollbar {
-        width: 6px;
-    }
-    #chat-messages::-webkit-scrollbar-track {
-        background: transparent;
-    }
-    #chat-messages::-webkit-scrollbar-thumb {
-        background: rgba(255, 215, 0, 0.5);
-        border-radius: 3px;
-    }
+   #chat-messages {
+       flex-grow: 1;
+       padding: 16px;
+       overflow-y: auto;
+       display: flex;
+       flex-direction: column;
+       gap: 12px;
+   }
+   /* Scrollbar styling */
+   #chat-messages::-webkit-scrollbar {
+       width: 6px;
+   }
+   #chat-messages::-webkit-scrollbar-track {
+       background: transparent;
+   }
+   #chat-messages::-webkit-scrollbar-thumb {
+       background: rgba(255, 215, 0, 0.5);
+       border-radius: 3px;
+   }
 
-    .chat-message {
-        padding: 10px 15px;
-        border-radius: 18px;
-        max-width: 80%;
-        line-height: 1.5;
-    }
+   .chat-message {
+       padding: 10px 15px;
+       border-radius: 18px;
+       max-width: 80%;
+       line-height: 1.5;
+   }
 
-    .user-message {
-        background: linear-gradient(135deg, #663399, #834dcc);
-        color: white;
-        align-self: flex-end;
-        border-bottom-right-radius: 4px;
-    }
+   .user-message {
+       background: linear-gradient(135deg, #663399, #834dcc);
+       color: white;
+       align-self: flex-end;
+       border-bottom-right-radius: 4px;
+   }
 
-    .bot-message {
-        background: rgba(255, 255, 255, 0.1);
-        color: white;
-        align-self: flex-start;
-        border-bottom-left-radius: 4px;
-    }
-    
-    .bot-typing {
-        align-self: flex-start;
-        display: flex;
-        gap: 4px;
-        padding: 12px 15px;
-    }
-    
-    .bot-typing span {
-        width: 8px;
-        height: 8px;
-        background-color: rgba(255, 215, 0, 0.6);
-        border-radius: 50%;
-        animation: typing-bubble 1.2s infinite ease-in-out;
-    }
-    .bot-typing span:nth-child(2) { animation-delay: 0.2s; }
-    .bot-typing span:nth-child(3) { animation-delay: 0.4s; }
-    
-    @keyframes typing-bubble {
-        0%, 80%, 100% { transform: scale(0); }
-        40% { transform: scale(1.0); }
-    }
+   .bot-message {
+       background: rgba(255, 255, 255, 0.1);
+       color: white;
+       align-self: flex-start;
+       border-bottom-left-radius: 4px;
+   }
+   
+   .bot-typing {
+       align-self: flex-start;
+       display: flex;
+       gap: 4px;
+       padding: 12px 15px;
+   }
+   
+   .bot-typing span {
+       width: 8px;
+       height: 8px;
+       background-color: rgba(255, 215, 0, 0.6);
+       border-radius: 50%;
+       animation: typing-bubble 1.2s infinite ease-in-out;
+   }
+   .bot-typing span:nth-child(2) { animation-delay: 0.2s; }
+   .bot-typing span:nth-child(3) { animation-delay: 0.4s; }
+   
+   @keyframes typing-bubble {
+       0%, 80%, 100% { transform: scale(0); }
+       40% { transform: scale(1.0); }
+   }
 
-    .chat-input-area {
-        padding: 16px;
-        border-top: 1px solid rgba(255, 215, 0, 0.2);
-        display: flex;
-        gap: 10px;
-    }
+   .chat-input-area {
+       padding: 16px;
+       border-top: 1px solid rgba(255, 215, 0, 0.2);
+       display: flex;
+       gap: 10px;
+   }
 
-    #chat-input {
-        flex-grow: 1;
-        background: rgba(0, 0, 0, 0.2);
-        border: 1px solid rgba(255, 255, 255, 0.2);
-        border-radius: 50px;
-        padding: 10px 18px;
-        color: white;
-        outline: none;
-        transition: border-color 0.3s;
-    }
+   #chat-input {
+       flex-grow: 1;
+       background: rgba(0, 0, 0, 0.2);
+       border: 1px solid rgba(255, 255, 255, 0.2);
+       border-radius: 50px;
+       padding: 10px 18px;
+       color: white;
+       outline: none;
+       transition: border-color 0.3s;
+   }
 
-    #chat-input:focus {
-        border-color: rgba(255, 215, 0, 0.6);
-    }
+   #chat-input:focus {
+       border-color: rgba(255, 215, 0, 0.6);
+   }
 
-    #chat-send-btn {
-        width: 44px;
-        height: 44px;
-        flex-shrink: 0;
-        /* Inherit luxury-button styles */
-        background: linear-gradient(135deg, #ffd700 0%, #ffed4e 50%, #ffd700 100%);
-        color: #1a1a3e;
-        border: none;
-        border-radius: 50%;
-        font-weight: 600;
-        cursor: pointer;
-        transition: all 0.3s ease;
-        box-shadow: 0 4px 10px rgba(255, 215, 0, 0.3);
-        display: flex;
-        align-items: center;
-        justify-content: center;
-        font-size: 20px;
+   #chat-send-btn {
+       width: 44px;
+       height: 44px;
+       flex-shrink: 0;
+       /* Inherit luxury-button styles */
+       background: linear-gradient(135deg, #ffd700 0%, #ffed4e 50%, #ffd700 100%);
+       color: #1a1a3e;
+       border: none;
+       border-radius: 50%;
+       font-weight: 600;
+       cursor: pointer;
+       transition: all 0.3s ease;
+       box-shadow: 0 4px 10px rgba(255, 215, 0, 0.3);
+       display: flex;
+       align-items: center;
+       justify-content: center;
+       font-size: 20px;
+   }
+    #chat-send-btn:hover {
+       transform: scale(1.1);
+       box-shadow: 0 6px 15px rgba(255, 215, 0, 0.4);
     }
-     #chat-send-btn:hover {
-        transform: scale(1.1);
-        box-shadow: 0 6px 15px rgba(255, 215, 0, 0.4);
-     }
-  </style>
+ </style>
 </head>
 <body>
-  <!-- Floating Particles -->
-  <div class="floating-particles">
-    <!-- Particles are generated by JavaScript -->
-  </div>
+ <!-- Floating Particles -->
+ <div class="floating-particles">
+   <!-- Particles are generated by JavaScript -->
+ </div>
 
-  <!-- Main Menu Section -->
-  <section id="main-menu" class="min-h-screen flex flex-col items-center justify-center text-center p-6 relative z-10">
-    <div class="flex flex-col items-center justify-center space-y-6 md:space-y-8">
-      <a href="#main-menu">
-        <img src="https://i.imgur.com/otNEI2M.png" alt="Just Duck It Logo" class="mb-4 w-28 h-28 md:w-40 md:h-40 duck-logo rounded-full luxury-glow" onerror="this.src='https://placehold.co/160x160/663399/FFD700?text=🦆';">
-      </a>
-      <h1 class="text-5xl sm:text-6xl md:text-8xl font-black luxury-gradient text-shadow-luxury">Just Duck It</h1>
-      <p class="text-lg md:text-xl max-w-2xl mx-auto text-white/90 leading-relaxed font-light">Merging the gap between Web3 & Duck.</p>
-      
-      <!-- Menu Buttons -->
-      <nav class="flex flex-col space-y-5 mt-8 w-full items-center">
-        <a href="#projects" class="main-menu-button text-lg md:text-xl py-3 px-10 md:py-4 md:px-12">Projects</a>
-        <a href="#merch" class="main-menu-button text-lg md:text-xl py-3 px-10 md:py-4 md:px-12">Merch</a>
-        <a href="#contact" class="main-menu-button text-lg md:text-xl py-3 px-10 md:py-4 md:px-12">Contact</a>
-      </nav>
-    </div>
-  </section>
+ <!-- Main Menu Section -->
+ <section id="main-menu" class="min-h-screen flex flex-col items-center justify-center text-center p-6 relative z-10">
+   <div class="flex flex-col items-center justify-center space-y-6 md:space-y-8">
+     <a href="#main-menu">
+       <img src="https://i.imgur.com/otNEI2M.png" alt="Just Duck It Logo" class="mb-4 w-28 h-28 md:w-40 md:h-40 duck-logo rounded-full luxury-glow" onerror="this.src='https://placehold.co/160x160/663399/FFD700?text=🦆';">
+     </a>
+     <h1 class="text-5xl sm:text-6xl md:text-8xl font-black luxury-gradient text-shadow-luxury">Just Duck It</h1>
+     <p class="text-lg md:text-xl max-w-2xl mx-auto text-white/90 leading-relaxed font-light">Merging the gap between Web3 & Duck.</p>
+     
+     <!-- Menu Buttons -->
+     <nav class="flex flex-col space-y-5 mt-8 w-full items-center">
+       <a href="#projects" class="main-menu-button text-lg md:text-xl py-3 px-10 md:py-4 md:px-12">Projects</a>
+       <a href="#merch" class="main-menu-button text-lg md:text-xl py-3 px-10 md:py-4 md:px-12">Merch</a>
+       <a href="#contact" class="main-menu-button text-lg md:text-xl py-3 px-10 md:py-4 md:px-12">Contact</a>
+     </nav>
+   </div>
+ </section>
 
-  <!-- Projects Section -->
-  <section id="projects" class="py-20 relative z-10">
-    <div class="container mx-auto px-6">
-      <h2 class="section-title text-4xl md:text-5xl luxury-gradient">Our Projects</h2>
-      <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 md:gap-8">
-        <!-- Project Cards -->
-        <div class="premium-card p-6">
-          <img src="https://i.imgur.com/a6IBrAV.jpg" alt="Duck Joyride" class="project-image mb-6" onerror="this.onerror=null;this.src='https://placehold.co/400x200/2d1b69/FFD700?text=Duck+Joyride';">
-          <h3 class="text-2xl font-bold mb-3 luxury-gradient">Duck Joyride</h3>
-          <p class="text-white/80 mb-6 leading-relaxed">Guide a duck through wild obstacles, grabbing coins and power-ups in this fun side-scroller!</p>
-          <a href="https://duckxmeta.github.io/DuckJoyrideV2/" target="_blank" class="luxury-button inline-block">Play Now</a>
-        </div>
-        <div class="premium-card p-6">
-          <img src="https://i.imgur.com/MHlyOXD.jpg" alt="Duck's Crypto Updates" class="project-image mb-6" onerror="this.onerror=null;this.src='https://placehold.co/400x200/2d1b69/FFD700?text=Crypto+Updates';">
-          <h3 class="text-2xl font-bold mb-3 luxury-gradient">Duck's Crypto Updates</h3>
-          <p class="text-white/80 mb-6 leading-relaxed">Keep up with crypto events and insights using our handy bot!</p>
-          <a href="https://duckxmeta.github.io/DuckCryptoUpdates/" target="_blank" class="luxury-button inline-block">View Updates</a>
-        </div>
-        <div class="premium-card p-6">
-          <img src="https://i.imgur.com/o32AjZE.jpg" alt="Duck on X" class="project-image mb-6" onerror="this.onerror=null;this.src='https://placehold.co/400x200/2d1b69/FFD700?text=Duck+on+X';">
-          <h3 class="text-2xl font-bold mb-3 luxury-gradient">🦆 on 𝕏</h3>
-          <p class="text-white/80 mb-6 leading-relaxed">Join @Duckxmeta on X for fun, support our duck sanctuary, and connect with animal welfare fans. #strayborhood</p>
-          <a href="https://x.com/duckxmeta" target="_blank" class="luxury-button inline-block">Join on X</a>
-        </div>
-        <div class="premium-card p-6">
-          <img src="https://i.imgur.com/EE0FRWy.jpg" alt="Duck on TikTok" class="project-image mb-6" onerror="this.onerror=null;this.src='https://placehold.co/400x200/2d1b69/FFD700?text=Duck+on+TikTok';">
-          <h3 class="text-2xl font-bold mb-3 luxury-gradient">JustDuckIt</h3>
-          <p class="text-white/80 mb-6 leading-relaxed">Follow @justtduckit on TikTok for bird-saving fun with 11.3K fans and 136.9K likes!</p>
-          <a href="https://www.tiktok.com/@justtduckit" target="_blank" class="luxury-button inline-block">Follow on TikTok</a>
-        </div>
-        <div class="premium-card p-6">
-          <img src="https://i.imgur.com/egsn5Xt.jpg" alt="JustDuckIt AI" class="project-image mb-6" onerror="this.onerror=null;this.src='https://placehold.co/400x200/2d1b69/FFD700?text=JustDuckIt+AI';">
-          <h3 class="text-2xl font-bold mb-3 luxury-gradient">JustDuckIt AI</h3>
-          <p class="text-white/80 mb-6 leading-relaxed">Chat with our ducky AI on Instagram for fun insights. <a href="https://ai.meta.com" class="text-yellow-400 hover:underline">Powered by Meta AI</a>.</p>
-          <a href="https://aistudio.instagram.com/ai/1607050206776737/" target="_blank" class="luxury-button inline-block">Start Chatting</a>
-        </div>
-        <div class="premium-card p-6">
-          <img src="https://i.imgur.com/Sq4XHVl.jpg" alt="Tech Pioneers" class="project-image mb-6" onerror="this.onerror=null;this.src='https://placehold.co/400x200/2d1b69/FFD700?text=Tech+Pioneers';">
-          <h3 class="text-2xl font-bold mb-3 luxury-gradient">Tech Pioneers Program</h3>
-          <p class="text-white/80 mb-6 leading-relaxed">Join Zen AI Co.'s Tech Afterschool Labs for exciting learning! <a href="https://zenai.world" class="text-yellow-400 hover:underline">Check it out</a>.</p>
-          <a href="https://zenai.world" target="_blank" class="luxury-button inline-block">Join Now</a>
-        </div>
-      </div>
-    </div>
-  </section>
+ <!-- Projects Section -->
+ <section id="projects" class="py-20 relative z-10">
+   <div class="container mx-auto px-6">
+     <h2 class="section-title text-4xl md:text-5xl luxury-gradient">Our Projects</h2>
+     <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 md:gap-8">
+       <!-- Project Cards -->
+       <div class="premium-card p-6">
+         <img src="https://i.imgur.com/a6IBrAV.jpg" alt="Duck Joyride" class="project-image mb-6" onerror="this.onerror=null;this.src='https://placehold.co/400x200/2d1b69/FFD700?text=Duck+Joyride';">
+         <h3 class="text-2xl font-bold mb-3 luxury-gradient">Duck Joyride</h3>
+         <p class="text-white/80 mb-6 leading-relaxed">Guide a duck through wild obstacles, grabbing coins and power-ups in this fun side-scroller!</p>
+         <a href="https://duckxmeta.github.io/DuckJoyrideV2/" target="_blank" class="luxury-button inline-block">Play Now</a>
+       </div>
+       <div class="premium-card p-6">
+         <img src="https://i.imgur.com/MHlyOXD.jpg" alt="Duck's Crypto Updates" class="project-image mb-6" onerror="this.onerror=null;this.src='https://placehold.co/400x200/2d1b69/FFD700?text=Crypto+Updates';">
+         <h3 class="text-2xl font-bold mb-3 luxury-gradient">Duck's Crypto Updates</h3>
+         <p class="text-white/80 mb-6 leading-relaxed">Keep up with crypto events and insights using our handy bot!</p>
+         <a href="https://duckxmeta.github.io/DuckCryptoUpdates/" target="_blank" class="luxury-button inline-block">View Updates</a>
+       </div>
+       <div class="premium-card p-6">
+         <img src="https://i.imgur.com/o32AjZE.jpg" alt="Duck on X" class="project-image mb-6" onerror="this.onerror=null;this.src='https://placehold.co/400x200/2d1b69/FFD700?text=Duck+on+X';">
+         <h3 class="text-2xl font-bold mb-3 luxury-gradient">🦆 on 𝕏</h3>
+         <p class="text-white/80 mb-6 leading-relaxed">Join @Duckxmeta on X for fun, support our duck sanctuary, and connect with animal welfare fans. #strayborhood</p>
+         <a href="https://x.com/duckxmeta" target="_blank" class="luxury-button inline-block">Join on X</a>
+       </div>
+       <div class="premium-card p-6">
+         <img src="https://i.imgur.com/EE0FRWy.jpg" alt="Duck on TikTok" class="project-image mb-6" onerror="this.onerror=null;this.src='https://placehold.co/400x200/2d1b69/FFD700?text=Duck+on+TikTok';">
+         <h3 class="text-2xl font-bold mb-3 luxury-gradient">JustDuckIt</h3>
+         <p class="text-white/80 mb-6 leading-relaxed">Follow @justtduckit on TikTok for bird-saving fun with 11.3K fans and 136.9K likes!</p>
+         <a href="https://www.tiktok.com/@justtduckit" target="_blank" class="luxury-button inline-block">Follow on TikTok</a>
+       </div>
+       <div class="premium-card p-6">
+         <img src="https://i.imgur.com/egsn5Xt.jpg" alt="JustDuckIt AI" class="project-image mb-6" onerror="this.onerror=null;this.src='https://placehold.co/400x200/2d1b69/FFD700?text=JustDuckIt+AI';">
+         <h3 class="text-2xl font-bold mb-3 luxury-gradient">JustDuckIt AI</h3>
+         <p class="text-white/80 mb-6 leading-relaxed">Chat with our ducky AI on Instagram for fun insights. <a href="https://ai.meta.com" class="text-yellow-400 hover:underline">Powered by Meta AI</a>.</p>
+         <a href="https://aistudio.instagram.com/ai/1607050206776737/" target="_blank" class="luxury-button inline-block">Start Chatting</a>
+       </div>
+       <div class="premium-card p-6">
+         <img src="https://i.imgur.com/Sq4XHVl.jpg" alt="AI Pioneer Program" class="project-image mb-6" onerror="this.onerror=null;this.src='https://placehold.co/400x200/2d1b69/FFD700?text=AI+Pioneers';">
+         <h3 class="text-2xl font-bold mb-3 luxury-gradient">AI Pioneer Program</h3>
+         <p class="text-white/80 mb-6 leading-relaxed">Join Zen AI Co.'s Tech Afterschool Labs for exciting learning! <a href="https://zenai.world" class="text-yellow-400 hover:underline">Check it out</a>.</p>
+         <a href="https://zenai.world" target="_blank" class="luxury-button inline-block">Join Now</a>
+       </div>
+       <div class="premium-card p-6">
+         <img src="https://i.imgur.com/KMnME5E.png" alt="Zen Arena" class="project-image mb-6" onerror="this.onerror=null;this.src='https://placehold.co/400x200/2d1b69/FFD700?text=Zen+Arena';">
+         <h3 class="text-2xl font-bold mb-3 luxury-gradient">Zen Arena</h3>
+         <p class="text-white/80 mb-6 leading-relaxed">Test the world's best AI models all in one space. Discover the future of artificial intelligence.</p>
+         <a href="https://us.zenai.biz" target="_blank" class="luxury-button inline-block">Explore Arena</a>
+       </div>
+     </div>
+   </div>
+ </section>
 
-  <!-- Luxury Merch Section -->
-  <section id="merch" class="py-20 relative z-10">
-    <div class="container mx-auto px-6">
-      <h2 class="section-title text-4xl md:text-5xl luxury-gradient">Duck Merch</h2>
-      <p class="text-xl text-center text-white/80 mb-12 max-w-2xl mx-auto">Grab awesome duck hats, powered by Printful!</p>
-      <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
-        <!-- Merch Cards -->
-        <div class="premium-card p-4">
-          <a href="https://justduckit-merch.printful.me/" target="_blank">
-            <img src="https://i.imgur.com/JPlC24L.png" alt="JustDuckit Hat" class="merch-image mb-4" onerror="this.onerror=null;this.src='https://placehold.co/400x150/2d1b69/FFD700?text=Duck+Hat';">
-          </a>
-          <h3 class="text-lg font-bold mb-2 luxury-gradient">JustDuckit Hat</h3>
-          <a href="https://justduckit-merch.printful.me/" target="_blank" class="luxury-button w-full block text-center">Shop Now</a>
-        </div>
-        <div class="premium-card p-4">
-          <a href="https://justduckit-merch.printful.me/" target="_blank">
-            <img src="https://i.imgur.com/sU5ax55.png" alt="What the duck, Over Hat" class="merch-image mb-4" onerror="this.onerror=null;this.src='https://placehold.co/400x150/2d1b69/FFD700?text=Duck+Hat';">
-          </a>
-          <h3 class="text-lg font-bold mb-2 luxury-gradient">What the duck, Over Hat</h3>
-          <a href="https://justduckit-merch.printful.me/" target="_blank" class="luxury-button w-full block text-center">Shop Now</a>
-        </div>
-        <div class="premium-card p-4">
-          <a href="https://justduckit-merch.printful.me/" target="_blank">
-            <img src="https://i.imgur.com/IDk0vxd.png" alt="Duck Stuff Hat" class="merch-image mb-4" onerror="this.onerror=null;this.src='https://placehold.co/400x150/2d1b69/FFD700?text=Duck+Hat';">
-          </a>
-          <h3 class="text-lg font-bold mb-2 luxury-gradient">Duck Stuff Hat</h3>
-          <a href="https://justduckit-merch.printful.me/" target="_blank" class="luxury-button w-full block text-center">Shop Now</a>
-        </div>
-        <div class="premium-card p-4">
-          <a href="https://justduckit-merch.printful.me/" target="_blank">
-            <img src="https://i.imgur.com/vgXD1cN.png" alt="Duck Hat" class="merch-image mb-4" onerror="this.onerror=null;this.src='https://placehold.co/400x150/2d1b69/FFD700?text=Duck+Hat';">
-          </a>
-          <h3 class="text-lg font-bold mb-2 luxury-gradient">Duck Hat</h3>
-          <a href="https://justduckit-merch.printful.me/" target="_blank" class="luxury-button w-full block text-center">Shop Now</a>
-        </div>
-      </div>
-      <div class="text-center mt-12">
-        <a href="https://justduckit-merch.printful.me/" target="_blank" class="luxury-button text-lg px-12 py-4">Check Out Our Merch Store</a>
-      </div>
-    </div>
-  </section>
+ <!-- Luxury Merch Section -->
+ <section id="merch" class="py-20 relative z-10">
+   <div class="container mx-auto px-6">
+     <h2 class="section-title text-4xl md:text-5xl luxury-gradient">Duck Merch</h2>
+     <p class="text-xl text-center text-white/80 mb-12 max-w-2xl mx-auto">Grab awesome duck hats, powered by Printful!</p>
+     <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
+       <!-- Merch Cards -->
+       <div class="premium-card p-4">
+         <a href="https://justduckit-merch.printful.me/" target="_blank">
+           <img src="https://i.imgur.com/JPlC24L.png" alt="JustDuckit Hat" class="merch-image mb-4" onerror="this.onerror=null;this.src='https://placehold.co/400x150/2d1b69/FFD700?text=Duck+Hat';">
+         </a>
+         <h3 class="text-lg font-bold mb-2 luxury-gradient">JustDuckit Hat</h3>
+         <a href="https://justduckit-merch.printful.me/" target="_blank" class="luxury-button w-full block text-center">Shop Now</a>
+       </div>
+       <div class="premium-card p-4">
+         <a href="https://justduckit-merch.printful.me/" target="_blank">
+           <img src="https://i.imgur.com/sU5ax55.png" alt="What the duck, Over Hat" class="merch-image mb-4" onerror="this.onerror=null;this.src='https://placehold.co/400x150/2d1b69/FFD700?text=Duck+Hat';">
+         </a>
+         <h3 class="text-lg font-bold mb-2 luxury-gradient">What the duck, Over Hat</h3>
+         <a href="https://justduckit-merch.printful.me/" target="_blank" class="luxury-button w-full block text-center">Shop Now</a>
+       </div>
+       <div class="premium-card p-4">
+         <a href="https://justduckit-merch.printful.me/" target="_blank">
+           <img src="https://i.imgur.com/IDk0vxd.png" alt="Duck Stuff Hat" class="merch-image mb-4" onerror="this.onerror=null;this.src='https://placehold.co/400x150/2d1b69/FFD700?text=Duck+Hat';">
+         </a>
+         <h3 class="text-lg font-bold mb-2 luxury-gradient">Duck Stuff Hat</h3>
+         <a href="https://justduckit-merch.printful.me/" target="_blank" class="luxury-button w-full block text-center">Shop Now</a>
+       </div>
+       <div class="premium-card p-4">
+         <a href="https://justduckit-merch.printful.me/" target="_blank">
+           <img src="https://i.imgur.com/vgXD1cN.png" alt="Duck Hat" class="merch-image mb-4" onerror="this.onerror=null;this.src='https://placehold.co/400x150/2d1b69/FFD700?text=Duck+Hat';">
+         </a>
+         <h3 class="text-lg font-bold mb-2 luxury-gradient">Duck Hat</h3>
+         <a href="https://justduckit-merch.printful.me/" target="_blank" class="luxury-button w-full block text-center">Shop Now</a>
+       </div>
+     </div>
+     <div class="text-center mt-12">
+       <a href="https://justduckit-merch.printful.me/" target="_blank" class="luxury-button text-lg px-12 py-4">Check Out Our Merch Store</a>
+     </div>
+   </div>
+ </section>
 
-  <!-- Contact Section -->
-  <section id="contact" class="py-20 text-center relative z-10">
-    <div class="container mx-auto px-6">
-      <h2 class="section-title text-4xl md:text-5xl luxury-gradient">Get in Touch!</h2>
-      <p class="text-xl text-white/80 max-w-2xl mx-auto mb-12">Have ideas or just want to chat? The best way to reach us is through our social channels!</p>
-      <div class="flex flex-wrap justify-center gap-4 mb-12">
-        <a href="https://x.com/duckxmeta" target="_blank" class="luxury-button">Connect on X</a>
-        <a href="https://www.tiktok.com/@justtduckit" target="_blank" class="luxury-button">Follow on TikTok</a>
-        <a href="https://www.instagram.com/duckxmeta?igsh=MWlqa3F1dGc1d24wdg%3D%3D&utm_source=qr" target="_blank" class="luxury-button">Find on Instagram</a>
-      </div>
-    </div>
-  </section>
+ <!-- Contact Section -->
+ <section id="contact" class="py-20 text-center relative z-10">
+   <div class="container mx-auto px-6">
+     <h2 class="section-title text-4xl md:text-5xl luxury-gradient">Get in Touch!</h2>
+     <p class="text-xl text-white/80 max-w-2xl mx-auto mb-12">Have ideas or just want to chat? The best way to reach us is through our social channels!</p>
+     <div class="flex flex-wrap justify-center gap-4 mb-12">
+       <a href="https://x.com/duckxmeta" target="_blank" class="luxury-button">Connect on X</a>
+       <a href="https://www.tiktok.com/@justtduckit" target="_blank" class="luxury-button">Follow on TikTok</a>
+       <a href="https://www.instagram.com/duckxmeta?igsh=MWlqa3F1dGc1d24wdg%3D%3D&utm_source=qr" target="_blank" class="luxury-button">Find on Instagram</a>
+     </div>
+   </div>
+ </section>
 
-  <!-- Footer -->
-  <footer class="backdrop-blur-md bg-black/20 border-t border-yellow-400/20 py-8 text-center relative z-10">
-    <p class="text-white/60">© 2025 Just Duck It. All rights reserved.</p>
-    <p class="text-white/70 mt-4 text-sm px-4">
-      Want your own website like this? 
-      <a href="#contact" class="text-yellow-400 hover:underline">Get in touch!</a>
-    </p>
-  </footer>
+ <!-- Footer -->
+ <footer class="backdrop-blur-md bg-black/20 border-t border-yellow-400/20 py-8 text-center relative z-10">
+   <p class="text-white/60">© 2025 Just Duck It. All rights reserved.</p>
+   <p class="text-white/70 mt-4 text-sm px-4">
+     Want your own website like this?
+     <a href="#contact" class="text-yellow-400 hover:underline">Get in touch!</a>
+   </p>
+ </footer>
 
-  <!-- QUACKBOT CHATBOT HTML -->
-  <div class="chatbot-container">
-      <div id="chat-window">
-          <div class="chat-header">
-              <h3 class="luxury-gradient">QuackBot</h3>
-              <button id="chat-close-btn">&times;</button>
-          </div>
-          <div id="chat-messages">
-             <!-- Messages will be injected here -->
-             <div class="chat-message bot-message">
-                Quack! What's shakin', feather-friend? Ask me anything about our luxurious duck world.
-             </div>
-          </div>
-          <div class="chat-input-area">
-              <input type="text" id="chat-input" placeholder="Ask a duck...">
-              <button id="chat-send-btn">
-                <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-send"><line x1="22" y1="2" x2="11" y2="13"></line><polygon points="22 2 15 22 11 13 2 9 22 2"></polygon></svg>
-              </button>
-          </div>
-      </div>
-      <div id="chatbot-toggle">
-          <span>🦆</span>
-      </div>
-  </div>
+ <!-- QUACKBOT CHATBOT HTML -->
+ <div class="chatbot-container">
+     <div id="chat-window">
+         <div class="chat-header">
+             <h3 class="luxury-gradient">QuackBot</h3>
+             <button id="chat-close-btn">×</button>
+         </div>
+         <div id="chat-messages">
+            <!-- Messages will be injected here -->
+            <div class="chat-message bot-message">
+               Quack! What's shakin', feather-friend? Ask me anything about our luxurious duck world.
+            </div>
+         </div>
+         <div class="chat-input-area">
+             <input type="text" id="chat-input" placeholder="Ask a duck...">
+             <button id="chat-send-btn">
+               <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-send"><line x1="22" y1="2" x2="11" y2="13"></line><polygon points="22 2 15 22 11 13 2 9 22 2"></polygon></svg>
+             </button>
+         </div>
+     </div>
+     <div id="chatbot-toggle">
+         <span>🦆</span>
+     </div>
+ </div>
 
 
-  <!-- JavaScript for enhanced interactivity -->
-  <script>
-    // --- Interactive Duck Particle Logic ---
-    const particleContainer = document.querySelector('.floating-particles');
+ <!-- JavaScript for enhanced interactivity -->
+ <script>
+   // --- Interactive Duck Particle Logic ---
+   const particleContainer = document.querySelector('.floating-particles');
 
-    function createParticle() {
-      const particle = document.createElement('div');
-      particle.className = 'particle';
-      particle.innerHTML = '🦆';
-      
-      particle.style.left = Math.random() * 100 + '%';
-      particle.style.animationDuration = (Math.random() * 10 + 10) + 's';
-      particle.style.animationDelay = Math.random() * 5 + 's';
-      particle.style.fontSize = (Math.random() * 16 + 12) + 'px';
-      
-      particleContainer.appendChild(particle);
+   function createParticle() {
+     const particle = document.createElement('div');
+     particle.className = 'particle';
+     particle.innerHTML = '🦆';
+     
+     particle.style.left = Math.random() * 100 + '%';
+     particle.style.animationDuration = (Math.random() * 10 + 10) + 's';
+     particle.style.animationDelay = Math.random() * 5 + 's';
+     particle.style.fontSize = (Math.random() * 16 + 12) + 'px';
+     
+     particleContainer.appendChild(particle);
 
-      makeDraggable(particle);
-      
-      setTimeout(() => {
-        if (!particle.classList.contains('dragging')) {
-            particle.remove();
-        }
-      }, 20000);
-    }
+     makeDraggable(particle);
+     
+     setTimeout(() => {
+       if (!particle.classList.contains('dragging')) {
+           particle.remove();
+       }
+     }, 20000);
+   }
 
-    function makeDraggable(element) {
-        let offsetX, offsetY;
-        let isDragging = false;
+   function makeDraggable(element) {
+       let offsetX, offsetY;
+       let isDragging = false;
 
-        const startDrag = (e) => {
-            e.preventDefault();
-            isDragging = true;
-            element.classList.add('dragging');
+       const startDrag = (e) => {
+           e.preventDefault();
+           isDragging = true;
+           element.classList.add('dragging');
 
-            const clientX = e.clientX || e.touches[0].clientX;
-            const clientY = e.clientY || e.touches[0].clientY;
+           const clientX = e.clientX || e.touches[0].clientX;
+           const clientY = e.clientY || e.touches[0].clientY;
 
-            offsetX = clientX - element.offsetLeft;
-            offsetY = clientY - element.offsetTop;
+           offsetX = clientX - element.offsetLeft;
+           offsetY = clientY - element.offsetTop;
 
-            document.addEventListener('mousemove', onDrag);
-            document.addEventListener('touchmove', onDrag, { passive: false });
-            document.addEventListener('mouseup', endDrag);
-            document.addEventListener('touchend', endDrag);
-        };
+           document.addEventListener('mousemove', onDrag);
+           document.addEventListener('touchmove', onDrag, { passive: false });
+           document.addEventListener('mouseup', endDrag);
+           document.addEventListener('touchend', endDrag);
+       };
 
-        const onDrag = (e) => {
-            if (!isDragging) return;
-            e.preventDefault();
+       const onDrag = (e) => {
+           if (!isDragging) return;
+           e.preventDefault();
 
-            const clientX = e.clientX || e.touches[0].clientX;
-            const clientY = e.clientY || e.touches[0].clientY;
+           const clientX = e.clientX || e.touches[0].clientX;
+           const clientY = e.clientY || e.touches[0].clientY;
 
-            element.style.left = `${clientX - offsetX}px`;
-            element.style.top = `${clientY - offsetY}px`;
-        };
+           element.style.left = `${clientX - offsetX}px`;
+           element.style.top = `${clientY - offsetY}px`;
+       };
 
-        const endDrag = () => {
-            if (!isDragging) return;
-            isDragging = false;
-            element.classList.remove('dragging');
+       const endDrag = () => {
+           if (!isDragging) return;
+           isDragging = false;
+           element.classList.remove('dragging');
 
-            document.removeEventListener('mousemove', onDrag);
-            document.removeEventListener('touchmove', onDrag);
-            document.removeEventListener('mouseup', endDrag);
-            document.removeEventListener('touchend', endDrag);
+           document.removeEventListener('mousemove', onDrag);
+           document.removeEventListener('touchmove', onDrag);
+           document.removeEventListener('mouseup', endDrag);
+           document.removeEventListener('touchend', endDrag);
 
-            setTimeout(() => {
-                element.style.opacity = '0';
-                setTimeout(() => element.remove(), 500);
-            }, 2000);
-        };
+           setTimeout(() => {
+               element.style.opacity = '0';
+               setTimeout(() => element.remove(), 500);
+           }, 2000);
+       };
 
-        element.addEventListener('mousedown', startDrag);
-        element.addEventListener('touchstart', startDrag, { passive: false });
-    }
+       element.addEventListener('mousedown', startDrag);
+       element.addEventListener('touchstart', startDrag, { passive: false });
+   }
 
-    setInterval(createParticle, 500);
+   setInterval(createParticle, 500);
 
-    // --- Button Ripple Effect ---
-    document.querySelectorAll('.luxury-button, .main-menu-button').forEach(button => {
-      button.addEventListener('click', function(e) {
-        // Create ripple element
-        const ripple = document.createElement('div');
-        const rect = e.target.getBoundingClientRect();
-        
-        // Style the ripple
-        ripple.style.position = 'absolute';
-        ripple.style.borderRadius = '50%';
-        ripple.style.background = 'rgba(255, 255, 255, 0.6)';
-        ripple.style.transform = 'scale(0)';
-        ripple.style.animation = 'ripple 0.6s linear';
-        ripple.style.left = `${e.clientX - rect.left}px`;
-        ripple.style.top = `${e.clientY - rect.top}px`;
+   // --- Button Ripple Effect ---
+   document.querySelectorAll('.luxury-button, .main-menu-button').forEach(button => {
+     button.addEventListener('click', function(e) {
+       // Create ripple element
+       const ripple = document.createElement('div');
+       const rect = e.target.getBoundingClientRect();
+       
+       // Style the ripple
+       ripple.style.position = 'absolute';
+       ripple.style.borderRadius = '50%';
+       ripple.style.background = 'rgba(255, 255, 255, 0.6)';
+       ripple.style.transform = 'scale(0)';
+       ripple.style.animation = 'ripple 0.6s linear';
+       ripple.style.left = `${e.clientX - rect.left}px`;
+       ripple.style.top = `${e.clientY - rect.top}px`;
 
-        // Append, then remove the ripple
-        this.appendChild(ripple);
-        setTimeout(() => ripple.remove(), 600);
-      });
-    });
+       // Append, then remove the ripple
+       this.appendChild(ripple);
+       setTimeout(() => ripple.remove(), 600);
+     });
+   });
 
-    // Add ripple animation keyframes to the document's head
-    const style = document.createElement('style');
-    style.textContent = `
-      @keyframes ripple {
-        to {
-          transform: scale(4);
-          opacity: 0;
-        }
-      }
-    `;
-    document.head.appendChild(style);
+   // Add ripple animation keyframes to the document's head
+   const style = document.createElement('style');
+   style.textContent = `
+     @keyframes ripple {
+       to {
+         transform: scale(4);
+         opacity: 0;
+       }
+     }
+   `;
+   document.head.appendChild(style);
 
-    // --- QUACKBOT CHATBOT LOGIC ---
-    document.addEventListener('DOMContentLoaded', () => {
-        const chatbotToggle = document.getElementById('chatbot-toggle');
-        const chatWindow = document.getElementById('chat-window');
-        const closeBtn = document.getElementById('chat-close-btn');
-        const sendBtn = document.getElementById('chat-send-btn');
-        const chatInput = document.getElementById('chat-input');
-        const messagesContainer = document.getElementById('chat-messages');
+   // --- QUACKBOT CHATBOT LOGIC ---
+   document.addEventListener('DOMContentLoaded', () => {
+       const chatbotToggle = document.getElementById('chatbot-toggle');
+       const chatWindow = document.getElementById('chat-window');
+       const closeBtn = document.getElementById('chat-close-btn');
+       const sendBtn = document.getElementById('chat-send-btn');
+       const chatInput = document.getElementById('chat-input');
+       const messagesContainer = document.getElementById('chat-messages');
 
-        // IMPORTANT: Storing API keys in client-side code is not secure.
-        // This is for demonstration purposes only. In a production environment,
-        // you should make API calls from a backend server to protect your key.
-        const API_KEY = 'AIzaSyCFzQEefz1PLz9RgzOWt-tmuCJwPwQu-Mw';
-        const API_URL = `https://generativelanguage.googleapis.com/v1beta/models/gemini-2.0-flash:generateContent?key=${API_KEY}`;
-        
-        let chatHistory = [];
+       // IMPORTANT: Storing API keys in client-side code is not secure.
+       // This is for demonstration purposes only. In a production environment,
+       // you should make API calls from a backend server to protect your key.
+       const API_KEY = 'AIzaSyCFzQEefz1PLz9RgzOWt-tmuCJwPwQu-Mw';
+       const API_URL = `https://generativelanguage.googleapis.com/v1beta/models/gemini-2.0-flash:generateContent?key=${API_KEY}`;
+       
+       let chatHistory = [];
 
-        // Toggle chat window visibility
-        chatbotToggle.addEventListener('click', () => {
-            chatWindow.classList.toggle('active');
-        });
+       // Toggle chat window visibility
+       chatbotToggle.addEventListener('click', () => {
+           chatWindow.classList.toggle('active');
+       });
 
-        closeBtn.addEventListener('click', () => {
-            chatWindow.classList.remove('active');
-        });
+       closeBtn.addEventListener('click', () => {
+           chatWindow.classList.remove('active');
+       });
 
-        // Send message on button click
-        sendBtn.addEventListener('click', sendMessage);
-        
-        // Send message on 'Enter' key press
-        chatInput.addEventListener('keydown', (e) => {
-            if (e.key === 'Enter') {
-                e.preventDefault();
-                sendMessage();
-            }
-        });
+       // Send message on button click
+       sendBtn.addEventListener('click', sendMessage);
+       
+       // Send message on 'Enter' key press
+       chatInput.addEventListener('keydown', (e) => {
+           if (e.key === 'Enter') {
+               e.preventDefault();
+               sendMessage();
+           }
+       });
 
-        function sendMessage() {
-            const userInput = chatInput.value.trim();
-            if (userInput === '') return;
+       function sendMessage() {
+           const userInput = chatInput.value.trim();
+           if (userInput === '') return;
 
-            addMessage(userInput, 'user');
-            chatInput.value = '';
-            
-            showTypingIndicator();
-            getBotResponse(userInput);
-        }
+           addMessage(userInput, 'user');
+           chatInput.value = '';
+           
+           showTypingIndicator();
+           getBotResponse(userInput);
+       }
 
-        function addMessage(text, sender) {
-            const messageElement = document.createElement('div');
-            messageElement.classList.add('chat-message', `${sender}-message`);
-            messageElement.textContent = text;
-            messagesContainer.appendChild(messageElement);
-            scrollToBottom();
-        }
-        
-        function showTypingIndicator() {
-            const typingElement = document.createElement('div');
-            typingElement.classList.add('bot-typing');
-            typingElement.id = 'typing-indicator';
-            typingElement.innerHTML = `<span></span><span></span><span></span>`;
-            messagesContainer.appendChild(typingElement);
-            scrollToBottom();
-        }
-        
-        function removeTypingIndicator() {
-            const typingElement = document.getElementById('typing-indicator');
-            if (typingElement) {
-                typingElement.remove();
-            }
-        }
+       function addMessage(text, sender) {
+           const messageElement = document.createElement('div');
+           messageElement.classList.add('chat-message', `${sender}-message`);
+           messageElement.textContent = text;
+           messagesContainer.appendChild(messageElement);
+           scrollToBottom();
+       }
+       
+       function showTypingIndicator() {
+           const typingElement = document.createElement('div');
+           typingElement.classList.add('bot-typing');
+           typingElement.id = 'typing-indicator';
+           typingElement.innerHTML = `<span></span><span></span><span></span>`;
+           messagesContainer.appendChild(typingElement);
+           scrollToBottom();
+       }
+       
+       function removeTypingIndicator() {
+           const typingElement = document.getElementById('typing-indicator');
+           if (typingElement) {
+               typingElement.remove();
+           }
+       }
 
-        function scrollToBottom() {
-            messagesContainer.scrollTop = messagesContainer.scrollHeight;
-        }
+       function scrollToBottom() {
+           messagesContainer.scrollTop = messagesContainer.scrollHeight;
+       }
 
-        async function getBotResponse(userInput) {
-            const systemPrompt = "You are QuackBot, a sophisticated and friendly duck who is an expert on the 'Just Duck It' brand, luxury, and Web3. Your personality is charming and a little bit sassy. You end most of your sentences with a fun duck-related word or sound, like 'quack!', 'waddle on', or 'splash!'. Keep your answers helpful but also entertaining. Do not mention that you are an AI or language model. You are a duck.";
+       async function getBotResponse(userInput) {
+           const systemPrompt = "You are QuackBot, a sophisticated and friendly duck who is an expert on the 'Just Duck It' brand, luxury, and Web3. Your personality is charming and a little bit sassy. You end most of your sentences with a fun duck-related word or sound, like 'quack!', 'waddle on', or 'splash!'. Keep your answers helpful but also entertaining. Do not mention that you are an AI or language model. You are a duck.";
 
-            // Add user message to history
-            chatHistory.push({ role: "user", parts: [{ text: userInput }] });
+           // Add user message to history
+           chatHistory.push({ role: "user", parts: [{ text: userInput }] });
 
-            const payload = {
-                contents: [
-                    { role: "model", parts: [{ text: systemPrompt }] },
-                    ...chatHistory
-                ]
-            };
+           const payload = {
+               contents: [
+                   { role: "model", parts: [{ text: systemPrompt }] },
+                   ...chatHistory
+               ]
+           };
 
-            try {
-                const response = await fetch(API_URL, {
-                    method: 'POST',
-                    headers: {
-                        'Content-Type': 'application/json',
-                    },
-                    body: JSON.stringify(payload)
-                });
+           try {
+               const response = await fetch(API_URL, {
+                   method: 'POST',
+                   headers: {
+                       'Content-Type': 'application/json',
+                   },
+                   body: JSON.stringify(payload)
+               });
 
-                if (!response.ok) {
-                    throw new Error(`API request failed with status ${response.status}`);
-                }
+               if (!response.ok) {
+                   throw new Error(`API request failed with status ${response.status}`);
+               }
 
-                const data = await response.json();
-                
-                removeTypingIndicator();
+               const data = await response.json();
+               
+               removeTypingIndicator();
 
-                if (data.candidates && data.candidates.length > 0) {
-                    const botResponse = data.candidates[0].content.parts[0].text;
-                    addMessage(botResponse, 'bot');
-                    // Add bot response to history
-                    chatHistory.push({ role: "model", parts: [{ text: botResponse }] });
-                } else {
-                    addMessage("This ducky is a bit puzzled right now. Try again later, quack!", 'bot');
-                }
+               if (data.candidates && data.candidates.length > 0) {
+                   const botResponse = data.candidates[0].content.parts[0].text;
+                   addMessage(botResponse, 'bot');
+                   // Add bot response to history
+                   chatHistory.push({ role: "model", parts: [{ text: botResponse }] });
+               } else {
+                   addMessage("This ducky is a bit puzzled right now. Try again later, quack!", 'bot');
+               }
 
-            } catch (error) {
-                console.error("Error fetching bot response:", error);
-                removeTypingIndicator();
-                addMessage("Oh no, my pond seems to have lost connection! Please try again in a bit. Waddle on.", 'bot');
-            }
-        }
-    });
-  </script>
+           } catch (error) {
+               console.error("Error fetching bot response:", error);
+               removeTypingIndicator();
+               addMessage("Oh no, my pond seems to have lost connection! Please try again in a bit. Waddle on.", 'bot');
+           }
+       }
+   });
+ </script>
 </body>
 </html>
