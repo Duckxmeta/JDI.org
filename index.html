@@ -507,6 +507,38 @@
         object-fit: cover;
         border-radius: 16px;
     }
+    
+    /* --- Countdown Timer --- */
+    #countdown-timer {
+        display: flex;
+        justify-content: center;
+        gap: 1rem;
+        margin: 1.5rem 0;
+    }
+    .timer-box {
+        background: rgba(0,0,0,0.2);
+        padding: 1rem;
+        border-radius: 12px;
+        border: 1px solid rgba(255, 215, 0, 0.2);
+        width: 90px;
+        text-align: center;
+    }
+    .timer-box span {
+        font-family: 'Playfair Display', serif;
+        font-size: 2.5rem;
+        font-weight: 900;
+        color: #ffd700;
+        display: block;
+        line-height: 1;
+    }
+    .timer-box p {
+        font-size: 0.8rem;
+        text-transform: uppercase;
+        letter-spacing: 1px;
+        color: rgba(255,255,255,0.7);
+        margin-top: 0.5rem;
+    }
+
 
   </style>
 </head>
@@ -616,7 +648,31 @@
               <img src="https://i.imgur.com/dfIEwGk.png" alt="Decent Duck NFT" class="w-40 h-40 mx-auto mb-6 rounded-full luxury-glow object-cover" onerror="this.onerror=null;this.src='https://placehold.co/160x160/2d1b69/FFD700?text=Mint+a+Duck';">
               <h2 class="text-4xl md:text-5xl font-black luxury-gradient">Get Your Own Decent Duck</h2>
               <p class="text-white/80 mt-2 max-w-xl mx-auto">Ready to join the flock? Mint your very own Decent Duck NFT to unlock exclusive access to tools like our GIF Generator and become part of the community!</p>
-              <div class="pt-4">
+              
+              <!-- Countdown Timer -->
+              <div id="countdown-container">
+                  <h3 class="text-2xl font-bold text-white/90 mb-4">Launching In:</h3>
+                  <div id="countdown-timer">
+                      <div class="timer-box">
+                          <span id="days">00</span>
+                          <p>Days</p>
+                      </div>
+                      <div class="timer-box">
+                          <span id="hours">00</span>
+                          <p>Hours</p>
+                      </div>
+                      <div class="timer-box">
+                          <span id="minutes">00</span>
+                          <p>Minutes</p>
+                      </div>
+                      <div class="timer-box">
+                          <span id="seconds">00</span>
+                          <p>Seconds</p>
+                      </div>
+                  </div>
+              </div>
+
+              <div id="mint-button-container" class="pt-4">
                   <a href="https://launchmynft.io/collections/BcFk6iremDyoZvrFChHdLdeXV4kcoCYsDX5nXfiXRA7H/fbcixvFFo1WFKNUnazYj" target="_blank" class="luxury-button inline-block text-lg px-10 py-4">
                       Mint Your Duck
                   </a>
@@ -1019,6 +1075,29 @@
                 ? 'text-center text-red-400 font-medium pt-2' 
                 : 'text-center text-green-400 font-medium pt-2';
         }
+        
+        // --- Countdown Timer Logic ---
+        const countdownDate = new Date("Aug 8, 2025 13:30:10").getTime();
+        const countdownFunction = setInterval(function() {
+            const now = new Date().getTime();
+            const distance = countdownDate - now;
+
+            const days = Math.floor(distance / (1000 * 60 * 60 * 24));
+            const hours = Math.floor((distance % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
+            const minutes = Math.floor((distance % (1000 * 60 * 60)) / (1000 * 60));
+            const seconds = Math.floor((distance % (1000 * 60)) / 1000);
+
+            document.getElementById("days").innerText = days.toString().padStart(2, '0');
+            document.getElementById("hours").innerText = hours.toString().padStart(2, '0');
+            document.getElementById("minutes").innerText = minutes.toString().padStart(2, '0');
+            document.getElementById("seconds").innerText = seconds.toString().padStart(2, '0');
+
+            if (distance < 0) {
+                clearInterval(countdownFunction);
+                document.getElementById("countdown-container").innerHTML = "<h3 class='text-3xl luxury-gradient font-bold'>Minting is Live!</h3>";
+            }
+        }, 1000);
+
     });
   </script>
 </body>
