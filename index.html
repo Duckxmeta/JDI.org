@@ -475,6 +475,39 @@
     @keyframes spin {
         to { transform: rotate(360deg); }
     }
+
+    /* --- Horizontal Scroll Gallery --- */
+    .scroll-gallery {
+        display: flex;
+        overflow-x: auto;
+        padding-bottom: 20px;
+        scroll-snap-type: x mandatory;
+    }
+    .scroll-gallery::-webkit-scrollbar {
+        height: 8px;
+    }
+    .scroll-gallery::-webkit-scrollbar-track {
+        background: rgba(0,0,0,0.2);
+        border-radius: 4px;
+    }
+    .scroll-gallery::-webkit-scrollbar-thumb {
+        background: rgba(255, 215, 0, 0.5);
+        border-radius: 4px;
+    }
+    .gallery-item {
+        flex: 0 0 auto;
+        width: 280px;
+        height: 350px;
+        margin-right: 20px;
+        scroll-snap-align: start;
+    }
+    .gallery-image {
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+        border-radius: 16px;
+    }
+
   </style>
 </head>
 <body>
@@ -504,6 +537,7 @@
         <nav id="mobile-menu" class="hidden absolute bottom-full mb-4 flex-col space-y-5 w-full items-center opacity-0 -translate-y-4 pointer-events-none">
             <a href="#generator" class="main-menu-button text-lg md:text-xl py-3 px-10 md:py-4 md:px-12">Generator</a>
             <a href="#mint" class="main-menu-button text-lg md:text-xl py-3 px-10 md:py-4 md:px-12">Mint NFT</a>
+            <a href="#flock" class="main-menu-button text-lg md:text-xl py-3 px-10 md:py-4 md:px-12">Our Flock</a>
             <a href="#projects" class="main-menu-button text-lg md:text-xl py-3 px-10 md:py-4 md:px-12">Projects</a>
             <a href="#merch" class="main-menu-button text-lg md:text-xl py-3 px-10 md:py-4 md:px-12">Merch</a>
             <a href="#contact" class="main-menu-button text-lg md:text-xl py-3 px-10 md:py-4 md:px-12">Contact</a>
@@ -590,6 +624,43 @@
           </div>
       </div>
   </section>
+
+  <!-- Our Flock Section -->
+  <section id="flock" class="py-20 relative z-10">
+    <div class="container mx-auto px-6">
+        <h2 class="section-title relative text-4xl md:text-5xl luxury-gradient text-center mb-12">Meet Our Flock</h2>
+        <div class="scroll-gallery">
+            <div class="gallery-item premium-card p-2"><img src="https://i.imgur.com/puY6hwJ.jpeg" class="gallery-image" alt="Rescued bird 1" onerror="this.onerror=null;this.src='https://placehold.co/280x350/2d1b69/FFD700?text=Bird+1';"></div>
+            <div class="gallery-item premium-card p-2"><img src="https://i.imgur.com/xDtlHp2.jpeg" class="gallery-image" alt="Rescued bird 2" onerror="this.onerror=null;this.src='https://placehold.co/280x350/2d1b69/FFD700?text=Bird+2';"></div>
+            <div class="gallery-item premium-card p-2"><img src="https://i.imgur.com/UFqLyjX.jpeg" class="gallery-image" alt="Rescued bird 3" onerror="this.onerror=null;this.src='https://placehold.co/280x350/2d1b69/FFD700?text=Bird+3';"></div>
+            <div class="gallery-item premium-card p-2"><img src="https://i.imgur.com/nSFnPRi.jpeg" class="gallery-image" alt="Rescued bird 4" onerror="this.onerror=null;this.src='https://placehold.co/280x350/2d1b69/FFD700?text=Bird+4';"></div>
+            <div class="gallery-item premium-card p-2"><img src="https://i.imgur.com/cVPK557.jpeg" class="gallery-image" alt="Rescued bird 5" onerror="this.onerror=null;this.src='https://placehold.co/280x350/2d1b69/FFD700?text=Bird+5';"></div>
+            <div class="gallery-item premium-card p-2"><img src="https://i.imgur.com/Z0SjtYK.jpeg" class="gallery-image" alt="Rescued bird 6" onerror="this.onerror=null;this.src='https://placehold.co/280x350/2d1b69/FFD700?text=Bird+6';"></div>
+            <div class="gallery-item premium-card p-2"><img src="https://i.imgur.com/4JjvsZJ.jpeg" class="gallery-image" alt="Rescued bird 7" onerror="this.onerror=null;this.src='https://placehold.co/280x350/2d1b69/FFD700?text=Bird+7';"></div>
+            <div class="gallery-item premium-card p-2"><img src="https://i.imgur.com/CLD4H11.jpeg" class="gallery-image" alt="Rescued bird 8" onerror="this.onerror=null;this.src='https://placehold.co/280x350/2d1b69/FFD700?text=Bird+8';"></div>
+            <div class="gallery-item premium-card p-2"><img src="https://i.imgur.com/Zj9vBvE.jpeg" class="gallery-image" alt="Rescued bird 9" onerror="this.onerror=null;this.src='https://placehold.co/280x350/2d1b69/FFD700?text=Bird+9';"></div>
+            <div class="gallery-item premium-card p-2"><img src="https://i.imgur.com/uDodScy.jpeg" class="gallery-image" alt="Rescued bird 10" onerror="this.onerror=null;this.src='https://placehold.co/280x350/2d1b69/FFD700?text=Bird+10';"></div>
+            <div class="gallery-item premium-card p-2"><img src="https://i.imgur.com/Ikai49o.jpeg" class="gallery-image" alt="Rescued bird 11" onerror="this.onerror=null;this.src='https://placehold.co/280x350/2d1b69/FFD700?text=Bird+11';"></div>
+            <div class="gallery-item premium-card p-2"><img src="https://i.imgur.com/3JWIdgd.jpeg" class="gallery-image" alt="Rescued bird 12" onerror="this.onerror=null;this.src='https://placehold.co/280x350/2d1b69/FFD700?text=Bird+12';"></div>
+            <div class="gallery-item premium-card p-2"><img src="https://i.imgur.com/f6JHZAZ.jpeg" class="gallery-image" alt="Rescued bird 13" onerror="this.onerror=null;this.src='https://placehold.co/280x350/2d1b69/FFD700?text=Bird+13';"></div>
+            <div class="gallery-item premium-card p-2"><img src="https://i.imgur.com/u1imbPy.jpeg" class="gallery-image" alt="Rescued bird 14" onerror="this.onerror=null;this.src='https://placehold.co/280x350/2d1b69/FFD700?text=Bird+14';"></div>
+            <div class="gallery-item premium-card p-2"><img src="https://i.imgur.com/RzR8Swn.jpeg" class="gallery-image" alt="Rescued bird 15" onerror="this.onerror=null;this.src='https://placehold.co/280x350/2d1b69/FFD700?text=Bird+15';"></div>
+            <div class="gallery-item premium-card p-2"><img src="https://i.imgur.com/6xgDSoD.jpeg" class="gallery-image" alt="Rescued bird 16" onerror="this.onerror=null;this.src='https://placehold.co/280x350/2d1b69/FFD700?text=Bird+16';"></div>
+            <div class="gallery-item premium-card p-2"><img src="https://i.imgur.com/CgXDM7n.jpeg" class="gallery-image" alt="Rescued bird 17" onerror="this.onerror=null;this.src='https://placehold.co/280x350/2d1b69/FFD700?text=Bird+17';"></div>
+            <div class="gallery-item premium-card p-2"><img src="https://i.imgur.com/osg6DVb.jpeg" class="gallery-image" alt="Rescued bird 18" onerror="this.onerror=null;this.src='https://placehold.co/280x350/2d1b69/FFD700?text=Bird+18';"></div>
+            <div class="gallery-item premium-card p-2"><img src="https://i.imgur.com/IWXDsZa.jpeg" class="gallery-image" alt="Rescued bird 19" onerror="this.onerror=null;this.src='https://placehold.co/280x350/2d1b69/FFD700?text=Bird+19';"></div>
+            <div class="gallery-item premium-card p-2"><img src="https://i.imgur.com/k3Rduas.jpeg" class="gallery-image" alt="Rescued bird 20" onerror="this.onerror=null;this.src='https://placehold.co/280x350/2d1b69/FFD700?text=Bird+20';"></div>
+            <div class="gallery-item premium-card p-2"><img src="https://i.imgur.com/4xFPsoA.jpeg" class="gallery-image" alt="Rescued bird 21" onerror="this.onerror=null;this.src='https://placehold.co/280x350/2d1b69/FFD700?text=Bird+21';"></div>
+            <div class="gallery-item premium-card p-2"><img src="https://i.imgur.com/hO4vfzL.jpeg" class="gallery-image" alt="Rescued bird 22" onerror="this.onerror=null;this.src='https://placehold.co/280x350/2d1b69/FFD700?text=Bird+22';"></div>
+            <div class="gallery-item premium-card p-2"><img src="https://i.imgur.com/Xtj3MUW.jpeg" class="gallery-image" alt="Rescued bird 23" onerror="this.onerror=null;this.src='https://placehold.co/280x350/2d1b69/FFD700?text=Bird+23';"></div>
+            <div class="gallery-item premium-card p-2"><img src="https://i.imgur.com/Wo89RgC.jpeg" class="gallery-image" alt="Rescued bird 24" onerror="this.onerror=null;this.src='https://placehold.co/280x350/2d1b69/FFD700?text=Bird+24';"></div>
+            <div class="gallery-item premium-card p-2"><img src="https://i.imgur.com/RqOd3Ac.jpeg" class="gallery-image" alt="Rescued bird 25" onerror="this.onerror=null;this.src='https://placehold.co/280x350/2d1b69/FFD700?text=Bird+25';"></div>
+            <div class="gallery-item premium-card p-2"><img src="https://i.imgur.com/It4saKp.jpeg" class="gallery-image" alt="Rescued bird 26" onerror="this.onerror=null;this.src='https://placehold.co/280x350/2d1b69/FFD700?text=Bird+26';"></div>
+            <div class="gallery-item premium-card p-2"><img src="https://i.imgur.com/2I2BIOq.jpeg" class="gallery-image" alt="Rescued bird 27" onerror="this.onerror=null;this.src='https://placehold.co/280x350/2d1b69/FFD700?text=Bird+27';"></div>
+        </div>
+    </div>
+  </section>
+
 
   <!-- Projects Section -->
   <section id="projects" class="py-20 relative z-10">
