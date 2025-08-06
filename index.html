@@ -244,6 +244,25 @@
         box-shadow: 0 15px 30px rgba(0, 0, 0, 0.3);
     }
 
+    /* Hamburger Menu Styles */
+    #menu-toggle-btn .hamburger-line {
+        transition: all 0.3s ease-in-out;
+    }
+    #menu-toggle-btn.active .hamburger-line:nth-child(1) {
+        transform: translateY(10px) rotate(45deg);
+    }
+    #menu-toggle-btn.active .hamburger-line:nth-child(2) {
+        opacity: 0;
+    }
+    #menu-toggle-btn.active .hamburger-line:nth-child(3) {
+        transform: translateY(-10px) rotate(-45deg);
+    }
+
+    #mobile-menu {
+        transition: opacity 0.3s ease-in-out, transform 0.3s ease-in-out;
+    }
+
+
     /* Responsive adjustments for smaller image heights */
     @media (max-width: 768px) {
       .project-image { height: 150px; }
@@ -473,14 +492,23 @@
       <h1 class="text-5xl sm:text-6xl md:text-8xl font-black luxury-gradient text-shadow-luxury">Just Duck It</h1>
       <p class="text-lg md:text-xl max-w-2xl mx-auto text-white/90 leading-relaxed font-light">Merging the gap between Web3 & Duck.</p>
       
-      <!-- Menu Buttons -->
-      <nav class="flex flex-col space-y-5 mt-8 w-full items-center">
-        <a href="#generator" class="main-menu-button text-lg md:text-xl py-3 px-10 md:py-4 md:px-12">Generator</a>
-        <a href="#mint" class="main-menu-button text-lg md:text-xl py-3 px-10 md:py-4 md:px-12">Mint NFT</a>
-        <a href="#projects" class="main-menu-button text-lg md:text-xl py-3 px-10 md:py-4 md:px-12">Projects</a>
-        <a href="#merch" class="main-menu-button text-lg md:text-xl py-3 px-10 md:py-4 md:px-12">Merch</a>
-        <a href="#contact" class="main-menu-button text-lg md:text-xl py-3 px-10 md:py-4 md:px-12">Contact</a>
-      </nav>
+      <!-- Hamburger Menu -->
+      <div class="relative w-full flex justify-center mt-8">
+        <button id="menu-toggle-btn" class="main-menu-button !w-auto !max-w-none py-3 px-6">
+            <div class="space-y-2">
+                <span class="hamburger-line block w-8 h-0.5 bg-white"></span>
+                <span class="hamburger-line block w-8 h-0.5 bg-white"></span>
+                <span class="hamburger-line block w-8 h-0.5 bg-white"></span>
+            </div>
+        </button>
+        <nav id="mobile-menu" class="hidden absolute bottom-full mb-4 flex-col space-y-5 w-full items-center opacity-0 -translate-y-4 pointer-events-none">
+            <a href="#generator" class="main-menu-button text-lg md:text-xl py-3 px-10 md:py-4 md:px-12">Generator</a>
+            <a href="#mint" class="main-menu-button text-lg md:text-xl py-3 px-10 md:py-4 md:px-12">Mint NFT</a>
+            <a href="#projects" class="main-menu-button text-lg md:text-xl py-3 px-10 md:py-4 md:px-12">Projects</a>
+            <a href="#merch" class="main-menu-button text-lg md:text-xl py-3 px-10 md:py-4 md:px-12">Merch</a>
+            <a href="#contact" class="main-menu-button text-lg md:text-xl py-3 px-10 md:py-4 md:px-12">Contact</a>
+        </nav>
+      </div>
     </div>
   </section>
 
@@ -746,6 +774,7 @@
         setInterval(createParticle, 500);
         document.querySelectorAll('.luxury-button, .main-menu-button').forEach(button => {
           button.addEventListener('click', function(e) {
+            if(this.id === 'menu-toggle-btn') return; // Prevent ripple on menu toggle
             const ripple = document.createElement('div'); const rect = e.target.getBoundingClientRect();
             ripple.style.position = 'absolute'; ripple.style.borderRadius = '50%';
             ripple.style.background = 'rgba(255, 255, 255, 0.6)'; ripple.style.transform = 'scale(0)';
@@ -806,6 +835,27 @@
                 addMessage("Oh no, my pond seems to have lost connection! Please try again in a bit. Waddle on.", 'bot');
             }
         }
+
+        // --- Hamburger Menu Logic ---
+        const menuToggleBtn = document.getElementById('menu-toggle-btn');
+        const mobileMenu = document.getElementById('mobile-menu');
+        const menuLinks = mobileMenu.querySelectorAll('a');
+
+        menuToggleBtn.addEventListener('click', (e) => {
+            e.stopPropagation();
+            menuToggleBtn.classList.toggle('active');
+            mobileMenu.classList.toggle('hidden');
+            mobileMenu.classList.toggle('opacity-0');
+            mobileMenu.classList.toggle('-translate-y-4');
+            mobileMenu.classList.toggle('pointer-events-none');
+        });
+
+        menuLinks.forEach(link => {
+            link.addEventListener('click', () => {
+                menuToggleBtn.classList.remove('active');
+                mobileMenu.classList.add('hidden', 'opacity-0', '-translate-y-4', 'pointer-events-none');
+            });
+        });
 
         // --- GIF GENERATOR LOGIC ---
         const verifyBtn = document.getElementById('verify-btn');
