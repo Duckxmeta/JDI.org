@@ -567,6 +567,7 @@
             </div>
         </button>
         <nav id="mobile-menu" class="hidden absolute bottom-full mb-4 flex-col space-y-5 w-full items-center opacity-0 -translate-y-4 pointer-events-none">
+            <a href="#web3-explained" class="main-menu-button text-lg md:text-xl py-3 px-10 md:py-4 md:px-12">What is Web3?</a>
             <a href="#generator" class="main-menu-button text-lg md:text-xl py-3 px-10 md:py-4 md:px-12">Generator</a>
             <a href="#mint" class="main-menu-button text-lg md:text-xl py-3 px-10 md:py-4 md:px-12">Mint NFT</a>
             <a href="#flock" class="main-menu-button text-lg md:text-xl py-3 px-10 md:py-4 md:px-12">Our Flock</a>
@@ -578,8 +579,29 @@
     </div>
   </section>
 
+  <!-- Web3 Explanation Section -->
+  <section id="web3-explained" class="py-20 relative z-10">
+    <div class="w-full max-w-3xl mx-auto px-6">
+        <div class="premium-container p-8 space-y-6 text-center">
+            <h2 class="text-4xl md:text-5xl font-black luxury-gradient">New to Web3? No Worries!</h2>
+            <p class="text-white/80 mt-2 max-w-xl mx-auto">
+                Welcome! If you're new to concepts like "blockchain" or "NFTs," you're in the right place. We believe this technology should be for everyone, so here’s a simple, safe-space explanation.
+            </p>
+            <div class="text-left space-y-4 pt-4 text-white/90">
+                <h3 class="text-2xl font-bold luxury-gradient">What's a Blockchain?</h3>
+                <p>Imagine a **digital receipt book** that's shared and verified by a huge community of computers. Every time something happens (like someone minting a Decent Duck), a new receipt is added. Because everyone has a copy, it's practically impossible to cheat, erase, or change a past receipt. This makes it super secure and transparent. That's the blockchain!</p>
+                
+                <h3 class="text-2xl font-bold luxury-gradient">What's an NFT?</h3>
+                <p>An NFT (Non-Fungible Token) is like a **unique, digital certificate of ownership** for a specific item, recorded in that shared receipt book. While anyone can look at a picture of the Mona Lisa, only one museum owns the original. Similarly, an NFT proves you own the original version of a digital item, like your one-of-a-kind Decent Duck.</p>
+                
+                <p class="font-bold text-center pt-4">It's all about true, verifiable ownership in the digital world. Still curious? Our QuackBot is happy to answer more questions!</p>
+            </div>
+        </div>
+    </div>
+  </section>
+
   <!-- Decent Ducks GIF Generator Section -->
-  <section id="generator" class="py-20 relative z-10">
+  <section id="generator" class="py-20 pt-0 relative z-10">
     <div class="w-full max-w-3xl mx-auto px-6">
         <div class="premium-container p-8 space-y-6">
             <div class="text-center">
@@ -843,7 +865,7 @@
           </div>
           <div id="chat-messages">
              <div class="chat-message bot-message">
-                Quack! What's shakin', feather-friend? Ask me anything about our luxurious duck world.
+                Quack! Welcome to the pond. Curious about the tech behind our ducks? Try asking me: "explain what are NFTs"
              </div>
           </div>
           <div class="chat-input-area">
@@ -1077,7 +1099,7 @@
         }
         
         // --- Countdown Timer Logic ---
-        const countdownDate = new Date("Aug 8, 2025 13:30:10").getTime();
+        const countdownDate = new Date().getTime() + (51 * 60 * 60 * 1000) + (1 * 60 * 1000) + (10 * 1000);
         const countdownFunction = setInterval(function() {
             const now = new Date().getTime();
             const distance = countdownDate - now;
