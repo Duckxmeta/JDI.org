@@ -448,34 +448,6 @@
         box-shadow: 0 6px 15px rgba(255, 215, 0, 0.4);
      }
 
-    /* --- GIF GENERATOR STYLES --- */
-    .form-input {
-        background: rgba(0, 0, 0, 0.2);
-        border: 1px solid rgba(255, 255, 255, 0.2);
-        border-radius: 12px;
-        padding: 12px 18px;
-        color: white;
-        outline: none;
-        transition: border-color 0.3s;
-    }
-
-    .form-input:focus {
-        border-color: rgba(255, 215, 0, 0.6);
-    }
-    
-    .loader {
-        border: 4px solid rgba(255, 255, 255, 0.2);
-        border-left-color: #ffd700;
-        border-radius: 50%;
-        width: 24px;
-        height: 24px;
-        animation: spin 1s linear infinite;
-    }
-
-    @keyframes spin {
-        to { transform: rotate(360deg); }
-    }
-
     /* --- Horizontal Scroll Gallery --- */
     .scroll-gallery {
         display: flex;
@@ -508,38 +480,6 @@
         border-radius: 16px;
     }
     
-    /* --- Countdown Timer --- */
-    #countdown-timer {
-        display: flex;
-        justify-content: center;
-        gap: 1rem;
-        margin: 1.5rem 0;
-    }
-    .timer-box {
-        background: rgba(0,0,0,0.2);
-        padding: 1rem;
-        border-radius: 12px;
-        border: 1px solid rgba(255, 215, 0, 0.2);
-        width: 90px;
-        text-align: center;
-    }
-    .timer-box span {
-        font-family: 'Playfair Display', serif;
-        font-size: 2.5rem;
-        font-weight: 900;
-        color: #ffd700;
-        display: block;
-        line-height: 1;
-    }
-    .timer-box p {
-        font-size: 0.8rem;
-        text-transform: uppercase;
-        letter-spacing: 1px;
-        color: rgba(255,255,255,0.7);
-        margin-top: 0.5rem;
-    }
-
-
   </style>
 </head>
 <body>
@@ -555,7 +495,9 @@
         <img src="https://i.imgur.com/otNEI2M.png" alt="Just Duck It Logo" class="mb-4 w-28 h-28 md:w-40 md:h-40 duck-logo rounded-full luxury-glow" onerror="this.src='https://placehold.co/160x160/663399/FFD700?text=🦆';">
       </a>
       <h1 class="text-5xl sm:text-6xl md:text-8xl font-black luxury-gradient text-shadow-luxury">Just Duck It</h1>
-      <p class="text-lg md:text-xl max-w-2xl mx-auto text-white/90 leading-relaxed font-light">Merging the gap between an irl sanctuary and web3</p>
+      <p class="text-lg md:text-xl max-w-2xl mx-auto text-white/90 leading-relaxed font-light">
+        JustDuckIt saves ducks in Tennessee. We're building a community around this mission using modern web and blockchain technology. Join our flock!
+      </p>
       
       <!-- Hamburger Menu -->
       <div class="relative w-full flex justify-center mt-8">
@@ -568,7 +510,7 @@
         </button>
         <nav id="mobile-menu" class="hidden absolute bottom-full mb-4 flex-col space-y-5 w-full items-center opacity-0 -translate-y-4 pointer-events-none">
             <a href="#web3-explained" class="main-menu-button text-lg md:text-xl py-3 px-10 md:py-4 md:px-12">What is Web3?</a>
-            <a href="#generator" class="main-menu-button text-lg md:text-xl py-3 px-10 md:py-4 md:px-12">Generator</a>
+            <a href="#discord" class="main-menu-button text-lg md:text-xl py-3 px-10 md:py-4 md:px-12">Community</a>
             <a href="#mint" class="main-menu-button text-lg md:text-xl py-3 px-10 md:py-4 md:px-12">Mint NFT</a>
             <a href="#flock" class="main-menu-button text-lg md:text-xl py-3 px-10 md:py-4 md:px-12">Our Flock</a>
             <a href="#projects" class="main-menu-button text-lg md:text-xl py-3 px-10 md:py-4 md:px-12">Projects</a>
@@ -599,68 +541,20 @@
         </div>
     </div>
   </section>
-
-  <!-- Decent Ducks GIF Generator Section -->
-  <section id="generator" class="py-20 pt-0 relative z-10">
-    <div class="w-full max-w-3xl mx-auto px-6">
-        <div class="premium-container p-8 space-y-6">
-            <div class="text-center">
-                <h2 class="text-4xl md:text-5xl font-black luxury-gradient">Decent Ducks GIF Generator</h2>
-                <p class="text-white/80 mt-2">Own a Decent Duck? Verify your wallet to create a custom GIF!</p>
-            </div>
-
-            <!-- Verification Section -->
-            <div id="verification-section" class="space-y-4">
-                <div>
-                    <label for="wallet-input" class="block mb-2 text-sm font-medium text-white/90">Your Solana Wallet Address</label>
-                    <input type="text" id="wallet-input" class="form-input w-full" placeholder="Enter your Solana wallet address...">
-                </div>
-                <button id="verify-btn" class="luxury-button w-full flex items-center justify-center gap-2">
-                    <span id="verify-btn-text">Verify Ownership</span>
-                    <div id="verify-spinner" class="loader hidden"></div>
-                </button>
-                <div id="message-area" class="text-center text-red-400 font-medium pt-2"></div>
-            </div>
-
-            <!-- GIF Generator UI (Initially Hidden) -->
-            <div id="generator-ui" class="hidden space-y-6">
-                <div class="text-center p-4 bg-green-500/10 border border-green-500/30 rounded-xl">
-                    <p class="font-bold text-green-300">✅ Wallet Verified! Welcome, fellow duck owner.</p>
-                </div>
-                
-                <div>
-                    <label class="block mb-2 text-sm font-medium text-white/90">1. Upload Your Duck Image</label>
-                    <input type="file" id="image-upload" class="form-input w-full file:mr-4 file:py-2 file:px-4 file:rounded-full file:border-0 file:text-sm file:font-semibold file:bg-yellow-400 file:text-purple-900 hover:file:bg-yellow-300">
-                </div>
-
-                <div>
-                    <label for="effect-dropdown" class="block mb-2 text-sm font-medium text-white/90">2. Choose an Effect</label>
-                    <select id="effect-dropdown" class="form-input w-full">
-                        <option>Quack Pulse</option>
-                        <option>Party Sparkles</option>
-                        <option>Retro Zoom</option>
-                        <option>Vaporwave Colors</option>
-                    </select>
-                </div>
-
-                <div class="flex items-center gap-3">
-                     <input type="checkbox" id="watermark-check" class="h-5 w-5 rounded bg-black/20 border-white/30 text-yellow-400 focus:ring-yellow-500" checked>
-                     <label for="watermark-check" class="text-sm text-white/90">Add #DecentDucks Watermark</label>
-                </div>
-
-                <button id="generate-btn" class="luxury-button w-full">Generate GIF</button>
-                
-                <!-- Output Area -->
-                <div id="output-area" class="hidden text-center space-y-4 pt-4">
-                    <h3 class="text-2xl luxury-gradient">Your Masterpiece!</h3>
-                    <div id="gif-preview" class="bg-black/20 p-2 rounded-xl flex items-center justify-center min-h-[200px]">
-                        <!-- JS will insert a placeholder or spinner here -->
-                    </div>
-                    <p class="text-sm text-white/70">Note: GIF generation is simulated. Right-click to save the preview image.</p>
-                </div>
-            </div>
-        </div>
-    </div>
+  
+  <!-- Discord Section -->
+  <section id="discord" class="py-20 pt-0 relative z-10">
+      <div class="w-full max-w-3xl mx-auto px-6">
+          <div class="premium-container p-8 space-y-4 text-center">
+              <h2 class="text-4xl md:text-5xl font-black luxury-gradient">Decent Duck holder?</h2>
+              <p class="text-white/90 mt-2 text-lg">Join our discord to unlock community perks</p>
+              <div class="pt-4">
+                  <a href="https://discord.gg/sqjZRAUr" target="_blank" class="luxury-button inline-block text-lg px-10 py-4">
+                      Join Discord
+                  </a>
+              </div>
+          </div>
+      </div>
   </section>
 
   <!-- Mint NFT Section -->
@@ -669,31 +563,8 @@
           <div class="premium-container p-8 space-y-6 text-center">
               <img src="https://i.imgur.com/dfIEwGk.png" alt="Decent Duck NFT" class="w-40 h-40 mx-auto mb-6 rounded-full luxury-glow object-cover" onerror="this.onerror=null;this.src='https://placehold.co/160x160/2d1b69/FFD700?text=Mint+a+Duck';">
               <h2 class="text-4xl md:text-5xl font-black luxury-gradient">Get Your Own Decent Duck</h2>
-              <p class="text-white/80 mt-2 max-w-xl mx-auto">Ready to join the flock? Mint your very own Decent Duck NFT to unlock exclusive access to tools like our GIF Generator and become part of the community!</p>
+              <p class="text-white/80 mt-2 max-w-xl mx-auto">Ready to join the flock? Mint your very own Decent Duck NFT to unlock exclusive access and become part of the community!</p>
               
-              <!-- Countdown Timer -->
-              <div id="countdown-container">
-                  <h3 class="text-2xl font-bold text-white/90 mb-4">Launching In:</h3>
-                  <div id="countdown-timer">
-                      <div class="timer-box">
-                          <span id="days">00</span>
-                          <p>Days</p>
-                      </div>
-                      <div class="timer-box">
-                          <span id="hours">00</span>
-                          <p>Hours</p>
-                      </div>
-                      <div class="timer-box">
-                          <span id="minutes">00</span>
-                          <p>Minutes</p>
-                      </div>
-                      <div class="timer-box">
-                          <span id="seconds">00</span>
-                          <p>Seconds</p>
-                      </div>
-                  </div>
-              </div>
-
               <div id="mint-button-container" class="pt-4">
                   <a href="https://launchmynft.io/collections/BcFk6iremDyoZvrFChHdLdeXV4kcoCYsDX5nXfiXRA7H/fbcixvFFo1WFKNUnazYj" target="_blank" class="luxury-button inline-block text-lg px-10 py-4">
                       Mint Your Duck
@@ -1005,120 +876,6 @@
                 mobileMenu.classList.add('hidden', 'opacity-0', '-translate-y-4', 'pointer-events-none');
             });
         });
-
-        // --- GIF GENERATOR LOGIC ---
-        const verifyBtn = document.getElementById('verify-btn');
-        const verifyBtnText = document.getElementById('verify-btn-text');
-        const verifySpinner = document.getElementById('verify-spinner');
-        const walletInput = document.getElementById('wallet-input');
-        const messageArea = document.getElementById('message-area');
-        const verificationSection = document.getElementById('verification-section');
-        const generatorUI = document.getElementById('generator-ui');
-        const generateBtn = document.getElementById('generate-btn');
-        const outputArea = document.getElementById('output-area');
-        const gifPreview = document.getElementById('gif-preview');
-
-        const SOLANA_RPC_URL = "https://api.mainnet-beta.solana.com";
-        const connection = new solanaWeb3.Connection(SOLANA_RPC_URL);
-        // IMPORTANT: Replace with your actual Decent Ducks collection mint address.
-        const MINT_ADDRESS = "DECENTduckxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx"; 
-        const TOKEN_PROGRAM_ID = new solanaWeb3.PublicKey('TokenkegQfeZyiNwAJbNbGKPFXCWuBvf9Ss623VQ5DA');
-        const ASSOCIATED_TOKEN_PROGRAM_ID = new solanaWeb3.PublicKey('ATokenGPvbdGVxr1b2hvZbsiqW5xWH25efTNsLJA8knL');
-
-        verifyBtn.addEventListener('click', handleVerification);
-        generateBtn.addEventListener('click', handleGeneration);
-
-        async function handleVerification() {
-            const walletAddress = walletInput.value.trim();
-            if (!walletAddress) {
-                showMessage("Please enter a wallet address.", true);
-                return;
-            }
-            setLoading(true);
-            showMessage("", false);
-            try {
-                const ownsDuck = await checkNFTOwnership(walletAddress, MINT_ADDRESS);
-                if (ownsDuck) {
-                    verificationSection.classList.add('hidden');
-                    generatorUI.classList.remove('hidden');
-                } else {
-                    showMessage("❌ You must own a Decent Duck NFT from this collection to use this tool.", true);
-                }
-            } catch (error) {
-                console.error("Verification error:", error);
-                let errorMessage = "An error occurred. Make sure the wallet address is correct.";
-                if (error.message.includes("Invalid public key")) {
-                    errorMessage = "Invalid Solana wallet address. Please check and try again.";
-                }
-                showMessage(errorMessage, true);
-            } finally {
-                setLoading(false);
-            }
-        }
-        
-        function handleGeneration() {
-            outputArea.classList.remove('hidden');
-            gifPreview.innerHTML = '<div class="loader"></div>';
-            setTimeout(() => {
-                const effect = document.getElementById('effect-dropdown').value.replace(' ', '+');
-                const placeholderUrl = `https://placehold.co/400x300/663399/FFD700?text=Your+${effect}+GIF!`;
-                gifPreview.innerHTML = `<img src="${placeholderUrl}" alt="Generated GIF" class="rounded-lg mx-auto">`;
-            }, 2000);
-        }
-
-        async function checkNFTOwnership(walletAddressBase58, mintAddressBase58) {
-            try {
-                const ownerPublicKey = new solanaWeb3.PublicKey(walletAddressBase58);
-                const mintPublicKey = new solanaWeb3.PublicKey(mintAddressBase58);
-                const [ataAddress] = await solanaWeb3.PublicKey.findProgramAddress(
-                    [ownerPublicKey.toBuffer(), TOKEN_PROGRAM_ID.toBuffer(), mintPublicKey.toBuffer()],
-                    ASSOCIATED_TOKEN_PROGRAM_ID
-                );
-                const balanceResponse = await connection.getTokenAccountBalance(ataAddress);
-                if (balanceResponse.value && parseInt(balanceResponse.value.amount) >= 1) {
-                    return true;
-                }
-                return false;
-            } catch (error) {
-                console.log("Could not find token account, assuming no ownership.", error.message);
-                return false;
-            }
-        }
-
-        function setLoading(isLoading) {
-            verifyBtn.disabled = isLoading;
-            verifyBtnText.classList.toggle('hidden', isLoading);
-            verifySpinner.classList.toggle('hidden', !isLoading);
-        }
-
-        function showMessage(text, isError) {
-            messageArea.textContent = text;
-            messageArea.className = isError 
-                ? 'text-center text-red-400 font-medium pt-2' 
-                : 'text-center text-green-400 font-medium pt-2';
-        }
-        
-        // --- Countdown Timer Logic ---
-        const countdownDate = new Date().getTime() + (51 * 60 * 60 * 1000) + (1 * 60 * 1000) + (10 * 1000);
-        const countdownFunction = setInterval(function() {
-            const now = new Date().getTime();
-            const distance = countdownDate - now;
-
-            const days = Math.floor(distance / (1000 * 60 * 60 * 24));
-            const hours = Math.floor((distance % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
-            const minutes = Math.floor((distance % (1000 * 60 * 60)) / (1000 * 60));
-            const seconds = Math.floor((distance % (1000 * 60)) / 1000);
-
-            document.getElementById("days").innerText = days.toString().padStart(2, '0');
-            document.getElementById("hours").innerText = hours.toString().padStart(2, '0');
-            document.getElementById("minutes").innerText = minutes.toString().padStart(2, '0');
-            document.getElementById("seconds").innerText = seconds.toString().padStart(2, '0');
-
-            if (distance < 0) {
-                clearInterval(countdownFunction);
-                document.getElementById("countdown-container").innerHTML = "<h3 class='text-3xl luxury-gradient font-bold'>Minting is Live!</h3>";
-            }
-        }, 1000);
 
     });
   </script>
