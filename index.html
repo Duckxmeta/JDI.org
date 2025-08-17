@@ -479,6 +479,14 @@
         object-fit: cover;
         border-radius: 16px;
     }
+    
+    /* Interactive Journey Styles */
+    .journey-slide {
+        display: none;
+    }
+    .journey-slide.active {
+        display: block;
+    }
 
   </style>
 </head>
@@ -509,9 +517,8 @@
             </div>
         </button>
         <nav id="mobile-menu" class="hidden absolute bottom-full mb-4 flex-col space-y-5 w-full items-center opacity-0 -translate-y-4 pointer-events-none">
-            <a href="#web3-explained" class="main-menu-button text-lg md:text-xl py-3 px-10 md:py-4 md:px-12">What is Web3?</a>
+            <a href="#interactive-journey" class="main-menu-button text-lg md:text-xl py-3 px-10 md:py-4 md:px-12">Get Started</a>
             <a href="#discord" class="main-menu-button text-lg md:text-xl py-3 px-10 md:py-4 md:px-12">Community</a>
-            <a href="#mint" class="main-menu-button text-lg md:text-xl py-3 px-10 md:py-4 md:px-12">Mint NFT</a>
             <a href="#flock" class="main-menu-button text-lg md:text-xl py-3 px-10 md:py-4 md:px-12">Our Flock</a>
             <a href="#projects" class="main-menu-button text-lg md:text-xl py-3 px-10 md:py-4 md:px-12">Projects</a>
             <a href="#merch" class="main-menu-button text-lg md:text-xl py-3 px-10 md:py-4 md:px-12">Merch</a>
@@ -521,25 +528,60 @@
     </div>
   </section>
 
-  <!-- Web3 Explanation Section -->
-  <section id="web3-explained" class="py-16 sm:py-20 relative z-10">
-    <div class="w-full max-w-3xl mx-auto px-4">
-        <div class="premium-container p-6 sm:p-8 space-y-6 text-center">
-            <h2 class="text-3xl md:text-5xl font-black luxury-gradient">New to Web3? No Worries!</h2>
-            <p class="text-white/80 mt-2 max-w-xl mx-auto">
-                Welcome! If you're new to concepts like "blockchain" or "NFTs," you're in the right place. We believe this technology should be for everyone, so here’s a simple, safe-space explanation.
-            </p>
-            <div class="text-left space-y-4 pt-4 text-white/90">
-                <h3 class="text-2xl font-bold luxury-gradient">What's a Blockchain?</h3>
-                <p>Imagine a **digital receipt book** that's shared and verified by a huge community of computers. Every time something happens (like someone minting a Decent Duck), a new receipt is added. Because everyone has a copy, it's practically impossible to cheat, erase, or change a past receipt. This makes it super secure and transparent. That's the blockchain!</p>
-                
-                <h3 class="text-2xl font-bold luxury-gradient">What's an NFT?</h3>
-                <p>An NFT (Non-Fungible Token) is like a **unique, digital certificate of ownership** for a specific item, recorded in that shared receipt book. While anyone can look at a picture of the Mona Lisa, only one museum owns the original. Similarly, an NFT proves you own the original version of a digital item, like your one-of-a-kind Decent Duck.</p>
-                
-                <p class="font-bold text-center pt-4">It's all about true, verifiable ownership in the digital world. Still curious? Our QuackBot is happy to answer more questions!</p>
-            </div>
-        </div>
-    </div>
+  <!-- Interactive Journey Section -->
+  <section id="interactive-journey" class="py-16 sm:py-20 relative z-10">
+      <div class="w-full max-w-3xl mx-auto px-4">
+          <div class="premium-container p-6 sm:p-8 space-y-6 text-center">
+              <!-- Initial Question -->
+              <div id="journey-start" class="journey-slide active">
+                  <h2 class="text-3xl md:text-5xl font-black luxury-gradient">Ready to Join the Flock?</h2>
+                  <p class="text-white/80 mt-4 max-w-xl mx-auto">First, a quick question to help guide your journey:</p>
+                  <p class="text-2xl font-bold text-white/90 my-6">Do you understand crypto?</p>
+                  <div class="flex flex-col sm:flex-row gap-4 justify-center">
+                      <button id="crypto-yes-btn" class="luxury-button flex-1 text-lg py-3">Yes, I'm a Pro!</button>
+                      <button id="crypto-no-btn" class="luxury-button flex-1 text-lg py-3">No, Please Explain</button>
+                  </div>
+              </div>
+
+              <!-- Slideshow for "No" Path -->
+              <div id="journey-slideshow" class="hidden">
+                  <!-- Slide 1: Explanation -->
+                  <div id="slide-1" class="journey-slide">
+                      <h2 class="text-3xl md:text-5xl font-black luxury-gradient">New to Web3? No Worries!</h2>
+                      <div class="text-left space-y-4 pt-4 text-white/90">
+                          <h3 class="text-2xl font-bold luxury-gradient">What's a Blockchain?</h3>
+                          <p>Imagine a **digital receipt book** that's shared and verified by a huge community of computers. Every time something happens, a new receipt is added. Because everyone has a copy, it's practically impossible to cheat, making it super secure. That's the blockchain!</p>
+                          <h3 class="text-2xl font-bold luxury-gradient">What's an NFT?</h3>
+                          <p>An NFT is like a **unique, digital certificate of ownership** recorded in that shared receipt book. It proves you own the original version of a digital item, like your one-of-a-kind Decent Duck.</p>
+                      </div>
+                  </div>
+                  <!-- Slide 2: Connection -->
+                  <div id="slide-2" class="journey-slide">
+                      <h2 class="text-3xl md:text-5xl font-black luxury-gradient">Our Mission: IRL x Web3</h2>
+                       <div class="text-left space-y-4 pt-4 text-white/90">
+                          <p>We're merging our real-life duck sanctuary with this technology. When you own a Decent Duck NFT, you're not just holding a digital collectible; you're holding a verifiable piece of our sanctuary's story.</p>
+                          <p>This allows for a new level of transparency and community involvement, where your support is directly and provably linked to our mission of saving birds.</p>
+                      </div>
+                  </div>
+                  <!-- Slide 3: Minting -->
+                  <div id="slide-3" class="journey-slide">
+                      <img src="https://i.imgur.com/dfIEwGk.png" alt="Decent Duck NFT" class="w-40 h-40 mx-auto mb-6 rounded-full luxury-glow object-cover" onerror="this.onerror=null;this.src='https://placehold.co/160x160/2d1b69/FFD700?text=Mint+a+Duck';">
+                      <h2 class="text-3xl md:text-5xl font-black luxury-gradient">Ready to Make a Difference?</h2>
+                      <p class="text-white/80 mt-2 max-w-xl mx-auto">The flock is here! Mint your very own Decent Duck NFT to unlock exclusive access and become a verifiable part of our community.</p>
+                      <div class="pt-4">
+                          <a href="https://launchmynft.io/collections/BcFk6iremDyoZvrFChHdLdeXV4kcoCYsDX5nXfiXRA7H/fbcixvFFo1WFKNUnazYj" target="_blank" class="luxury-button inline-block text-lg px-10 py-4">
+                              Mint Your Duck Now
+                          </a>
+                      </div>
+                  </div>
+                  <!-- Navigation -->
+                  <div class="flex justify-between mt-8">
+                      <button id="back-btn" class="luxury-button opacity-50 pointer-events-none">Back</button>
+                      <button id="next-btn" class="luxury-button">Next</button>
+                  </div>
+              </div>
+          </div>
+      </div>
   </section>
   
   <!-- Discord Section -->
@@ -551,23 +593,6 @@
               <div class="pt-4">
                   <a href="https://discord.com/invite/e6b4RnXRkE" target="_blank" class="luxury-button inline-block text-lg px-10 py-4">
                       Join Discord
-                  </a>
-              </div>
-          </div>
-      </div>
-  </section>
-
-  <!-- Mint NFT Section -->
-  <section id="mint" class="py-16 sm:py-20 pt-0 relative z-10">
-      <div class="w-full max-w-3xl mx-auto px-4">
-          <div class="premium-container p-6 sm:p-8 space-y-6 text-center">
-              <img src="https://i.imgur.com/dfIEwGk.png" alt="Decent Duck NFT" class="w-40 h-40 mx-auto mb-6 rounded-full luxury-glow object-cover" onerror="this.onerror=null;this.src='https://placehold.co/160x160/2d1b69/FFD700?text=Mint+a+Duck';">
-              <h2 class="text-3xl md:text-5xl font-black luxury-gradient">Get Your Own Decent Duck</h2>
-              <p class="text-white/80 mt-2 max-w-xl mx-auto">The flock is here! Mint your very own Decent Duck NFT to unlock exclusive access to our community and tools.</p>
-              
-              <div id="mint-button-container" class="pt-4">
-                  <a href="https://launchmynft.io/collections/BcFk6iremDyoZvrFChHdLdeXV4kcoCYsDX5nXfiXRA7H/fbcixvFFo1WFKNUnazYj" target="_blank" class="luxury-button inline-block text-lg px-10 py-4">
-                      Mint Your Duck Now
                   </a>
               </div>
           </div>
@@ -650,7 +675,7 @@
         <div class="premium-card p-6">
           <img src="https://i.imgur.com/Sq4XHVl.jpg" alt="AI Pioneer Program" class="project-image mb-6" onerror="this.onerror=null;this.src='https://placehold.co/400x200/2d1b69/FFD700?text=AI+Pioneers';">
           <h3 class="text-2xl font-bold mb-3 luxury-gradient">AI Pioneer Program</h3>
-          <p class="text-white/80 mb-6 leading-relaxed">Join Zen AI Co.'s Tech Afterschool Labs for exciting learning! <a href="https://zenai.world" class="text-yellow-400 hover:underline">Check it out</a>.</p>
+          <p class="text-white/80 mb-6 leading-relaxed">Unlock the future. Join our global community for all ages and learn real-world skills in AI, blockchain, and more. Your journey into cutting-edge tech starts here.</p>
           <a href="https://zenai.world" target="_blank" class="luxury-button inline-block">Join Now</a>
         </div>
         <div class="premium-card p-6">
@@ -876,6 +901,59 @@
                 mobileMenu.classList.add('hidden', 'opacity-0', '-translate-y-4', 'pointer-events-none');
             });
         });
+
+        // --- Interactive Journey Logic ---
+        const journeyStart = document.getElementById('journey-start');
+        const journeySlideshow = document.getElementById('journey-slideshow');
+        const cryptoYesBtn = document.getElementById('crypto-yes-btn');
+        const cryptoNoBtn = document.getElementById('crypto-no-btn');
+        const nextBtn = document.getElementById('next-btn');
+        const backBtn = document.getElementById('back-btn');
+        const slides = journeySlideshow.querySelectorAll('.journey-slide');
+        let currentSlide = 0;
+
+        cryptoYesBtn.addEventListener('click', () => {
+            window.open('https://launchmynft.io/collections/BcFk6iremDyoZvrFChHdLdeXV4kcoCYsDX5nXfiXRA7H/fbcixvFFo1WFKNUnazYj', '_blank');
+        });
+
+        cryptoNoBtn.addEventListener('click', () => {
+            journeyStart.style.display = 'none';
+            journeySlideshow.style.display = 'block';
+            slides[currentSlide].classList.add('active');
+            updateNavButtons();
+        });
+
+        nextBtn.addEventListener('click', () => {
+            if (currentSlide < slides.length - 1) {
+                slides[currentSlide].classList.remove('active');
+                currentSlide++;
+                slides[currentSlide].classList.add('active');
+                updateNavButtons();
+            }
+        });
+
+        backBtn.addEventListener('click', () => {
+            if (currentSlide > 0) {
+                slides[currentSlide].classList.remove('active');
+                currentSlide--;
+                slides[currentSlide].classList.add('active');
+                updateNavButtons();
+            }
+        });
+
+        function updateNavButtons() {
+            if (currentSlide === 0) {
+                backBtn.classList.add('opacity-50', 'pointer-events-none');
+            } else {
+                backBtn.classList.remove('opacity-50', 'pointer-events-none');
+            }
+
+            if (currentSlide === slides.length - 1) {
+                nextBtn.classList.add('opacity-50', 'pointer-events-none');
+            } else {
+                nextBtn.classList.remove('opacity-50', 'pointer-events-none');
+            }
+        }
 
     });
   </script>
