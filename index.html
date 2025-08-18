@@ -206,7 +206,7 @@
             max-width: 400px;
             margin-right: 20px;
         }
-        .gallery-item img {
+        .gallery-item img, .gallery-item video {
             width: 100%;
             height: 100%;
             object-fit: cover;
@@ -388,7 +388,7 @@
     <!-- Video Background -->
     <div class="hero-video-container">
         <video autoplay loop muted playsinline id="hero-video" poster="https://i.imgur.com/puY6hwJ.jpeg">
-            <source src="https://i.imgur.com/mcVf5gf.mp4" type="video/mp4">
+            <source src="https://i.imgur.com/5yRqKas.mp4" type="video/mp4">
         </video>
         <div class="video-overlay"></div>
     </div>
@@ -416,6 +416,7 @@
             <a href="#projects" class="menu-link">Projects</a>
             <a href="#merch" class="menu-link">Merch</a>
             <a href="#community" class="menu-link">Community</a>
+            <a href="#collective-movement" class="menu-link">Art Collective</a>
             <a href="#contact" class="menu-link">Contact</a>
         </nav>
     </div>
@@ -581,6 +582,65 @@
                 </div>
             </div>
         </section>
+
+        <!-- Collective Movement Section -->
+        <section id="collective-movement" class="py-20 md:py-32 fade-in-section">
+            <div class="container mx-auto px-4">
+                <h2 class="section-title text-center mb-4">Collective <span class="text-gold">Movement</span></h2>
+                <p class="section-subtitle text-center mb-12">
+                    Showcasing the incredible creativity of our community members.
+                </p>
+                <div class="scroll-gallery">
+                    <div class="gallery-item">
+                        <div class="content-card h-full">
+                            <img src="https://i.imgur.com/u34c7jq.jpeg" alt="3D Duck Giveaway" class="w-full h-80 object-cover card-image" style="object-position: center 20%;" onerror="this.src='https://placehold.co/600x600/1a1a1a/ffd700?text=Art';">
+                            <div class="p-6">
+                                <h3 class="text-2xl font-bold mb-1">3D Duck Giveaway</h3>
+                                <p class="text-gray-400">by Cavan</p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="gallery-item">
+                        <div class="content-card h-full">
+                            <img src="https://i.imgur.com/ivwS5Jx.jpeg" alt="Decentralized Ducks Flyer" class="w-full h-80 object-cover card-image" onerror="this.src='https://placehold.co/600x600/1a1a1a/ffd700?text=Art';">
+                            <div class="p-6">
+                                <h3 class="text-2xl font-bold mb-1">Decentralized Ducks Flyer</h3>
+                                <p class="text-gray-400">by Henry</p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="gallery-item">
+                        <div class="content-card h-full">
+                            <img src="https://i.imgur.com/smbiwp8.jpeg" alt="Save Ducks" class="w-full h-80 object-cover card-image" onerror="this.src='https://placehold.co/600x600/1a1a1a/ffd700?text=Art';">
+                            <div class="p-6">
+                                <h3 class="text-2xl font-bold mb-1">Save Ducks</h3>
+                                <p class="text-gray-400">by Tokyo</p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="gallery-item">
+                        <div class="content-card h-full">
+                            <img src="https://i.imgur.com/JOJITsH.jpeg" alt="Save Ducks" class="w-full h-80 object-cover card-image" onerror="this.src='https://placehold.co/600x600/1a1a1a/ffd700?text=Art';">
+                            <div class="p-6">
+                                <h3 class="text-2xl font-bold mb-1">Save Ducks</h3>
+                                <p class="text-gray-400">by Tokyo</p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="gallery-item">
+                        <div class="content-card h-full">
+                           <video id="skater-duck-video" loop muted playsinline poster="https://i.imgur.com/UOnHket.jpeg" class="w-full h-80 object-cover card-image">
+                                <source src="https://i.imgur.com/UOnHket.mp4" type="video/mp4">
+                            </video>
+                            <div class="p-6">
+                                <h3 class="text-2xl font-bold mb-1">Skater Duck</h3>
+                                <p class="text-gray-400">by Bradkat</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
     </main>
 
     <!-- Footer -->
@@ -675,6 +735,33 @@
             observer.observe(section);
         });
         
+        // --- Autoplay Video on Scroll ---
+        const skaterVideo = document.getElementById('skater-duck-video');
+        if (skaterVideo) {
+            const videoObserverOptions = {
+                root: null,
+                rootMargin: '0px',
+                threshold: 0.5 // Start playing when 50% of the video is visible
+            };
+
+            const videoObserver = new IntersectionObserver((entries) => {
+                entries.forEach(entry => {
+                    if (entry.isIntersecting) {
+                        const playPromise = skaterVideo.play();
+                        if (playPromise !== undefined) {
+                            playPromise.catch(error => {
+                                console.log("Video autoplay prevented:", error);
+                            });
+                        }
+                    } else {
+                        skaterVideo.pause();
+                    }
+                });
+            }, videoObserverOptions);
+
+            videoObserver.observe(skaterVideo);
+        }
+
         // --- QuackBot Logic ---
         const chatbotToggle = document.getElementById('chatbot-toggle');
         const chatWindow = document.getElementById('chat-window');
@@ -683,8 +770,6 @@
         const chatInput = document.getElementById('chat-input');
         const messagesContainer = document.getElementById('chat-messages');
         
-        // NOTE: For security, API keys should ideally be handled on a server, not exposed in client-side code.
-        // This is for demonstration purposes.
         const API_KEY = 'AIzaSyCFzQEefz1PLz9RgzOWt-tmuCJwPwQu-Mw';
         const API_URL = `https://generativelanguage.googleapis.com/v1beta/models/gemini-2.0-flash:generateContent?key=${API_KEY}`;
         let chatHistory = [];
