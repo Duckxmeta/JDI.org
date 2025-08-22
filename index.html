@@ -67,7 +67,7 @@
 
         /* Header & Navigation */
         .site-header {
-            position: sticky; /* Changed from fixed */
+            position: sticky;
             top: 0;
             left: 0;
             width: 100%;
@@ -221,6 +221,78 @@
         .fade-in-section.is-visible {
             opacity: 1;
             transform: translateY(0);
+        }
+
+        /* Crypto Updates Section Styles */
+        .data-table {
+          background: #2a2a2a;
+          border: 2px solid #ffd700;
+          border-radius: 0.5rem;
+          padding: 0.5rem;
+          margin-top: 1rem;
+          overflow-x: auto;
+        }
+        .data-table th, .data-table td {
+          padding: 0.75rem 1rem;
+          text-align: left;
+          font-size: 0.875rem;
+          white-space: nowrap;
+        }
+        .data-table th {
+          color: #ffd700;
+          font-weight: 700;
+        }
+        .data-table td {
+          color: #f5f5f5;
+        }
+        .data-table tr.negative td {
+          color: #f87171;
+        }
+        .data-table tr.positive td {
+          color: #4ade80;
+        }
+        .data-table tr:hover {
+          background: #3a3a3a;
+        }
+        .impact-high { color: #f87171; }
+        .impact-medium { color: #ffd700; }
+        .impact-low { color: #f87171; }
+
+        .crypto-chatbot input {
+          background-color: #333333;
+          color: #f5f5f5;
+          border: 1px solid #444444;
+          border-radius: 0.375rem;
+          padding: 0.75rem;
+          font-size: 0.875rem;
+          transition: all 0.2s ease;
+        }
+        .crypto-chatbot input:focus {
+          outline: none;
+          border-color: #ffd700;
+          box-shadow: 0 0 0 3px rgba(255, 210, 0, 0.3);
+        }
+        .crypto-chatbot button {
+          background-color: #ffd700;
+          color: #1a1a1a;
+          border: none;
+          border-radius: 0.375rem;
+          padding: 0.75rem 1.5rem;
+          font-size: 0.875rem;
+          cursor: pointer;
+          font-weight: 700;
+          transition: background-color 0.3s ease;
+        }
+        .crypto-chatbot button:hover {
+          background-color: #e6b800;
+        }
+        #crypto-chatbot-response {
+            background-color: #2a2a2a;
+            padding: 1rem;
+            border-radius: 0.375rem;
+            border: 1px solid #444;
+            line-height: 1.6;
+            white-space: pre-wrap;
         }
 
         /* --- QUACKBOT CHATBOT STYLES --- */
@@ -419,6 +491,7 @@
             <a href="#web3-explainer" class="menu-link">What is Web3?</a>
             <a href="#flock" class="menu-link">The Flock</a>
             <a href="#projects" class="menu-link">Projects</a>
+            <a href="#duckonomics" class="menu-link">Duckonomics</a>
             <a href="#merch" class="menu-link">Merch</a>
             <a href="#community" class="menu-link">Community</a>
             <a href="#collective-movement" class="menu-link">Art Collective</a>
@@ -578,15 +651,80 @@
             </div>
         </section>
 
+        <!-- Duckonomics Section -->
+        <section id="duckonomics" class="py-20 md:py-32 fade-in-section">
+            <div class="container mx-auto px-4">
+                <h2 class="section-title text-center mb-4">Duck<span class="text-gold">onomics</span></h2>
+                <p class="section-subtitle text-center mb-12">
+                    Stay updated with the latest crypto events, prices, and AI-powered insights.
+                </p>
+
+                <!-- Crypto Events Table -->
+                <div class="text-center mb-12">
+                    <h3 class="text-3xl font-bold mb-2 text-gold">Crypto Market Events</h3>
+                    <p class="text-lg max-w-2xl mx-auto text-gray-300">Track key events impacting the crypto markets!</p>
+                </div>
+                <div id="crypto-events" class="data-table mx-auto max-w-4xl">
+                    <table class="w-full">
+                        <thead>
+                            <tr>
+                                <th>Date</th>
+                                <th>Event</th>
+                                <th>Impact</th>
+                            </tr>
+                        </thead>
+                        <tbody id="events-table-body">
+                            <tr><td colspan="3" class="text-center p-8">Loading crypto events...</td></tr>
+                        </tbody>
+                    </table>
+                </div>
+
+                <!-- Crypto Data Table -->
+                <div class="text-center mt-16 mb-12">
+                    <h3 class="text-3xl font-bold mb-2 text-gold">Live Crypto Prices</h3>
+                    <p class="text-lg max-w-2xl mx-auto text-gray-300">Check the latest prices and trends for top cryptocurrencies!</p>
+                </div>
+                <div id="crypto-data" class="data-table mx-auto max-w-4xl">
+                    <table class="w-full">
+                        <thead>
+                            <tr>
+                                <th>Coin</th>
+                                <th>Price (USD)</th>
+                                <th>24h Change</th>
+                            </tr>
+                        </thead>
+                        <tbody id="crypto-table-body">
+                            <tr><td colspan="3" class="text-center p-8">Loading crypto data...</td></tr>
+                        </tbody>
+                    </table>
+                </div>
+
+                <!-- Crypto Chatbot -->
+                <div class="text-center mt-16 mb-12">
+                    <h3 class="text-3xl font-bold mb-2 text-gold">Crypto AI Chatbot</h3>
+                    <p class="text-lg max-w-2xl mx-auto text-gray-300">Ask me anything about cryptocurrency!</p>
+                </div>
+                <div class="crypto-chatbot max-w-2xl mx-auto mt-6">
+                    <div id="crypto-chatbot-response" class="text-md mb-4 min-h-[6rem] flex items-center justify-center text-gray-400">
+                        Ask a question to get started. For a list of commands, type /help.
+                    </div>
+                    <div class="flex flex-col sm:flex-row gap-2">
+                        <input id="crypto-chatbot-input" type="text" placeholder="e.g., Explain what a blockchain is" class="w-full">
+                        <button id="crypto-chatbot-send">Ask</button>
+                    </div>
+                </div>
+            </div>
+        </section>
+
         <!-- Merch Section -->
-        <section id="merch" class="py-20 md:py-32 fade-in-section">
+        <section id="merch" class="py-20 md:py-32 bg-[#111] fade-in-section">
             <div class="container mx-auto px-4">
                 <h2 class="section-title text-center">Wear The <span class="text-gold">Cause</span>.</h2>
                 <p class="section-subtitle text-center">
                     Support the sanctuary and look good doing it. High-quality apparel powered by Printful.
                 </p>
                 <div class="mt-12 text-center">
-                    <a href="https://justduckit-merch.printful.me/" target="_blank" class="btn-primary text-lg">Shop The Collection</a>
+                    <a href="https://duckxmeta.github.io/Decentralized-Merch/" target="_blank" class="btn-primary text-lg">Shop The Collection</a>
                 </div>
                 <div class="mt-12 scroll-gallery">
                     <div class="gallery-item">
@@ -606,7 +744,7 @@
         </section>
 
         <!-- Community Section -->
-        <section id="community" class="py-20 md:py-32 bg-[#111] fade-in-section">
+        <section id="community" class="py-20 md:py-32 fade-in-section">
             <div class="container mx-auto px-4 text-center">
                 <h2 class="section-title">Join The <span class="text-gold">Flock</span>.</h2>
                 <p class="section-subtitle">
@@ -619,7 +757,7 @@
         </section>
 
         <!-- Collective Movement Section -->
-        <section id="collective-movement" class="py-20 md:py-32 fade-in-section">
+        <section id="collective-movement" class="py-20 md:py-32 bg-[#111] fade-in-section">
             <div class="container mx-auto px-4">
                 <h2 class="section-title text-center mb-4">Collective <span class="text-gold">Movement</span></h2>
                 <p class="section-subtitle text-center mb-12">
@@ -797,65 +935,82 @@
             videoObserver.observe(skaterVideo);
         }
 
-        // --- QuackBot Logic ---
-        const chatbotToggle = document.getElementById('chatbot-toggle');
-        const chatWindow = document.getElementById('chat-window');
-        const closeBtn = document.getElementById('chat-close-btn');
-        const sendBtn = document.getElementById('chat-send-btn');
-        const chatInput = document.getElementById('chat-input');
-        const messagesContainer = document.getElementById('chat-messages');
-        
-        const API_KEY = 'AIzaSyCFzQEefz1PLz9RgzOWt-tmuCJwPwQu-Mw';
-        const API_URL = `https://generativelanguage.googleapis.com/v1beta/models/gemini-2.0-flash:generateContent?key=${API_KEY}`;
-        let chatHistory = [];
-
-        chatbotToggle.addEventListener('click', () => { chatWindow.classList.toggle('active'); });
-        closeBtn.addEventListener('click', () => { chatWindow.classList.remove('active'); });
-        sendBtn.addEventListener('click', sendMessage);
-        chatInput.addEventListener('keydown', (e) => { if (e.key === 'Enter') { e.preventDefault(); sendMessage(); } });
-
-        function sendMessage() {
-            const userInput = chatInput.value.trim();
-            if (userInput === '') return;
-            addMessage(userInput, 'user');
-            chatInput.value = '';
-            showTypingIndicator();
-            getBotResponse(userInput);
-        }
-
-        function addMessage(text, sender) {
-            const messageElement = document.createElement('div');
-            messageElement.classList.add('chat-message', `${sender}-message`);
-            messageElement.textContent = text;
-            messagesContainer.appendChild(messageElement);
-            scrollToBottom();
-        }
-
-        function showTypingIndicator() {
-            const typingElement = document.createElement('div');
-            typingElement.classList.add('bot-typing');
-            typingElement.id = 'typing-indicator';
-            typingElement.innerHTML = `<span></span><span></span><span></span>`;
-            messagesContainer.appendChild(typingElement);
-            scrollToBottom();
-        }
-
-        function removeTypingIndicator() {
-            const typingElement = document.getElementById('typing-indicator');
-            if (typingElement) {
-                typingElement.remove();
+        // --- Crypto Data Logic ---
+        async function fetchCryptoData() {
+            const url = 'https://api.coingecko.com/api/v3/coins/markets?vs_currency=usd&ids=bitcoin,ethereum,binancecoin,solana,ripple&order=market_cap_desc&per_page=5&page=1&sparkline=false';
+            const tableBody = document.getElementById('crypto-table-body');
+            try {
+                const response = await fetch(url);
+                if (!response.ok) throw new Error(`API request failed with status ${response.status}`);
+                const cryptoData = await response.json();
+                tableBody.innerHTML = '';
+                cryptoData.forEach(coin => {
+                    const row = document.createElement('tr');
+                    row.className = coin.price_change_percentage_24h >= 0 ? 'positive' : 'negative';
+                    row.innerHTML = `
+                        <td class="font-bold">${coin.name}</td>
+                        <td>$${coin.current_price.toLocaleString('en-US', { minimumFractionDigits: 2, maximumFractionDigits: 2 })}</td>
+                        <td>${coin.price_change_percentage_24h.toFixed(2)}%</td>
+                    `;
+                    tableBody.appendChild(row);
+                });
+            } catch (error) {
+                console.error('Error fetching crypto data:', error);
+                tableBody.innerHTML = `<tr><td colspan="3" class="text-center p-8 text-red-400">Quack! Data unavailable. Please try again soon.</td></tr>`;
             }
         }
 
-        function scrollToBottom() {
-            messagesContainer.scrollTop = messagesContainer.scrollHeight;
+        function populateCryptoEvents() {
+            const events = [
+                { date: '2025-08-28', name: 'US GDP Growth Rate Report', impact: 'High' },
+                { date: '2025-09-02', name: 'Cardano Network Upgrade "Voltaire"', impact: 'Medium' },
+                { date: '2025-09-10', name: 'US Inflation Rate Data', impact: 'High' },
+                { date: '2025-09-15', name: 'Avalanche Summit', impact: 'Medium' },
+                { date: '2025-09-22', name: 'SEC Decision on Spot Bitcoin ETF', impact: 'High' }
+            ];
+            const tableBody = document.getElementById('events-table-body');
+            tableBody.innerHTML = '';
+            events.forEach(event => {
+                const row = document.createElement('tr');
+                row.innerHTML = `
+                    <td>${event.date}</td>
+                    <td>${event.name}</td>
+                    <td class="impact-${event.impact.toLowerCase()} font-bold">${event.impact}</td>
+                `;
+                tableBody.appendChild(row);
+            });
         }
 
-        async function getBotResponse(userInput) {
-            const systemPrompt = "You are QuackBot, a sophisticated and friendly duck who is an expert on the 'Just Duck It' brand, luxury, and Web3. Your personality is charming and a little bit sassy. You end most of your sentences with a fun duck-related word or sound, like 'quack!', 'waddle on', or 'splash!'. Keep your answers helpful but also entertaining. Do not mention that you are an AI or language model. You are a duck.";
-            chatHistory.push({ role: "user", parts: [{ text: userInput }] });
+        // --- Crypto Chatbot Logic ---
+        async function handleChatbotQuery() {
+            const input = document.getElementById('crypto-chatbot-input').value.trim();
+            const responseDiv = document.getElementById('crypto-chatbot-response');
+            
+            if (!input) return;
+
+            responseDiv.innerHTML = '<div class="text-gray-400">Quack! The AI is thinking...</div>';
+            document.getElementById('crypto-chatbot-input').value = '';
+
+            if (input.toLowerCase() === '/help') {
+                responseDiv.innerHTML = `
+                <div class="text-left">
+                    <strong class="text-gold">Hello! I'm a crypto AI assistant.</strong><br>
+                    <p class="mt-2">You can ask me anything about cryptocurrency, blockchain, NFTs, and more. Just type your question and I'll do my best to answer.</p>
+                    <p class="mt-2 text-sm text-gray-400">Example: "What is the difference between Bitcoin and Ethereum?"</p>
+                </div>
+                `;
+                return;
+            }
+
+            const GEMINI_API_KEY = 'AIzaSyCFzQEefz1PLz9RgzOWt-tmuCJwPwQu-Mw';
+            const API_URL = `https://generativelanguage.googleapis.com/v1beta/models/gemini-2.0-flash:generateContent?key=${GEMINI_API_KEY}`;
+            
             const payload = {
-                contents: [{ role: "model", parts: [{ text: systemPrompt }] }, ...chatHistory]
+                contents: [{
+                    parts: [{
+                        text: `You are a helpful, friendly, and knowledgeable cryptocurrency assistant named DuckBot. Explain things clearly and concisely. Answer the following user query: "${input}"`
+                    }]
+                }]
             };
 
             try {
@@ -864,21 +1019,122 @@
                     headers: { 'Content-Type': 'application/json' },
                     body: JSON.stringify(payload)
                 });
+
+                if (!response.ok) {
+                    throw new Error(`API request failed with status ${response.status}. Check your API key and network connection.`);
+                }
+
+                const result = await response.json();
+                
+                if (result.candidates && result.candidates.length > 0 && result.candidates[0].content.parts[0].text) {
+                    const text = result.candidates[0].content.parts[0].text;
+                    responseDiv.innerHTML = `<div class="text-left">${text}</div>`;
+                } else {
+                    let errorMessage = "Received an empty or invalid response from the API.";
+                    if (result.promptFeedback && result.promptFeedback.blockReason) {
+                        errorMessage = `Request was blocked. Reason: ${result.promptFeedback.blockReason}. Please adjust your query.`;
+                    }
+                    throw new Error(errorMessage);
+                }
+
+            } catch (error) {
+                console.error("Chatbot Error:", error);
+                responseDiv.innerHTML = `<div class="text-red-400">Quack! An error occurred. ${error.message}</div>`;
+            }
+        }
+        
+        // Initial data fetch for crypto section
+        fetchCryptoData();
+        populateCryptoEvents();
+        document.getElementById('crypto-chatbot-send').addEventListener('click', handleChatbotQuery);
+        document.getElementById('crypto-chatbot-input').addEventListener('keypress', (e) => {
+            if (e.key === 'Enter') {
+                handleChatbotQuery();
+            }
+        });
+
+        // --- QuackBot Logic ---
+        const chatbotToggle = document.getElementById('chatbot-toggle');
+        const chatWindow = document.getElementById('chat-window');
+        const closeBtn = document.getElementById('chat-close-btn');
+        const sendBtn = document.getElementById('chat-send-btn');
+        const chatInput = document.getElementById('chat-input');
+        const messagesContainer = document.getElementById('chat-messages');
+        
+        const QUACKBOT_API_KEY = 'AIzaSyCFzQEefz1PLz9RgzOWt-tmuCJwPwQu-Mw';
+        const QUACKBOT_API_URL = `https://generativelanguage.googleapis.com/v1beta/models/gemini-2.0-flash:generateContent?key=${QUACKBOT_API_KEY}`;
+        let chatHistory = [];
+
+        chatbotToggle.addEventListener('click', () => { chatWindow.classList.toggle('active'); });
+        closeBtn.addEventListener('click', () => { chatWindow.classList.remove('active'); });
+        sendBtn.addEventListener('click', sendQuackBotMessage);
+        chatInput.addEventListener('keydown', (e) => { if (e.key === 'Enter') { e.preventDefault(); sendQuackBotMessage(); } });
+
+        function sendQuackBotMessage() {
+            const userInput = chatInput.value.trim();
+            if (userInput === '') return;
+            addQuackBotMessage(userInput, 'user');
+            chatInput.value = '';
+            showQuackBotTypingIndicator();
+            getQuackBotResponse(userInput);
+        }
+
+        function addQuackBotMessage(text, sender) {
+            const messageElement = document.createElement('div');
+            messageElement.classList.add('chat-message', `${sender}-message`);
+            messageElement.textContent = text;
+            messagesContainer.appendChild(messageElement);
+            scrollToQuackBotBottom();
+        }
+
+        function showQuackBotTypingIndicator() {
+            const typingElement = document.createElement('div');
+            typingElement.classList.add('bot-typing');
+            typingElement.id = 'typing-indicator';
+            typingElement.innerHTML = `<span></span><span></span><span></span>`;
+            messagesContainer.appendChild(typingElement);
+            scrollToQuackBotBottom();
+        }
+
+        function removeQuackBotTypingIndicator() {
+            const typingElement = document.getElementById('typing-indicator');
+            if (typingElement) {
+                typingElement.remove();
+            }
+        }
+
+        function scrollToQuackBotBottom() {
+            messagesContainer.scrollTop = messagesContainer.scrollHeight;
+        }
+
+        async function getQuackBotResponse(userInput) {
+            const systemPrompt = "You are QuackBot, a sophisticated and friendly duck who is an expert on the 'Just Duck It' brand, luxury, and Web3. Your personality is charming and a little bit sassy. You end most of your sentences with a fun duck-related word or sound, like 'quack!', 'waddle on', or 'splash!'. Keep your answers helpful but also entertaining. Do not mention that you are an AI or language model. You are a duck.";
+            chatHistory.push({ role: "user", parts: [{ text: userInput }] });
+            const payload = {
+                contents: [{ role: "model", parts: [{ text: systemPrompt }] }, ...chatHistory]
+            };
+
+            try {
+                const response = await fetch(QUACKBOT_API_URL, {
+                    method: 'POST',
+                    headers: { 'Content-Type': 'application/json' },
+                    body: JSON.stringify(payload)
+                });
                 if (!response.ok) {
                     throw new Error(`API request failed with status ${response.status}`);
                 }
                 const data = await response.json();
-                removeTypingIndicator();
+                removeQuackBotTypingIndicator();
                 if (data.candidates && data.candidates.length > 0) {
                     const botResponse = data.candidates[0].content.parts[0].text;
-                    addMessage(botResponse, 'bot');
+                    addQuackBotMessage(botResponse, 'bot');
                     chatHistory.push({ role: "model", parts: [{ text: botResponse }] });
                 } else {
-                    addMessage("This ducky is a bit puzzled right now. Try again later, quack!", 'bot');
+                    addQuackBotMessage("This ducky is a bit puzzled right now. Try again later, quack!", 'bot');
                 }
             } catch (error) {
                 console.error("Error fetching bot response:", error);
-                removeTypingIndicator();
+                removeQuackBotTypingIndicator();
                 addMessage("Oh no, my pond seems to have lost connection! Please try again in a bit. Waddle on.", 'bot');
             }
         }
