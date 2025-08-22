@@ -489,9 +489,9 @@
         <nav class="text-center">
             <a href="#mission" class="menu-link">Our Mission</a>
             <a href="#web3-explainer" class="menu-link">What is Web3?</a>
+            <a href="#duckonomics" class="menu-link">Duckonomics</a>
             <a href="#flock" class="menu-link">The Flock</a>
             <a href="#projects" class="menu-link">Projects</a>
-            <a href="#duckonomics" class="menu-link">Duckonomics</a>
             <a href="#merch" class="menu-link">Merch</a>
             <a href="#community" class="menu-link">Community</a>
             <a href="#collective-movement" class="menu-link">Art Collective</a>
@@ -561,8 +561,73 @@
             </div>
         </section>
 
+        <!-- Duckonomics Section -->
+        <section id="duckonomics" class="py-20 md:py-32 fade-in-section">
+            <div class="container mx-auto px-4">
+                <h2 class="section-title text-center mb-4">Duck<span class="text-gold">onomics</span></h2>
+                <p class="section-subtitle text-center mb-12">
+                    Stay updated with the latest crypto events, prices, and AI-powered insights.
+                </p>
+
+                <!-- Crypto Events Table -->
+                <div class="text-center mb-12">
+                    <h3 class="text-3xl font-bold mb-2 text-gold">Crypto Market Events</h3>
+                    <p class="text-lg max-w-2xl mx-auto text-gray-300">Track key events impacting the crypto markets!</p>
+                </div>
+                <div id="crypto-events" class="data-table mx-auto max-w-4xl">
+                    <table class="w-full">
+                        <thead>
+                            <tr>
+                                <th>Date</th>
+                                <th>Event</th>
+                                <th>Impact</th>
+                            </tr>
+                        </thead>
+                        <tbody id="events-table-body">
+                            <tr><td colspan="3" class="text-center p-8">Loading crypto events...</td></tr>
+                        </tbody>
+                    </table>
+                </div>
+
+                <!-- Crypto Data Table -->
+                <div class="text-center mt-16 mb-12">
+                    <h3 class="text-3xl font-bold mb-2 text-gold">Live Crypto Prices</h3>
+                    <p class="text-lg max-w-2xl mx-auto text-gray-300">Check the latest prices and trends for top cryptocurrencies!</p>
+                </div>
+                <div id="crypto-data" class="data-table mx-auto max-w-4xl">
+                    <table class="w-full">
+                        <thead>
+                            <tr>
+                                <th>Coin</th>
+                                <th>Price (USD)</th>
+                                <th>24h Change</th>
+                            </tr>
+                        </thead>
+                        <tbody id="crypto-table-body">
+                            <tr><td colspan="3" class="text-center p-8">Loading crypto data...</td></tr>
+                        </tbody>
+                    </table>
+                </div>
+
+                <!-- Crypto Chatbot -->
+                <div class="text-center mt-16 mb-12">
+                    <h3 class="text-3xl font-bold mb-2 text-gold">Crypto AI Chatbot</h3>
+                    <p class="text-lg max-w-2xl mx-auto text-gray-300">Ask me anything about cryptocurrency!</p>
+                </div>
+                <div class="crypto-chatbot max-w-2xl mx-auto mt-6">
+                    <div id="crypto-chatbot-response" class="text-md mb-4 min-h-[6rem] flex items-center justify-center text-gray-400">
+                        Ask a question to get started. For a list of commands, type /help.
+                    </div>
+                    <div class="flex flex-col sm:flex-row gap-2">
+                        <input id="crypto-chatbot-input" type="text" placeholder="e.g., Explain what a blockchain is" class="w-full">
+                        <button id="crypto-chatbot-send">Ask</button>
+                    </div>
+                </div>
+            </div>
+        </section>
+
         <!-- Our Flock Section -->
-        <section id="flock" class="py-20 md:py-32 fade-in-section">
+        <section id="flock" class="py-20 md:py-32 bg-[#111] fade-in-section">
             <div class="container mx-auto px-4">
                 <h2 class="section-title text-center mb-12">Meet Our Flock</h2>
                 <div class="scroll-gallery">
@@ -651,73 +716,8 @@
             </div>
         </section>
 
-        <!-- Duckonomics Section -->
-        <section id="duckonomics" class="py-20 md:py-32 fade-in-section">
-            <div class="container mx-auto px-4">
-                <h2 class="section-title text-center mb-4">Duck<span class="text-gold">onomics</span></h2>
-                <p class="section-subtitle text-center mb-12">
-                    Stay updated with the latest crypto events, prices, and AI-powered insights.
-                </p>
-
-                <!-- Crypto Events Table -->
-                <div class="text-center mb-12">
-                    <h3 class="text-3xl font-bold mb-2 text-gold">Crypto Market Events</h3>
-                    <p class="text-lg max-w-2xl mx-auto text-gray-300">Track key events impacting the crypto markets!</p>
-                </div>
-                <div id="crypto-events" class="data-table mx-auto max-w-4xl">
-                    <table class="w-full">
-                        <thead>
-                            <tr>
-                                <th>Date</th>
-                                <th>Event</th>
-                                <th>Impact</th>
-                            </tr>
-                        </thead>
-                        <tbody id="events-table-body">
-                            <tr><td colspan="3" class="text-center p-8">Loading crypto events...</td></tr>
-                        </tbody>
-                    </table>
-                </div>
-
-                <!-- Crypto Data Table -->
-                <div class="text-center mt-16 mb-12">
-                    <h3 class="text-3xl font-bold mb-2 text-gold">Live Crypto Prices</h3>
-                    <p class="text-lg max-w-2xl mx-auto text-gray-300">Check the latest prices and trends for top cryptocurrencies!</p>
-                </div>
-                <div id="crypto-data" class="data-table mx-auto max-w-4xl">
-                    <table class="w-full">
-                        <thead>
-                            <tr>
-                                <th>Coin</th>
-                                <th>Price (USD)</th>
-                                <th>24h Change</th>
-                            </tr>
-                        </thead>
-                        <tbody id="crypto-table-body">
-                            <tr><td colspan="3" class="text-center p-8">Loading crypto data...</td></tr>
-                        </tbody>
-                    </table>
-                </div>
-
-                <!-- Crypto Chatbot -->
-                <div class="text-center mt-16 mb-12">
-                    <h3 class="text-3xl font-bold mb-2 text-gold">Crypto AI Chatbot</h3>
-                    <p class="text-lg max-w-2xl mx-auto text-gray-300">Ask me anything about cryptocurrency!</p>
-                </div>
-                <div class="crypto-chatbot max-w-2xl mx-auto mt-6">
-                    <div id="crypto-chatbot-response" class="text-md mb-4 min-h-[6rem] flex items-center justify-center text-gray-400">
-                        Ask a question to get started. For a list of commands, type /help.
-                    </div>
-                    <div class="flex flex-col sm:flex-row gap-2">
-                        <input id="crypto-chatbot-input" type="text" placeholder="e.g., Explain what a blockchain is" class="w-full">
-                        <button id="crypto-chatbot-send">Ask</button>
-                    </div>
-                </div>
-            </div>
-        </section>
-
         <!-- Merch Section -->
-        <section id="merch" class="py-20 md:py-32 bg-[#111] fade-in-section">
+        <section id="merch" class="py-20 md:py-32 fade-in-section">
             <div class="container mx-auto px-4">
                 <h2 class="section-title text-center">Wear The <span class="text-gold">Cause</span>.</h2>
                 <p class="section-subtitle text-center">
@@ -744,7 +744,7 @@
         </section>
 
         <!-- Community Section -->
-        <section id="community" class="py-20 md:py-32 fade-in-section">
+        <section id="community" class="py-20 md:py-32 bg-[#111] fade-in-section">
             <div class="container mx-auto px-4 text-center">
                 <h2 class="section-title">Join The <span class="text-gold">Flock</span>.</h2>
                 <p class="section-subtitle">
@@ -757,7 +757,7 @@
         </section>
 
         <!-- Collective Movement Section -->
-        <section id="collective-movement" class="py-20 md:py-32 bg-[#111] fade-in-section">
+        <section id="collective-movement" class="py-20 md:py-32 fade-in-section">
             <div class="container mx-auto px-4">
                 <h2 class="section-title text-center mb-4">Collective <span class="text-gold">Movement</span></h2>
                 <p class="section-subtitle text-center mb-12">
