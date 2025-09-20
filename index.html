@@ -223,6 +223,14 @@
             transform: translateY(0);
         }
 
+        /* Accordion Styles */
+        #duckonomics-content {
+            transition: max-height 0.5s ease-out, opacity 0.5s ease-out;
+            max-height: 0;
+            opacity: 0;
+            overflow: hidden;
+        }
+
         /* Crypto Updates Section Styles */
         .data-table {
           background: #2a2a2a;
@@ -494,6 +502,7 @@
             <a href="#projects" class="menu-link">Projects</a>
             <a href="#merch" class="menu-link">Merch</a>
             <a href="#community" class="menu-link">Community</a>
+            <a href="#partners" class="menu-link">Partners</a>
             <a href="#collective-movement" class="menu-link">Art Collective</a>
             <a href="#contact" class="menu-link">Contact</a>
         </nav>
@@ -569,76 +578,93 @@
                     Stay updated with the latest crypto events, prices, and AI-powered insights.
                 </p>
 
-                <!-- Crypto Events Table -->
-                <div class="text-center mb-12">
-                    <h3 class="text-3xl font-bold mb-2 text-gold">Crypto Market Events</h3>
-                    <p class="text-lg max-w-2xl mx-auto text-gray-300">Track key events impacting the crypto markets!</p>
-                </div>
-                <div id="crypto-events" class="data-table mx-auto max-w-4xl">
-                    <table class="w-full">
-                        <thead>
-                            <tr>
-                                <th>Date</th>
-                                <th>Event</th>
-                                <th>Impact</th>
-                            </tr>
-                        </thead>
-                        <tbody id="events-table-body">
-                            <tr><td colspan="3" class="text-center p-8">Loading crypto events...</td></tr>
-                        </tbody>
-                    </table>
+                <div class="text-center">
+                    <button id="duckonomics-toggle" class="btn-primary text-lg flex items-center mx-auto">
+                        View Duckonomics
+                        <svg id="duckonomics-arrow" class="w-6 h-6 ml-2 transition-transform" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"></path></svg>
+                    </button>
                 </div>
 
-                <!-- Crypto Data Table -->
-                <div class="text-center mt-16 mb-12">
-                    <h3 class="text-3xl font-bold mb-2 text-gold">Live Crypto Prices</h3>
-                    <p class="text-lg max-w-2xl mx-auto text-gray-300">Check the latest prices and trends for top cryptocurrencies!</p>
-                </div>
-                <div id="crypto-data" class="data-table mx-auto max-w-4xl">
-                    <table class="w-full">
-                        <thead>
-                            <tr>
-                                <th>Coin</th>
-                                <th>Price (USD)</th>
-                                <th>24h Change</th>
-                            </tr>
-                        </thead>
-                        <tbody id="crypto-table-body">
-                            <tr><td colspan="3" class="text-center p-8">Loading crypto data...</td></tr>
-                        </tbody>
-                    </table>
-                </div>
-                
-                <!-- Referral Link Section -->
-                <div class="text-center mt-16 mb-12">
-                    <h3 class="text-3xl font-bold mb-2 text-gold">Get Crypto Alerts</h3>
-                    <p class="text-lg max-w-2xl mx-auto text-gray-300">We're building Lurky, turning crypto X Spaces into real-time insights. Lurk with us.</p>
-                    <div class="mt-8">
-                        <a href="https://lurky.app/auth?referral-code=Ducksonx" target="_blank" class="btn-primary text-lg">Join Lurky</a>
-                    </div>
-                </div>
+                <div id="duckonomics-content">
+                    <div class="mt-12 space-y-16">
+                        <!-- Crypto Events Table -->
+                        <div>
+                            <h3 class="text-3xl font-bold mb-2 text-gold text-center">Crypto Market Events</h3>
+                            <p class="text-lg max-w-2xl mx-auto text-gray-300 text-center">Track key events impacting the crypto markets!</p>
+                            <div id="crypto-events" class="data-table mx-auto max-w-4xl">
+                                <table class="w-full">
+                                    <thead>
+                                        <tr>
+                                            <th>Date</th>
+                                            <th>Event</th>
+                                            <th>Impact</th>
+                                        </tr>
+                                    </thead>
+                                    <tbody id="events-table-body">
+                                        <tr><td colspan="3" class="text-center p-8">Loading crypto events...</td></tr>
+                                    </tbody>
+                                </table>
+                            </div>
+                        </div>
 
-                <!-- Yotta Shill Section -->
-                <div class="text-center mt-16 mb-12">
-                    <h3 class="text-3xl font-bold mb-2 text-gold">Turn Game Time into Win Time</h3>
-                    <p class="text-lg max-w-2xl mx-auto text-gray-300">Okay, I'm letting you in on a secret...🤫 This app is how over 1 million people are turning game time into win time. It's called Yotta, and it's legit. They're giving away $2 in game credits if you use my code JUSTDUCKIT. Don't sleep on this.</p>
-                    <div class="mt-8">
-                        <a href="https://members.withyotta.com/register?adjust_referrer=adjust_reftag%3DcnsDURajCCVIc&code=JUSTDUCKIT" target="_blank" class="btn-primary text-lg">Get Yotta</a>
-                    </div>
-                </div>
+                        <!-- Crypto Data Table -->
+                        <div>
+                            <h3 class="text-3xl font-bold mb-2 text-gold text-center">Live Crypto Prices</h3>
+                            <p class="text-lg max-w-2xl mx-auto text-gray-300 text-center">Check the latest prices and trends for top cryptocurrencies!</p>
+                            <div id="crypto-data" class="data-table mx-auto max-w-4xl">
+                                <table class="w-full">
+                                    <thead>
+                                        <tr>
+                                            <th>Coin</th>
+                                            <th>Price (USD)</th>
+                                            <th>24h Change</th>
+                                        </tr>
+                                    </thead>
+                                    <tbody id="crypto-table-body">
+                                        <tr><td colspan="3" class="text-center p-8">Loading crypto data...</td></tr>
+                                    </tbody>
+                                </table>
+                            </div>
+                        </div>
+                        
+                        <!-- Community Perks -->
+                        <div>
+                             <h3 class="text-3xl font-bold mb-8 text-gold text-center">Community Perks</h3>
+                            <div class="grid grid-cols-1 md:grid-cols-2 gap-12 max-w-4xl mx-auto">
+                                <!-- Lurky -->
+                                <div class="text-center">
+                                    <h4 class="text-2xl font-bold mb-2">Get Crypto Alerts</h4>
+                                    <p class="text-gray-300">We're building Lurky, turning crypto X Spaces into real-time insights. Lurk with us.</p>
+                                    <div class="mt-6">
+                                        <a href="https://lurky.app/auth?referral-code=Ducksonx" target="_blank" class="btn-primary">Join Lurky</a>
+                                    </div>
+                                </div>
+                                <!-- Yotta -->
+                                 <div class="text-center">
+                                    <h4 class="text-2xl font-bold mb-2">Turn Game Time into Win Time</h4>
+                                    <p class="text-gray-300">Okay, I'm letting you in on a secret...🤫 This app is how over 1 million people are turning game time into win time. It's called Yotta, and it's legit. They're giving away $2 in game credits if you use my code JUSTDUCKIT. Don't sleep on this.</p>
+                                    <div class="mt-6">
+                                        <a href="https://members.withyotta.com/register?adjust_referrer=adjust_reftag%3DcnsDURajCCVIc&code=JUSTDUCKIT" target="_blank" class="btn-primary">Get Yotta</a>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
 
-                <!-- Crypto Chatbot -->
-                <div class="text-center mt-16 mb-12">
-                    <h3 class="text-3xl font-bold mb-2 text-gold">QuackBot 🦆</h3>
-                    <p class="text-lg max-w-2xl mx-auto text-gray-300">Ask me anything about cryptocurrency!</p>
-                </div>
-                <div class="crypto-chatbot max-w-2xl mx-auto mt-6">
-                    <div id="crypto-chatbot-response" class="text-md mb-4 min-h-[6rem] flex items-center justify-center text-gray-400">
-                        Ask a question to get started. For a list of commands, type /help.
-                    </div>
-                    <div class="flex flex-col sm:flex-row gap-2">
-                        <input id="crypto-chatbot-input" type="text" placeholder="e.g., Explain what a blockchain is" class="w-full">
-                        <button id="crypto-chatbot-send">Ask</button>
+
+                        <!-- Crypto Chatbot -->
+                        <div>
+                             <h3 class="text-3xl font-bold mb-2 text-gold text-center">QuackBot 🦆</h3>
+                            <p class="text-lg max-w-2xl mx-auto text-gray-300 text-center">Ask me anything about cryptocurrency!</p>
+                            <div class="crypto-chatbot max-w-2xl mx-auto mt-6">
+                                <div id="crypto-chatbot-response" class="text-md mb-4 min-h-[6rem] flex items-center justify-center text-gray-400">
+                                    Ask a question to get started. For a list of commands, type /help.
+                                </div>
+                                <div class="flex flex-col sm:flex-row gap-2">
+                                    <input id="crypto-chatbot-input" type="text" placeholder="e.g., Explain what a blockchain is" class="w-full">
+                                    <button id="crypto-chatbot-send">Ask</button>
+                                </div>
+                            </div>
+                        </div>
                     </div>
                 </div>
             </div>
@@ -728,15 +754,6 @@
                             <a href="https://www.tiktok.com/@justtduckit" target="_blank" class="font-bold text-gold hover:underline">Follow Us &rarr;</a>
                         </div>
                     </div>
-                    <!-- Project Card -->
-                    <div class="content-card">
-                        <img src="https://i.imgur.com/Sq4XHVl.jpg" alt="AI Pioneer Program" class="w-full h-56 object-cover card-image" onerror="this.src='https://placehold.co/600x400/1a1a1a/e0e0e0?text=AI+Pioneers';">
-                        <div class="p-6">
-                            <h3 class="text-2xl font-bold mb-2">AI Pioneer Program</h3>
-                            <p class="text-gray-400 mb-6">Join our global community to learn real-world skills in AI and blockchain.</p>
-                            <a href="https://zenai.world" target="_blank" class="font-bold text-gold hover:underline">Join Now &rarr;</a>
-                        </div>
-                    </div>
                      <!-- Project Card -->
                     <div class="content-card">
                         <img src="https://i.imgur.com/KMnME5E.png" alt="Zen Arena" class="w-full h-56 object-cover card-image" onerror="this.src='https://placehold.co/600x400/1a1a1a/e0e0e0?text=Zen+Arena';">
@@ -744,15 +761,6 @@
                             <h3 class="text-2xl font-bold mb-2">Zen Arena</h3>
                             <p class="text-gray-400 mb-6">Test the world's best AI models all in one place. Discover the future of artificial intelligence.</p>
                             <a href="https://us.zenai.biz" target="_blank" class="font-bold text-gold hover:underline">Explore Arena &rarr;</a>
-                        </div>
-                    </div>
-                    <!-- Project Card -->
-                    <div class="content-card">
-                        <img src="https://i.imgur.com/e1lvzDL.jpeg" alt="Zora" class="w-full h-56 object-cover card-image" onerror="this.src='https://placehold.co/600x400/1a1a1a/e0e0e0?text=Zora';">
-                        <div class="p-6">
-                            <h3 class="text-2xl font-bold mb-2">JustDuckIt on Zora</h3>
-                            <p class="text-gray-400 mb-6">Create and collect onchain with us. Join the new creative economy.</p>
-                            <a href="https://zora.co/invite/justduckit" target="_blank" class="font-bold text-gold hover:underline">Explore on Zora &rarr;</a>
                         </div>
                     </div>
                 </div>
@@ -799,6 +807,38 @@
             </div>
         </section>
 
+        <!-- Partners Section -->
+        <section id="partners" class="py-20 md:py-32 bg-[#111] fade-in-section">
+            <div class="container mx-auto px-4">
+                <h2 class="section-title text-center mb-4">Our Esteemed <span class="text-gold">Partners</span></h2>
+                <p class="section-subtitle text-center mb-12">
+                    We're proud to collaborate with these amazing projects in the ecosystem.
+                </p>
+                <div class="grid grid-cols-2 md:grid-cols-2 lg:grid-cols-4 gap-8 items-center max-w-5xl mx-auto">
+                    <!-- Zen -->
+                    <a href="https://www.zenai.world/" target="_blank" class="flex flex-col items-center justify-center text-center no-underline">
+                        <img src="https://i.imgur.com/KMnME5E.png" alt="Zen Logo" class="max-h-16 grayscale hover:grayscale-0 transition-all duration-300">
+                        <p class="mt-4 text-sm font-semibold text-gray-400">Zen</p>
+                    </a>
+                    <!-- Quakk -->
+                    <a href="https://quakklife.com/" target="_blank" class="flex flex-col items-center justify-center text-center no-underline">
+                        <img src="https://i.imgur.com/qOmxNCQ.png" alt="Quakk Logo" class="max-h-16 grayscale hover:grayscale-0 transition-all duration-300">
+                        <p class="mt-4 text-sm font-semibold text-gray-400">Quakk</p>
+                    </a>
+                    <!-- Solana Strays -->
+                    <a href="https://solanastrays.com/" target="_blank" class="flex flex-col items-center justify-center text-center no-underline">
+                        <img src="https://i.imgur.com/2x3n6oZ.png" alt="Solana Strays Logo" class="max-h-16 grayscale hover:grayscale-0 transition-all duration-300">
+                        <p class="mt-4 text-sm font-semibold text-gray-400">Solana Strays</p>
+                    </a>
+                    <!-- SolOnChain -->
+                    <a href="https://www.solonchain.net/" target="_blank" class="flex flex-col items-center justify-center text-center no-underline">
+                        <img src="https://i.imgur.com/A8R1yLY.png" alt="SolOnChain Logo" class="max-h-16 grayscale hover:grayscale-0 transition-all duration-300">
+                        <p class="mt-4 text-sm font-semibold text-gray-400">SolOnChain</p>
+                    </a>
+                </div>
+            </div>
+        </section>
+
         <!-- Collective Movement Section -->
         <section id="collective-movement" class="py-20 md:py-32 bg-[#111] fade-in-section">
             <div class="container mx-auto px-4">
@@ -809,7 +849,7 @@
                 <div class="scroll-gallery">
                     <div class="gallery-item">
                         <div class="content-card h-full">
-                            <img src="https://i.imgur.com/P1X7Q55.jpeg" alt="3D Duck Giveaway" class="w-full h-80 object-cover card-image" style="object-position: center 20%;" onerror="this.src='https://placehold.co/600x600/1a1a1a/ffd700?text=Art';">
+                            <img src="https://i.imgur.com/P1X7Q55.jpeg" alt="3D Duck Giveaway" class="w-full h-80 object-cover card-image" onerror="this.src='https://placehold.co/600x600/1a1a1a/ffd700?text=Art';">
                             <div class="p-6">
                                 <h3 class="text-2xl font-bold mb-1">3D Duck Giveaway</h3>
                                 <p class="text-gray-400">by Cavan</p>
@@ -864,11 +904,9 @@
         <div class="container mx-auto px-4 text-center">
             <img src="https://i.imgur.com/otNEI2M.png" alt="Just Duck It Logo" class="w-16 h-16 rounded-full mx-auto mb-6" onerror="this.src='https://placehold.co/64x64/0a0a0a/FFD700?text=JDI';">
             <h4 class="text-3xl md:text-4xl font-bold">Get in Touch</h4>
-            <p class="text-gray-400 mt-2 mb-8">The best way to reach us is through our social channels.</p>
-            <div class="flex justify-center space-x-6">
-                <a href="https://x.com/ducksonx?s=21" target="_blank" class="text-gray-400 hover:text-gold transition-colors">Twitter / X</a>
-                <a href="https://www.tiktok.com/@justtduckit" target="_blank" class="text-gray-400 hover:text-gold transition-colors">TikTok</a>
-                <a href="https://www.instagram.com/duckxmeta?igsh=MWlqa3F1dGc1d24wdg%3D%3D&utm_source=qr" target="_blank" class="text-gray-400 hover:text-gold transition-colors">Instagram</a>
+            <p class="text-gray-400 mt-2 mb-8">The best way to reach the team is to join our Discord and submit a ticket.</p>
+            <div class="mt-8">
+                <a href="https://discord.com/invite/e6b4RnXRkE" target="_blank" class="btn-primary text-lg">Join Discord &amp; Get Support</a>
             </div>
             <div class="mt-12 text-sm text-gray-600">
                 <p>&copy; 2025 Just Duck It. All rights reserved.</p>
@@ -977,6 +1015,24 @@
 
             videoObserver.observe(skaterVideo);
         }
+
+        // --- Duckonomics Accordion ---
+        const duckonomicsToggle = document.getElementById('duckonomics-toggle');
+        const duckonomicsContent = document.getElementById('duckonomics-content');
+        const duckonomicsArrow = document.getElementById('duckonomics-arrow');
+
+        duckonomicsToggle.addEventListener('click', () => {
+            if (duckonomicsContent.style.maxHeight) {
+                duckonomicsContent.style.maxHeight = null;
+                duckonomicsContent.style.opacity = '0';
+                duckonomicsArrow.classList.remove('rotate-180');
+            } else {
+                duckonomicsContent.style.maxHeight = duckonomicsContent.scrollHeight + "px";
+                duckonomicsContent.style.opacity = '1';
+                duckonomicsArrow.classList.add('rotate-180');
+            }
+        });
+
 
         // --- Crypto Data Logic ---
         async function fetchCryptoData() {
@@ -1187,5 +1243,4 @@
 
 </body>
 </html>
-
 
