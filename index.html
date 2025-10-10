@@ -303,164 +303,6 @@
             white-space: pre-wrap;
         }
 
-        /* --- QUACKBOT CHATBOT STYLES --- */
-        #chatbot-container {
-            position: fixed;
-            bottom: 20px;
-            right: 20px;
-            z-index: 1000;
-        }
-        #chatbot-toggle {
-            width: 60px;
-            height: 60px;
-            background: #ffd700;
-            border-radius: 50%;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            font-size: 32px;
-            cursor: pointer;
-            box-shadow: 0 8px 20px rgba(255, 215, 0, 0.3);
-            transition: all 0.3s ease;
-        }
-        #chatbot-toggle:hover {
-            transform: scale(1.1) rotate(10deg);
-        }
-        #chat-window {
-            position: absolute;
-            bottom: 80px;
-            right: 0;
-            width: 350px;
-            max-width: 90vw;
-            height: 500px;
-            max-height: 80vh;
-            display: flex;
-            flex-direction: column;
-            background: rgba(18, 18, 18, 0.8);
-            backdrop-filter: blur(20px);
-            border: 1px solid rgba(255, 215, 0, 0.2);
-            border-radius: 16px;
-            box-shadow: 0 20px 40px rgba(0, 0, 0, 0.5);
-            overflow: hidden;
-            transform: translateY(20px) scale(0.95);
-            opacity: 0;
-            pointer-events: none;
-            transition: all 0.4s cubic-bezier(0.23, 1, 0.32, 1);
-        }
-        #chat-window.active {
-            transform: translateY(0) scale(1);
-            opacity: 1;
-            pointer-events: auto;
-        }
-        .chat-header {
-            padding: 16px;
-            border-bottom: 1px solid rgba(255, 215, 0, 0.2);
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-        }
-        .chat-header h3 {
-            font-size: 20px;
-            color: #ffd700;
-        }
-        #chat-close-btn {
-            background: none;
-            border: none;
-            color: white;
-            font-size: 24px;
-            cursor: pointer;
-            opacity: 0.7;
-            transition: opacity 0.2s;
-        }
-        #chat-close-btn:hover {
-            opacity: 1;
-        }
-        #chat-messages {
-            flex-grow: 1;
-            padding: 16px;
-            overflow-y: auto;
-            display: flex;
-            flex-direction: column;
-            gap: 12px;
-        }
-        #chat-messages::-webkit-scrollbar { width: 6px; }
-        #chat-messages::-webkit-scrollbar-track { background: transparent; }
-        #chat-messages::-webkit-scrollbar-thumb { background: rgba(255, 215, 0, 0.5); border-radius: 3px; }
-        .chat-message {
-            padding: 10px 15px;
-            border-radius: 18px;
-            max-width: 80%;
-            line-height: 1.5;
-        }
-        .user-message {
-            background: #ffd700;
-            color: #0a0a0a;
-            align-self: flex-end;
-            border-bottom-right-radius: 4px;
-        }
-        .bot-message {
-            background: #2a2a2a;
-            color: #e0e0e0;
-            align-self: flex-start;
-            border-bottom-left-radius: 4px;
-        }
-        .bot-typing {
-            align-self: flex-start;
-            display: flex;
-            gap: 4px;
-            padding: 12px 15px;
-        }
-        .bot-typing span {
-            width: 8px;
-            height: 8px;
-            background-color: rgba(255, 215, 0, 0.6);
-            border-radius: 50%;
-            animation: typing-bubble 1.2s infinite ease-in-out;
-        }
-        .bot-typing span:nth-child(2) { animation-delay: 0.2s; }
-        .bot-typing span:nth-child(3) { animation-delay: 0.4s; }
-        @keyframes typing-bubble {
-            0%, 80%, 100% { transform: scale(0); }
-            40% { transform: scale(1.0); }
-        }
-        .chat-input-area {
-            padding: 16px;
-            border-top: 1px solid rgba(255, 215, 0, 0.2);
-            display: flex;
-            gap: 10px;
-        }
-        #chat-input {
-            flex-grow: 1;
-            background: rgba(0, 0, 0, 0.2);
-            border: 1px solid #444;
-            border-radius: 50px;
-            padding: 10px 18px;
-            color: white;
-            outline: none;
-            transition: border-color 0.3s;
-        }
-        #chat-input:focus {
-            border-color: #ffd700;
-        }
-        #chat-send-btn {
-            width: 44px;
-            height: 44px;
-            flex-shrink: 0;
-            background: #ffd700;
-            color: #0a0a0a;
-            border: none;
-            border-radius: 50%;
-            cursor: pointer;
-            transition: all 0.3s ease;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            font-size: 20px;
-        }
-        #chat-send-btn:hover {
-            transform: scale(1.1);
-        }
-
     </style>
 </head>
 <body class="antialiased">
@@ -531,10 +373,11 @@
                 <p class="section-subtitle">
                    We're pioneering a unique approach by merging the worlds of Web2 and Web3. By leveraging the broad reach of familiar social platforms with the ownership and transparency of blockchain technology, we're building our community in a truly modern way. This fusion allows everyone to connect with our mission of saving birds through an engaging and verifiable experience.
                 </p>
-                <div class="mt-12">
+                <div class="mt-12 flex flex-col items-center space-y-4">
                      <a href="https://magiceden.us/marketplace/decent_ducks" target="_blank" class="btn-primary text-lg">
                         Grab your Duck
                     </a>
+                    <a href="https://duckxmeta.github.io/The-Solana-Duck-Chronicles/" target="_blank" class="text-gold hover:underline font-semibold">📖 Ducklopedia: Explore the Lore</a>
                 </div>
             </div>
         </section>
@@ -951,29 +794,10 @@
         </div>
     </footer>
 
-    <!-- QUACKBOT CHATBOT HTML -->
-    <div id="chatbot-container">
-        <div id="chat-window">
-            <div class="chat-header">
-                <h3>QuackBot</h3>
-                <button id="chat-close-btn">&times;</button>
-            </div>
-            <div id="chat-messages">
-               <div class="chat-message bot-message">
-                 Quack! Welcome to the pond. Curious about the tech behind our ducks? Try asking me: "explain what are NFTs"
-               </div>
-            </div>
-            <div class="chat-input-area">
-                <input type="text" id="chat-input" placeholder="Ask a duck...">
-                <button id="chat-send-btn">
-                    <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><line x1="22" y1="2" x2="11" y2="13"></line><polygon points="22 2 15 22 11 13 2 9 22 2"></polygon></svg>
-                </button>
-            </div>
-        </div>
-        <div id="chatbot-toggle">
-            <span>🦆</span>
-        </div>
-    </div>
+    <!-- Duck Chronicles Easter Egg -->
+    <a href="https://duckxmeta.github.io/The-Solana-Duck-Chronicles/" target="_blank" title="The Duck Chronicles" class="fixed bottom-5 right-5 z-[1000] w-16 h-16 bg-[#ffd700] rounded-full flex items-center justify-center text-4xl text-black cursor-pointer shadow-lg transition-transform hover:scale-110 hover:rotate-12">
+        🦆
+    </a>
 
 
     <script>
@@ -1188,92 +1012,6 @@
                 handleChatbotQuery();
             }
         });
-
-        // --- QuackBot Logic ---
-        const chatbotToggle = document.getElementById('chatbot-toggle');
-        const chatWindow = document.getElementById('chat-window');
-        const closeBtn = document.getElementById('chat-close-btn');
-        const sendBtn = document.getElementById('chat-send-btn');
-        const chatInput = document.getElementById('chat-input');
-        const messagesContainer = document.getElementById('chat-messages');
-        
-        const QUACKBOT_API_KEY = 'AIzaSyCFzQEefz1PLz9RgzOWt-tmuCJwPwQu-Mw';
-        const QUACKBOT_API_URL = `https://generativelanguage.googleapis.com/v1beta/models/gemini-2.0-flash:generateContent?key=${QUACKBOT_API_KEY}`;
-        let chatHistory = [];
-
-        chatbotToggle.addEventListener('click', () => { chatWindow.classList.toggle('active'); });
-        closeBtn.addEventListener('click', () => { chatWindow.classList.remove('active'); });
-        sendBtn.addEventListener('click', sendQuackBotMessage);
-        chatInput.addEventListener('keydown', (e) => { if (e.key === 'Enter') { e.preventDefault(); sendQuackBotMessage(); } });
-
-        function sendQuackBotMessage() {
-            const userInput = chatInput.value.trim();
-            if (userInput === '') return;
-            addQuackBotMessage(userInput, 'user');
-            chatInput.value = '';
-            showQuackBotTypingIndicator();
-            getQuackBotResponse(userInput);
-        }
-
-        function addQuackBotMessage(text, sender) {
-            const messageElement = document.createElement('div');
-            messageElement.classList.add('chat-message', `${sender}-message`);
-            messageElement.textContent = text;
-            messagesContainer.appendChild(messageElement);
-            scrollToQuackBotBottom();
-        }
-
-        function showQuackBotTypingIndicator() {
-            const typingElement = document.createElement('div');
-            typingElement.classList.add('bot-typing');
-            typingElement.id = 'typing-indicator';
-            typingElement.innerHTML = `<span></span><span></span><span></span>`;
-            messagesContainer.appendChild(typingElement);
-            scrollToQuackBotBottom();
-        }
-
-        function removeQuackBotTypingIndicator() {
-            const typingElement = document.getElementById('typing-indicator');
-            if (typingElement) {
-                typingElement.remove();
-            }
-        }
-
-        function scrollToQuackBotBottom() {
-            messagesContainer.scrollTop = messagesContainer.scrollHeight;
-        }
-
-        async function getQuackBotResponse(userInput) {
-            const systemPrompt = "You are QuackBot, a sophisticated and friendly duck who is an expert on the 'Just Duck It' brand, luxury, and Web3. Your personality is charming and a little bit sassy. You end most of your sentences with a fun duck-related word or sound, like 'quack!', 'waddle on', or 'splash!'. Keep your answers helpful but also entertaining. Do not mention that you are an AI or language model. You are a duck.";
-            chatHistory.push({ role: "user", parts: [{ text: userInput }] });
-            const payload = {
-                contents: [{ role: "model", parts: [{ text: systemPrompt }] }, ...chatHistory]
-            };
-
-            try {
-                const response = await fetch(QUACKBOT_API_URL, {
-                    method: 'POST',
-                    headers: { 'Content-Type': 'application/json' },
-                    body: JSON.stringify(payload)
-                });
-                if (!response.ok) {
-                    throw new Error(`API request failed with status ${response.status}`);
-                }
-                const data = await response.json();
-                removeQuackBotTypingIndicator();
-                if (data.candidates && data.candidates.length > 0) {
-                    const botResponse = data.candidates[0].content.parts[0].text;
-                    addQuackBotMessage(botResponse, 'bot');
-                    chatHistory.push({ role: "model", parts: [{ text: botResponse }] });
-                } else {
-                    addQuackBotMessage("This ducky is a bit puzzled right now. Try again later, quack!", 'bot');
-                }
-            } catch (error) {
-                console.error("Error fetching bot response:", error);
-                removeQuackBotTypingIndicator();
-                addMessage("Oh no, my pond seems to have lost connection! Please try again in a bit. Waddle on.", 'bot');
-            }
-        }
 
     });
     </script>
