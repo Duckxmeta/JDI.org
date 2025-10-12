@@ -343,6 +343,7 @@
             <a href="#flock" class="menu-link">The Flock</a>
             <a href="#projects" class="menu-link">Projects</a>
             <a href="#merch" class="menu-link">Merch</a>
+            <a href="#soundtrack" class="menu-link">Soundtrack</a>
             <a href="#community" class="menu-link">Community</a>
             <a href="#partners" class="menu-link">Partners</a>
             <a href="#collective-movement" class="menu-link">Art Collective</a>
@@ -358,7 +359,7 @@
                     Just Duck It
                 </h1>
                 <p class="mt-4 text-lg md:text-xl max-w-2xl mx-auto text-gray-300">
-                    A Tennessee bird sanctuary building a new kind of community.
+                    A Southern Sanctuary building a new kind of community.
                 </p>
                 <div class="mt-8">
                     <a href="https://duckxmeta.github.io/Ducks-next-12mo/" target="_blank" class="btn-primary">Roadmap</a>
@@ -674,6 +675,35 @@
             </div>
         </section>
 
+        <!-- Soundtrack Section -->
+        <section id="soundtrack" class="py-20 md:py-32 fade-in-section">
+            <div class="container mx-auto px-4">
+                <h2 class="section-title text-center mb-4">Official <span class="text-gold">Soundtrack</span></h2>
+                <p class="section-subtitle text-center mb-12">
+                    Press play and vibe with us while you explore.
+                </p>
+                <div class="max-w-3xl mx-auto bg-[#1a1a1a] rounded-lg p-8">
+                    <div class="flex items-center space-x-6">
+                        <button id="play-pause-btn" class="w-20 h-20 bg-[#ffd700] rounded-full flex items-center justify-center text-black cursor-pointer shadow-lg transition-transform hover:scale-110 flex-shrink-0">
+                            <svg id="play-icon" class="w-10 h-10" fill="currentColor" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg"><path d="M4.536 2.536A1 1 0 016.207 3.207l9.428 6.286a1 1 0 010 1.514l-9.428 6.286a1 1 0 01-1.671-.757V3.293a1 1 0 01.329-.757z"></path></svg>
+                            <svg id="pause-icon" class="w-10 h-10 hidden" fill="currentColor" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg"><path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zM8 7a1 1 0 00-1 1v4a1 1 0 001 1h1a1 1 0 001-1V8a1 1 0 00-1-1H8zm4 0a1 1 0 00-1 1v4a1 1 0 001 1h1a1 1 0 001-1V8a1 1 0 00-1-1h-1z" clip-rule="evenodd"></path></svg>
+                        </button>
+                        <div>
+                            <h3 id="song-title" class="text-2xl font-bold text-white"></h3>
+                            <p id="song-artist" class="text-gray-400"></p>
+                        </div>
+                    </div>
+                    <div id="lyrics-container" class="mt-8 text-gray-400 h-64 overflow-y-auto text-lg leading-loose pr-4">
+                        <!-- Lyrics populated by JS -->
+                    </div>
+                    <div id="tracklist" class="mt-8 border-t border-gray-700 pt-6">
+                        <h4 class="text-xl font-bold mb-4 text-white">Tracklist</h4>
+                        <!-- JS will populate this -->
+                    </div>
+                </div>
+            </div>
+        </section>
+
         <!-- Community Section -->
         <section id="community" class="py-20 md:py-32 fade-in-section">
             <div class="container mx-auto px-4 text-center">
@@ -806,6 +836,8 @@
     <a href="https://duckxmeta.github.io/Ducklopedia/" target="_blank" title="The Ducklopedia" class="fixed bottom-5 right-5 z-[1000] w-16 h-16 bg-[#ffd700] rounded-full flex items-center justify-center text-4xl text-black cursor-pointer shadow-lg transition-transform hover:scale-110 hover:rotate-12">
         🦆
     </a>
+    
+    <audio id="background-music" loop></audio>
 
 
     <script>
@@ -1020,6 +1052,246 @@
                 handleChatbotQuery();
             }
         });
+        
+        // --- Music Player Logic ---
+        const music = document.getElementById('background-music');
+        const playPauseBtn = document.getElementById('play-pause-btn');
+        const playIcon = document.getElementById('play-icon');
+        const pauseIcon = document.getElementById('pause-icon');
+        const lyricsContainer = document.getElementById('lyrics-container');
+        const songTitleEl = document.getElementById('song-title');
+        const songArtistEl = document.getElementById('song-artist');
+        const tracklistContainer = document.getElementById('tracklist');
+
+        const playlist = [
+            {
+                title: "Decent Ducks",
+                artist: "@Duckxmeta",
+                src: "https://files.catbox.moe/lpxaiv.wav",
+                lyrics: [
+                    { time: 0, text: "[Intro]" },
+                    { time: 5, text: "Lyrics coming soon..." },
+                ]
+            },
+            {
+                title: "Damn, you can grow",
+                artist: "@Duckxmeta",
+                src: "https://files.catbox.moe/rob100.wav",
+                lyrics: [
+                    { time: 0, text: "(Intro Music)" },
+                    { time: 13, text: "Kettle screams the start of the scene," },
+                    { time: 15, text: "fill up cracked ceramic with what if and has been." },
+                    { time: 18, text: "Got this blueprint I drew with a younger hand," },
+                    { time: 21, text: "now the architect's building on shifting sand." },
+                    { time: 24, text: "Every open tab is a different door," },
+                    { time: 27, text: "a thousand lives I'm not living and a thousand more." },
+                    { time: 30, text: "They're all posted at the summit, the view from the peak," },
+                    { time: 33, text: "I'm just trying to survive the middle of the week." },
+                    { time: 36, text: "But there's a rhythm that's beating a steady sound," },
+                    { time: 39, text: "on this beautiful, terrifying, familiar ground." },
+                    { time: 42, text: "And I'm finding my footing in the push and the pull," },
+                    { time: 45, text: "my hope is half empty, my hope is half full." },
+                    { time: 48, text: "Just leaning into the motion," },
+                    { time: 51, text: "trusting the flow," },
+                    { time: 54, text: "got a long way to go..." },
+                    { time: 58, text: "But damn, I can grow." },
+                    { time: 61, text: "(Music)" },
+                    { time: 76, text: "Took a midnight walk past the city canal," },
+                    { time: 79, text: "to silence the static and the digital drawl." },
+                    { time: 82, text: "Orange street lights were slick on the water's dark face," },
+                    { time: 85, text: "the whole world was sleeping but I felt out of place." },
+                    { time: 88, text: "Then a duck cut the surface, a silent design," },
+                    { time: 91, text: "leaving a clean, steady V and a confident line." },
+                    { time: 94, text: "No thrashing, no questions, just cleaving the black," },
+                    { time: 97, text: "a quiet lesson in never looking back." },
+                    { time: 100, text: "And that rhythm starts beating that steady old sound," },
+                    { time: 103, text: "on this beautiful, terrifying, familiar ground." },
+                    { time: 106, text: "And I'm finding my footing in the push and the pull," },
+                    { time: 109, text: "my hope is half empty, my hope is half full." },
+                    { time: 112, text: "Just leaning into the motion," },
+                    { time: 115, text: "trusting the flow," },
+                    { time: 118, text: "got a long way to go..." },
+                    { time: 122, text: "But damn, I can grow." },
+                    { time: 125, text: "(Music)" },
+                    { time: 140, text: "They don't tell you the map is a thing that you create," },
+                    { time: 144, text: "with every small victory and every mistake." },
+                    { time: 147, text: "That perfection's a phantom, a well-marketed lie," },
+                    { time: 150, text: "the real work of art is the reason you try." },
+                    { time: 153, text: "A beautiful chaos, the color, the ache," },
+                    { time: 156, text: "it's all in the wake that you make." },
+                    { time: 159, text: "(Music Outro)" }
+                ]
+            },
+            {
+                title: "No turning back",
+                artist: "@Duckxmeta",
+                src: "https://files.catbox.moe/q4q9vf.wav",
+                lyrics: [
+                     { time: 0, text: "[Music Intro]" },
+                    { time: 10, text: "Feel the fire in my soul, a story to be told" },
+                    { time: 15, text: "Every step a new design, a future to unfold" },
+                    { time: 20, text: "No turning back from the path I'm on" },
+                    { time: 25, text: "With every beat, a victory's won" },
+                ]
+            }
+        ];
+
+        let currentTrackIndex = 0;
+
+        function loadTrack(trackIndex) {
+            const track = playlist[trackIndex];
+            if (!track.src) {
+                console.error("Audio source for track " + track.title + " is not set.");
+                alert("The audio for '" + track.title + "' is not available yet. Please add a valid URL for the song in the code.");
+                return;
+            }
+            music.src = track.src;
+            songTitleEl.textContent = track.title;
+            songArtistEl.textContent = track.artist;
+            
+            populateLyrics(track.lyrics);
+            
+            playIcon.classList.remove('hidden');
+            pauseIcon.classList.add('hidden');
+            updateTracklistUI();
+        }
+
+        function populateTracklist() {
+             tracklistContainer.innerHTML = '<h4 class="text-xl font-bold mb-4 text-white">Tracklist</h4>';
+            playlist.forEach((song, index) => {
+                const trackItem = document.createElement('div');
+                trackItem.className = 'p-3 rounded-lg cursor-pointer hover:bg-gray-800 flex justify-between items-center transition-colors';
+                trackItem.dataset.index = index;
+
+                let titleHtml = `<p class="font-semibold text-white">${song.title}</p><p class="text-sm text-gray-400">${song.artist}</p>`;
+                if (!song.src) {
+                     titleHtml += `<p class="text-xs text-yellow-500"> (Coming Soon)</p>`;
+                }
+
+                trackItem.innerHTML = `
+                    <div>${titleHtml}</div>
+                    <div class="track-status-icon"></div>
+                `;
+
+                trackItem.addEventListener('click', () => {
+                    if (currentTrackIndex === index && !music.paused) return; // Don't reload if playing
+                    
+                    if (!playlist[index].src) {
+                         alert("This song is coming soon!");
+                        return;
+                    }
+                    
+                    const wasPlaying = !music.paused;
+                    currentTrackIndex = index;
+                    loadTrack(currentTrackIndex);
+                    
+                    if(wasPlaying){
+                        music.play().then(() => {
+                           playIcon.classList.add('hidden');
+                           pauseIcon.classList.remove('hidden');
+                           updateTracklistUI();
+                        });
+                    } else {
+                         updateTracklistUI();
+                    }
+                });
+                tracklistContainer.appendChild(trackItem);
+            });
+             updateTracklistUI();
+        }
+
+        function updateTracklistUI() {
+            const trackItems = tracklistContainer.querySelectorAll('.p-3');
+            trackItems.forEach((item, index) => {
+                const iconContainer = item.querySelector('.track-status-icon');
+                item.classList.remove('bg-gray-700');
+                if (iconContainer) iconContainer.innerHTML = '';
+                
+                if (index === currentTrackIndex) {
+                    item.classList.add('bg-gray-700');
+                     if (!music.paused) {
+                         if (iconContainer) iconContainer.innerHTML = `<svg class="w-5 h-5 text-gold" fill="currentColor" viewBox="0 0 20 20"><path d="M5 4a1 1 0 00-2 0v12a1 1 0 002 0V4zm10 0a1 1 0 00-2 0v12a1 1 0 002 0V4z"/></svg>`;
+                     }
+                }
+            });
+        }
+
+
+        function populateLyrics(lyrics) {
+            lyricsContainer.innerHTML = '';
+            lyrics.forEach(line => {
+                const p = document.createElement('p');
+                p.textContent = line.text;
+                p.dataset.time = line.time;
+                p.className = 'transition-colors duration-300';
+                lyricsContainer.appendChild(p);
+            });
+        }
+
+        let currentLine = null;
+
+        function updateLyrics() {
+            const lyrics = playlist[currentTrackIndex].lyrics;
+            const currentTime = music.currentTime;
+            let activeLine = lyricsContainer.children[0];
+
+            for (let i = 0; i < lyrics.length; i++) {
+                if (currentTime >= lyrics[i].time) {
+                    activeLine = lyricsContainer.children[i];
+                }
+            }
+            
+            if (currentLine !== activeLine) {
+                if(currentLine) {
+                    currentLine.classList.remove('text-gold', 'font-bold');
+                }
+                activeLine.classList.add('text-gold', 'font-bold');
+                currentLine = activeLine;
+                activeLine.scrollIntoView({ behavior: 'smooth', block: 'center' });
+            }
+        }
+
+        if (playPauseBtn && music) {
+            loadTrack(currentTrackIndex); // Load initial track
+            populateTracklist();
+            
+            playPauseBtn.addEventListener('click', () => {
+                if (!music.src || music.src === window.location.href) { // Check if src is not set or is base URL
+                    alert("Please select a track to play.");
+                    return;
+                }
+
+                if (music.paused) {
+                    music.play();
+                } else {
+                    music.pause();
+                }
+            });
+            
+            music.onplay = function() {
+                playIcon.classList.add('hidden');
+                pauseIcon.classList.remove('hidden');
+                updateTracklistUI();
+            };
+            
+            music.onpause = function() {
+                playIcon.classList.remove('hidden');
+                pauseIcon.classList.add('hidden');
+                updateTracklistUI();
+            };
+
+            music.addEventListener('timeupdate', updateLyrics);
+
+            music.onended = function() {
+                playIcon.classList.remove('hidden');
+                pauseIcon.classList.add('hidden');
+                 if(currentLine) {
+                    currentLine.classList.remove('text-gold', 'font-bold');
+                }
+                lyricsContainer.children[0].scrollIntoView({ behavior: 'smooth', block: 'center' });
+                updateTracklistUI();
+            };
+        }
 
     });
     </script>
