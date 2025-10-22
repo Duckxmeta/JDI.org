@@ -103,12 +103,12 @@
         #menu-overlay nav a {
             color: #a0a0a0;
             font-family: 'Playfair Display', serif;
-            font-size: 2.5rem; /* 40px */
+            font-size: 2.2rem; /* Slightly smaller to fit items */
             font-weight: 700;
             text-decoration: none;
             transition: color 0.3s ease, transform 0.3s ease;
             display: block;
-            margin: 1rem 0;
+            margin: 0.8rem 0; /* Adjusted margin */
         }
         #menu-overlay nav a:hover {
             color: #ffd700;
@@ -669,7 +669,7 @@
                 <p class="section-subtitle text-center mb-12">
                     We're proud to collaborate with these amazing projects in the ecosystem.
                 </p>
-                <div class="grid grid-cols-2 md:grid-cols-2 lg:grid-cols-4 gap-8 items-center max-w-5xl mx-auto">
+                <div class="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-5 gap-8 items-center max-w-5xl mx-auto">
                     <!-- Zen -->
                     <a href="https://www.zenai.world/" target="_blank" class="flex flex-col items-center justify-center text-center no-underline">
                         <img src="https://i.imgur.com/KMnME5E.png" alt="Zen Logo" class="max-h-16 grayscale hover:grayscale-0 transition-all duration-300">
@@ -689,6 +689,11 @@
                     <a href="https://www.solonchain.net/" target="_blank" class="flex flex-col items-center justify-center text-center no-underline">
                         <img src="https://i.imgur.com/A8R1yLY.png" alt="SolOnChain Logo" class="max-h-16 grayscale hover:grayscale-0 transition-all duration-300">
                         <p class="mt-4 text-sm font-semibold text-gray-400">SolOnChain</p>
+                    </a>
+                    <!-- SOLGods -->
+                    <a href="https://x.com/SOLGodNFTs" target="_blank" class="flex flex-col items-center justify-center text-center no-underline">
+                        <img src="https://i.imgur.com/ytSe6bY.jpeg" alt="SOLGods Logo" class="max-h-16 grayscale hover:grayscale-0 transition-all duration-300">
+                        <p class="mt-4 text-sm font-semibold text-gray-400">SOLGods</p>
                     </a>
                 </div>
             </div>
@@ -925,8 +930,6 @@
                 tableBody.appendChild(row);
             });
         }
-
-        // --- Crypto Chatbot Logic ---
         
         // Initial data fetch for crypto section
         fetchCryptoData();
