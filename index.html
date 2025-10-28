@@ -22,6 +22,8 @@
     <meta name="twitter:image" content="https://i.imgur.com/otNEI2M.png">
     
     <script src="https://cdn.tailwindcss.com"></script>
+    <!-- Elfsight Twitter Feed -->
+    <script src="https://elfsightcdn.com/platform.js" async></script>
     <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@700;900&family=Inter:wght@300;400;500&display=swap" rel="stylesheet">
     
     <style>
@@ -103,7 +105,7 @@
         #menu-overlay nav a {
             color: #a0a0a0;
             font-family: 'Playfair Display', serif;
-            font-size: 2.2rem; /* Slightly smaller to fit items */
+            font-size: 2.2rem; /* Slightly smaller to fit new item */
             font-weight: 700;
             text-decoration: none;
             transition: color 0.3s ease, transform 0.3s ease;
@@ -512,7 +514,7 @@
                     <div class="gallery-item"><img src="https://i.imgur.com/CgXDM7n.jpeg" alt="Rescued bird 17" onerror="this.src='https://placehold.co/400x500/111111/e0e0e0?text=Bird';"></div>
                     <div class="gallery-item"><img src="https://i.imgur.com/osg6DVb.jpeg" alt="Rescued bird 18" onerror="this.src='https://placehold.co/400x500/111111/e0e0e0?text=Bird';"></div>
                     <div class="gallery-item"><img src="https://i.imgur.com/IWXDsZa.jpeg" alt="Rescued bird 19" onerror="this.src='https://placehold.co/400x500/111111/e0e0e0?text=Bird';"></div>
-                    <div class="gallery-item"><img src="https://i.imgur.com/k3Rduas.jpeg" alt="Rescued bird 20" onerror="this.src='https://placehold.co/400x500/111111/e0e0e0?text=Bird';"></div>
+                    <div class="gallery-item"><img src="httpsG://i.imgur.com/k3Rduas.jpeg" alt="Rescued bird 20" onerror="this.src='https://placehold.co/400x500/111111/e0e0e0?text=Bird';"></div>
                     <div class="gallery-item"><img src="https://i.imgur.com/4xFPsoA.jpeg" alt="Rescued bird 21" onerror="this.src='https://placehold.co/400x500/111111/e0e0e0?text=Bird';"></div>
                     <div class="gallery-item"><img src="https://i.imgur.com/hO4vfzL.jpeg" alt="Rescued bird 22" onerror="this.src='https://placehold.co/400x500/111111/e0e0e0?text=Bird';"></div>
                     <div class="gallery-item"><img src="https://i.imgur.com/Xtj3MUW.jpeg" alt="Rescued bird 23" onerror="this.src='https://placehold.co/400x500/111111/e0e0e0?text=Bird';"></div>
@@ -782,9 +784,18 @@
         </div>
     </footer>
 
-    <!-- Duck Chronicles Easter Egg -->
-    <a href="https://duckxmeta.github.io/D-Ducks-v1/" target="_blank" title="D & Ducks Quest" class="fixed bottom-5 right-5 z-[1000] w-16 h-16 bg-[#ffd700] rounded-full flex items-center justify-center text-4xl text-black cursor-pointer shadow-lg transition-transform hover:scale-110 hover:rotate-12">
-        🦆
+    <!-- Live X Spaces Link -->
+    <a href="https://x.com/ducksonx?s=21" target="_blank" title="Join our X Space!" class="fixed bottom-6 right-6 z-[1000] w-24 h-24 flex items-center justify-center cursor-pointer transition-transform hover:scale-110 group">
+        <div class="relative w-16 h-16">
+            <!-- Mic Icon -->
+            <div class="absolute -top-3 left-1/2 -translate-x-1/2 z-20 w-8 h-8 bg-red-600 rounded-full flex items-center justify-center text-white p-1 shadow-lg transition-transform group-hover:scale-110">
+                <svg class="w-5 h-5" fill="currentColor" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg"><path fill-rule="evenodd" d="M7 4a3 3 0 016 0v4a3 3 0 11-6 0V4zm4 10.93A7.001 7.001 0 0017 8a1 1 0 10-2 0a5 5 0 01-4.5 4.93V17a1 1 0 102 0v-2.07zM4 8a1 1 0 10-2 0a7.001 7.001 0 006 6.93V17a1 1 0 102 0v-2.07A5 5 0 015 8z" clip-rule="evenodd"></path></svg>
+            </div>
+            <!-- Profile Picture -->
+            <img src="https://i.imgur.com/U1zzvR5.jpeg" alt="X Profile" class="relative z-10 w-full h-full rounded-full border-4 border-red-600 shadow-lg">
+            <!-- Glowing Ping Ring -->
+            <div class="absolute top-0 left-0 z-0 w-full h-full rounded-full bg-red-600 opacity-75 animate-ping"></div>
+        </div>
     </a>
     
     <audio id="background-music" loop></audio>
