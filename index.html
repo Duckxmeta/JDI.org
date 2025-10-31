@@ -22,8 +22,6 @@
     <meta name="twitter:image" content="https://i.imgur.com/otNEI2M.png">
     
     <script src="https://cdn.tailwindcss.com"></script>
-    <!-- Elfsight Twitter Feed -->
-    <script src="https://elfsightcdn.com/platform.js" async></script>
     <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@700;900&family=Inter:wght@300;400;500&display=swap" rel="stylesheet">
     
     <style>
@@ -105,12 +103,12 @@
         #menu-overlay nav a {
             color: #a0a0a0;
             font-family: 'Playfair Display', serif;
-            font-size: 2.2rem; /* Slightly smaller to fit new item */
+            font-size: 2.1rem; /* Adjusted for 12 items */
             font-weight: 700;
             text-decoration: none;
             transition: color 0.3s ease, transform 0.3s ease;
             display: block;
-            margin: 0.8rem 0; /* Adjusted margin */
+            margin: 0.6rem 0; /* Adjusted for 12 items */
         }
         #menu-overlay nav a:hover {
             color: #ffd700;
@@ -157,6 +155,27 @@
             background-color: #ffd700;
             color: #0a0a0a;
         }
+        
+        .btn-secondary {
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            background-color: #2a2a2a;
+            color: #e0e0e0;
+            padding: 12px 32px;
+            text-transform: uppercase;
+            letter-spacing: 2px;
+            font-weight: 600;
+            font-size: 14px;
+            transition: background-color 0.3s ease, color 0.3s ease;
+            text-decoration: none;
+            border: 2px solid #4a4a4a;
+        }
+        .btn-secondary:hover {
+            background-color: #3a3a3a;
+            border-color: #ffd700;
+        }
+
 
         /* Section Styling */
         .section-title {
@@ -267,6 +286,15 @@
         .impact-high { color: #f87171; }
         .impact-medium { color: #ffd700; }
         .impact-low { color: #f87171; }
+
+        .icon-glow-container img {
+            filter: drop-shadow(0 0 8px rgba(255, 255, 255, 0.2));
+            transition: filter 0.3s ease, transform 0.3s ease;
+        }
+        .icon-glow-container:hover img {
+            filter: drop-shadow(0 0 14px rgba(255, 255, 255, 0.4));
+            transform: scale(1.1); /* Add a little pop on hover */
+        }
     </style>
 </head>
 <body class="antialiased">
@@ -305,6 +333,7 @@
             <a href="#web3-explainer" class="menu-link">What is Web3?</a>
             <a href="#duckonomics" class="menu-link">Duckonomics</a>
             <a href="#flock" class="menu-link">The Flock</a>
+            <a href="#donate" class="menu-link">Donate</a>
             <a href="#projects" class="menu-link">Projects</a>
             <a href="#merch" class="menu-link">Merch</a>
             <a href="#soundtrack" class="menu-link">Soundtrack</a>
@@ -471,14 +500,27 @@
                                 </table>
                             </div>
                         </div>
-                         <!-- Community Perks -->
+                        
+                        <!-- Live Collection Stats -->
+                        <div>
+                            <h3 class="text-3xl font-bold mb-2 text-gold text-center">Collection Live Chart</h3>
+                            <p class="text-lg max-w-2xl mx-auto text-gray-300 text-center">Track the Decent Ducks collection stats in real-time.</p>
+                            <div class="mt-6 rounded-lg overflow-hidden border-2 border-gold max-w-4xl mx-auto text-center">
+                                <a href="https://magiceden.us/analytics/decent_ducks" target="_blank" class="btn-primary inline-block my-8">
+                                    View Live Chart on Magic Eden
+                                </a>
+                            </div>
+                        </div>
+                        
+                        <!-- Community Perks -->
                         <div>
                              <h3 class="text-3xl font-bold mb-8 text-gold text-center">Community Perks</h3>
                             <div class="grid grid-cols-1 md:grid-cols-1 gap-12 max-w-lg mx-auto">
                                 <!-- Lurky -->
                                 <div class="text-center">
-                                    <h4 class="text-2xl font-bold mb-2">Get Crypto Alerts</h4>
-                                    <p class="text-gray-300">We're building Lurky, turning crypto X Spaces into real-time insights. Lurk with us.</p>
+                                    <img src="https://i.imgur.com/OOmwppw.png" alt="Lurky Logo" class="h-20 mx-auto mb-4 rounded-lg">
+                                    <h4 class="text-2xl font-bold mb-2">Earn $LURKY with Us</h4>
+                                    <p class="text-gray-300">Lurky now rewards users with $LURKY coin for their sheer work. Join with our code 'DECENT DUCK' (we both earn points!) to get real-time insights from X Spaces, track coin mentions, and earn $LURKY for engagements & tags. Check your eligible $LURKY airdrop, claimable after the TGE on Oct 30th!</p>
                                     <div class="mt-6">
                                         <a href="https://lurky.app/auth?referral-code=Ducksonx" target="_blank" class="btn-primary">Join Lurky</a>
                                     </div>
@@ -522,6 +564,41 @@
                     <div class="gallery-item"><img src="https://i.imgur.com/RqOd3Ac.jpeg" alt="Rescued bird 25" onerror="this.src='https://placehold.co/400x500/111111/e0e0e0?text=Bird';"></div>
                     <div class="gallery-item"><img src="https://i.imgur.com/It4saKp.jpeg" alt="Rescued bird 26" onerror="this.src='https://placehold.co/400x500/111111/e0e0e0?text=Bird';"></div>
                     <div class="gallery-item"><img src="https://i.imgur.com/2I2BIOq.jpeg" alt="Rescued bird 27" onerror="this.src='https://placehold.co/400x500/111111/e0e0e0?text=Bird';"></div>
+                </div>
+            </div>
+        </section>
+
+        <!-- New Donation Section -->
+        <section id="donate" class="py-20 md:py-32 fade-in-section">
+            <div class="container mx-auto px-4 text-center">
+                <h2 class="section-title">Feed The <span class="text-gold">Flock</span>.</h2>
+                <p class="section-subtitle">
+                    Your donations directly support our sanctuary and the birds in our care.
+                </p>
+                <p class="text-gray-300 mt-6 max-w-2xl mx-auto">
+                    For a video shoutout or to have your donation go to a specific feed, please 
+                    <a href="https://discord.com/invite/e6b4RnXRkE" target="_blank" class="text-gold hover:underline font-semibold">join our Discord</a> 
+                    and submit a ticket with a screenshot of your donation.
+                </p>
+                <div class="mt-12 flex flex-col md:flex-row items-center justify-center gap-6">
+                    <!-- Solana -->
+                    <div class="relative">
+                        <button id="sol-copy-btn" class="btn-secondary w-full md:w-auto">
+                            Copy SOL Address
+                        </button>
+                        <span id="copy-feedback-sol" class="absolute -top-8 left-1/2 -translate-x-1/2 text-sm text-gold opacity-0 transition-opacity whitespace-nowrap">Copied!</span>
+                    </div>
+                    <!-- USDC -->
+                    <div class="relative">
+                        <button id="usdc-copy-btn" class="btn-secondary w-full md:w-auto">
+                            Copy USDC Address
+                        </button>
+                        <span id="copy-feedback-usdc" class="absolute -top-8 left-1/2 -translate-x-1/2 text-sm text-gold opacity-0 transition-opacity whitespace-nowrap">Copied!</span>
+                    </div>
+                    <!-- PayPal -->
+                    <a href="https://www.paypal.com/pool/9jDm0KFRXJ?sr=ancr" target="_blank" class="btn-primary w-full md:w-auto">
+                        PayPal
+                    </a>
                 </div>
             </div>
         </section>
@@ -778,6 +855,33 @@
             <div class="mt-8">
                 <a href="https://discord.com/invite/e6b4RnXRkE" target="_blank" class="btn-primary text-lg">Join Discord &amp; Get Support</a>
             </div>
+            
+            <!-- New Social/Donation Icons -->
+            <div class="flex justify-center space-x-6 items-center mt-12">
+                <!-- Instagram -->
+                <a href="https://www.instagram.com/duckxmeta/?igsh=MWlqa3F1dGc1d24wdg%3D%3D" target="_blank" title="Instagram" class="text-gray-400 transition-opacity icon-glow-container">
+                    <img src="https://i.imgur.com/esKhojE.png" alt="Instagram" class="w-9 h-9">
+                </a>
+                <!-- TikTok -->
+                <a href="https://www.tiktok.com/@ducksontiktok?_t=ZP-9100t0lTaBS&_r=1" target="_blank" title="TikTok" class="text-gray-400 transition-opacity icon-glow-container">
+                    <img src="https://i.imgur.com/fAfNoh4.png" alt="TikTok" class="w-9 h-9">
+                </a>
+                <!-- Solana -->
+                <div class="relative flex items-center">
+                    <button id="solana-copy-btn" title="Copy Donation Address" class="text-gray-400 transition-opacity icon-glow-container">
+                        <img src="https://i.imgur.com/fdAeIGs.png" alt="Solana" class="w-9 h-9">
+                    </button>
+                    <span id="copy-feedback" class="absolute left-full ml-3 text-sm text-gold opacity-0 transition-opacity whitespace-nowrap">Copied!</span>
+                </div>
+                <!-- USDC -->
+                <div class="relative flex items-center">
+                    <button id="usdc-copy-btn-footer" title="Copy USDC Donation Address" class="text-gray-400 transition-opacity icon-glow-container">
+                        <img src="https://i.imgur.com/96HDe2B.png" alt="USDC" class="w-9 h-9">
+                    </button>
+                    <span id="copy-feedback-usdc-footer" class="absolute left-full ml-3 text-sm text-gold opacity-0 transition-opacity whitespace-nowrap">Copied!</span>
+                </div>
+            </div>
+
             <div class="mt-12 text-sm text-gray-600">
                 <p>&copy; 2025 Just Duck It. All rights reserved.</p>
             </div>
@@ -792,7 +896,7 @@
                 <svg class="w-5 h-5" fill="currentColor" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg"><path fill-rule="evenodd" d="M7 4a3 3 0 016 0v4a3 3 0 11-6 0V4zm4 10.93A7.001 7.001 0 0017 8a1 1 0 10-2 0a5 5 0 01-4.5 4.93V17a1 1 0 102 0v-2.07zM4 8a1 1 0 10-2 0a7.001 7.001 0 006 6.93V17a1 1 0 102 0v-2.07A5 5 0 015 8z" clip-rule="evenodd"></path></svg>
             </div>
             <!-- Profile Picture -->
-            <img src="https://i.imgur.com/U1zzvR5.jpeg" alt="X Profile" class="relative z-10 w-full h-full rounded-full border-4 border-red-600 shadow-lg">
+            <img src="https://i.imgur.com/U1zzvR5.jpeg" alt="X Profile" class="relative z-10 w-full h-full rounded-full border-4 border-red-600 shadow-lg object-cover">
             <!-- Glowing Ping Ring -->
             <div class="absolute top-0 left-0 z-0 w-full h-full rounded-full bg-red-600 opacity-75 animate-ping"></div>
         </div>
@@ -1193,6 +1297,69 @@
                 lyricsContainer.children[0].scrollIntoView({ behavior: 'smooth', block: 'center' });
                 updateTracklistUI();
             };
+        }
+        
+        // --- Clipboard Function ---
+        function copyToClipboard(text, feedbackEl) {
+            const textarea = document.createElement('textarea');
+            textarea.value = text;
+            textarea.style.position = 'fixed'; // Prevent scrolling to bottom
+            document.body.appendChild(textarea);
+            textarea.select();
+            try {
+                document.execCommand('copy'); // Use execCommand for iframe compatibility
+                if (feedbackEl) {
+                    feedbackEl.classList.remove('opacity-0');
+                    setTimeout(() => {
+                        feedbackEl.classList.add('opacity-0');
+                    }, 2000);
+                }
+            } catch (err) {
+                console.error('Failed to copy: ', err);
+                alert('Failed to copy address. Please copy it manually.');
+            }
+            document.body.removeChild(textarea);
+        }
+
+        const solanaBtn = document.getElementById('solana-copy-btn');
+        const copyFeedback = document.getElementById('copy-feedback');
+        const solanaAddress = 'E1Ba8BiGnnRxPvPTY8vARjPPEY2mgg3pqTuRn1pvXjxQ';
+
+        if (solanaBtn) {
+            solanaBtn.addEventListener('click', (e) => {
+                e.preventDefault(); // Prevent link navigation
+                copyToClipboard(solanaAddress, copyFeedback);
+            });
+        }
+        
+        const solBtnDonate = document.getElementById('sol-copy-btn');
+        const usdcBtnDonate = document.getElementById('usdc-copy-btn');
+        const solFeedback = document.getElementById('copy-feedback-sol');
+        const usdcFeedback = document.getElementById('copy-feedback-usdc');
+        
+        const solDonationAddress = 'E1Ba8BiGnnRxPvPTY8vARjPPEY2mgg3pqTuRn1pvXjxQ';
+        const usdcDonationAddress = '0xd15D984C4BB474b0f60247f29c87cEEB9c92253e';
+
+        if(solBtnDonate) {
+            solBtnDonate.addEventListener('click', () => {
+                copyToClipboard(solDonationAddress, solFeedback);
+            });
+        }
+        
+        if(usdcBtnDonate) {
+            usdcBtnDonate.addEventListener('click', () => {
+                copyToClipboard(usdcDonationAddress, usdcFeedback);
+            });
+        }
+
+        const usdcBtnFooter = document.getElementById('usdc-copy-btn-footer');
+        const usdcFeedbackFooter = document.getElementById('copy-feedback-usdc-footer');
+
+        if(usdcBtnFooter) {
+            usdcBtnFooter.addEventListener('click', (e) => {
+                e.preventDefault();
+                copyToClipboard(usdcDonationAddress, usdcFeedbackFooter);
+            });
         }
 
     });
