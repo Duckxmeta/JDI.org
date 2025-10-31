@@ -519,8 +519,27 @@
                                 <!-- Lurky -->
                                 <div class="text-center">
                                     <img src="https://i.imgur.com/OOmwppw.png" alt="Lurky Logo" class="h-20 mx-auto mb-4 rounded-lg">
-                                    <h4 class="text-2xl font-bold mb-2">Earn $LURKY with Us</h4>
-                                    <p class="text-gray-300">Lurky now rewards users with $LURKY coin for their sheer work. Join with our code 'DECENT DUCK' (we both earn points!) to get real-time insights from X Spaces, track coin mentions, and earn $LURKY for engagements & tags. Check your eligible $LURKY airdrop, claimable after the TGE on Oct 30th!</p>
+                                    <h4 class="text-2xl font-bold mb-2">Exclusive $LURKY Perks</h4>
+                                    <p class="text-gray-300 leading-relaxed">
+                                        Join Lurky with our exclusive community invite code: 
+                                        <button id="lurky-copy-btn" class="text-gold font-bold hover:underline relative focus:outline-none">
+                                            @Ducksonx
+                                            <span id="copy-feedback-lurky" class="absolute -bottom-6 left-1/2 -translate-x-1/2 text-sm text-gold opacity-0 transition-opacity whitespace-nowrap">Copied!</span>
+                                        </button>
+                                        (we both earn points!).
+                                        <br><br>
+                                        <strong class="text-gold">As a community exclusive, holding 20,000 $LURKY unlocks:</strong>
+                                        <ul class="text-left list-disc list-inside mt-4 space-y-2">
+                                            <li>50 Reverb Questions a day <span class="text-gray-400">(vs. 3 free daily questions)</span></li>
+                                            <li>5 lurk space requests a day <span class="text-gray-400">(vs. 1 free request)</span></li>
+                                            <li>Coin Mentions analytics</li>
+                                            <li>KOLs Leaderboard for each coin</li>
+                                            <li>Space Mindmaps for quick insights</li>
+                                            <li>...and more benefits to come!</li>
+                                        </ul>
+                                        <br>
+                                        Use Lurky to earn $LURKY for your engagements & tags. Check your eligible airdrop, claimable after TGE on Oct 30th!
+                                    </p>
                                     <div class="mt-6">
                                         <a href="https://lurky.app/auth?referral-code=Ducksonx" target="_blank" class="btn-primary">Join Lurky</a>
                                     </div>
@@ -550,7 +569,7 @@
                     <div class="gallery-item"><img src="https://i.imgur.com/Ikai49o.jpeg" alt="Rescued bird 11" onerror="this.src='https://placehold.co/400x500/111111/e0e0e0?text=Bird';"></div>
                     <div class="gallery-item"><img src="https://i.imgur.com/3JWIdgd.jpeg" alt="Rescued bird 12" onerror="this.src='https://placehold.co/400x500/111111/e0e0e0?text=Bird';"></div>
                     <div class="gallery-item"><img src="https://i.imgur.com/f6JHZAZ.jpeg" alt="Rescued bird 13" onerror="this.src='https://placehold.co/400x500/111111/e0e0e0?text=Bird';"></div>
-                    <div class="gallery-item"><img src="https://i.imgur.com/u1imbPy.jpeg" alt="Rescued bird 14" onerror="this.src='https://placehold.co/400x500/111111/e0e0e0?text=Bird';"></div>
+                    <div class="gallery-item"><img src="https->://i.imgur.com/u1imbPy.jpeg" alt="Rescued bird 14" onerror="this.src='https://placehold.co/400x500/111111/e0e0e0?text=Bird';"></div>
                     <div class="gallery-item"><img src="https://i.imgur.com/RzR8Swn.jpeg" alt="Rescued bird 15" onerror="this.src='https://placehold.co/400x500/111111/e0e0e0?text=Bird';"></div>
                     <div class="gallery-item"><img src="https://i.imgur.com/6xgDSoD.jpeg" alt="Rescued bird 16" onerror="this.src='https://placehold.co/400x500/111111/e0e0e0?text=Bird';"></div>
                     <div class="gallery-item"><img src="https://i.imgur.com/CgXDM7n.jpeg" alt="Rescued bird 17" onerror="this.src='https://placehold.co/400x500/111111/e0e0e0?text=Bird';"></div>
@@ -690,7 +709,7 @@
                         <img src="https://i.imgur.com/xTIWyEx.jpeg" alt="JustDuckit Merch 2" class="w-full h-full object-cover rounded-lg" onerror="this.onerror=null;this.src='https://placehold.co/400x500/1a1a1a/FFD700?text=Merch';">
                     </div>
                     <div class="gallery-item">
-                        <img src="https://i.imgur.com/BHp79S5.jpeg" alt="JustDuckit Merch 3" class="w-full h-full object-cover rounded-lg" onerror="this.onerror=null;this.src='https://placehold.co/400x500/1a1a1a/FFD700?text=Merch';">
+                        <img src="https://i.imgur.com/BHp79S5.jpeg" alt="JustDuckit Merch 3" class="w-full h-full object-cover rounded-lg" onerror="this.onerror=null;this.src='https"https://placehold.co/400x500/1a1a1a/FFD700?text=Merch';">
                     </div>
                     <div class="gallery-item">
                         <img src="https://i.imgur.com/AVxgVeR.jpeg" alt="JustDuckit Merch 4" class="w-full h-full object-cover rounded-lg" onerror="this.onerror=null;this.src='https://placehold.co/400x500/1a1a1a/FFD700?text=Merch';">
@@ -1359,6 +1378,16 @@
             usdcBtnFooter.addEventListener('click', (e) => {
                 e.preventDefault();
                 copyToClipboard(usdcDonationAddress, usdcFeedbackFooter);
+            });
+        }
+
+        const lurkyBtn = document.getElementById('lurky-copy-btn');
+        const lurkyFeedback = document.getElementById('copy-feedback-lurky');
+        const lurkyCode = '@Ducksonx';
+
+        if(lurkyBtn) {
+            lurkyBtn.addEventListener('click', () => {
+                copyToClipboard(lurkyCode, lurkyFeedback);
             });
         }
 
