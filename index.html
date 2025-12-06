@@ -354,10 +354,13 @@
                     Just Duck It
                 </h1>
                 <p class="mt-4 text-lg md:text-xl max-w-2xl mx-auto text-gray-300">
-                    A Southern Sanctuary building a new kind of community.
+                    A Southern Sanctuary live streaming daily
                 </p>
-                <div class="mt-8">
-                    <a href="https://duckxmeta.github.io/Ducks-next-12mo/" target="_blank" class="btn-primary">Roadmap</a>
+                <div class="mt-8 relative inline-block">
+                    <button id="hero-sol-btn" class="btn-primary">
+                        Donate SOL (Copy Address)
+                    </button>
+                    <span id="hero-copy-feedback" class="absolute top-full left-1/2 -translate-x-1/2 mt-2 text-sm text-gold opacity-0 transition-opacity whitespace-nowrap">Copied!</span>
                 </div>
             </div>
         </section>
@@ -702,6 +705,15 @@
                             <h3 class="text-2xl font-bold mb-2">JustDuckIt on TikTok</h3>
                             <p class="text-gray-400 mb-6">Follow our daily sanctuary antics and join our 11K+ followers.</p>
                             <a href="https://www.tiktok.com/@justtduckit" target="_blank" class="font-bold text-gold hover:underline">Follow Us &rarr;</a>
+                        </div>
+                    </div>
+                     <!-- Project Card -->
+                    <div class="content-card">
+                        <img src="https://i.imgur.com/KMnME5E.png" alt="Zen Arena" class="w-full h-56 object-cover card-image" onerror="this.src='https://placehold.co/600x400/1a1a1a/e0e0e0?text=Zen+Arena';">
+                        <div class="p-6">
+                            <h3 class="text-2xl font-bold mb-2">Zen Arena</h3>
+                            <p class="text-gray-400 mb-6">Test the world's best AI models all in one place. Discover the future of artificial intelligence.</p>
+                            <a href="https://us.zenai.biz" target="_blank" class="font-bold text-gold hover:underline">Explore Arena &rarr;</a>
                         </div>
                     </div>
                 </div>
@@ -1359,7 +1371,7 @@
 
         const solanaBtn = document.getElementById('solana-copy-btn');
         const copyFeedback = document.getElementById('copy-feedback');
-        const solanaAddress = 'E1Ba8BiGnnRxPvPTY8vARjPPEY2mgg3pqTuRn1pvXjxQ';
+        const solanaAddress = 'AKkgD4kg8bq7sPUXhqWLqNPBcvtXXhevx3TQCkuxpUQY';
 
         if (solanaBtn) {
             solanaBtn.addEventListener('click', (e) => {
@@ -1373,7 +1385,7 @@
         const solFeedback = document.getElementById('copy-feedback-sol');
         const usdcFeedback = document.getElementById('copy-feedback-usdc');
         
-        const solDonationAddress = 'E1Ba8BiGnnRxPvPTY8vARjPPEY2mgg3pqTuRn1pvXjxQ';
+        const solDonationAddress = 'AKkgD4kg8bq7sPUXhqWLqNPBcvtXXhevx3TQCkuxpUQY';
         const usdcDonationAddress = '0xd15D984C4BB474b0f60247f29c87cEEB9c92253e';
 
         if(solBtnDonate) {
@@ -1405,6 +1417,15 @@
         if(lurkyBtn) {
             lurkyBtn.addEventListener('click', () => {
                 copyToClipboard(lurkyCode, lurkyFeedback);
+            });
+        }
+        
+        const heroSolBtn = document.getElementById('hero-sol-btn');
+        const heroCopyFeedback = document.getElementById('hero-copy-feedback');
+        
+        if (heroSolBtn) {
+            heroSolBtn.addEventListener('click', () => {
+                copyToClipboard(solDonationAddress, heroCopyFeedback);
             });
         }
 
