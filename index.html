@@ -631,22 +631,25 @@
                 <div class="mt-12 flex flex-col md:flex-row items-center justify-center gap-6">
                     <!-- Solana -->
                     <div class="relative">
-                        <button id="sol-copy-btn" class="btn-secondary w-full md:w-auto">
-                            Copy SOL Address
+                        <button id="sol-copy-btn" class="btn-secondary w-full md:w-auto flex items-center justify-center gap-2">
+                            <img src="https://i.imgur.com/fdAeIGs.png" class="w-5 h-5"> Copy SOL Address
                         </button>
                         <span id="copy-feedback-sol" class="absolute -top-8 left-1/2 -translate-x-1/2 text-sm text-gold opacity-0 transition-opacity whitespace-nowrap">Copied!</span>
                     </div>
-                    <!-- USDC -->
+                    <!-- Bitcoin -->
                     <div class="relative">
-                        <button id="usdc-copy-btn" class="btn-secondary w-full md:w-auto">
-                            Copy USDC Address
+                        <button id="btc-copy-btn" class="btn-secondary w-full md:w-auto flex items-center justify-center gap-2">
+                            <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/4/46/Bitcoin.svg/200px-Bitcoin.svg.png" class="w-5 h-5"> Copy BTC Address
                         </button>
-                        <span id="copy-feedback-usdc" class="absolute -top-8 left-1/2 -translate-x-1/2 text-sm text-gold opacity-0 transition-opacity whitespace-nowrap">Copied!</span>
+                        <span id="copy-feedback-btc" class="absolute -top-8 left-1/2 -translate-x-1/2 text-sm text-gold opacity-0 transition-opacity whitespace-nowrap">Copied!</span>
                     </div>
-                    <!-- PayPal -->
-                    <a href="https://www.paypal.com/pool/9jDm0KFRXJ?sr=ancr" target="_blank" class="btn-primary w-full md:w-auto">
-                        PayPal
-                    </a>
+                    <!-- ETH -->
+                    <div class="relative">
+                        <button id="eth-copy-btn" class="btn-secondary w-full md:w-auto flex items-center justify-center gap-2">
+                            <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/6/6f/Ethereum-icon-purple.svg/480px-Ethereum-icon-purple.svg.png" class="w-5 h-5"> Copy ETH Address
+                        </button>
+                        <span id="copy-feedback-eth" class="absolute -top-8 left-1/2 -translate-x-1/2 text-sm text-gold opacity-0 transition-opacity whitespace-nowrap">Copied!</span>
+                    </div>
                 </div>
             </div>
         </section>
@@ -707,13 +710,13 @@
                             <a href="https://www.tiktok.com/@justtduckit" target="_blank" class="font-bold text-gold hover:underline">Follow Us &rarr;</a>
                         </div>
                     </div>
-                     <!-- Project Card -->
+                    <!-- New EXCLUSIVO Card -->
                     <div class="content-card">
-                        <img src="https://i.imgur.com/KMnME5E.png" alt="Zen Arena" class="w-full h-56 object-cover card-image" onerror="this.src='https://placehold.co/600x400/1a1a1a/e0e0e0?text=Zen+Arena';">
+                        <img src="https://i.imgur.com/PulUeOX.jpeg" alt="EXCLUSIVO Storefront" class="w-full h-56 object-cover card-image">
                         <div class="p-6">
-                            <h3 class="text-2xl font-bold mb-2">Zen Arena</h3>
-                            <p class="text-gray-400 mb-6">Test the world's best AI models all in one place. Discover the future of artificial intelligence.</p>
-                            <a href="https://us.zenai.biz" target="_blank" class="font-bold text-gold hover:underline">Explore Arena &rarr;</a>
+                            <h3 class="text-2xl font-bold mb-2">EXCLUSIVO Storefront</h3>
+                            <p class="text-gray-400 mb-6">Explore our premium duck decor and exclusive items.</p>
+                            <a href="https://app.exclusivo.one/invite/4fTDRlV4XKp5XooPeCSGJeFLsqYq3Dlo" target="_blank" class="font-bold text-gold hover:underline">Shop Now &rarr;</a>
                         </div>
                     </div>
                 </div>
@@ -834,6 +837,16 @@
                     Showcasing the incredible creativity of our community members.
                 </p>
                 <div class="scroll-gallery">
+                     <!-- New Item 1 -->
+                     <div class="gallery-item">
+                        <div class="content-card h-full">
+                            <img src="https://i.imgur.com/PulUeOX.jpeg" alt="Community Art" class="w-full h-80 object-cover card-image" onerror="this.src='https://placehold.co/600x600/1a1a1a/ffd700?text=Art';">
+                            <div class="p-6">
+                                <h3 class="text-2xl font-bold mb-1">Community Art</h3>
+                                <p class="text-gray-400">by The Flock</p>
+                            </div>
+                        </div>
+                    </div>
                     <div class="gallery-item">
                         <div class="content-card h-full">
                             <img src="https://i.imgur.com/P1X7Q55.jpeg" alt="3D Duck Giveaway" class="w-full h-80 object-cover card-image" onerror="this.src='https://placehold.co/600x600/1a1a1a/ffd700?text=Art';">
@@ -921,12 +934,19 @@
                     </button>
                     <span id="copy-feedback" class="absolute left-full ml-3 text-sm text-gold opacity-0 transition-opacity whitespace-nowrap">Copied!</span>
                 </div>
-                <!-- USDC -->
-                <div class="relative flex items-center">
-                    <button id="usdc-copy-btn-footer" title="Copy USDC Donation Address" class="text-gray-400 transition-opacity icon-glow-container">
-                        <img src="https://i.imgur.com/96HDe2B.png" alt="USDC" class="w-9 h-9">
+                 <!-- Bitcoin -->
+                 <div class="relative flex items-center">
+                    <button id="btc-copy-btn-footer" title="Copy Bitcoin Donation Address" class="text-gray-400 transition-opacity icon-glow-container">
+                        <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/4/46/Bitcoin.svg/200px-Bitcoin.svg.png" alt="Bitcoin" class="w-9 h-9">
                     </button>
-                    <span id="copy-feedback-usdc-footer" class="absolute left-full ml-3 text-sm text-gold opacity-0 transition-opacity whitespace-nowrap">Copied!</span>
+                    <span id="copy-feedback-btc-footer" class="absolute left-full ml-3 text-sm text-gold opacity-0 transition-opacity whitespace-nowrap">Copied!</span>
+                </div>
+                <!-- Ethereum -->
+                <div class="relative flex items-center">
+                    <button id="eth-copy-btn-footer" title="Copy Ethereum Donation Address" class="text-gray-400 transition-opacity icon-glow-container">
+                        <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/6/6f/Ethereum-icon-purple.svg/480px-Ethereum-icon-purple.svg.png" alt="Ethereum" class="w-9 h-9">
+                    </button>
+                    <span id="copy-feedback-eth-footer" class="absolute left-full ml-3 text-sm text-gold opacity-0 transition-opacity whitespace-nowrap">Copied!</span>
                 </div>
             </div>
 
@@ -1381,34 +1401,63 @@
         }
         
         const solBtnDonate = document.getElementById('sol-copy-btn');
-        const usdcBtnDonate = document.getElementById('usdc-copy-btn');
+        const btcBtnDonate = document.getElementById('btc-copy-btn');
+        const ethBtnDonate = document.getElementById('eth-copy-btn');
         const solFeedback = document.getElementById('copy-feedback-sol');
-        const usdcFeedback = document.getElementById('copy-feedback-usdc');
+        const btcFeedback = document.getElementById('copy-feedback-btc');
+        const ethFeedback = document.getElementById('copy-feedback-eth');
         
         const solDonationAddress = 'AKkgD4kg8bq7sPUXhqWLqNPBcvtXXhevx3TQCkuxpUQY';
-        const usdcDonationAddress = '0xd15D984C4BB474b0f60247f29c87cEEB9c92253e';
+        // User implied eth address is same as usdc address provided earlier
+        const ethDonationAddress = '0xd15D984C4BB474b0f60247f29c87cEEB9c92253e';
+        const btcDonationAddress = 'BITCOIN_ADDRESS_HERE'; // Placeholder
 
         if(solBtnDonate) {
             solBtnDonate.addEventListener('click', () => {
                 copyToClipboard(solDonationAddress, solFeedback);
             });
         }
+
+         if(btcBtnDonate) {
+            btcBtnDonate.addEventListener('click', () => {
+                if (btcDonationAddress === 'BITCOIN_ADDRESS_HERE') {
+                    alert('Bitcoin donation address coming soon!');
+                } else {
+                    copyToClipboard(btcDonationAddress, btcFeedback);
+                }
+            });
+        }
         
-        if(usdcBtnDonate) {
-            usdcBtnDonate.addEventListener('click', () => {
-                copyToClipboard(usdcDonationAddress, usdcFeedback);
+         if(ethBtnDonate) {
+            ethBtnDonate.addEventListener('click', () => {
+                copyToClipboard(ethDonationAddress, ethFeedback); 
             });
         }
-
-        const usdcBtnFooter = document.getElementById('usdc-copy-btn-footer');
-        const usdcFeedbackFooter = document.getElementById('copy-feedback-usdc-footer');
-
-        if(usdcBtnFooter) {
-            usdcBtnFooter.addEventListener('click', (e) => {
+        
+        const btcBtnFooter = document.getElementById('btc-copy-btn-footer');
+        const btcFeedbackFooter = document.getElementById('copy-feedback-btc-footer');
+        
+         if(btcBtnFooter) {
+            btcBtnFooter.addEventListener('click', (e) => {
                 e.preventDefault();
-                copyToClipboard(usdcDonationAddress, usdcFeedbackFooter);
+                 if (btcDonationAddress === 'BITCOIN_ADDRESS_HERE') {
+                    alert('Bitcoin donation address coming soon!');
+                } else {
+                    copyToClipboard(btcDonationAddress, btcFeedbackFooter);
+                }
             });
         }
+        
+        const ethBtnFooter = document.getElementById('eth-copy-btn-footer');
+        const ethFeedbackFooter = document.getElementById('copy-feedback-eth-footer');
+        
+         if(ethBtnFooter) {
+            ethBtnFooter.addEventListener('click', (e) => {
+                e.preventDefault();
+                copyToClipboard(ethDonationAddress, ethFeedbackFooter);
+            });
+        }
+
 
         const lurkyBtn = document.getElementById('lurky-copy-btn');
         const lurkyFeedback = document.getElementById('copy-feedback-lurky');
