@@ -15,16 +15,18 @@
     <!-- Open Graph Meta Tags -->
     <meta property="og:title" content="JustDuckIt - A New Era">
     <meta property="og:description" content="JustDuckIt saves ducks in Tennessee. We're building a community around this mission using modern web and blockchain technology. Join our flock!">
-    <meta property="og:image" content="https://i.imgur.com/otNEI2M.png">
+    <!-- Updated Thumbnail -->
+    <meta property="og:image" content="https://i.imgur.com/0kVMbOp.jpeg">
     <meta property="og:url" content="https://justduckit.org">
     <meta property="og:type" content="website">
     <meta name="twitter:card" content="summary_large_image">
-    <meta name="twitter:image" content="https://i.imgur.com/otNEI2M.png">
+    <meta name="twitter:image" content="https://i.imgur.com/0kVMbOp.jpeg">
     
     <script src="https://cdn.tailwindcss.com"></script>
     <!-- Elfsight Twitter Feed -->
     <script src="https://elfsightcdn.com/platform.js" async></script>
-    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@700;900&family=Inter:wght@300;400;500&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@700;900&family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
     
     <style>
         /* Base Styles */
@@ -33,7 +35,7 @@
         }
         body {
             font-family: 'Inter', sans-serif;
-            background-color: #0a0a0a;
+            background-color: #050505;
             color: #e0e0e0;
             overflow-x: hidden;
         }
@@ -64,7 +66,7 @@
             left: 0;
             width: 100%;
             height: 100%;
-            background-color: rgba(0, 0, 0, 0.6);
+            background: linear-gradient(to bottom, rgba(0,0,0,0.4) 0%, rgba(0,0,0,0.7) 80%, #050505 100%);
         }
 
         /* Header & Navigation */
@@ -74,11 +76,12 @@
             left: 0;
             width: 100%;
             z-index: 100;
-            transition: background-color 0.3s ease;
+            transition: all 0.3s ease;
         }
         .site-header.scrolled {
-            background-color: rgba(10, 10, 10, 0.8);
-            backdrop-filter: blur(10px);
+            background-color: rgba(5, 5, 5, 0.85);
+            backdrop-filter: blur(12px);
+            border-bottom: 1px solid rgba(147, 51, 234, 0.2); /* Purple border */
         }
 
         /* Full-Screen Menu */
@@ -88,7 +91,7 @@
             left: 0;
             width: 100%;
             height: 100%;
-            background-color: rgba(10, 10, 10, 0.95);
+            background-color: rgba(5, 5, 5, 0.98);
             backdrop-filter: blur(15px);
             z-index: 998;
             opacity: 0;
@@ -105,16 +108,16 @@
         #menu-overlay nav a {
             color: #a0a0a0;
             font-family: 'Playfair Display', serif;
-            font-size: 2.1rem; /* Adjusted for 12 items */
+            font-size: 2rem; 
             font-weight: 700;
             text-decoration: none;
-            transition: color 0.3s ease, transform 0.3s ease;
+            transition: all 0.3s ease;
             display: block;
-            margin: 0.6rem 0; /* Adjusted for 12 items */
+            margin: 0.5rem 0;
         }
         #menu-overlay nav a:hover {
-            color: #ffd700;
-            transform: translateX(10px);
+            color: #9333ea; /* Royal Purple Hover */
+            transform: scale(1.05);
         }
 
         /* Hamburger Menu Button */
@@ -134,81 +137,95 @@
             transform: translateY(-8px) rotate(-45deg);
         }
         
-        /* Gold Accent & Buttons */
+        /* Royal Purple Accent & Buttons (Previously Gold) */
+        .text-purple-royal {
+            color: #9333ea; /* Tailwind purple-600 */
+        }
+        .border-purple-royal {
+            border-color: #9333ea;
+        }
+        /* Keep helper class for compatibility but update value */
         .text-gold {
-            color: #ffd700;
+            color: #9333ea !important; 
         }
-        .border-gold {
-            border-color: #ffd700;
-        }
+
         .btn-primary {
             display: inline-block;
-            border: 2px solid #ffd700;
-            color: #ffd700;
+            background: rgba(147, 51, 234, 0.15);
+            border: 1px solid #9333ea;
+            color: #a855f7; /* Lighter purple for text */
             padding: 12px 32px;
             text-transform: uppercase;
             letter-spacing: 2px;
             font-weight: 600;
             font-size: 14px;
-            transition: background-color 0.3s ease, color 0.3s ease;
+            transition: all 0.3s ease;
             text-decoration: none;
+            border-radius: 4px;
         }
         .btn-primary:hover {
-            background-color: #ffd700;
-            color: #0a0a0a;
+            background-color: #9333ea;
+            color: #ffffff;
+            box-shadow: 0 0 15px rgba(147, 51, 234, 0.5);
         }
         
         .btn-secondary {
             display: inline-flex;
             align-items: center;
             justify-content: center;
-            background-color: #2a2a2a;
+            background-color: #1a1a1a;
             color: #e0e0e0;
             padding: 12px 32px;
             text-transform: uppercase;
-            letter-spacing: 2px;
+            letter-spacing: 1px;
             font-weight: 600;
             font-size: 14px;
-            transition: background-color 0.3s ease, color 0.3s ease;
+            transition: all 0.3s ease;
             text-decoration: none;
-            border: 2px solid #4a4a4a;
+            border: 1px solid #333;
+            border-radius: 4px;
         }
         .btn-secondary:hover {
-            background-color: #3a3a3a;
-            border-color: #ffd700;
+            background-color: #252525;
+            border-color: #9333ea;
+            color: #9333ea;
         }
-
 
         /* Section Styling */
         .section-title {
-            font-size: 3rem; /* 48px */
+            font-size: 2.5rem;
             font-weight: 900;
             letter-spacing: -1px;
+            line-height: 1.1;
         }
         @media (min-width: 768px) {
             .section-title {
-                font-size: 4.5rem; /* 72px */
+                font-size: 4rem;
             }
         }
         .section-subtitle {
-            font-size: 1.25rem; /* 20px */
+            font-size: 1.1rem;
             color: #a0a0a0;
             max-width: 600px;
             margin: 1rem auto 0;
+            line-height: 1.6;
         }
         
-        /* Project/Merch Card */
+        /* Glass/Card Styles */
         .content-card {
-            background-color: #1a1a1a;
+            background-color: #111;
+            border: 1px solid #222;
             overflow: hidden;
-            transition: transform 0.4s ease, box-shadow 0.4s ease;
+            transition: transform 0.4s ease, box-shadow 0.4s ease, border-color 0.4s ease;
+            border-radius: 8px;
         }
         .content-card:hover {
-            transform: translateY(-10px);
-            box-shadow: 0 20px 40px rgba(0,0,0,0.3);
+            transform: translateY(-5px);
+            box-shadow: 0 10px 30px rgba(0,0,0,0.5);
+            border-color: #444; /* Slightly lighter border on hover */
         }
         .card-image {
-            transition: transform 0.4s ease;
+            transition: transform 0.6s cubic-bezier(0.25, 0.46, 0.45, 0.94);
         }
         .content-card:hover .card-image {
             transform: scale(1.05);
@@ -220,14 +237,22 @@
             overflow-x: auto;
             -webkit-overflow-scrolling: touch;
             scrollbar-width: none; /* Firefox */
+            gap: 20px;
+            padding-bottom: 20px; /* Space for shadows */
         }
         .scroll-gallery::-webkit-scrollbar {
             display: none; /* Safari and Chrome */
         }
         .gallery-item {
-            flex: 0 0 80vw;
+            flex: 0 0 85vw;
             max-width: 400px;
-            margin-right: 20px;
+            border-radius: 8px;
+            overflow: hidden;
+        }
+        @media (min-width: 768px) {
+            .gallery-item {
+                flex: 0 0 350px;
+            }
         }
         .gallery-item img, .gallery-item video {
             width: 100%;
@@ -238,7 +263,7 @@
         /* Fade-in Animation */
         .fade-in-section {
             opacity: 0;
-            transform: translateY(40px);
+            transform: translateY(30px);
             transition: opacity 0.8s ease-out, transform 0.8s ease-out;
         }
         .fade-in-section.is-visible {
@@ -254,55 +279,116 @@
             overflow: hidden;
         }
 
-        /* Crypto Updates Section Styles */
+        /* Data Tables */
         .data-table {
-          background: #2a2a2a;
-          border: 2px solid #ffd700;
-          border-radius: 0.5rem;
+          background: #111;
+          border: 1px solid #333;
+          border-radius: 8px;
           padding: 0.5rem;
           margin-top: 1rem;
           overflow-x: auto;
+          box-shadow: 0 4px 6px rgba(0,0,0,0.3);
         }
         .data-table th, .data-table td {
-          padding: 0.75rem 1rem;
+          padding: 1rem;
           text-align: left;
-          font-size: 0.875rem;
+          font-size: 0.9rem;
           white-space: nowrap;
+          border-bottom: 1px solid #222;
+        }
+        .data-table tr:last-child td {
+            border-bottom: none;
         }
         .data-table th {
-          color: #ffd700;
+          color: #9333ea; /* Purple Headers */
           font-weight: 700;
+          text-transform: uppercase;
+          letter-spacing: 1px;
+          font-size: 0.8rem;
         }
         .data-table td {
-          color: #f5f5f5;
+          color: #ccc;
         }
-        .data-table tr.negative td {
-          color: #f87171;
-        }
-        .data-table tr.positive td {
-          color: #4ade80;
-        }
-        .data-table tr:hover {
-          background: #3a3a3a;
-        }
-        .impact-high { color: #f87171; }
+        .data-table tr.negative td { color: #ff5f5f; }
+        .data-table tr.positive td { color: #4ade80; }
+        .data-table tr:hover { background: #1a1a1a; }
+        
+        .impact-high { color: #ff5f5f; font-weight: bold; }
         .impact-medium { color: #ffd700; }
-        .impact-low { color: #f87171; }
+        .impact-low { color: #4ade80; }
+        .status-completed { color: #888; text-decoration: line-through; }
 
-        .icon-glow-container img {
-            filter: drop-shadow(0 0 8px rgba(255, 255, 255, 0.2));
-            transition: filter 0.3s ease, transform 0.3s ease;
+        /* Social Icons Glow */
+        .icon-glow-container {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            width: 48px;
+            height: 48px;
+            border-radius: 50%;
+            background: #1a1a1a;
+            transition: all 0.3s ease;
+            border: 1px solid #333;
         }
-        .icon-glow-container:hover img {
-            filter: drop-shadow(0 0 14px rgba(255, 255, 255, 0.4));
-            transform: scale(1.1); /* Add a little pop on hover */
+        .icon-glow-container img, .icon-glow-container i {
+            width: 20px;
+            height: 20px;
+            font-size: 20px;
+            filter: grayscale(100%);
+            color: #9ca3af; /* Gray-400 equivalent for icons */
+            transition: all 0.3s ease;
         }
+        .icon-glow-container:hover {
+            border-color: #9333ea;
+            box-shadow: 0 0 10px rgba(147, 51, 234, 0.4);
+            transform: translateY(-2px);
+        }
+        .icon-glow-container:hover img, .icon-glow-container:hover i {
+            filter: grayscale(0%);
+            color: #fff;
+            transform: scale(1.1);
+        }
+
+        /* Music Player Enhancements */
+        .music-player-container {
+            background: linear-gradient(145deg, #1a1a1a, #0f0f0f);
+            border: 1px solid #333;
+            box-shadow: 0 8px 32px rgba(0,0,0,0.3);
+        }
+        .lyrics-scroll::-webkit-scrollbar {
+            width: 4px;
+        }
+        .lyrics-scroll::-webkit-scrollbar-thumb {
+            background-color: #333;
+            border-radius: 4px;
+        }
+        .track-item:hover {
+            background-color: #252525;
+        }
+        .track-item.active {
+            background-color: rgba(147, 51, 234, 0.1);
+            border-left: 3px solid #9333ea;
+        }
+        
+        /* New Hero Icons */
+        .hero-icon-btn {
+            background: rgba(0,0,0,0.6);
+            border: 1px solid rgba(255,255,255,0.2);
+            backdrop-filter: blur(4px);
+            transition: all 0.3s ease;
+        }
+        .hero-icon-btn:hover {
+            background: #9333ea;
+            border-color: #9333ea;
+            transform: translateY(-2px);
+        }
+
     </style>
 </head>
 <body class="antialiased">
 
     <!-- Top Banner -->
-    <div class="bg-[#ffd700] text-black text-center py-2 font-semibold text-sm uppercase tracking-wider">
+    <div class="bg-[#9333ea] text-white text-center py-2 font-bold text-xs md:text-sm uppercase tracking-widest sticky top-0 z-[101] shadow-lg">
         888 Decentralized Ducks powered by Solana
     </div>
 
@@ -317,13 +403,16 @@
     <!-- Header -->
     <header class="site-header p-4 md:p-6">
         <div class="container mx-auto flex justify-between items-center">
-            <a href="#" class="z-50">
-                <img src="https://i.imgur.com/otNEI2M.png" alt="Just Duck It Logo" class="w-12 h-12 rounded-full" onerror="this.src='https://placehold.co/48x48/0a0a0a/FFD700?text=JDI';">
+            <a href="#" class="z-50 group">
+                <div class="relative">
+                    <div class="absolute inset-0 bg-purple-600 blur-lg opacity-0 group-hover:opacity-40 transition-opacity duration-500 rounded-full"></div>
+                    <img src="https://i.imgur.com/otNEI2M.png" alt="Just Duck It Logo" class="relative w-12 h-12 rounded-full border border-white/10" onerror="this.src='https://placehold.co/48x48/0a0a0a/9333ea?text=JDI';">
+                </div>
             </a>
-            <button id="menu-toggle" class="hamburger-btn space-y-1.5 p-2 z-50">
-                <span class="hamburger-line block w-6 h-0.5 bg-white"></span>
-                <span class="hamburger-line block w-6 h-0.5 bg-white"></span>
-                <span class="hamburger-line block w-6 h-0.5 bg-white"></span>
+            <button id="menu-toggle" class="hamburger-btn space-y-1.5 p-2 z-50 focus:outline-none">
+                <span class="hamburger-line block w-6 h-0.5 bg-white rounded-full"></span>
+                <span class="hamburger-line block w-6 h-0.5 bg-white rounded-full"></span>
+                <span class="hamburger-line block w-6 h-0.5 bg-white rounded-full"></span>
             </button>
         </div>
     </header>
@@ -337,7 +426,7 @@
             <a href="#flock" class="menu-link">The Flock</a>
             <a href="#donate" class="menu-link">Donate</a>
             <a href="#projects" class="menu-link">Projects</a>
-            <a href="#merch" class="menu-link">Merch</a>
+            <a href="#merch" class="menu-link">Merch & Shop</a>
             <a href="#soundtrack" class="menu-link">Soundtrack</a>
             <a href="#community" class="menu-link">Community</a>
             <a href="#partners" class="menu-link">Partners</a>
@@ -348,85 +437,122 @@
 
     <main>
         <!-- Hero Section -->
-        <section id="hero" class="h-screen flex items-center justify-center text-center p-4 relative">
+        <section id="hero" class="h-screen flex items-center justify-center text-center p-4 relative -mt-20">
             <div class="relative z-10">
-                <h1 class="text-5xl md:text-8xl font-black text-white leading-tight" style="text-shadow: 0 5px 15px rgba(0,0,0,0.5);">
+                <h1 class="text-6xl md:text-8xl lg:text-9xl font-black text-transparent bg-clip-text bg-gradient-to-b from-white to-gray-400 leading-tight drop-shadow-2xl">
                     Just Duck It
                 </h1>
-                <p class="mt-4 text-lg md:text-xl max-w-2xl mx-auto text-gray-300">
+                <p class="mt-6 text-lg md:text-2xl max-w-2xl mx-auto text-gray-200 font-light tracking-wide">
                     A Southern Sanctuary live streaming daily
                 </p>
-                <div class="mt-8 relative inline-block">
-                    <button id="hero-sol-btn" class="btn-primary">
+                
+                <!-- Main CTA -->
+                <div class="mt-10 relative inline-block group">
+                    <button id="hero-sol-btn" class="btn-primary border-2">
                         Donate SOL (Copy Address)
                     </button>
-                    <span id="hero-copy-feedback" class="absolute top-full left-1/2 -translate-x-1/2 mt-2 text-sm text-gold opacity-0 transition-opacity whitespace-nowrap">Copied!</span>
+                    <span id="hero-copy-feedback" class="absolute top-full left-1/2 -translate-x-1/2 mt-3 text-sm text-purple-400 opacity-0 transition-opacity whitespace-nowrap bg-black/80 px-2 py-1 rounded">Copied!</span>
                 </div>
+
+                <!-- Hero Crypto Icons (New) -->
+                <div class="mt-8 flex justify-center gap-4">
+                     <!-- Solana -->
+                     <div class="relative group">
+                        <button id="hero-sol-icon" class="hero-icon-btn w-10 h-10 rounded-full flex items-center justify-center" title="Copy SOL Address">
+                            <img src="https://i.imgur.com/fdAeIGs.png" alt="Solana" class="w-6 h-6">
+                        </button>
+                    </div>
+                     <!-- Bitcoin -->
+                     <div class="relative group">
+                        <button id="hero-btc-icon" class="hero-icon-btn w-10 h-10 rounded-full flex items-center justify-center" title="Copy BTC Address">
+                             <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/4/46/Bitcoin.svg/200px-Bitcoin.svg.png" alt="Bitcoin" class="w-6 h-6">
+                        </button>
+                    </div>
+                    <!-- Ethereum -->
+                    <div class="relative group">
+                        <button id="hero-eth-icon" class="hero-icon-btn w-10 h-10 rounded-full flex items-center justify-center" title="Copy ETH Address">
+                            <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/6/6f/Ethereum-icon-purple.svg/480px-Ethereum-icon-purple.svg.png" alt="Ethereum" class="w-6 h-6">
+                        </button>
+                    </div>
+                </div>
+            </div>
+            
+            <!-- Scroll Down Indicator -->
+            <div class="absolute bottom-10 left-1/2 -translate-x-1/2 animate-bounce opacity-70">
+                <svg class="w-6 h-6 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 14l-7 7m0 0l-7-7m7 7V3"></path></svg>
             </div>
         </section>
 
         <!-- Mission Section -->
-        <section id="mission" class="py-20 md:py-32 fade-in-section">
+        <section id="mission" class="py-24 md:py-32 fade-in-section bg-[#050505]">
             <div class="container mx-auto px-4 text-center">
-                <h2 class="section-title">A Sanctuary, <span class="text-gold">Reimagined</span>.</h2>
+                <h2 class="section-title">A Sanctuary, <span class="text-purple-royal">Reimagined</span>.</h2>
                 <p class="section-subtitle">
-                   We merge Web2 and Web3 to expand our sanctuary's reach and to cultivate an environment of growth and security.
+                   We merge Web2 and Web3 to expand our sanctuary's reach and cultivate an environment of growth, transparency, and security for our feathered friends.
                 </p>
-                <div class="mt-12 flex flex-col items-center space-y-4">
-                     <a href="https://magiceden.us/marketplace/decent_ducks" target="_blank" class="btn-primary text-lg">
+                <div class="mt-12 flex flex-col md:flex-row justify-center items-center gap-6">
+                     <a href="https://magiceden.us/marketplace/decent_ducks" target="_blank" class="btn-primary text-lg min-w-[200px] text-center">
                         Grab your Duck
                     </a>
-                    <a href="https://duckxmeta.github.io/Ducklopedia/" target="_blank" class="text-gold hover:underline font-semibold">📖 Ducklopedia: Explore the Lore</a>
+                    <a href="https://duckxmeta.github.io/Ducklopedia/" target="_blank" class="group flex items-center text-white hover:text-purple-400 transition-colors font-medium">
+                        <span class="mr-2 text-2xl group-hover:-translate-y-1 transition-transform">📖</span> 
+                        Ducklopedia: Explore the Lore
+                    </a>
                 </div>
             </div>
         </section>
         
         <!-- GIF Gallery Section -->
-        <section id="gif-gallery" class="py-16 md:py-20 fade-in-section">
+        <section id="gif-gallery" class="py-16 bg-[#0a0a0a] fade-in-section">
             <div class="container mx-auto px-4">
+                <div class="flex items-center justify-between mb-8">
+                    <h3 class="text-2xl font-bold text-white">The Eggs</h3>
+                    <div class="text-sm text-gray-500">Swipe to view &rarr;</div>
+                </div>
                 <div class="scroll-gallery">
-                     <!-- New Item 1 -->
+                     <!-- Gallery Items -->
                      <div class="gallery-item">
                         <div class="content-card h-full">
-                            <img src="https://i.imgur.com/DlMVOTl.gif" alt="Diamond Duck Egg" class="w-full h-auto object-contain bg-[#1a1a1a] card-image">
-                            <div class="p-6">
-                                <h3 class="text-2xl font-bold mb-1">Diamond Duck Egg</h3>
+                            <img src="https://i.imgur.com/DlMVOTl.gif" alt="Diamond Duck Egg" class="w-full h-64 md:h-80 object-contain bg-[#111] card-image">
+                            <div class="p-6 border-t border-[#222]">
+                                <h3 class="text-xl font-bold text-white">Diamond Egg</h3>
+                                <p class="text-xs text-gray-500 uppercase tracking-wider mt-1">Rarity: Legendary</p>
                             </div>
                         </div>
                     </div>
-                    <!-- Item 2 -->
                     <div class="gallery-item">
                         <div class="content-card h-full">
-                            <img src="https://i.imgur.com/9sho77c.gif" alt="Duck egg Bronze" class="w-full h-80 object-contain bg-[#1a1a1a] card-image">
-                            <div class="p-6">
-                                <h3 class="text-2xl font-bold mb-1">Duck egg Bronze</h3>
+                            <img src="https://i.imgur.com/9sho77c.gif" alt="Duck egg Bronze" class="w-full h-64 md:h-80 object-contain bg-[#111] card-image">
+                            <div class="p-6 border-t border-[#222]">
+                                <h3 class="text-xl font-bold text-white">Bronze Egg</h3>
+                                <p class="text-xs text-gray-500 uppercase tracking-wider mt-1">Rarity: Common</p>
                             </div>
                         </div>
                     </div>
-                    <!-- Item 3 -->
                     <div class="gallery-item">
                         <div class="content-card h-full">
-                            <img src="https://i.imgur.com/k3B6vQN.gif" alt="Duck egg Silver" class="w-full h-80 object-contain bg-[#1a1a1a] card-image">
-                            <div class="p-6">
-                                <h3 class="text-2xl font-bold mb-1">Duck egg Silver</h3>
+                            <img src="https://i.imgur.com/k3B6vQN.gif" alt="Duck egg Silver" class="w-full h-64 md:h-80 object-contain bg-[#111] card-image">
+                            <div class="p-6 border-t border-[#222]">
+                                <h3 class="text-xl font-bold text-white">Silver Egg</h3>
+                                <p class="text-xs text-gray-500 uppercase tracking-wider mt-1">Rarity: Rare</p>
                             </div>
                         </div>
                     </div>
-                    <!-- Item 4 -->
                     <div class="gallery-item">
                         <div class="content-card h-full">
-                            <img src="https://i.imgur.com/BXVlN3L.gif" alt="Duck egg Gold" class="w-full h-80 object-contain bg-[#1a1a1a] card-image">
-                            <div class="p-6">
-                                <h3 class="text-2xl font-bold mb-1">Duck egg Gold</h3>
+                            <img src="https://i.imgur.com/BXVlN3L.gif" alt="Duck egg Gold" class="w-full h-64 md:h-80 object-contain bg-[#111] card-image">
+                            <div class="p-6 border-t border-[#222]">
+                                <h3 class="text-xl font-bold text-white">Gold Egg</h3>
+                                <p class="text-xs text-gray-500 uppercase tracking-wider mt-1">Rarity: Epic</p>
                             </div>
                         </div>
                     </div>
-                    <!-- Item 5 -->
                     <div class="gallery-item">
                         <div class="content-card h-full">
-                            <img src="https://i.imgur.com/106NHXT.gif" alt="Duck egg Platinum" class="w-full h-80 object-contain bg-[#1a1a1a] card-image">
-                            <div class="p-6">
-                                <h3 class="text-2xl font-bold mb-1">Duck egg Platinum</h3>
+                            <img src="https://i.imgur.com/106NHXT.gif" alt="Duck egg Platinum" class="w-full h-64 md:h-80 object-contain bg-[#111] card-image">
+                            <div class="p-6 border-t border-[#222]">
+                                <h3 class="text-xl font-bold text-white">Platinum Egg</h3>
+                                <p class="text-xs text-gray-500 uppercase tracking-wider mt-1">Rarity: Mythic</p>
                             </div>
                         </div>
                     </div>
@@ -435,23 +561,28 @@
         </section>
 
         <!-- Web3 Explainer Section -->
-        <section id="web3-explainer" class="py-20 md:py-32 bg-[#111] fade-in-section">
-            <div class="container mx-auto px-4 text-center">
-                <h2 class="section-title">The Future of <span class="text-gold">Community</span>.</h2>
+        <section id="web3-explainer" class="py-24 md:py-32 bg-[#080808] fade-in-section relative overflow-hidden">
+            <!-- Background element -->
+            <div class="absolute top-0 right-0 w-1/2 h-full bg-gradient-to-l from-[#111] to-transparent pointer-events-none"></div>
+            
+            <div class="container mx-auto px-4 text-center relative z-10">
+                <h2 class="section-title">The Future of <span class="text-purple-royal">Community</span>.</h2>
                 <p class="section-subtitle">
-                    Tokenomics and digital ownership are the natural way of the future. We're embracing this technology before it's mainstream to build a stronger, more connected community.
+                    Tokenomics and digital ownership are the natural way of the future. We're embracing this technology to build a transparent, decentralized foundation.
                 </p>
-                <div class="grid grid-cols-1 md:grid-cols-2 gap-8 md:gap-12 max-w-4xl mx-auto mt-16 text-left">
-                    <div>
-                        <h3 class="text-3xl font-bold mb-4 text-gold">The Blockchain Evolution</h3>
+                <div class="grid grid-cols-1 md:grid-cols-2 gap-8 md:gap-16 max-w-5xl mx-auto mt-20 text-left">
+                    <div class="p-8 rounded-xl bg-[#111] border border-[#222] hover:border-purple-600/30 transition-colors">
+                        <div class="w-12 h-12 bg-gray-800 rounded-full flex items-center justify-center mb-6 text-2xl">🔗</div>
+                        <h3 class="text-2xl font-bold mb-4 text-purple-royal">The Blockchain Evolution</h3>
                         <p class="text-gray-400 leading-relaxed">
-                           Think of blockchain as the next generation of the internet—a secure, transparent system that allows for true digital ownership. Just as the internet connected us with information, blockchain connects us directly with value. We're embracing it early to build a more secure and transparent foundation for our community's future.
+                           Think of blockchain as the next generation of the internet—a secure, transparent system allowing for true digital ownership. Just as the internet connected us with information, blockchain connects us directly with value.
                         </p>
                     </div>
-                    <div>
-                        <h3 class="text-3xl font-bold mb-4 text-gold">NFTs: True Digital Ownership</h3>
+                    <div class="p-8 rounded-xl bg-[#111] border border-[#222] hover:border-purple-600/30 transition-colors">
+                        <div class="w-12 h-12 bg-gray-800 rounded-full flex items-center justify-center mb-6 text-2xl">💎</div>
+                        <h3 class="text-2xl font-bold mb-4 text-purple-royal">NFTs: True Ownership</h3>
                         <p class="text-gray-400 leading-relaxed">
-                           NFTs are simply the evolution of digital items. An NFT is a verifiable, digital certificate that proves you own a unique item—like your Decent Duck. It's your digital key to our community, granting you exclusive access and a real stake in our sanctuary's story. It's ownership, redefined for the digital age.
+                           An NFT is a verifiable, digital certificate that proves you own a unique item—like your Decent Duck. It's your digital key to our community, granting exclusive access and a real stake in our sanctuary's story.
                         </p>
                     </div>
                 </div>
@@ -459,37 +590,39 @@
         </section>
 
         <!-- Duckonomics Section -->
-        <section id="duckonomics" class="py-20 md:py-32 fade-in-section">
+        <section id="duckonomics" class="py-24 md:py-32 fade-in-section bg-[#050505]">
             <div class="container mx-auto px-4">
-                <h2 class="section-title text-center mb-4">Duck<span class="text-gold">onomics</span></h2>
+                <h2 class="section-title text-center mb-4">Duck<span class="text-purple-royal">onomics</span></h2>
                 <p class="section-subtitle text-center mb-12">
-                    Stay updated with the latest crypto events, prices, and AI-powered insights.
+                    Stay updated with the latest crypto events, market prices, and community insights.
                 </p>
 
                 <div class="text-center">
-                    <button id="duckonomics-toggle" class="btn-primary text-lg flex items-center mx-auto">
-                        View Duckonomics
-                        <svg id="duckonomics-arrow" class="w-6 h-6 ml-2 transition-transform" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"></path></svg>
+                    <button id="duckonomics-toggle" class="btn-primary text-lg flex items-center mx-auto gap-3">
+                        <span>View Market Data</span>
+                        <svg id="duckonomics-arrow" class="w-5 h-5 transition-transform duration-300" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"></path></svg>
                     </button>
                 </div>
 
                 <div id="duckonomics-content">
-                    <div class="mt-12 space-y-16">
+                    <div class="mt-16 space-y-16">
                         <!-- Crypto Events Table -->
                         <div>
-                            <h3 class="text-3xl font-bold mb-2 text-gold text-center">Crypto Market Events</h3>
-                            <p class="text-lg max-w-2xl mx-auto text-gray-300 text-center">Track key events impacting the crypto markets!</p>
+                            <div class="flex flex-col md:flex-row justify-between items-end max-w-4xl mx-auto mb-4 px-2">
+                                <h3 class="text-2xl font-bold text-white">📅 Market Events</h3>
+                                <p class="text-xs text-gray-500 uppercase">Updated: Dec 2025</p>
+                            </div>
                             <div id="crypto-events" class="data-table mx-auto max-w-4xl">
                                 <table class="w-full">
                                     <thead>
                                         <tr>
                                             <th>Date</th>
                                             <th>Event</th>
-                                            <th>Impact</th>
+                                            <th>Est. Impact</th>
                                         </tr>
                                     </thead>
                                     <tbody id="events-table-body">
-                                        <tr><td colspan="3" class="text-center p-8">Loading crypto events...</td></tr>
+                                        <tr><td colspan="3" class="text-center p-8">Loading events...</td></tr>
                                     </tbody>
                                 </table>
                             </div>
@@ -497,83 +630,54 @@
 
                         <!-- Crypto Data Table -->
                         <div>
-                            <h3 class="text-3xl font-bold mb-2 text-gold text-center">Live Crypto Prices</h3>
-                            <p class="text-lg max-w-2xl mx-auto text-gray-300 text-center">Check the latest prices and trends for top cryptocurrencies!</p>
+                            <div class="max-w-4xl mx-auto mb-4 px-2">
+                                <h3 class="text-2xl font-bold text-white">📈 Live Prices</h3>
+                            </div>
                             <div id="crypto-data" class="data-table mx-auto max-w-4xl">
                                 <table class="w-full">
                                     <thead>
                                         <tr>
-                                            <th>Coin</th>
+                                            <th>Asset</th>
                                             <th>Price (USD)</th>
                                             <th>24h Change</th>
                                         </tr>
                                     </thead>
                                     <tbody id="crypto-table-body">
-                                        <tr><td colspan="3" class="text-center p-8">Loading crypto data...</td></tr>
+                                        <tr><td colspan="3" class="text-center p-8 text-gray-500">Loading market data...</td></tr>
                                     </tbody>
                                 </table>
                             </div>
                         </div>
                         
                         <!-- Live Collection Stats -->
-                        <div>
-                            <h3 class="text-3xl font-bold mb-2 text-gold text-center">Collection Live Chart</h3>
-                            <p class="text-lg max-w-2xl mx-auto text-gray-300 text-center">Track the Decent Ducks collection stats in real-time.</p>
-                            <div class="mt-6 rounded-lg overflow-hidden border-2 border-gold max-w-4xl mx-auto text-center">
-                                <a href="https://magiceden.us/analytics/decent_ducks" target="_blank" class="btn-primary inline-block my-8">
-                                    View Live Chart on Magic Eden
-                                </a>
-                            </div>
-                        </div>
-                        
-                        <!-- Community Perks -->
-                        <div>
-                             <h3 class="text-3xl font-bold mb-8 text-gold text-center">Community Perks</h3>
-                            <div class="grid grid-cols-1 md:grid-cols-1 gap-12 max-w-lg mx-auto">
-                                <!-- Lurky -->
-                                <div class="text-center">
-                                    <img src="https://i.imgur.com/OOmwppw.png" alt="Lurky Logo" class="h-20 mx-auto mb-4 rounded-lg">
-                                    <h4 class="text-2xl font-bold mb-2">Exclusive $LURKY Perks</h4>
-                                    <p class="text-gray-300 leading-relaxed">
-                                        Join Lurky with our exclusive community invite code: 
-                                        <button id="lurky-copy-btn" class="text-gold font-bold hover:underline relative focus:outline-none">
-                                            @Ducksonx
-                                            <span id="copy-feedback-lurky" class="absolute -bottom-6 left-1/2 -translate-x-1/2 text-sm text-gold opacity-0 transition-opacity whitespace-nowrap">Copied!</span>
-                                        </button>
-                                        (we both earn points!).
-                                        <br><br>
-                                        <strong class="text-gold">As a community exclusive, holding 20,000 $LURKY unlocks:</strong>
-                                        <ul class="text-left list-disc list-inside mt-4 space-y-2">
-                                            <li>50 Reverb Questions a day <span class="text-gray-400">(vs. 3 free daily questions)</span></li>
-                                            <li>5 lurk space requests a day <span class="text-gray-400">(vs. 1 free request)</span></li>
-                                            <li>Coin Mentions analytics</li>
-                                            <li>KOLs Leaderboard for each coin</li>
-                                            <li>Space Mindmaps for quick insights</li>
-                                            <li>...and more benefits to come!</li>
-                                        </ul>
-                                        <br>
-                                        Use Lurky to earn $LURKY for your engagements & tags. Check your eligible airdrop, claimable after TGE on Oct 30th!
-                                    </p>
-                                    <div class="mt-6">
-                                        <a href="https://lurky.app/auth?referral-code=Ducksonx" target="_blank" class="btn-primary">Join Lurky</a>
-                                    </div>
+                        <div class="text-center">
+                            <div class="inline-block p-1 rounded-lg bg-gradient-to-r from-purple-800 to-purple-500">
+                                <div class="bg-[#111] rounded-md p-8 max-w-2xl">
+                                    <h3 class="text-2xl font-bold mb-4 text-white">Decent Ducks Analytics</h3>
+                                    <p class="text-gray-400 mb-8">Track the floor price, volume, and holder distribution in real-time.</p>
+                                    <a href="https://magiceden.us/marketplace/decent_ducks" target="_blank" class="btn-primary">
+                                        View on Magic Eden
+                                    </a>
                                 </div>
                             </div>
                         </div>
+                        
+                        <!-- Community Perks / Lurky Removed -->
                     </div>
                 </div>
             </div>
         </section>
 
         <!-- Jasmine Tribute Section -->
-        <section id="jasmine-tribute" class="py-20 md:py-32 fade-in-section">
+        <section id="jasmine-tribute" class="py-24 bg-[#080808] fade-in-section">
             <div class="container mx-auto px-4 text-center">
-                <div class="max-w-md mx-auto">
-                    <div class="content-card">
-                        <img src="https://i.imgur.com/KDhLLz2.jpeg" alt="Jasmine, the one lucky duck who inspired it all" class="w-full h-80 object-cover card-image" onerror="this.src='https://placehold.co/400x500/111111/e0e0e0?text=Jasmine';">
-                        <div class="p-6">
-                            <h3 class="text-2xl font-bold mb-1">Jasmine</h3>
-                            <p class="text-gray-400">The one lucky duck who inspired it all</p>
+                <div class="max-w-md mx-auto relative group">
+                    <div class="absolute -inset-1 bg-gradient-to-r from-purple-600 to-indigo-600 rounded-lg blur opacity-25 group-hover:opacity-75 transition duration-1000 group-hover:duration-200"></div>
+                    <div class="content-card relative">
+                        <img src="https://i.imgur.com/KDhLLz2.jpeg" alt="Jasmine, the one lucky duck who inspired it all" class="w-full h-96 object-cover card-image" onerror="this.src='https://placehold.co/400x500/111111/e0e0e0?text=Jasmine';">
+                        <div class="absolute bottom-0 left-0 w-full bg-gradient-to-t from-black to-transparent p-6 text-left">
+                            <h3 class="text-3xl font-bold mb-1 text-white">Jasmine</h3>
+                            <p class="text-gray-300 font-medium">The lucky duck who started it all.</p>
                         </div>
                     </div>
                 </div>
@@ -581,142 +685,160 @@
         </section>
 
         <!-- Our Flock Section -->
-        <section id="flock" class="py-20 md:py-32 bg-[#111] fade-in-section">
-            <div class="container mx-auto px-4">
-                <h2 class="section-title text-center mb-12">Meet Our Flock</h2>
-                <div class="scroll-gallery">
-                    <div class="gallery-item"><img src="https://i.imgur.com/puY6hwJ.jpeg" alt="Rescued bird 1" class="h-full object-cover" onerror="this.src='https://placehold.co/400x500/111111/e0e0e0?text=Bird';"></div>
-                    <div class="gallery-item"><img src="https://i.imgur.com/xDtlHp2.jpeg" alt="Rescued bird 2" class="h-full object-cover" onerror="this.src='https://placehold.co/400x500/111111/e0e0e0?text=Bird';"></div>
-                    <div class="gallery-item"><img src="https://i.imgur.com/UFqLyjX.jpeg" alt="Rescued bird 3" class="h-full object-cover" onerror="this.src='https://placehold.co/400x500/111111/e0e0e0?text=Bird';"></div>
-                    <div class="gallery-item"><img src="https://i.imgur.com/nSFnPRi.jpeg" alt="Rescued bird 4" class="h-full object-cover" onerror="this.src='https://placehold.co/400x500/111111/e0e0e0?text=Bird';"></div>
-                    <div class="gallery-item"><img src="https://i.imgur.com/cVPK557.jpeg" alt="Rescued bird 5" class="h-full object-cover" onerror="this.src='https://placehold.co/400x500/111111/e0e0e0?text=Bird';"></div>
-                    <div class="gallery-item"><img src="https://i.imgur.com/Z0SjtYK.jpeg" alt="Rescued bird 6" class="h-full object-cover" onerror="this.src='https://placehold.co/400x500/111111/e0e0e0?text=Bird';"></div>
-                    <div class="gallery-item"><img src="https://i.imgur.com/4JjvsZJ.jpeg" alt="Rescued bird 7" class="h-full object-cover" onerror="this.src='https://placehold.co/400x500/111111/e0e0e0?text=Bird';"></div>
-                    <div class="gallery-item"><img src="https://i.imgur.com/CLD4H11.jpeg" alt="Rescued bird 8" class="h-full object-cover" onerror="this.src='https://placehold.co/400x500/111111/e0e0e0?text=Bird';"></div>
-                    <div class="gallery-item"><img src="https://i.imgur.com/Zj9vBvE.jpeg" alt="Rescued bird 9" class="h-full object-cover" onerror="this.src='https://placehold.co/400x500/111111/e0e0e0?text=Bird';"></div>
-                    <div class="gallery-item"><img src="https://i.imgur.com/uDodScy.jpeg" alt="Rescued bird 10" class="h-full object-cover" onerror="this.src='https://placehold.co/400x500/111111/e0e0e0?text=Bird';"></div>
-                    <div class="gallery-item"><img src="https://i.imgur.com/Ikai49o.jpeg" alt="Rescued bird 11" class="h-full object-cover" onerror="this.src='https://placehold.co/400x500/111111/e0e0e0?text=Bird';"></div>
-                    <div class="gallery-item"><img src="https://i.imgur.com/3JWIdgd.jpeg" alt="Rescued bird 12" class="h-full object-cover" onerror="this.src='https://placehold.co/400x500/111111/e0e0e0?text=Bird';"></div>
-                    <div class="gallery-item"><img src="https://i.imgur.com/f6JHZAZ.jpeg" alt="Rescued bird 13" class="h-full object-cover" onerror="this.src='https://placehold.co/400x500/111111/e0e0e0?text=Bird';"></div>
-                    <div class="gallery-item"><img src="https://i.imgur.com/u1imbPy.jpeg" alt="Rescued bird 14" class="h-full object-cover" onerror="this.src='https://placehold.co/400x500/111111/e0e0e0?text=Bird';"></div>
-                    <div class="gallery-item"><img src="https://i.imgur.com/RzR8Swn.jpeg" alt="Rescued bird 15" class="h-full object-cover" onerror="this.src='https://placehold.co/400x500/111111/e0e0e0?text=Bird';"></div>
-                    <div class="gallery-item"><img src="https://i.imgur.com/6xgDSoD.jpeg" alt="Rescued bird 16" class="h-full object-cover" onerror="this.src='https://placehold.co/400x500/111111/e0e0e0?text=Bird';"></div>
-                    <div class="gallery-item"><img src="https://i.imgur.com/CgXDM7n.jpeg" alt="Rescued bird 17" class="h-full object-cover" onerror="this.src='https://placehold.co/400x500/111111/e0e0e0?text=Bird';"></div>
-                    <div class="gallery-item"><img src="https://i.imgur.com/osg6DVb.jpeg" alt="Rescued bird 18" class="h-full object-cover" onerror="this.src='https://placehold.co/400x500/111111/e0e0e0?text=Bird';"></div>
-                    <div class="gallery-item"><img src="https://i.imgur.com/IWXDsZa.jpeg" alt="Rescued bird 19" class="h-full object-cover" onerror="this.src='https://placehold.co/400x500/111111/e0e0e0?text=Bird';"></div>
-                    <div class="gallery-item"><img src="https://i.imgur.com/k3Rduas.jpeg" alt="Rescued bird 20" class="h-full object-cover" onerror="this.src='https://placehold.co/400x500/111111/e0e0e0?text=Bird';"></div>
-                    <div class="gallery-item"><img src="https://i.imgur.com/4xFPsoA.jpeg" alt="Rescued bird 21" class="h-full object-cover" onerror="this.src='https://placehold.co/400x500/111111/e0e0e0?text=Bird';"></div>
-                    <div class="gallery-item"><img src="https://i.imgur.com/hO4vfzL.jpeg" alt="Rescued bird 22" class="h-full object-cover" onerror="this.src='https://placehold.co/400x500/111111/e0e0e0?text=Bird';"></div>
-                    <div class="gallery-item"><img src="https://i.imgur.com/Xtj3MUW.jpeg" alt="Rescued bird 23" class="h-full object-cover" onerror="this.src='https://placehold.co/400x500/111111/e0e0e0?text=Bird';"></div>
-                    <div class="gallery-item"><img src="https://i.imgur.com/Wo89RgC.jpeg" alt="Rescued bird 24" class="h-full object-cover" onerror="this.src='https://placehold.co/400x500/111111/e0e0e0?text=Bird';"></div>
-                    <div class="gallery-item"><img src="https://i.imgur.com/RqOd3Ac.jpeg" alt="Rescued bird 25" class="h-full object-cover" onerror="this.src='https://placehold.co/400x500/111111/e0e0e0?text=Bird';"></div>
-                    <div class="gallery-item"><img src="https://i.imgur.com/It4saKp.jpeg" alt="Rescued bird 26" class="h-full object-cover" onerror="this.src='https://placehold.co/400x500/111111/e0e0e0?text=Bird';"></div>
-                    <div class="gallery-item"><img src="https://i.imgur.com/2I2BIOq.jpeg" alt="Rescued bird 27" class="h-full object-cover" onerror="this.src='https://placehold.co/400x500/111111/e0e0e0?text=Bird';"></div>
+        <section id="flock" class="py-24 bg-[#050505] fade-in-section">
+            <div class="container mx-auto px-4 mb-8 flex justify-between items-end">
+                <div>
+                    <h2 class="section-title">Meet The <span class="text-purple-royal">Flock</span></h2>
+                    <p class="text-gray-500 mt-2">Some of the lives we've saved together.</p>
+                </div>
+                <div class="hidden md:block text-gray-600 text-sm">Drag to explore &rarr;</div>
+            </div>
+            <div class="container-fluid px-0">
+                <div class="scroll-gallery px-4">
+                    <div class="gallery-item"><img src="https://i.imgur.com/puY6hwJ.jpeg" alt="Rescued bird 1" loading="lazy"></div>
+                    <div class="gallery-item"><img src="https://i.imgur.com/xDtlHp2.jpeg" alt="Rescued bird 2" loading="lazy"></div>
+                    <div class="gallery-item"><img src="https://i.imgur.com/UFqLyjX.jpeg" alt="Rescued bird 3" loading="lazy"></div>
+                    <div class="gallery-item"><img src="https://i.imgur.com/nSFnPRi.jpeg" alt="Rescued bird 4" loading="lazy"></div>
+                    <div class="gallery-item"><img src="https://i.imgur.com/cVPK557.jpeg" alt="Rescued bird 5" loading="lazy"></div>
+                    <div class="gallery-item"><img src="https://i.imgur.com/Z0SjtYK.jpeg" alt="Rescued bird 6" loading="lazy"></div>
+                    <div class="gallery-item"><img src="https://i.imgur.com/4JjvsZJ.jpeg" alt="Rescued bird 7" loading="lazy"></div>
+                    <div class="gallery-item"><img src="https://i.imgur.com/CLD4H11.jpeg" alt="Rescued bird 8" loading="lazy"></div>
+                    <div class="gallery-item"><img src="https://i.imgur.com/Zj9vBvE.jpeg" alt="Rescued bird 9" loading="lazy"></div>
+                    <div class="gallery-item"><img src="https://i.imgur.com/uDodScy.jpeg" alt="Rescued bird 10" loading="lazy"></div>
+                    <div class="gallery-item"><img src="https://i.imgur.com/Ikai49o.jpeg" alt="Rescued bird 11" loading="lazy"></div>
+                    <div class="gallery-item"><img src="https://i.imgur.com/3JWIdgd.jpeg" alt="Rescued bird 12" loading="lazy"></div>
+                    <div class="gallery-item"><img src="https://i.imgur.com/f6JHZAZ.jpeg" alt="Rescued bird 13" loading="lazy"></div>
+                    <div class="gallery-item"><img src="https://i.imgur.com/u1imbPy.jpeg" alt="Rescued bird 14" loading="lazy"></div>
+                    <div class="gallery-item"><img src="https://i.imgur.com/RzR8Swn.jpeg" alt="Rescued bird 15" loading="lazy"></div>
+                    <div class="gallery-item"><img src="https://i.imgur.com/6xgDSoD.jpeg" alt="Rescued bird 16" loading="lazy"></div>
+                    <div class="gallery-item"><img src="https://i.imgur.com/CgXDM7n.jpeg" alt="Rescued bird 17" loading="lazy"></div>
+                    <div class="gallery-item"><img src="https://i.imgur.com/osg6DVb.jpeg" alt="Rescued bird 18" loading="lazy"></div>
+                    <div class="gallery-item"><img src="https://i.imgur.com/IWXDsZa.jpeg" alt="Rescued bird 19" loading="lazy"></div>
+                    <div class="gallery-item"><img src="https://i.imgur.com/k3Rduas.jpeg" alt="Rescued bird 20" loading="lazy"></div>
+                    <div class="gallery-item"><img src="https://i.imgur.com/4xFPsoA.jpeg" alt="Rescued bird 21" loading="lazy"></div>
+                    <div class="gallery-item"><img src="https://i.imgur.com/hO4vfzL.jpeg" alt="Rescued bird 22" loading="lazy"></div>
+                    <div class="gallery-item"><img src="https://i.imgur.com/Xtj3MUW.jpeg" alt="Rescued bird 23" loading="lazy"></div>
+                    <div class="gallery-item"><img src="https://i.imgur.com/Wo89RgC.jpeg" alt="Rescued bird 24" loading="lazy"></div>
+                    <div class="gallery-item"><img src="https://i.imgur.com/RqOd3Ac.jpeg" alt="Rescued bird 25" loading="lazy"></div>
+                    <div class="gallery-item"><img src="https://i.imgur.com/It4saKp.jpeg" alt="Rescued bird 26" loading="lazy"></div>
+                    <div class="gallery-item"><img src="https://i.imgur.com/2I2BIOq.jpeg" alt="Rescued bird 27" loading="lazy"></div>
                 </div>
             </div>
         </section>
 
-        <!-- New Donation Section -->
-        <section id="donate" class="py-20 md:py-32 fade-in-section">
+        <!-- Donation Section -->
+        <section id="donate" class="py-24 md:py-32 fade-in-section bg-[#0a0a0a]">
             <div class="container mx-auto px-4 text-center">
-                <h2 class="section-title">Feed The <span class="text-gold">Flock</span>.</h2>
+                <h2 class="section-title">Feed The <span class="text-purple-royal">Flock</span>.</h2>
                 <p class="section-subtitle">
-                    Your donations directly support our sanctuary and the birds in our care.
+                    Your donations directly support our sanctuary, covering feed, shelter maintenance, and medical care.
                 </p>
-                <p class="text-gray-300 mt-6 max-w-2xl mx-auto">
-                    For a video shoutout or to have your donation go to a specific feed, please 
-                    <a href="https://discord.com/invite/e6b4RnXRkE" target="_blank" class="text-gold hover:underline font-semibold">join our Discord</a> 
-                    and submit a ticket with a screenshot of your donation.
-                </p>
-                <div class="mt-12 flex flex-col md:flex-row items-center justify-center gap-6">
+                <div class="mt-8 bg-[#111] border border-[#222] p-6 rounded-lg inline-block text-sm text-gray-400 max-w-2xl">
+                    <p class="mb-2"><strong class="text-white">Want a shoutout?</strong></p>
+                    <p>
+                        Join our <a href="https://discord.com/invite/e6b4RnXRkE" target="_blank" class="text-purple-400 hover:underline">Discord</a> and open a ticket with your donation screenshot. You can even specify which duck gets the extra treats!
+                    </p>
+                </div>
+                
+                <div class="mt-12 grid grid-cols-1 md:grid-cols-3 gap-6 max-w-4xl mx-auto">
                     <!-- Solana -->
-                    <div class="relative">
-                        <button id="sol-copy-btn" class="btn-secondary w-full md:w-auto flex items-center justify-center gap-2">
-                            <img src="https://i.imgur.com/fdAeIGs.png" class="w-5 h-5"> Copy SOL Address
+                    <div class="relative group">
+                        <button id="sol-copy-btn" class="btn-secondary w-full h-16 flex items-center justify-center gap-3 text-sm md:text-base hover:border-[#9945FF] hover:text-[#9945FF]">
+                            <img src="https://i.imgur.com/fdAeIGs.png" class="w-6 h-6"> 
+                            <span>Copy SOL Address</span>
                         </button>
-                        <span id="copy-feedback-sol" class="absolute -top-8 left-1/2 -translate-x-1/2 text-sm text-gold opacity-0 transition-opacity whitespace-nowrap">Copied!</span>
+                        <span id="copy-feedback-sol" class="absolute -top-10 left-1/2 -translate-x-1/2 bg-white text-black text-xs font-bold px-3 py-1 rounded shadow-lg opacity-0 transition-opacity">Copied!</span>
                     </div>
                     <!-- Bitcoin -->
-                    <div class="relative">
-                        <button id="btc-copy-btn" class="btn-secondary w-full md:w-auto flex items-center justify-center gap-2">
-                            <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/4/46/Bitcoin.svg/200px-Bitcoin.svg.png" class="w-5 h-5"> Copy BTC Address
+                    <div class="relative group">
+                        <button id="btc-copy-btn" class="btn-secondary w-full h-16 flex items-center justify-center gap-3 text-sm md:text-base hover:border-[#F7931A] hover:text-[#F7931A]">
+                            <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/4/46/Bitcoin.svg/200px-Bitcoin.svg.png" class="w-6 h-6"> 
+                            <span>Copy BTC Address</span>
                         </button>
-                        <span id="copy-feedback-btc" class="absolute -top-8 left-1/2 -translate-x-1/2 text-sm text-gold opacity-0 transition-opacity whitespace-nowrap">Copied!</span>
+                        <span id="copy-feedback-btc" class="absolute -top-10 left-1/2 -translate-x-1/2 bg-white text-black text-xs font-bold px-3 py-1 rounded shadow-lg opacity-0 transition-opacity">Copied!</span>
                     </div>
                     <!-- ETH -->
-                    <div class="relative">
-                        <button id="eth-copy-btn" class="btn-secondary w-full md:w-auto flex items-center justify-center gap-2">
-                            <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/6/6f/Ethereum-icon-purple.svg/480px-Ethereum-icon-purple.svg.png" class="w-5 h-5"> Copy ETH Address
+                    <div class="relative group">
+                        <button id="eth-copy-btn" class="btn-secondary w-full h-16 flex items-center justify-center gap-3 text-sm md:text-base hover:border-[#627EEA] hover:text-[#627EEA]">
+                            <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/6/6f/Ethereum-icon-purple.svg/480px-Ethereum-icon-purple.svg.png" class="w-6 h-6"> 
+                            <span>Copy ETH Address</span>
                         </button>
-                        <span id="copy-feedback-eth" class="absolute -top-8 left-1/2 -translate-x-1/2 text-sm text-gold opacity-0 transition-opacity whitespace-nowrap">Copied!</span>
+                        <span id="copy-feedback-eth" class="absolute -top-10 left-1/2 -translate-x-1/2 bg-white text-black text-xs font-bold px-3 py-1 rounded shadow-lg opacity-0 transition-opacity">Copied!</span>
                     </div>
                 </div>
             </div>
         </section>
 
         <!-- Projects Section -->
-        <section id="projects" class="py-20 md:py-32 fade-in-section">
+        <section id="projects" class="py-24 md:py-32 fade-in-section bg-[#050505]">
             <div class="container mx-auto px-4">
-                <h2 class="section-title text-center mb-12">Our Digital <span class="text-gold">Ecosystem</span></h2>
+                <h2 class="section-title text-center mb-16">Our Digital <span class="text-purple-royal">Ecosystem</span></h2>
                 <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
-                    <div class="content-card">
-                        <img src="https://i.imgur.com/JuDDwQ7.jpeg" alt="Duck Joyride" class="w-full h-56 object-cover card-image" onerror="this.src='https://placehold.co/600x400/1a1a1a/e0e0e0?text=Duck+Joyride';">
+                    <!-- Joyride -->
+                    <div class="content-card group">
+                        <div class="overflow-hidden h-56 relative">
+                            <div class="absolute inset-0 bg-black/20 group-hover:bg-transparent transition-colors z-10"></div>
+                            <img src="https://i.imgur.com/JuDDwQ7.jpeg" alt="Duck Joyride" class="w-full h-full object-cover card-image">
+                        </div>
                         <div class="p-6">
-                            <h3 class="text-2xl font-bold mb-2">Duck Joyride</h3>
-                            <p class="text-gray-400 mb-6">An adventurous side-scroller. Guide a duck through wild obstacles.</p>
-                            <a href="https://duckxmeta.github.io/DuckJoyrideV2/" target="_blank" class="font-bold text-gold hover:underline">Play Now &rarr;</a>
+                            <h3 class="text-2xl font-bold mb-2 text-white group-hover:text-purple-400 transition-colors">Duck Joyride</h3>
+                            <p class="text-gray-400 mb-6 text-sm leading-relaxed">An adventurous side-scroller. Guide a duck through wild obstacles and collect rewards.</p>
+                            <a href="https://duckxmeta.github.io/DuckJoyrideV2/" target="_blank" class="text-sm font-bold text-white border-b-2 border-purple-600 pb-1 hover:text-purple-400">PLAY NOW</a>
                         </div>
                     </div>
-                     <div class="content-card">
-                        <img src="https://i.imgur.com/braneXY.jpeg" alt="Ground Rangers" class="w-full h-56 object-cover card-image" onerror="this.src='https://placehold.co/600x400/1a1a1a/e0e0e0?text=Ground+Rangers';">
+                    <!-- Ground Rangers -->
+                     <div class="content-card group">
+                        <div class="overflow-hidden h-56 relative">
+                            <img src="https://i.imgur.com/braneXY.jpeg" alt="Ground Rangers" class="w-full h-full object-cover card-image">
+                        </div>
                         <div class="p-6">
-                            <h3 class="text-2xl font-bold mb-2">Ground Rangers</h3>
-                            <p class="text-gray-400 mb-6">Shoutout to @Monkeybizio on X for making this game!</p>
-                            <a href="https://decentducks.netlify.app/" target="_blank" class="font-bold text-gold hover:underline">Play Now &rarr;</a>
+                            <h3 class="text-2xl font-bold mb-2 text-white group-hover:text-purple-400 transition-colors">Ground Rangers</h3>
+                            <p class="text-gray-400 mb-6 text-sm leading-relaxed">A special shoutout to @Monkeybizio for developing this arcade classic.</p>
+                            <a href="https://decentducks.netlify.app/" target="_blank" class="text-sm font-bold text-white border-b-2 border-purple-600 pb-1 hover:text-purple-400">PLAY NOW</a>
                         </div>
                     </div>
-                    <!-- Project Card -->
-                    <div class="content-card">
-                        <img src="https://i.imgur.com/hOWQbzH.jpeg" alt="Decent Duck's Chess" class="w-full h-56 object-cover card-image" onerror="this.src='https://placehold.co/600x400/1a1a1a/ffd700?text=Chess';">
+                    <!-- Chess -->
+                    <div class="content-card group">
+                        <div class="overflow-hidden h-56 relative">
+                            <img src="https://i.imgur.com/hOWQbzH.jpeg" alt="Decent Duck's Chess" class="w-full h-full object-cover card-image">
+                        </div>
                         <div class="p-6">
-                            <h3 class="text-2xl font-bold mb-2">Decent Duck's Chess</h3>
-                            <p class="text-gray-400 mb-6">Play a classic game of chess with a Decent Duck twist.</p>
-                            <a href="https://duckxmeta.github.io/Decent-Chess/" target="_blank" class="font-bold text-gold hover:underline">Play Now &rarr;</a>
+                            <h3 class="text-2xl font-bold mb-2 text-white group-hover:text-purple-400 transition-colors">Decent Chess</h3>
+                            <p class="text-gray-400 mb-6 text-sm leading-relaxed">Strategic mastery meets barnyard chaos. Play a classic game with a twist.</p>
+                            <a href="https://duckxmeta.github.io/Decent-Chess/" target="_blank" class="text-sm font-bold text-white border-b-2 border-purple-600 pb-1 hover:text-purple-400">PLAY NOW</a>
                         </div>
                     </div>
-                     <div class="content-card">
-                        <img src="https://i.imgur.com/nryha8g.jpeg" alt="D & Ducks Quest" class="w-full h-56 object-cover card-image" onerror="this.src='https://placehold.co/600x400/1a1a1a/ffd700?text=D+%26+Ducks';">
+                     <!-- D&D -->
+                     <div class="content-card group">
+                        <div class="overflow-hidden h-56 relative">
+                            <img src="https://i.imgur.com/nryha8g.jpeg" alt="D & Ducks Quest" class="w-full h-full object-cover card-image">
+                        </div>
                         <div class="p-6">
-                            <h3 class="text-2xl font-bold mb-2">D & Ducks Quest</h3>
-                            <p class="text-gray-400 mb-6">Embark on a text-based adventure in the world of Decent Ducks.</p>
-                            <a href="https://duckxmeta.github.io/D-Ducks-v1/" target="_blank" class="font-bold text-gold hover:underline">Play Now &rarr;</a>
+                            <h3 class="text-2xl font-bold mb-2 text-white group-hover:text-purple-400 transition-colors">D & Ducks Quest</h3>
+                            <p class="text-gray-400 mb-6 text-sm leading-relaxed">Embark on a text-based RPG adventure in the world of Decent Ducks.</p>
+                            <a href="https://duckxmeta.github.io/D-Ducks-v1/" target="_blank" class="text-sm font-bold text-white border-b-2 border-purple-600 pb-1 hover:text-purple-400">PLAY NOW</a>
                         </div>
                     </div>
-                    <!-- Project Card: X Page -->
-                    <div class="content-card">
-                        <img src="https://i.imgur.com/o32AjZE.jpg" alt="Duck on X" class="w-full h-56 object-cover card-image" onerror="this.src='https://placehold.co/600x400/1a1a1a/e0e0e0?text=X';">
+                    <!-- X -->
+                    <div class="content-card group">
+                        <div class="overflow-hidden h-56 relative">
+                            <img src="https://i.imgur.com/o32AjZE.jpg" alt="Duck on X" class="w-full h-full object-cover card-image">
+                        </div>
                         <div class="p-6">
-                            <h3 class="text-2xl font-bold mb-2">🦆 on 𝕏</h3>
-                            <p class="text-gray-400 mb-6">Join @Ducksonx for fun, support our duck sanctuary, and connect.</p>
-                            <a href="https://x.com/ducksonx?s=21" target="_blank" class="font-bold text-gold hover:underline">Join on X &rarr;</a>
+                            <h3 class="text-2xl font-bold mb-2 text-white group-hover:text-purple-400 transition-colors">@Ducksonx</h3>
+                            <p class="text-gray-400 mb-6 text-sm leading-relaxed">Join the conversation on X. Memes, updates, and community spaces.</p>
+                            <a href="https://x.com/ducksonx?s=21" target="_blank" class="text-sm font-bold text-white border-b-2 border-purple-600 pb-1 hover:text-purple-400">FOLLOW</a>
                         </div>
                     </div>
-                    <!-- Project Card -->
-                    <div class="content-card">
-                        <img src="https://i.imgur.com/EE0FRWy.jpg" alt="Duck on TikTok" class="w-full h-56 object-cover card-image" onerror="this.src='https://placehold.co/600x400/1a1a1a/e0e0e0?text=TikTok';">
-                        <div class="p-6">
-                            <h3 class="text-2xl font-bold mb-2">JustDuckIt on TikTok</h3>
-                            <p class="text-gray-400 mb-6">Follow our daily sanctuary antics and join our 11K+ followers.</p>
-                            <a href="https://www.tiktok.com/@justtduckit" target="_blank" class="font-bold text-gold hover:underline">Follow Us &rarr;</a>
+                    <!-- TikTok -->
+                    <div class="content-card group">
+                        <div class="overflow-hidden h-56 relative">
+                            <img src="https://i.imgur.com/EE0FRWy.jpg" alt="Duck on TikTok" class="w-full h-full object-cover card-image">
                         </div>
-                    </div>
-                    <!-- New EXCLUSIVO Card -->
-                    <div class="content-card">
-                        <img src="https://i.imgur.com/PulUeOX.jpeg" alt="EXCLUSIVO Storefront" class="w-full h-56 object-cover card-image">
                         <div class="p-6">
-                            <h3 class="text-2xl font-bold mb-2">EXCLUSIVO Storefront</h3>
-                            <p class="text-gray-400 mb-6">Explore our premium duck decor and exclusive items.</p>
-                            <a href="https://app.exclusivo.one/invite/4fTDRlV4XKp5XooPeCSGJeFLsqYq3Dlo" target="_blank" class="font-bold text-gold hover:underline">Shop Now &rarr;</a>
+                            <h3 class="text-2xl font-bold mb-2 text-white group-hover:text-purple-400 transition-colors">@JustDuckIt</h3>
+                            <p class="text-gray-400 mb-6 text-sm leading-relaxed">Daily dose of serotonin. Watch the ducks live their best lives on TikTok.</p>
+                            <a href="https://www.tiktok.com/@justtduckit" target="_blank" class="text-sm font-bold text-white border-b-2 border-purple-600 pb-1 hover:text-purple-400">WATCH</a>
                         </div>
                     </div>
                 </div>
@@ -724,153 +846,149 @@
         </section>
 
         <!-- Merch Section -->
-        <section id="merch" class="py-20 md:py-32 bg-[#111] fade-in-section">
+        <section id="merch" class="py-24 md:py-32 bg-[#080808] fade-in-section">
             <div class="container mx-auto px-4">
-                <h2 class="section-title text-center">Wear The <span class="text-gold">Cause</span>.</h2>
+                <h2 class="section-title text-center">Shop The <span class="text-purple-royal">Collection</span></h2>
                 <p class="section-subtitle text-center">
-                    Support the sanctuary and look good doing it. High-quality apparel powered by Printful.
+                    Support the sanctuary with official merch and our curated favorites.
                 </p>
-                <div class="mt-12 text-center">
-                    <a href="https://justduckit-merch.printful.me/" target="_blank" class="btn-primary text-lg">Shop The Collection</a>
+                
+                <!-- Shop Buttons -->
+                <div class="mt-12 flex flex-col sm:flex-row justify-center items-center gap-6">
+                    <a href="https://justduckit-merch.printful.me/" target="_blank" class="btn-primary min-w-[200px] text-center">
+                        Official Merch
+                    </a>
+                    <a href="https://www.amazon.com/shop/justtduckit?ref_=cm_sw_r_cp_ud_aipsfshop_E3JBV39PAKXKP333HT6T" target="_blank" class="btn-secondary min-w-[200px] gap-2 hover:text-[#ff9900] hover:border-[#ff9900]">
+                         <i class="fab fa-amazon"></i> Amazon Favorites
+                    </a>
+                    <a href="https://app.exclusivo.one/invite/4fTDRlV4XKp5XooPeCSGJeFLsqYq3Dlo" target="_blank" class="btn-secondary min-w-[200px] gap-2">
+                        Exclusivo Store
+                   </a>
                 </div>
-                <div class="mt-12 scroll-gallery">
+
+                <div class="mt-16 scroll-gallery">
                     <div class="gallery-item">
-                        <img src="https://i.imgur.com/U9e6xWi.jpeg" alt="JustDuckit Merch 1" class="w-full h-full object-cover rounded-lg" onerror="this.onerror=null;this.src='https://placehold.co/400x500/1a1a1a/FFD700?text=Merch';">
+                        <img src="https://i.imgur.com/U9e6xWi.jpeg" alt="JustDuckit Merch 1" class="w-full h-full object-cover rounded-lg shadow-lg">
                     </div>
                     <div class="gallery-item">
-                        <img src="https://i.imgur.com/xTIWyEx.jpeg" alt="JustDuckit Merch 2" class="w-full h-full object-cover rounded-lg" onerror="this.onerror=null;this.src='https://placehold.co/400x500/1a1a1a/FFD700?text=Merch';">
+                        <img src="https://i.imgur.com/xTIWyEx.jpeg" alt="JustDuckit Merch 2" class="w-full h-full object-cover rounded-lg shadow-lg">
                     </div>
                     <div class="gallery-item">
-                        <img src="https://i.imgur.com/BHp79S5.jpeg" alt="JustDuckit Merch 3" class="w-full h-full object-cover rounded-lg" onerror="this.onerror=null;this.src='https://placehold.co/400x500/1a1a1a/FFD700?text=Merch';">
+                        <img src="https://i.imgur.com/BHp79S5.jpeg" alt="JustDuckit Merch 3" class="w-full h-full object-cover rounded-lg shadow-lg">
                     </div>
                     <div class="gallery-item">
-                        <img src="https://i.imgur.com/AVxgVeR.jpeg" alt="JustDuckit Merch 4" class="w-full h-full object-cover rounded-lg" onerror="this.onerror=null;this.src='https://placehold.co/400x500/1a1a1a/FFD700?text=Merch';">
+                        <img src="https://i.imgur.com/AVxgVeR.jpeg" alt="JustDuckit Merch 4" class="w-full h-full object-cover rounded-lg shadow-lg">
                     </div>
                 </div>
             </div>
         </section>
 
         <!-- Soundtrack Section -->
-        <section id="soundtrack" class="py-20 md:py-32 fade-in-section">
+        <section id="soundtrack" class="py-24 md:py-32 fade-in-section bg-[#050505]">
             <div class="container mx-auto px-4">
-                <h2 class="section-title text-center mb-4">Official <span class="text-gold">Soundtrack</span></h2>
-                <p class="section-subtitle text-center mb-12">
-                    Press play and vibe with us while you explore.
-                </p>
-                <div class="max-w-3xl mx-auto bg-[#1a1a1a] rounded-lg p-8">
-                    <div class="flex items-center space-x-6">
-                        <button id="play-pause-btn" class="w-20 h-20 bg-[#ffd700] rounded-full flex items-center justify-center text-black cursor-pointer shadow-lg transition-transform hover:scale-110 flex-shrink-0">
-                            <svg id="play-icon" class="w-10 h-10" fill="currentColor" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg"><path d="M4.536 2.536A1 1 0 016.207 3.207l9.428 6.286a1 1 0 010 1.514l-9.428 6.286a1 1 0 01-1.671-.757V3.293a1 1 0 01.329-.757z"></path></svg>
-                            <svg id="pause-icon" class="w-10 h-10 hidden" fill="currentColor" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg"><path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zM8 7a1 1 0 00-1 1v4a1 1 0 001 1h1a1 1 0 001-1V8a1 1 0 00-1-1H8zm4 0a1 1 0 00-1 1v4a1 1 0 001 1h1a1 1 0 001-1V8a1 1 0 00-1-1h-1z" clip-rule="evenodd"></path></svg>
-                        </button>
-                        <div>
-                            <h3 id="song-title" class="text-2xl font-bold text-white"></h3>
-                            <p id="song-artist" class="text-gray-400"></p>
+                <div class="max-w-4xl mx-auto music-player-container rounded-2xl p-6 md:p-10">
+                    <div class="text-center mb-10">
+                         <h2 class="text-3xl font-bold mb-2">Sanctuary <span class="text-purple-royal">Vibes</span></h2>
+                         <p class="text-gray-500">Curated sounds for duck watching.</p>
+                    </div>
+
+                    <div class="flex flex-col md:flex-row gap-8 items-start">
+                        <!-- Controls & Visual -->
+                        <div class="w-full md:w-1/3 flex flex-col items-center text-center">
+                            <div class="w-48 h-48 bg-black rounded-lg shadow-2xl overflow-hidden mb-6 border border-[#333] relative group">
+                                <img src="https://i.imgur.com/otNEI2M.png" class="w-full h-full object-cover opacity-80 group-hover:opacity-100 transition-opacity">
+                                <div class="absolute inset-0 flex items-center justify-center">
+                                    <button id="play-pause-btn" class="w-16 h-16 bg-[#9333ea] rounded-full flex items-center justify-center text-white shadow-lg hover:scale-110 transition-transform">
+                                        <svg id="play-icon" class="w-6 h-6 ml-1" fill="currentColor" viewBox="0 0 24 24"><path d="M8 5v14l11-7z"/></svg>
+                                        <svg id="pause-icon" class="w-6 h-6 hidden" fill="currentColor" viewBox="0 0 24 24"><path d="M6 19h4V5H6v14zm8-14v14h4V5h-4z"/></svg>
+                                    </button>
+                                </div>
+                            </div>
+                            <h3 id="song-title" class="text-xl font-bold text-white mb-1">Select a Track</h3>
+                            <p id="song-artist" class="text-sm text-purple-400">@Duckxmeta</p>
                         </div>
-                    </div>
-                    <div id="lyrics-container" class="mt-8 text-gray-400 h-64 overflow-y-auto text-lg leading-loose pr-4">
-                        <!-- Lyrics populated by JS -->
-                    </div>
-                    <div id="tracklist" class="mt-8 border-t border-gray-700 pt-6">
-                        <h4 class="text-xl font-bold mb-4 text-white">Tracklist</h4>
-                        <!-- JS will populate this -->
+
+                        <!-- Lyrics & List -->
+                        <div class="w-full md:w-2/3">
+                            <!-- Lyrics -->
+                            <div id="lyrics-container" class="lyrics-scroll h-48 overflow-y-auto mb-8 text-center md:text-left pr-2 text-lg leading-loose text-gray-500 font-medium">
+                                <p>Select a track to view lyrics...</p>
+                            </div>
+                            
+                            <!-- Tracklist -->
+                            <div id="tracklist" class="space-y-2">
+                                <!-- Populated by JS -->
+                            </div>
+                        </div>
                     </div>
                 </div>
             </div>
         </section>
 
         <!-- Community Section -->
-        <section id="community" class="py-20 md:py-32 fade-in-section">
+        <section id="community" class="py-24 md:py-32 fade-in-section bg-[#0a0a0a]">
             <div class="container mx-auto px-4 text-center">
-                <h2 class="section-title">Join The <span class="text-gold">Flock</span>.</h2>
+                <h2 class="section-title">Join The <span class="text-purple-royal">Flock</span>.</h2>
                 <p class="section-subtitle">
-                    Our community spans the globe, allowing people to join regardless of where they are. Connect with us, get real-time updates, and unlock exclusive perks for Decent Duck holders in our Discord community.
+                    Connect with us, get real-time updates, and unlock exclusive perks for Decent Duck holders.
                 </p>
                 <div class="mt-12">
-                    <a href="https://discord.com/invite/e6b4RnXRkE" target="_blank" class="btn-primary text-lg">Join Our Discord</a>
+                    <a href="https://discord.com/invite/e6b4RnXRkE" target="_blank" class="btn-primary text-lg px-10 py-4 shadow-[0_0_20px_rgba(147,51,234,0.3)]">Join Our Discord</a>
                 </div>
             </div>
         </section>
 
-        <!-- Partners Section -->
-        <section id="partners" class="py-20 md:py-32 bg-[#111] fade-in-section">
+        <!-- Partners Section (SolOnChain Removed) -->
+        <section id="partners" class="py-24 bg-[#050505] fade-in-section">
             <div class="container mx-auto px-4">
-                <h2 class="section-title text-center mb-4">Our Esteemed <span class="text-gold">Partners</span></h2>
-                <p class="section-subtitle text-center mb-12">
-                    We're proud to collaborate with these amazing projects in the ecosystem.
+                <h2 class="section-title text-center mb-4">Our <span class="text-purple-royal">Partners</span></h2>
+                <p class="section-subtitle text-center mb-16">
+                    Proudly collaborating with leaders in the ecosystem.
                 </p>
-                <div class="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-5 gap-8 items-center max-w-5xl mx-auto">
-                    <!-- Quakk -->
-                    <a href="https://quakklife.com/" target="_blank" class="flex flex-col items-center justify-center text-center no-underline">
-                        <img src="https://i.imgur.com/qOmxNCQ.png" alt="Quakk Logo" class="max-h-16 grayscale hover:grayscale-0 transition-all duration-300">
-                        <p class="mt-4 text-sm font-semibold text-gray-400">Quakk</p>
+                <div class="flex flex-wrap justify-center gap-12 md:gap-20 items-center max-w-6xl mx-auto opacity-70 hover:opacity-100 transition-opacity duration-500">
+                    <a href="https://quakklife.com/" target="_blank" class="partner-logo text-center group">
+                        <img src="https://i.imgur.com/qOmxNCQ.png" alt="Quakk" class="h-12 md:h-16 grayscale group-hover:grayscale-0 transition-all">
+                        <p class="mt-2 text-xs text-gray-600 group-hover:text-purple-400">Quakk</p>
                     </a>
-                    <!-- Solana Strays -->
-                    <a href="https://solanastrays.com/" target="_blank" class="flex flex-col items-center justify-center text-center no-underline">
-                        <img src="https://i.imgur.com/2x3n6oZ.png" alt="Solana Strays Logo" class="max-h-16 grayscale hover:grayscale-0 transition-all duration-300">
-                        <p class="mt-4 text-sm font-semibold text-gray-400">Solana Strays</p>
+                    <a href="https://solanastrays.com/" target="_blank" class="partner-logo text-center group">
+                        <img src="https://i.imgur.com/2x3n6oZ.png" alt="Solana Strays" class="h-12 md:h-16 grayscale group-hover:grayscale-0 transition-all">
+                        <p class="mt-2 text-xs text-gray-600 group-hover:text-purple-400">Solana Strays</p>
                     </a>
-                    <!-- SolOnChain -->
-                    <a href="https://www.solonchain.net/" target="_blank" class="flex flex-col items-center justify-center text-center no-underline">
-                        <img src="https://i.imgur.com/A8R1yLY.png" alt="SolOnChain Logo" class="max-h-16 grayscale hover:grayscale-0 transition-all duration-300">
-                        <p class="mt-4 text-sm font-semibold text-gray-400">SolOnChain</p>
+                    <a href="https://x.com/SOLGodNFTs" target="_blank" class="partner-logo text-center group">
+                        <img src="https://i.imgur.com/ytSe6bY.jpeg" alt="SOLGods" class="h-12 md:h-16 rounded-full grayscale group-hover:grayscale-0 transition-all">
+                         <p class="mt-2 text-xs text-gray-600 group-hover:text-purple-400">SOLGods</p>
                     </a>
-                    <!-- SOLGods -->
-                    <a href="https://x.com/SOLGodNFTs" target="_blank" class="flex flex-col items-center justify-center text-center no-underline">
-                        <img src="https://i.imgur.com/ytSe6bY.jpeg" alt="SOLGods Logo" class="max-h-16 grayscale hover:grayscale-0 transition-all duration-300">
-                        <p class="mt-4 text-sm font-semibold text-gray-400">SOLGods</p>
-                    </a>
-                    <!-- Monkey Business -->
-                    <a href="https://www.monkeybiz.io/" target="_blank" class="flex flex-col items-center justify-center text-center no-underline">
-                        <img src="https://i.imgur.com/WUua3id.png" alt="Monkey Business Logo" class="max-h-16 grayscale hover:grayscale-0 transition-all duration-300">
-                        <p class="mt-4 text-sm font-semibold text-gray-400">Monkey Business</p>
+                    <a href="https://www.monkeybiz.io/" target="_blank" class="partner-logo text-center group">
+                        <img src="https://i.imgur.com/WUua3id.png" alt="Monkey Business" class="h-12 md:h-16 grayscale group-hover:grayscale-0 transition-all">
+                         <p class="mt-2 text-xs text-gray-600 group-hover:text-purple-400">Monkey Business</p>
                     </a>
                 </div>
             </div>
         </section>
 
         <!-- Collective Movement Section -->
-        <section id="collective-movement" class="py-20 md:py-32 bg-[#111] fade-in-section">
+        <section id="collective-movement" class="py-24 bg-[#080808] fade-in-section">
             <div class="container mx-auto px-4">
-                <h2 class="section-title text-center mb-4">Collective <span class="text-gold">Movement</span></h2>
+                <h2 class="section-title text-center mb-4">Collective <span class="text-purple-royal">Movement</span></h2>
                 <p class="section-subtitle text-center mb-12">
-                    Showcasing the incredible creativity of our community members.
+                    Showcasing the incredible creativity of our community.
                 </p>
                 <div class="scroll-gallery">
-                     <!-- New Item 1 -->
                      <div class="gallery-item">
                         <div class="content-card h-full">
-                            <img src="https://i.imgur.com/PulUeOX.jpeg" alt="Community Art" class="w-full h-80 object-cover card-image" onerror="this.src='https://placehold.co/600x600/1a1a1a/ffd700?text=Art';">
+                            <img src="https://i.imgur.com/PulUeOX.jpeg" alt="Community Art" class="w-full h-80 object-cover card-image">
                             <div class="p-6">
-                                <h3 class="text-2xl font-bold mb-1">Community Art</h3>
-                                <p class="text-gray-400">by The Flock</p>
+                                <h3 class="text-xl font-bold mb-1 text-white">Community Art</h3>
+                                <p class="text-sm text-gray-400">by The Flock</p>
                             </div>
                         </div>
                     </div>
                     <div class="gallery-item">
                         <div class="content-card h-full">
-                            <img src="https://i.imgur.com/P1X7Q55.jpeg" alt="3D Duck Giveaway" class="w-full h-80 object-cover card-image" onerror="this.src='https://placehold.co/600x600/1a1a1a/ffd700?text=Art';">
+                            <img src="https://i.imgur.com/P1X7Q55.jpeg" alt="3D Duck Giveaway" class="w-full h-80 object-cover card-image">
                             <div class="p-6">
-                                <h3 class="text-2xl font-bold mb-1">3D Duck Giveaway</h3>
-                                <p class="text-gray-400">by Cavan</p>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="gallery-item">
-                        <div class="content-card h-full">
-                            <img src="https://i.imgur.com/4yVeNa1.jpeg" alt="Golden Duck" class="w-full h-80 object-cover card-image" onerror="this.src='https://placehold.co/600x600/1a1a1a/ffd700?text=Art';">
-                            <div class="p-6">
-                                <h3 class="text-2xl font-bold mb-1">Golden Duck</h3>
-                                <p class="text-gray-400">by Community Artist</p>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="gallery-item">
-                        <div class="content-card h-full">
-                            <img src="https://i.imgur.com/smbiwp8.jpeg" alt="Save Ducks" class="w-full h-80 object-cover card-image" onerror="this.src='https://placehold.co/600x600/1a1a1a/ffd700?text=Art';">
-                            <div class="p-6">
-                                <h3 class="text-2xl font-bold mb-1">Save Ducks</h3>
-                                <p class="text-gray-400">by Tokyo</p>
+                                <h3 class="text-xl font-bold mb-1 text-white">3D Render</h3>
+                                <p class="text-sm text-gray-400">by Cavan</p>
                             </div>
                         </div>
                     </div>
@@ -880,25 +998,26 @@
                                 <source src="https://i.imgur.com/UOnHket.mp4" type="video/mp4">
                             </video>
                             <div class="p-6">
-                                <h3 class="text-2xl font-bold mb-1">Skater Duck</h3>
-                                <p class="text-gray-400">by Bradkat</p>
+                                <h3 class="text-xl font-bold mb-1 text-white">Skater Duck</h3>
+                                <p class="text-sm text-gray-400">by Bradkat</p>
                             </div>
                         </div>
                     </div>
                     <div class="gallery-item">
                         <div class="content-card h-full">
-                            <img src="https://i.imgur.com/wQqLbzu.gif" alt="Duck on X" class="w-full h-80 object-cover card-image">
+                            <img src="https://i.imgur.com/4yVeNa1.jpeg" alt="Golden Duck" class="w-full h-80 object-cover card-image">
                             <div class="p-6">
-                                <h3 class="text-2xl font-bold mb-1">🦆 on 𝕏</h3>
+                                <h3 class="text-xl font-bold mb-1 text-white">Golden Duck</h3>
+                                <p class="text-sm text-gray-400">by Community Artist</p>
                             </div>
                         </div>
                     </div>
                     <div class="gallery-item">
                         <div class="content-card h-full">
-                            <img src="https://i.imgur.com/asxD27p.gif" alt="Community GIF" class="w-full h-80 object-cover card-image">
+                            <img src="https://i.imgur.com/smbiwp8.jpeg" alt="Save Ducks" class="w-full h-80 object-cover card-image">
                             <div class="p-6">
-                                <h3 class="text-2xl font-bold mb-1">Community Spirit</h3>
-                                <p class="text-gray-400">by JustDuckIt</p>
+                                <h3 class="text-xl font-bold mb-1 text-white">Save Ducks</h3>
+                                <p class="text-sm text-gray-400">by Tokyo</p>
                             </div>
                         </div>
                     </div>
@@ -908,63 +1027,63 @@
     </main>
 
     <!-- Footer -->
-    <footer id="contact" class="py-16 border-t border-gray-800">
+    <footer id="contact" class="py-16 border-t border-[#222] bg-[#050505]">
         <div class="container mx-auto px-4 text-center">
-            <img src="https://i.imgur.com/otNEI2M.png" alt="Just Duck It Logo" class="w-16 h-16 rounded-full mx-auto mb-6" onerror="this.src='https://placehold.co/64x64/0a0a0a/FFD700?text=JDI';">
-            <h4 class="text-3xl md:text-4xl font-bold">Get in Touch</h4>
-            <p class="text-gray-400 mt-2 mb-8">The best way to reach the team is to join our Discord and submit a ticket.</p>
-            <div class="mt-8">
-                <a href="https://discord.com/invite/e6b4RnXRkE" target="_blank" class="btn-primary text-lg">Join Discord &amp; Get Support</a>
-            </div>
+            <img src="https://i.imgur.com/otNEI2M.png" alt="Just Duck It Logo" class="w-16 h-16 rounded-full mx-auto mb-6 border border-[#333]">
+            <h4 class="text-3xl font-bold text-white">Get in Touch</h4>
+            <p class="text-gray-400 mt-2 mb-8 max-w-md mx-auto">The best way to reach the team is to join our Discord and submit a ticket.</p>
             
-            <!-- New Social/Donation Icons -->
-            <div class="flex justify-center space-x-6 items-center mt-12">
+            <div class="flex flex-wrap justify-center gap-6 mt-8">
+                <!-- Discord (New) -->
+                <a href="https://discord.com/invite/e6b4RnXRkE" target="_blank" title="Join Discord" class="icon-glow-container">
+                    <i class="fab fa-discord"></i>
+                </a>
                 <!-- Instagram -->
-                <a href="https://www.instagram.com/duckxmeta/?igsh=MWlqa3F1dGc1d24wdg%3D%3D" target="_blank" title="Instagram" class="text-gray-400 transition-opacity icon-glow-container">
-                    <img src="https://i.imgur.com/esKhojE.png" alt="Instagram" class="w-9 h-9">
+                <a href="https://www.instagram.com/duckxmeta/?igsh=MWlqa3F1dGc1d24wdg%3D%3D" target="_blank" title="Instagram" class="icon-glow-container">
+                    <img src="https://i.imgur.com/esKhojE.png" alt="Instagram">
                 </a>
                 <!-- TikTok -->
-                <a href="https://www.tiktok.com/@ducksontiktok?_t=ZP-9100t0lTaBS&_r=1" target="_blank" title="TikTok" class="text-gray-400 transition-opacity icon-glow-container">
-                    <img src="https://i.imgur.com/fAfNoh4.png" alt="TikTok" class="w-9 h-9">
+                <a href="https://www.tiktok.com/@ducksontiktok?_t=ZP-9100t0lTaBS&_r=1" target="_blank" title="TikTok" class="icon-glow-container">
+                    <img src="https://i.imgur.com/fAfNoh4.png" alt="TikTok">
                 </a>
-                <!-- Solana -->
-                <div class="relative flex items-center">
-                    <button id="solana-copy-btn" title="Copy Donation Address" class="text-gray-400 transition-opacity icon-glow-container">
-                        <img src="https://i.imgur.com/fdAeIGs.png" alt="Solana" class="w-9 h-9">
+                 <!-- Solana -->
+                 <div class="relative">
+                    <button id="solana-copy-btn" title="Copy SOL Donation Address" class="icon-glow-container">
+                        <img src="https://i.imgur.com/fdAeIGs.png" alt="Solana">
                     </button>
-                    <span id="copy-feedback" class="absolute left-full ml-3 text-sm text-gold opacity-0 transition-opacity whitespace-nowrap">Copied!</span>
+                    <span id="copy-feedback" class="absolute bottom-full left-1/2 -translate-x-1/2 mb-2 bg-white text-black text-xs px-2 py-1 rounded opacity-0 transition-opacity">Copied!</span>
                 </div>
                  <!-- Bitcoin -->
-                 <div class="relative flex items-center">
-                    <button id="btc-copy-btn-footer" title="Copy Bitcoin Donation Address" class="text-gray-400 transition-opacity icon-glow-container">
-                        <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/4/46/Bitcoin.svg/200px-Bitcoin.svg.png" alt="Bitcoin" class="w-9 h-9">
+                 <div class="relative">
+                    <button id="btc-copy-btn-footer" title="Copy BTC Donation Address" class="icon-glow-container">
+                        <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/4/46/Bitcoin.svg/200px-Bitcoin.svg.png" alt="Bitcoin">
                     </button>
-                    <span id="copy-feedback-btc-footer" class="absolute left-full ml-3 text-sm text-gold opacity-0 transition-opacity whitespace-nowrap">Copied!</span>
+                    <span id="copy-feedback-btc-footer" class="absolute bottom-full left-1/2 -translate-x-1/2 mb-2 bg-white text-black text-xs px-2 py-1 rounded opacity-0 transition-opacity">Copied!</span>
                 </div>
                 <!-- Ethereum -->
-                <div class="relative flex items-center">
-                    <button id="eth-copy-btn-footer" title="Copy Ethereum Donation Address" class="text-gray-400 transition-opacity icon-glow-container">
-                        <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/6/6f/Ethereum-icon-purple.svg/480px-Ethereum-icon-purple.svg.png" alt="Ethereum" class="w-9 h-9">
+                <div class="relative">
+                    <button id="eth-copy-btn-footer" title="Copy ETH Donation Address" class="icon-glow-container">
+                        <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/6/6f/Ethereum-icon-purple.svg/480px-Ethereum-icon-purple.svg.png" alt="Ethereum">
                     </button>
-                    <span id="copy-feedback-eth-footer" class="absolute left-full ml-3 text-sm text-gold opacity-0 transition-opacity whitespace-nowrap">Copied!</span>
+                    <span id="copy-feedback-eth-footer" class="absolute bottom-full left-1/2 -translate-x-1/2 mb-2 bg-white text-black text-xs px-2 py-1 rounded opacity-0 transition-opacity">Copied!</span>
                 </div>
             </div>
 
-            <div class="mt-12 text-sm text-gray-600">
-                <p>&copy; 2025 Just Duck It. All rights reserved.</p>
+            <div class="mt-12 text-sm text-gray-600 border-t border-[#1a1a1a] pt-8">
+                <p>&copy; 2025 Just Duck It. All rights reserved. <br> Built by the Community.</p>
             </div>
         </div>
     </footer>
 
     <!-- Live X Spaces Link -->
-    <a href="https://x.com/ducksonx?s=21" target="_blank" title="Join our X Space!" class="fixed bottom-6 right-6 z-[1000] w-24 h-24 flex items-center justify-center cursor-pointer transition-transform hover:scale-110 group">
-        <div class="relative w-16 h-16">
+    <a href="https://x.com/ducksonx?s=21" target="_blank" title="Join our X Space!" class="fixed bottom-6 right-6 z-[990] w-20 h-20 md:w-24 md:h-24 flex items-center justify-center cursor-pointer transition-transform hover:scale-110 group">
+        <div class="relative w-14 h-14 md:w-16 md:h-16">
             <!-- Mic Icon -->
-            <div class="absolute -top-3 left-1/2 -translate-x-1/2 z-20 w-8 h-8 bg-red-600 rounded-full flex items-center justify-center text-white p-1 shadow-lg transition-transform group-hover:scale-110">
-                <svg class="w-5 h-5" fill="currentColor" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg"><path fill-rule="evenodd" d="M7 4a3 3 0 016 0v4a3 3 0 11-6 0V4zm4 10.93A7.001 7.001 0 0017 8a1 1 0 10-2 0a5 5 0 01-4.5 4.93V17a1 1 0 102 0v-2.07zM4 8a1 1 0 10-2 0a7.001 7.001 0 006 6.93V17a1 1 0 102 0v-2.07A5 5 0 015 8z" clip-rule="evenodd"></path></svg>
+            <div class="absolute -top-3 left-1/2 -translate-x-1/2 z-20 w-8 h-8 bg-red-600 rounded-full flex items-center justify-center text-white p-1 shadow-lg transition-transform group-hover:scale-110 border-2 border-[#111]">
+                <svg class="w-4 h-4" fill="currentColor" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg"><path fill-rule="evenodd" d="M7 4a3 3 0 016 0v4a3 3 0 11-6 0V4zm4 10.93A7.001 7.001 0 0017 8a1 1 0 10-2 0a5 5 0 01-4.5 4.93V17a1 1 0 102 0v-2.07zM4 8a1 1 0 10-2 0a7.001 7.001 0 006 6.93V17a1 1 0 102 0v-2.07A5 5 0 015 8z" clip-rule="evenodd"></path></svg>
             </div>
             <!-- Profile Picture -->
-            <img src="https://i.imgur.com/U1zzvR5.jpeg" alt="X Profile" class="relative z-10 w-full h-full rounded-full border-4 border-red-600 shadow-lg object-cover">
+            <img src="https://i.imgur.com/Te0FK9y.jpeg" alt="X Profile" class="relative z-10 w-full h-full rounded-full border-2 border-red-600 shadow-lg object-cover">
             <!-- Glowing Ping Ring -->
             <div class="absolute top-0 left-0 z-0 w-full h-full rounded-full bg-red-600 opacity-75 animate-ping"></div>
         </div>
@@ -979,7 +1098,7 @@
         // --- Header Scroll Effect ---
         const header = document.querySelector('.site-header');
         window.addEventListener('scroll', () => {
-            if (window.scrollY > 50) {
+            if (window.scrollY > 20) {
                 header.classList.add('scrolled');
             } else {
                 header.classList.remove('scrolled');
@@ -1029,7 +1148,7 @@
             const videoObserverOptions = {
                 root: null,
                 rootMargin: '0px',
-                threshold: 0.5 // Start playing when 50% of the video is visible
+                threshold: 0.5 
             };
 
             const videoObserver = new IntersectionObserver((entries) => {
@@ -1079,36 +1198,43 @@
                 tableBody.innerHTML = '';
                 cryptoData.forEach(coin => {
                     const row = document.createElement('tr');
-                    row.className = coin.price_change_percentage_24h >= 0 ? 'positive' : 'negative';
+                    const isPositive = coin.price_change_percentage_24h >= 0;
+                    row.className = isPositive ? 'positive' : 'negative';
                     row.innerHTML = `
-                        <td class="font-bold">${coin.name}</td>
+                        <td class="flex items-center gap-2">
+                             <img src="${coin.image}" class="w-6 h-6" alt="${coin.name}"> 
+                             <span class="font-bold text-white">${coin.symbol.toUpperCase()}</span>
+                        </td>
                         <td>$${coin.current_price.toLocaleString('en-US', { minimumFractionDigits: 2, maximumFractionDigits: 2 })}</td>
-                        <td>${coin.price_change_percentage_24h.toFixed(2)}%</td>
+                        <td>${isPositive ? '+' : ''}${coin.price_change_percentage_24h.toFixed(2)}%</td>
                     `;
                     tableBody.appendChild(row);
                 });
             } catch (error) {
                 console.error('Error fetching crypto data:', error);
-                tableBody.innerHTML = `<tr><td colspan="3" class="text-center p-8 text-red-400">Quack! Data unavailable. Please try again soon.</td></tr>`;
+                tableBody.innerHTML = `<tr><td colspan="3" class="text-center p-8 text-gray-500">Live data temporarily unavailable.</td></tr>`;
             }
         }
 
         function populateCryptoEvents() {
+            // Updated events for Dec 2025 context
             const events = [
-                { date: '2025-11-28', name: 'CME Bitcoin Futures Expiry', impact: 'High' },
-                { date: '2025-12-04', name: 'US Employment Data Release', impact: 'Medium' },
-                { date: '2025-12-10', name: 'US CPI Inflation Data', impact: 'High' },
-                { date: '2025-12-17', name: 'FOMC Interest Rate Decision', impact: 'High' },
-                { date: '2025-12-26', name: 'Annual Crypto Options Expiry', impact: 'High' }
+                { date: 'Dec 04', name: 'US Employment Data', impact: 'High', status: 'completed' },
+                { date: 'Dec 10', name: 'US CPI Data', impact: 'High', status: 'completed' },
+                { date: 'Dec 17', name: 'FOMC Interest Rate Decision', impact: 'High', status: 'upcoming' },
+                { date: 'Dec 26', name: 'Annual Options Expiry', impact: 'High', status: 'upcoming' },
+                { date: 'Jan 10', name: 'SEC ETF Deadline (Expected)', impact: 'High', status: 'upcoming' }
             ];
             const tableBody = document.getElementById('events-table-body');
             tableBody.innerHTML = '';
             events.forEach(event => {
                 const row = document.createElement('tr');
+                let nameClass = event.status === 'completed' ? 'status-completed' : 'text-white';
+                
                 row.innerHTML = `
-                    <td>${event.date}</td>
-                    <td>${event.name}</td>
-                    <td class="impact-${event.impact.toLowerCase()} font-bold">${event.impact}</td>
+                    <td class="${nameClass}">${event.date}</td>
+                    <td class="${nameClass}">${event.name}</td>
+                    <td><span class="impact-${event.impact.toLowerCase()}">${event.impact}</span></td>
                 `;
                 tableBody.appendChild(row);
             });
@@ -1135,7 +1261,8 @@
                 src: "https://files.catbox.moe/lpxaiv.wav",
                 lyrics: [
                     { time: 0, text: "[Intro]" },
-                    { time: 5, text: "Lyrics coming soon..." },
+                    { time: 5, text: "Wait for it..." },
+                    { time: 10, text: "Just Duck It!" }
                 ]
             },
             {
@@ -1192,7 +1319,7 @@
                 artist: "@Duckxmeta",
                 src: "https://files.catbox.moe/q4q9vf.wav",
                 lyrics: [
-                     { time: 0, text: "[Music Intro]" },
+                      { time: 0, text: "[Music Intro]" },
                     { time: 10, text: "Feel the fire in my soul, a story to be told" },
                     { time: 15, text: "Every step a new design, a future to unfold" },
                     { time: 20, text: "No turning back from the path I'm on" },
@@ -1205,7 +1332,7 @@
                 src: "https://files.catbox.moe/6x70e9.wav",
                 lyrics: [
                     { time: 0, text: "[Instrumental]" },
-                    { time: 5, text: "Lyrics coming soon..." }
+                    { time: 5, text: "Relax and enjoy the sanctuary." }
                 ]
             }
         ];
@@ -1215,79 +1342,86 @@
         function loadTrack(trackIndex) {
             const track = playlist[trackIndex];
             if (!track.src) {
-                console.error("Audio source for track " + track.title + " is not set.");
-                alert("The audio for '" + track.title + "' is not available yet. Please add a valid URL for the song in the code.");
+                alert("The audio for '" + track.title + "' is not available yet.");
                 return;
             }
-            music.src = track.src;
+            // Only update src if it's different to prevent full reload on pause/play
+            if (music.src !== track.src) {
+                music.src = track.src;
+            }
+            
             songTitleEl.textContent = track.title;
             songArtistEl.textContent = track.artist;
             
             populateLyrics(track.lyrics);
             
-            playIcon.classList.remove('hidden');
-            pauseIcon.classList.add('hidden');
             updateTracklistUI();
         }
 
         function populateTracklist() {
-             tracklistContainer.innerHTML = '<h4 class="text-xl font-bold mb-4 text-white">Tracklist</h4>';
+             tracklistContainer.innerHTML = '';
             playlist.forEach((song, index) => {
                 const trackItem = document.createElement('div');
-                trackItem.className = 'p-3 rounded-lg cursor-pointer hover:bg-gray-800 flex justify-between items-center transition-colors';
+                trackItem.className = 'track-item p-3 rounded-md cursor-pointer flex justify-between items-center transition-colors';
                 trackItem.dataset.index = index;
 
-                let titleHtml = `<p class="font-semibold text-white">${song.title}</p><p class="text-sm text-gray-400">${song.artist}</p>`;
-                if (!song.src) {
-                     titleHtml += `<p class="text-xs text-yellow-500"> (Coming Soon)</p>`;
-                }
+                let titleHtml = `
+                    <div class="flex items-center gap-3">
+                        <span class="text-gray-600 text-xs font-mono">${index + 1}</span>
+                        <div>
+                            <p class="font-bold text-gray-200 text-sm">${song.title}</p>
+                            <p class="text-xs text-gray-500">${song.artist}</p>
+                        </div>
+                    </div>`;
 
                 trackItem.innerHTML = `
-                    <div>${titleHtml}</div>
+                    ${titleHtml}
                     <div class="track-status-icon"></div>
                 `;
 
                 trackItem.addEventListener('click', () => {
-                    if (currentTrackIndex === index && !music.paused) return; // Don't reload if playing
-                    
-                    if (!playlist[index].src) {
-                         alert("This song is coming soon!");
-                        return;
+                    const wasPlaying = !music.paused;
+                    // If clicking same track
+                    if (currentTrackIndex === index) {
+                         if (music.paused) music.play();
+                         else music.pause();
+                         return;
                     }
                     
-                    const wasPlaying = !music.paused;
                     currentTrackIndex = index;
                     loadTrack(currentTrackIndex);
-                    
-                    if(wasPlaying){
-                        music.play().then(() => {
-                           playIcon.classList.add('hidden');
-                           pauseIcon.classList.remove('hidden');
-                           updateTracklistUI();
-                        });
-                    } else {
-                         updateTracklistUI();
-                    }
+                    music.play();
                 });
                 tracklistContainer.appendChild(trackItem);
             });
-             updateTracklistUI();
+            updateTracklistUI();
         }
 
         function updateTracklistUI() {
-            const trackItems = tracklistContainer.querySelectorAll('.p-3');
+            const trackItems = tracklistContainer.querySelectorAll('.track-item');
             trackItems.forEach((item, index) => {
                 const iconContainer = item.querySelector('.track-status-icon');
-                item.classList.remove('bg-gray-700');
+                item.classList.remove('active');
                 if (iconContainer) iconContainer.innerHTML = '';
                 
                 if (index === currentTrackIndex) {
-                    item.classList.add('bg-gray-700');
+                    item.classList.add('active');
                      if (!music.paused) {
-                         if (iconContainer) iconContainer.innerHTML = `<svg class="w-5 h-5 text-gold" fill="currentColor" viewBox="0 0 20 20"><path d="M5 4a1 1 0 00-2 0v12a1 1 0 002 0V4zm10 0a1 1 0 00-2 0v12a1 1 0 002 0V4z"/></svg>`;
+                         if (iconContainer) iconContainer.innerHTML = `<div class="flex gap-1 h-3 items-end"><div class="w-1 bg-purple-500 h-full animate-bounce"></div><div class="w-1 bg-purple-500 h-2/3 animate-bounce" style="animation-delay:0.1s"></div><div class="w-1 bg-purple-500 h-1/2 animate-bounce" style="animation-delay:0.2s"></div></div>`;
+                     } else {
+                         if (iconContainer) iconContainer.innerHTML = `<svg class="w-4 h-4 text-gray-400" fill="currentColor" viewBox="0 0 20 20"><path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zM9.555 7.168A1 1 0 008 8v4a1 1 0 001.555.832l3-2a1 1 0 000-1.664l-3-2z" clip-rule="evenodd"></path></svg>`;
                      }
                 }
             });
+            
+            // Toggle Main Play/Pause Button
+            if (music.paused) {
+                playIcon.classList.remove('hidden');
+                pauseIcon.classList.add('hidden');
+            } else {
+                playIcon.classList.add('hidden');
+                pauseIcon.classList.remove('hidden');
+            }
         }
 
 
@@ -1297,7 +1431,7 @@
                 const p = document.createElement('p');
                 p.textContent = line.text;
                 p.dataset.time = line.time;
-                p.className = 'transition-colors duration-300';
+                p.className = 'transition-all duration-300 py-1 opacity-40';
                 lyricsContainer.appendChild(p);
             });
         }
@@ -1307,21 +1441,27 @@
         function updateLyrics() {
             const lyrics = playlist[currentTrackIndex].lyrics;
             const currentTime = music.currentTime;
-            let activeLine = lyricsContainer.children[0];
-
+            
+            // Find active line
+            let activeIndex = -1;
             for (let i = 0; i < lyrics.length; i++) {
                 if (currentTime >= lyrics[i].time) {
-                    activeLine = lyricsContainer.children[i];
+                    activeIndex = i;
                 }
             }
-            
-            if (currentLine !== activeLine) {
-                if(currentLine) {
-                    currentLine.classList.remove('text-gold', 'font-bold');
+
+            if (activeIndex !== -1) {
+                const activeLine = lyricsContainer.children[activeIndex];
+                if (currentLine !== activeLine) {
+                    if (currentLine) {
+                        currentLine.classList.remove('text-purple-400', 'opacity-100', 'scale-105');
+                        currentLine.classList.add('opacity-40');
+                    }
+                    activeLine.classList.remove('opacity-40');
+                    activeLine.classList.add('text-purple-400', 'opacity-100', 'scale-105');
+                    currentLine = activeLine;
+                    activeLine.scrollIntoView({ behavior: 'smooth', block: 'center' });
                 }
-                activeLine.classList.add('text-gold', 'font-bold');
-                currentLine = activeLine;
-                activeLine.scrollIntoView({ behavior: 'smooth', block: 'center' });
             }
         }
 
@@ -1330,63 +1470,68 @@
             populateTracklist();
             
             playPauseBtn.addEventListener('click', () => {
-                if (!music.src || music.src === window.location.href) { // Check if src is not set or is base URL
-                    alert("Please select a track to play.");
-                    return;
-                }
-
+                if (!music.src) return;
                 if (music.paused) {
                     music.play();
                 } else {
                     music.pause();
                 }
+                updateTracklistUI();
             });
             
-            music.onplay = function() {
-                playIcon.classList.add('hidden');
-                pauseIcon.classList.remove('hidden');
-                updateTracklistUI();
-            };
-            
-            music.onpause = function() {
-                playIcon.classList.remove('hidden');
-                pauseIcon.classList.add('hidden');
-                updateTracklistUI();
-            };
-
+            music.addEventListener('play', updateTracklistUI);
+            music.addEventListener('pause', updateTracklistUI);
             music.addEventListener('timeupdate', updateLyrics);
 
             music.onended = function() {
-                playIcon.classList.remove('hidden');
-                pauseIcon.classList.add('hidden');
-                 if(currentLine) {
-                    currentLine.classList.remove('text-gold', 'font-bold');
-                }
-                lyricsContainer.children[0].scrollIntoView({ behavior: 'smooth', block: 'center' });
                 updateTracklistUI();
+                if(currentLine) {
+                    currentLine.classList.remove('text-purple-400', 'opacity-100', 'scale-105');
+                    currentLine.classList.add('opacity-40');
+                }
+                if (lyricsContainer.children[0]) {
+                     lyricsContainer.children[0].scrollIntoView({ behavior: 'smooth', block: 'center' });
+                }
             };
         }
         
         // --- Clipboard Function ---
         function copyToClipboard(text, feedbackEl) {
-            const textarea = document.createElement('textarea');
+            if (navigator.clipboard && window.isSecureContext) {
+                 navigator.clipboard.writeText(text).then(() => {
+                    showFeedback(feedbackEl);
+                 }).catch(err => {
+                     // Fallback
+                     fallbackCopy(text, feedbackEl);
+                 });
+            } else {
+                fallbackCopy(text, feedbackEl);
+            }
+        }
+        
+        function fallbackCopy(text, feedbackEl) {
+             const textarea = document.createElement('textarea');
             textarea.value = text;
-            textarea.style.position = 'fixed'; // Prevent scrolling to bottom
+            textarea.style.position = 'fixed'; 
+            textarea.style.left = '-9999px';
             document.body.appendChild(textarea);
             textarea.select();
             try {
-                document.execCommand('copy'); // Use execCommand for iframe compatibility
-                if (feedbackEl) {
-                    feedbackEl.classList.remove('opacity-0');
-                    setTimeout(() => {
-                        feedbackEl.classList.add('opacity-0');
-                    }, 2000);
-                }
+                document.execCommand('copy');
+                showFeedback(feedbackEl);
             } catch (err) {
-                console.error('Failed to copy: ', err);
-                alert('Failed to copy address. Please copy it manually.');
+                console.error('Failed to copy', err);
+                alert('Copy failed. Please copy manually: ' + text);
             }
             document.body.removeChild(textarea);
+        }
+
+        function showFeedback(el) {
+            if (!el) return;
+            el.classList.remove('opacity-0');
+            setTimeout(() => {
+                el.classList.add('opacity-0');
+            }, 2000);
         }
 
         const solanaBtn = document.getElementById('solana-copy-btn');
@@ -1395,7 +1540,7 @@
 
         if (solanaBtn) {
             solanaBtn.addEventListener('click', (e) => {
-                e.preventDefault(); // Prevent link navigation
+                e.preventDefault();
                 copyToClipboard(solanaAddress, copyFeedback);
             });
         }
@@ -1408,9 +1553,8 @@
         const ethFeedback = document.getElementById('copy-feedback-eth');
         
         const solDonationAddress = 'AKkgD4kg8bq7sPUXhqWLqNPBcvtXXhevx3TQCkuxpUQY';
-        // User implied eth address is same as usdc address provided earlier
         const ethDonationAddress = '0xd15D984C4BB474b0f60247f29c87cEEB9c92253e';
-        const btcDonationAddress = 'BITCOIN_ADDRESS_HERE'; // Placeholder
+        const btcDonationAddress = 'BITCOIN_ADDRESS_COMING_SOON'; 
 
         if(solBtnDonate) {
             solBtnDonate.addEventListener('click', () => {
@@ -1420,7 +1564,7 @@
 
          if(btcBtnDonate) {
             btcBtnDonate.addEventListener('click', () => {
-                if (btcDonationAddress === 'BITCOIN_ADDRESS_HERE') {
+                if (btcDonationAddress === 'BITCOIN_ADDRESS_COMING_SOON') {
                     alert('Bitcoin donation address coming soon!');
                 } else {
                     copyToClipboard(btcDonationAddress, btcFeedback);
@@ -1440,7 +1584,7 @@
          if(btcBtnFooter) {
             btcBtnFooter.addEventListener('click', (e) => {
                 e.preventDefault();
-                 if (btcDonationAddress === 'BITCOIN_ADDRESS_HERE') {
+                 if (btcDonationAddress === 'BITCOIN_ADDRESS_COMING_SOON') {
                     alert('Bitcoin donation address coming soon!');
                 } else {
                     copyToClipboard(btcDonationAddress, btcFeedbackFooter);
@@ -1457,17 +1601,6 @@
                 copyToClipboard(ethDonationAddress, ethFeedbackFooter);
             });
         }
-
-
-        const lurkyBtn = document.getElementById('lurky-copy-btn');
-        const lurkyFeedback = document.getElementById('copy-feedback-lurky');
-        const lurkyCode = '@Ducksonx';
-
-        if(lurkyBtn) {
-            lurkyBtn.addEventListener('click', () => {
-                copyToClipboard(lurkyCode, lurkyFeedback);
-            });
-        }
         
         const heroSolBtn = document.getElementById('hero-sol-btn');
         const heroCopyFeedback = document.getElementById('hero-copy-feedback');
@@ -1475,6 +1608,33 @@
         if (heroSolBtn) {
             heroSolBtn.addEventListener('click', () => {
                 copyToClipboard(solDonationAddress, heroCopyFeedback);
+            });
+        }
+        
+        // Hero Icons Logic
+        const heroSolIcon = document.getElementById('hero-sol-icon');
+        const heroBtcIcon = document.getElementById('hero-btc-icon');
+        const heroEthIcon = document.getElementById('hero-eth-icon');
+        
+        if (heroSolIcon) {
+            heroSolIcon.addEventListener('click', () => {
+                copyToClipboard(solDonationAddress, heroCopyFeedback);
+            });
+        }
+        
+        if (heroBtcIcon) {
+            heroBtcIcon.addEventListener('click', () => {
+                 if (btcDonationAddress === 'BITCOIN_ADDRESS_COMING_SOON') {
+                    alert('Bitcoin donation address coming soon!');
+                } else {
+                    copyToClipboard(btcDonationAddress, heroCopyFeedback);
+                }
+            });
+        }
+        
+        if (heroEthIcon) {
+            heroEthIcon.addEventListener('click', () => {
+                copyToClipboard(ethDonationAddress, heroCopyFeedback);
             });
         }
 
