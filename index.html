@@ -448,14 +448,16 @@
                 
                 <!-- Main CTA -->
                 <div class="mt-10 relative inline-block group">
-                    <button id="hero-sol-btn" class="btn-primary border-2">
-                        Donate SOL (Copy Address)
-                    </button>
-                    <span id="hero-copy-feedback" class="absolute top-full left-1/2 -translate-x-1/2 mt-3 text-sm text-purple-400 opacity-0 transition-opacity whitespace-nowrap bg-black/80 px-2 py-1 rounded">Copied!</span>
+                    <a href="#donate" class="btn-primary border-2">
+                        Donate to Sanctuary
+                    </a>
                 </div>
 
                 <!-- Hero Crypto Icons (New) -->
-                <div class="mt-8 flex justify-center gap-4">
+                <div class="mt-8 flex justify-center gap-4 relative">
+                     <!-- Shared Feedback Span -->
+                     <span id="hero-icon-feedback" class="absolute -top-8 left-1/2 -translate-x-1/2 text-sm text-purple-400 opacity-0 transition-opacity whitespace-nowrap bg-black/80 px-2 py-1 rounded pointer-events-none">Copied!</span>
+
                      <!-- Solana -->
                      <div class="relative group">
                         <button id="hero-sol-icon" class="hero-icon-btn w-10 h-10 rounded-full flex items-center justify-center" title="Copy SOL Address">
@@ -473,6 +475,18 @@
                         <button id="hero-eth-icon" class="hero-icon-btn w-10 h-10 rounded-full flex items-center justify-center" title="Copy ETH Address">
                             <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/6/6f/Ethereum-icon-purple.svg/480px-Ethereum-icon-purple.svg.png" alt="Ethereum" class="w-6 h-6">
                         </button>
+                    </div>
+                    <!-- CashApp (New) -->
+                    <div class="relative group">
+                        <a href="https://cash.app/$Duckxmeta" target="_blank" class="hero-icon-btn w-10 h-10 rounded-full flex items-center justify-center text-white hover:text-[#00D632]" title="Donate via CashApp">
+                            <i class="fas fa-dollar-sign text-lg"></i>
+                        </a>
+                    </div>
+                    <!-- PayPal (New) -->
+                    <div class="relative group">
+                        <a href="https://www.paypal.com/donate/?hosted_button_id=RG9T939ERXZB8" target="_blank" class="hero-icon-btn w-10 h-10 rounded-full flex items-center justify-center text-white hover:text-[#00457C]" title="Donate via PayPal">
+                            <i class="fab fa-paypal text-lg"></i>
+                        </a>
                     </div>
                 </div>
             </div>
@@ -499,7 +513,8 @@
                         <span class="mr-2 text-2xl group-hover:-translate-y-1 transition-transform">📖</span> 
                         Ducklopedia: Explore the Lore
                     </a>
-                    <a href="https://app.exclusivo.one/invite/store/duck/E6dU-3Md7BuEoCVF0etEG1DXROmJtqRq" target="_blank" class="btn-secondary text-lg min-w-[200px] text-center hover:text-purple-400 hover:border-purple-400">
+                    <!-- Link removed for V2 transition -->
+                    <a href="#" class="btn-secondary text-lg min-w-[200px] text-center hover:text-purple-400 hover:border-purple-400 cursor-default">
                         Did you lay an egg?
                     </a>
                 </div>
@@ -583,21 +598,21 @@
             <div class="container mx-auto px-4 text-center relative z-10">
                 <h2 class="section-title">The Future of <span class="text-purple-royal">Community</span>.</h2>
                 <p class="section-subtitle">
-                    Tokenomics and digital ownership are the natural way of the future. We're embracing this technology to build a transparent, decentralized foundation.
+                    We are building a decentralized sanctuary where your support directly fuels our mission and growth.
                 </p>
                 <div class="grid grid-cols-1 md:grid-cols-2 gap-8 md:gap-16 max-w-5xl mx-auto mt-20 text-left">
                     <div class="p-8 rounded-xl bg-[#111] border border-[#222] hover:border-purple-600/30 transition-colors">
-                        <div class="w-12 h-12 bg-gray-800 rounded-full flex items-center justify-center mb-6 text-2xl">🔗</div>
-                        <h3 class="text-2xl font-bold mb-4 text-purple-royal">The Blockchain Evolution</h3>
+                        <div class="w-12 h-12 bg-gray-800 rounded-full flex items-center justify-center mb-6 text-2xl">🚀</div>
+                        <h3 class="text-2xl font-bold mb-4 text-purple-royal">Sanctuary Kickstarter</h3>
                         <p class="text-gray-400 leading-relaxed">
-                           Think of blockchain as the next generation of the internet—a secure, transparent system allowing for true digital ownership. Just as the internet connected us with information, blockchain connects us directly with value.
+                           Think of our Decent Duck Collections (V1 & V2) as the kickstarter for our sanctuary's future. Unlike traditional crowdfunding, these digital collectibles directly fund our operations, allowing us to rescue more birds and expand our reach immediately.
                         </p>
                     </div>
                     <div class="p-8 rounded-xl bg-[#111] border border-[#222] hover:border-purple-600/30 transition-colors">
                         <div class="w-12 h-12 bg-gray-800 rounded-full flex items-center justify-center mb-6 text-2xl">💎</div>
-                        <h3 class="text-2xl font-bold mb-4 text-purple-royal">NFTs: True Ownership</h3>
+                        <h3 class="text-2xl font-bold mb-4 text-purple-royal">Stake in Our Growth</h3>
                         <p class="text-gray-400 leading-relaxed">
-                           An NFT is a verifiable, digital certificate that proves you own a unique item—like your Decent Duck. It's your digital key to our community, granting exclusive access and a real stake in our sanctuary's story.
+                           By holding a Decent Duck, you have true digital ownership and a real stake in our growth. It's more than just a collectible; it is your key to the community and a way to share in the success as we evolve into a world-class sanctuary.
                         </p>
                     </div>
                 </div>
@@ -609,7 +624,7 @@
             <div class="container mx-auto px-4">
                 <h2 class="section-title text-center mb-4">Duck<span class="text-purple-royal">onomics</span></h2>
                 <p class="section-subtitle text-center mb-12">
-                    Stay updated with the latest crypto events, market prices, and community insights.
+                    Stay updated with the latest crypto prices and community insights.
                 </p>
 
                 <div class="text-center">
@@ -621,28 +636,6 @@
 
                 <div id="duckonomics-content">
                     <div class="mt-16 space-y-16">
-                        <!-- Crypto Events Table -->
-                        <div>
-                            <div class="flex flex-col md:flex-row justify-between items-end max-w-4xl mx-auto mb-4 px-2">
-                                <h3 class="text-2xl font-bold text-white">📅 Market Events</h3>
-                                <p class="text-xs text-gray-500 uppercase">Updated: Dec 2025</p>
-                            </div>
-                            <div id="crypto-events" class="data-table mx-auto max-w-4xl">
-                                <table class="w-full">
-                                    <thead>
-                                        <tr>
-                                            <th>Date</th>
-                                            <th>Event</th>
-                                            <th>Est. Impact</th>
-                                        </tr>
-                                    </thead>
-                                    <tbody id="events-table-body">
-                                        <tr><td colspan="3" class="text-center p-8">Loading events...</td></tr>
-                                    </tbody>
-                                </table>
-                            </div>
-                        </div>
-
                         <!-- Crypto Data Table -->
                         <div>
                             <div class="max-w-4xl mx-auto mb-4 px-2">
@@ -676,8 +669,6 @@
                                 </div>
                             </div>
                         </div>
-                        
-                        <!-- Community Perks / Lurky Removed -->
                     </div>
                 </div>
             </div>
@@ -781,6 +772,43 @@
                         <span id="copy-feedback-eth" class="absolute -top-10 left-1/2 -translate-x-1/2 bg-white text-black text-xs font-bold px-3 py-1 rounded shadow-lg opacity-0 transition-opacity">Copied!</span>
                     </div>
                 </div>
+
+                <!-- Fiat Donation Section -->
+                <div class="mt-12">
+                    <p class="text-gray-400 mb-6 text-sm uppercase tracking-widest font-semibold">Or Support Via Cash & Cards</p>
+                    <div class="flex flex-col md:flex-row justify-center gap-6 max-w-2xl mx-auto">
+                        <!-- CashApp -->
+                        <a href="https://cash.app/$Duckxmeta" target="_blank" class="btn-secondary w-full h-16 flex items-center justify-center gap-3 text-sm md:text-base hover:border-[#00D632] hover:text-[#00D632]">
+                            <i class="fas fa-dollar-sign text-xl"></i>
+                            <span>CashApp</span>
+                        </a>
+                        <!-- PayPal -->
+                        <a href="https://www.paypal.com/donate/?hosted_button_id=RG9T939ERXZB8" target="_blank" class="btn-secondary w-full h-16 flex items-center justify-center gap-3 text-sm md:text-base hover:border-[#00457C] hover:text-[#00457C]">
+                            <i class="fab fa-paypal text-xl"></i>
+                            <span>PayPal</span>
+                        </a>
+                    </div>
+                </div>
+
+                <!-- Adopt a Duck Feature (Coming Soon) -->
+                <div class="mt-16 max-w-3xl mx-auto">
+                    <div class="relative bg-[#111] border border-purple-900/30 rounded-2xl p-8 overflow-hidden group hover:border-purple-500/50 transition-all duration-300">
+                        <div class="absolute top-0 right-0 bg-purple-600 text-white text-[10px] font-bold px-3 py-1 rounded-bl-lg uppercase tracking-widest">
+                            Coming Soon
+                        </div>
+                        <div class="flex flex-col md:flex-row items-center gap-6">
+                            <div class="w-20 h-20 bg-purple-900/20 rounded-full flex items-center justify-center flex-shrink-0 border border-purple-500/30 group-hover:scale-110 transition-transform duration-300">
+                                <i class="fas fa-heart text-3xl text-purple-400"></i>
+                            </div>
+                            <div class="text-center md:text-left">
+                                <h3 class="text-2xl font-bold text-white mb-2">Adopt a Duck</h3>
+                                <p class="text-gray-400 text-sm leading-relaxed">
+                                    Virtually adopt a sanctuary bird to name, care for, and receive exclusive updates on their daily life via our social channels.
+                                </p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
             </div>
         </section>
 
@@ -788,94 +816,117 @@
         <section id="projects" class="py-24 md:py-32 fade-in-section bg-[#050505]">
             <div class="container mx-auto px-4">
                 <h2 class="section-title text-center mb-16">Our Digital <span class="text-purple-royal">Ecosystem</span></h2>
-                <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
-                    <!-- Joyride -->
-                    <div class="content-card group">
-                        <div class="overflow-hidden h-56 relative">
-                            <div class="absolute inset-0 bg-black/20 group-hover:bg-transparent transition-colors z-10"></div>
-                            <img src="https://i.imgur.com/JuDDwQ7.jpeg" alt="Duck Joyride" class="w-full h-full object-cover card-image">
+                
+                <!-- Games Subsection -->
+                <div class="mb-20">
+                    <h3 class="text-3xl font-bold text-center mb-10 text-white">Arcade <span class="text-purple-royal">&</span> Games</h3>
+                    <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+                        <!-- Joyride -->
+                        <div class="content-card group">
+                            <div class="overflow-hidden h-56 relative">
+                                <div class="absolute inset-0 bg-black/20 group-hover:bg-transparent transition-colors z-10"></div>
+                                <img src="https://i.imgur.com/JuDDwQ7.jpeg" alt="Duck Joyride" class="w-full h-full object-cover card-image">
+                            </div>
+                            <div class="p-6">
+                                <h3 class="text-2xl font-bold mb-2 text-white group-hover:text-purple-400 transition-colors">Duck Joyride</h3>
+                                <p class="text-gray-400 mb-6 text-sm leading-relaxed">An adventurous side-scroller. Guide a duck through wild obstacles and collect rewards.</p>
+                                <a href="https://duckxmeta.github.io/DuckJoyrideV2/" target="_blank" class="text-sm font-bold text-white border-b-2 border-purple-600 pb-1 hover:text-purple-400">PLAY NOW</a>
+                            </div>
                         </div>
-                        <div class="p-6">
-                            <h3 class="text-2xl font-bold mb-2 text-white group-hover:text-purple-400 transition-colors">Duck Joyride</h3>
-                            <p class="text-gray-400 mb-6 text-sm leading-relaxed">An adventurous side-scroller. Guide a duck through wild obstacles and collect rewards.</p>
-                            <a href="https://duckxmeta.github.io/DuckJoyrideV2/" target="_blank" class="text-sm font-bold text-white border-b-2 border-purple-600 pb-1 hover:text-purple-400">PLAY NOW</a>
+                        <!-- Ground Rangers -->
+                         <div class="content-card group">
+                            <div class="overflow-hidden h-56 relative">
+                                <img src="https://i.imgur.com/braneXY.jpeg" alt="Ground Rangers" class="w-full h-full object-cover card-image">
+                            </div>
+                            <div class="p-6">
+                                <h3 class="text-2xl font-bold mb-2 text-white group-hover:text-purple-400 transition-colors">Ground Rangers</h3>
+                                <p class="text-gray-400 mb-6 text-sm leading-relaxed">A special shoutout to @Monkeybizio for developing this arcade classic.</p>
+                                <a href="https://decentducks.netlify.app/" target="_blank" class="text-sm font-bold text-white border-b-2 border-purple-600 pb-1 hover:text-purple-400">PLAY NOW</a>
+                            </div>
                         </div>
-                    </div>
-                    <!-- Ground Rangers -->
-                     <div class="content-card group">
-                        <div class="overflow-hidden h-56 relative">
-                            <img src="https://i.imgur.com/braneXY.jpeg" alt="Ground Rangers" class="w-full h-full object-cover card-image">
+                        <!-- Chess -->
+                        <div class="content-card group">
+                            <div class="overflow-hidden h-56 relative">
+                                <img src="https://i.imgur.com/hOWQbzH.jpeg" alt="Decent Duck's Chess" class="w-full h-full object-cover card-image">
+                            </div>
+                            <div class="p-6">
+                                <h3 class="text-2xl font-bold mb-2 text-white group-hover:text-purple-400 transition-colors">Decent Chess</h3>
+                                <p class="text-gray-400 mb-6 text-sm leading-relaxed">Strategic mastery meets barnyard chaos. Play a classic game with a twist.</p>
+                                <a href="https://duckxmeta.github.io/Decent-Chess/" target="_blank" class="text-sm font-bold text-white border-b-2 border-purple-600 pb-1 hover:text-purple-400">PLAY NOW</a>
+                            </div>
                         </div>
-                        <div class="p-6">
-                            <h3 class="text-2xl font-bold mb-2 text-white group-hover:text-purple-400 transition-colors">Ground Rangers</h3>
-                            <p class="text-gray-400 mb-6 text-sm leading-relaxed">A special shoutout to @Monkeybizio for developing this arcade classic.</p>
-                            <a href="https://decentducks.netlify.app/" target="_blank" class="text-sm font-bold text-white border-b-2 border-purple-600 pb-1 hover:text-purple-400">PLAY NOW</a>
+                         <!-- D&D -->
+                         <div class="content-card group">
+                            <div class="overflow-hidden h-56 relative">
+                                <img src="https://i.imgur.com/nryha8g.jpeg" alt="D & Ducks Quest" class="w-full h-full object-cover card-image">
+                            </div>
+                            <div class="p-6">
+                                <h3 class="text-2xl font-bold mb-2 text-white group-hover:text-purple-400 transition-colors">D & Ducks Quest</h3>
+                                <p class="text-gray-400 mb-6 text-sm leading-relaxed">Embark on a text-based RPG adventure in the world of Decent Ducks.</p>
+                                <a href="https://duckxmeta.github.io/D-Ducks-v1/" target="_blank" class="text-sm font-bold text-white border-b-2 border-purple-600 pb-1 hover:text-purple-400">PLAY NOW</a>
+                            </div>
                         </div>
-                    </div>
-                    <!-- Chess -->
-                    <div class="content-card group">
-                        <div class="overflow-hidden h-56 relative">
-                            <img src="https://i.imgur.com/hOWQbzH.jpeg" alt="Decent Duck's Chess" class="w-full h-full object-cover card-image">
-                        </div>
-                        <div class="p-6">
-                            <h3 class="text-2xl font-bold mb-2 text-white group-hover:text-purple-400 transition-colors">Decent Chess</h3>
-                            <p class="text-gray-400 mb-6 text-sm leading-relaxed">Strategic mastery meets barnyard chaos. Play a classic game with a twist.</p>
-                            <a href="https://duckxmeta.github.io/Decent-Chess/" target="_blank" class="text-sm font-bold text-white border-b-2 border-purple-600 pb-1 hover:text-purple-400">PLAY NOW</a>
-                        </div>
-                    </div>
-                     <!-- D&D -->
-                     <div class="content-card group">
-                        <div class="overflow-hidden h-56 relative">
-                            <img src="https://i.imgur.com/nryha8g.jpeg" alt="D & Ducks Quest" class="w-full h-full object-cover card-image">
-                        </div>
-                        <div class="p-6">
-                            <h3 class="text-2xl font-bold mb-2 text-white group-hover:text-purple-400 transition-colors">D & Ducks Quest</h3>
-                            <p class="text-gray-400 mb-6 text-sm leading-relaxed">Embark on a text-based RPG adventure in the world of Decent Ducks.</p>
-                            <a href="https://duckxmeta.github.io/D-Ducks-v1/" target="_blank" class="text-sm font-bold text-white border-b-2 border-purple-600 pb-1 hover:text-purple-400">PLAY NOW</a>
-                        </div>
-                    </div>
-                    <!-- Ducks vs Critters (New Game) -->
-                    <div class="content-card group">
-                        <div class="overflow-hidden h-56 relative">
-                            <img src="https://i.imgur.com/SqNvQaU.jpeg" alt="Ducks vs Critters" class="w-full h-full object-cover card-image">
-                        </div>
-                        <div class="p-6">
-                            <h3 class="text-2xl font-bold mb-2 text-white group-hover:text-purple-400 transition-colors">Ducks vs Critters</h3>
-                            <p class="text-gray-400 mb-6 text-sm leading-relaxed">Defend the sanctuary! Battle critters in this exciting new arcade adventure.</p>
-                            <a href="https://duckxmeta.github.io/Ducks-vs-Critters-/" target="_blank" class="text-sm font-bold text-white border-b-2 border-purple-600 pb-1 hover:text-purple-400">PLAY NOW</a>
-                        </div>
-                    </div>
-                    <!-- Exclusivo Storefront (Moved from Merch) -->
-                    <div class="content-card group">
-                        <div class="overflow-hidden h-56 relative">
-                            <img src="https://i.imgur.com/80VRaOg.jpeg" alt="Exclusivo Storefront" class="w-full h-full object-cover card-image">
-                        </div>
-                        <div class="p-6">
-                            <h3 class="text-2xl font-bold mb-2 text-white group-hover:text-purple-400 transition-colors">Exclusivo Storefront</h3>
-                            <p class="text-gray-400 mb-6 text-sm leading-relaxed">Explore our premium duck decor and exclusive items.</p>
-                            <a href="https://app.exclusivo.one/invite/store/duck/E6dU-3Md7BuEoCVF0etEG1DXROmJtqRq" target="_blank" class="text-sm font-bold text-white border-b-2 border-purple-600 pb-1 hover:text-purple-400">SHOP NOW</a>
+                        <!-- Ducks vs Critters (New Game) -->
+                        <div class="content-card group">
+                            <div class="overflow-hidden h-56 relative">
+                                <img src="https://i.imgur.com/SqNvQaU.jpeg" alt="Ducks vs Critters" class="w-full h-full object-cover card-image">
+                            </div>
+                            <div class="p-6">
+                                <h3 class="text-2xl font-bold mb-2 text-white group-hover:text-purple-400 transition-colors">Ducks vs Critters</h3>
+                                <p class="text-gray-400 mb-6 text-sm leading-relaxed">Defend the sanctuary! Battle critters in this exciting new arcade adventure.</p>
+                                <a href="https://duckxmeta.github.io/Ducks-vs-Critters-/" target="_blank" class="text-sm font-bold text-white border-b-2 border-purple-600 pb-1 hover:text-purple-400">PLAY NOW</a>
+                            </div>
                         </div>
                     </div>
-                    <!-- X -->
-                    <div class="content-card group">
-                        <div class="overflow-hidden h-56 relative">
-                            <img src="https://i.imgur.com/o32AjZE.jpg" alt="Duck on X" class="w-full h-full object-cover card-image">
+                </div>
+
+                <!-- Socials Subsection -->
+                <div>
+                    <h3 class="text-3xl font-bold text-center mb-10 text-white">Social <span class="text-purple-royal">Hub</span></h3>
+                    <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
+                        <!-- X -->
+                        <div class="content-card group">
+                            <div class="overflow-hidden h-48 relative">
+                                <img src="https://i.imgur.com/o32AjZE.jpg" alt="Duck on X" class="w-full h-full object-cover card-image">
+                            </div>
+                            <div class="p-6">
+                                <h3 class="text-xl font-bold mb-2 text-white group-hover:text-purple-400 transition-colors">@Ducksonx</h3>
+                                <p class="text-gray-400 mb-4 text-xs leading-relaxed">Join the conversation on X. Memes, updates, and community spaces.</p>
+                                <a href="https://x.com/ducksonx?s=21" target="_blank" class="text-xs font-bold text-white border-b-2 border-purple-600 pb-1 hover:text-purple-400">FOLLOW</a>
+                            </div>
                         </div>
-                        <div class="p-6">
-                            <h3 class="text-2xl font-bold mb-2 text-white group-hover:text-purple-400 transition-colors">@Ducksonx</h3>
-                            <p class="text-gray-400 mb-6 text-sm leading-relaxed">Join the conversation on X. Memes, updates, and community spaces.</p>
-                            <a href="https://x.com/ducksonx?s=21" target="_blank" class="text-sm font-bold text-white border-b-2 border-purple-600 pb-1 hover:text-purple-400">FOLLOW</a>
+                        <!-- TikTok -->
+                        <div class="content-card group">
+                            <div class="overflow-hidden h-48 relative">
+                                <img src="https://i.imgur.com/2Nyk3t7.jpeg" alt="Decent Duck Sanctuary" class="w-full h-full object-cover card-image">
+                            </div>
+                            <div class="p-6">
+                                <h3 class="text-xl font-bold mb-2 text-white group-hover:text-purple-400 transition-colors">TikTok</h3>
+                                <p class="text-gray-400 mb-4 text-xs leading-relaxed">Daily dose of serotonin. Watch the ducks live their best lives.</p>
+                                <a href="https://www.tiktok.com/@decentduckssanctuary?_r=1&_t=ZP-92Mdfdpadpv" target="_blank" class="text-xs font-bold text-white border-b-2 border-purple-600 pb-1 hover:text-purple-400">WATCH</a>
+                            </div>
                         </div>
-                    </div>
-                    <!-- TikTok -->
-                    <div class="content-card group">
-                        <div class="overflow-hidden h-56 relative">
-                            <img src="https://i.imgur.com/2Nyk3t7.jpeg" alt="Decent Duck Sanctuary" class="w-full h-full object-cover card-image">
+                        <!-- Twitch -->
+                        <div class="content-card group">
+                            <div class="overflow-hidden h-48 relative">
+                                <img src="https://i.imgur.com/H6UqgQc.jpeg" alt="JustDuckIt on Twitch" class="w-full h-full object-cover card-image">
+                            </div>
+                            <div class="p-6">
+                                <h3 class="text-xl font-bold mb-2 text-white group-hover:text-purple-400 transition-colors">Twitch</h3>
+                                <p class="text-gray-400 mb-4 text-xs leading-relaxed">Catch our live streams directly from the sanctuary.</p>
+                                <a href="https://www.twitch.tv/justduckitt" target="_blank" class="text-xs font-bold text-white border-b-2 border-purple-600 pb-1 hover:text-purple-400">WATCH LIVE</a>
+                            </div>
                         </div>
-                        <div class="p-6">
-                            <h3 class="text-2xl font-bold mb-2 text-white group-hover:text-purple-400 transition-colors">Decent Duck Sanctuary</h3>
-                            <p class="text-gray-400 mb-6 text-sm leading-relaxed">Daily dose of serotonin. Watch the ducks live their best lives on TikTok.</p>
-                            <a href="https://www.tiktok.com/@decentduckssanctuary?_r=1&_t=ZP-92Mdfdpadpv" target="_blank" class="text-sm font-bold text-white border-b-2 border-purple-600 pb-1 hover:text-purple-400">WATCH</a>
+                        <!-- YouTube -->
+                        <div class="content-card group">
+                            <div class="overflow-hidden h-48 relative">
+                                <img src="https://i.imgur.com/wT8X4s4.jpeg" alt="JustDuckIt on YouTube" class="w-full h-full object-cover card-image">
+                            </div>
+                            <div class="p-6">
+                                <h3 class="text-xl font-bold mb-2 text-white group-hover:text-purple-400 transition-colors">YouTube</h3>
+                                <p class="text-gray-400 mb-4 text-xs leading-relaxed">Watch extended sanctuary highlights, rescue stories, and vlogs.</p>
+                                <a href="https://www.youtube.com/@JusttDuckit" target="_blank" class="text-xs font-bold text-white border-b-2 border-purple-600 pb-1 hover:text-purple-400">SUBSCRIBE</a>
+                            </div>
                         </div>
                     </div>
                 </div>
@@ -1076,18 +1127,6 @@
             <p class="text-gray-400 mt-2 mb-8 max-w-md mx-auto">The best way to reach the team is to join our Discord and submit a ticket.</p>
             
             <div class="flex flex-wrap justify-center gap-6 mt-8">
-                <!-- Discord (New) -->
-                <a href="https://discord.com/invite/e6b4RnXRkE" target="_blank" title="Join Discord" class="icon-glow-container">
-                    <i class="fab fa-discord"></i>
-                </a>
-                <!-- Instagram -->
-                <a href="https://www.instagram.com/duckxmeta/?igsh=MWlqa3F1dGc1d24wdg%3D%3D" target="_blank" title="Instagram" class="icon-glow-container">
-                    <img src="https://i.imgur.com/esKhojE.png" alt="Instagram">
-                </a>
-                <!-- TikTok -->
-                <a href="https://www.tiktok.com/@ducksontiktok?_t=ZP-9100t0lTaBS&_r=1" target="_blank" title="TikTok" class="icon-glow-container">
-                    <img src="https://i.imgur.com/fAfNoh4.png" alt="TikTok">
-                </a>
                  <!-- Solana -->
                  <div class="relative">
                     <button id="solana-copy-btn" title="Copy SOL Donation Address" class="icon-glow-container">
@@ -1109,6 +1148,14 @@
                     </button>
                     <span id="copy-feedback-eth-footer" class="absolute bottom-full left-1/2 -translate-x-1/2 mb-2 bg-white text-black text-xs px-2 py-1 rounded opacity-0 transition-opacity">Copied!</span>
                 </div>
+                <!-- CashApp -->
+                <a href="https://cash.app/$Duckxmeta" target="_blank" title="Donate via CashApp" class="icon-glow-container text-white hover:text-[#00D632] hover:border-[#00D632]">
+                    <i class="fas fa-dollar-sign text-lg"></i>
+                </a>
+                <!-- PayPal -->
+                <a href="https://www.paypal.com/donate/?hosted_button_id=RG9T939ERXZB8" target="_blank" title="Donate via PayPal" class="icon-glow-container text-white hover:text-[#00457C] hover:border-[#00457C]">
+                    <i class="fab fa-paypal text-lg"></i>
+                </a>
             </div>
 
             <div class="mt-12 text-sm text-gray-600 border-t border-[#1a1a1a] pt-8">
@@ -1125,7 +1172,7 @@
                 <svg class="w-4 h-4" fill="currentColor" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg"><path fill-rule="evenodd" d="M7 4a3 3 0 016 0v4a3 3 0 11-6 0V4zm4 10.93A7.001 7.001 0 0017 8a1 1 0 10-2 0a5 5 0 01-4.5 4.93V17a1 1 0 102 0v-2.07zM4 8a1 1 0 10-2 0a7.001 7.001 0 006 6.93V17a1 1 0 102 0v-2.07A5 5 0 015 8z" clip-rule="evenodd"></path></svg>
             </div>
             <!-- Profile Picture -->
-            <img src="https://i.imgur.com/Te0FK9y.jpeg" alt="X Profile" class="relative z-10 w-full h-full rounded-full border-2 border-red-600 shadow-lg object-cover">
+            <img src="https://i.imgur.com/K7CdYVS.jpeg" alt="X Profile" class="relative z-10 w-full h-full rounded-full border-2 border-red-600 shadow-lg object-cover">
             <!-- Glowing Ping Ring -->
             <div class="absolute top-0 left-0 z-0 w-full h-full rounded-full bg-red-600 opacity-75 animate-ping"></div>
         </div>
@@ -1257,34 +1304,9 @@
                 tableBody.innerHTML = `<tr><td colspan="3" class="text-center p-8 text-gray-500">Live data temporarily unavailable.</td></tr>`;
             }
         }
-
-        function populateCryptoEvents() {
-            // Updated events for Dec 2025 context
-            const events = [
-                { date: 'Dec 04', name: 'US Employment Data', impact: 'High', status: 'completed' },
-                { date: 'Dec 10', name: 'US CPI Data', impact: 'High', status: 'completed' },
-                { date: 'Dec 17', name: 'FOMC Interest Rate Decision', impact: 'High', status: 'upcoming' },
-                { date: 'Dec 26', name: 'Annual Options Expiry', impact: 'High', status: 'upcoming' },
-                { date: 'Jan 10', name: 'SEC ETF Deadline (Expected)', impact: 'High', status: 'upcoming' }
-            ];
-            const tableBody = document.getElementById('events-table-body');
-            tableBody.innerHTML = '';
-            events.forEach(event => {
-                const row = document.createElement('tr');
-                let nameClass = event.status === 'completed' ? 'status-completed' : 'text-white';
-                
-                row.innerHTML = `
-                    <td class="${nameClass}">${event.date}</td>
-                    <td class="${nameClass}">${event.name}</td>
-                    <td><span class="impact-${event.impact.toLowerCase()}">${event.impact}</span></td>
-                `;
-                tableBody.appendChild(row);
-            });
-        }
         
         // Initial data fetch for crypto section
         fetchCryptoData();
-        populateCryptoEvents();
         
         // --- Music Player Logic ---
         const music = document.getElementById('background-music');
@@ -1644,23 +1666,15 @@
             });
         }
         
-        const heroSolBtn = document.getElementById('hero-sol-btn');
-        const heroCopyFeedback = document.getElementById('hero-copy-feedback');
-        
-        if (heroSolBtn) {
-            heroSolBtn.addEventListener('click', () => {
-                copyToClipboard(solDonationAddress, heroCopyFeedback);
-            });
-        }
-        
         // Hero Icons Logic
         const heroSolIcon = document.getElementById('hero-sol-icon');
         const heroBtcIcon = document.getElementById('hero-btc-icon');
         const heroEthIcon = document.getElementById('hero-eth-icon');
+        const heroIconFeedback = document.getElementById('hero-icon-feedback');
         
         if (heroSolIcon) {
             heroSolIcon.addEventListener('click', () => {
-                copyToClipboard(solDonationAddress, heroCopyFeedback);
+                copyToClipboard(solDonationAddress, heroIconFeedback);
             });
         }
         
@@ -1669,14 +1683,14 @@
                  if (btcDonationAddress === 'BITCOIN_ADDRESS_COMING_SOON') {
                     alert('Bitcoin donation address coming soon!');
                 } else {
-                    copyToClipboard(btcDonationAddress, heroCopyFeedback);
+                    copyToClipboard(btcDonationAddress, heroIconFeedback);
                 }
             });
         }
         
         if (heroEthIcon) {
             heroEthIcon.addEventListener('click', () => {
-                copyToClipboard(ethDonationAddress, heroCopyFeedback);
+                copyToClipboard(ethDonationAddress, heroIconFeedback);
             });
         }
 
