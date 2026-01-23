@@ -389,7 +389,7 @@
 
     <!-- Top Banner -->
     <div class="bg-[#9333ea] text-white text-center py-2 font-bold text-xs md:text-sm uppercase tracking-widest sticky top-0 z-[101] shadow-lg">
-        888 Decentralized Ducks powered by Solana
+        Help feed some ducks
     </div>
 
     <!-- Video Background -->
@@ -421,13 +421,12 @@
     <div id="menu-overlay">
         <nav class="text-center">
             <a href="#mission" class="menu-link">Our Mission</a>
-            <a href="#web3-explainer" class="menu-link">What is Web3?</a>
-            <a href="#duckonomics" class="menu-link">Duckonomics</a>
+            <a href="#gif-gallery" class="menu-link">The Eggs</a>
+            <a href="#web3-explainer" class="menu-link">Future of Community</a>
             <a href="#flock" class="menu-link">The Flock</a>
             <a href="#donate" class="menu-link">Donate</a>
-            <a href="#projects" class="menu-link">Projects</a>
+            <a href="#projects" class="menu-link">Digital Ecosystem</a>
             <a href="#merch" class="menu-link">Merch & Shop</a>
-            <a href="#soundtrack" class="menu-link">Soundtrack</a>
             <a href="#community" class="menu-link">Community</a>
             <a href="#partners" class="menu-link">Partners</a>
             <a href="#collective-movement" class="menu-link">Art Collective</a>
@@ -443,7 +442,7 @@
                     Just Duck It
                 </h1>
                 <p class="mt-6 text-lg md:text-2xl max-w-2xl mx-auto text-gray-200 font-light tracking-wide">
-                    A Southern Sanctuary live streaming daily
+                    Help care for some animals
                 </p>
                 
                 <!-- Main CTA -->
@@ -533,7 +532,7 @@
                      <!-- New Egg V2 -->
                      <div class="gallery-item">
                         <div class="content-card h-full">
-                            <img src="https://i.imgur.com/0hvACqa.gif" alt="Holiday Egg" class="w-full h-64 md:h-80 object-contain bg-[#111] card-image">
+                            <img src="https://i.imgur.com/7BiW2OG.gif" alt="Holiday Egg" class="w-full h-64 md:h-80 object-contain bg-[#111] card-image">
                             <div class="p-6 border-t border-[#222]">
                                 <h3 class="text-xl font-bold text-white">Holiday Egg</h3>
                                 <p class="text-xs text-gray-500 uppercase tracking-wider mt-1">Rarity: Solana</p>
@@ -541,15 +540,7 @@
                             </div>
                         </div>
                     </div>
-                     <div class="gallery-item">
-                        <div class="content-card h-full">
-                            <img src="https://i.imgur.com/DlMVOTl.gif" alt="Diamond Duck Egg" class="w-full h-64 md:h-80 object-contain bg-[#111] card-image">
-                            <div class="p-6 border-t border-[#222]">
-                                <h3 class="text-xl font-bold text-white">Diamond Egg</h3>
-                                <p class="text-xs text-gray-500 uppercase tracking-wider mt-1">Rarity: Legendary</p>
-                            </div>
-                        </div>
-                    </div>
+                    <!-- Bronze Egg (Moved Up) -->
                     <div class="gallery-item">
                         <div class="content-card h-full">
                             <img src="https://i.imgur.com/9sho77c.gif" alt="Duck egg Bronze" class="w-full h-64 md:h-80 object-contain bg-[#111] card-image">
@@ -586,6 +577,16 @@
                             </div>
                         </div>
                     </div>
+                     <!-- Diamond Egg (Moved to Last) -->
+                     <div class="gallery-item">
+                        <div class="content-card h-full">
+                            <img src="https://i.imgur.com/DlMVOTl.gif" alt="Diamond Duck Egg" class="w-full h-64 md:h-80 object-contain bg-[#111] card-image">
+                            <div class="p-6 border-t border-[#222]">
+                                <h3 class="text-xl font-bold text-white">Diamond Egg</h3>
+                                <p class="text-xs text-gray-500 uppercase tracking-wider mt-1">Rarity: Legendary</p>
+                            </div>
+                        </div>
+                    </div>
                 </div>
             </div>
         </section>
@@ -619,60 +620,7 @@
             </div>
         </section>
 
-        <!-- Duckonomics Section -->
-        <section id="duckonomics" class="py-24 md:py-32 fade-in-section bg-[#050505]">
-            <div class="container mx-auto px-4">
-                <h2 class="section-title text-center mb-4">Duck<span class="text-purple-royal">onomics</span></h2>
-                <p class="section-subtitle text-center mb-12">
-                    Stay updated with the latest crypto prices and community insights.
-                </p>
-
-                <div class="text-center">
-                    <button id="duckonomics-toggle" class="btn-primary text-lg flex items-center mx-auto gap-3">
-                        <span>View Market Data</span>
-                        <svg id="duckonomics-arrow" class="w-5 h-5 transition-transform duration-300" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"></path></svg>
-                    </button>
-                </div>
-
-                <div id="duckonomics-content">
-                    <div class="mt-16 space-y-16">
-                        <!-- Crypto Data Table -->
-                        <div>
-                            <div class="max-w-4xl mx-auto mb-4 px-2">
-                                <h3 class="text-2xl font-bold text-white">📈 Live Prices</h3>
-                            </div>
-                            <div id="crypto-data" class="data-table mx-auto max-w-4xl">
-                                <table class="w-full">
-                                    <thead>
-                                        <tr>
-                                            <th>Asset</th>
-                                            <th>Price (USD)</th>
-                                            <th>24h Change</th>
-                                        </tr>
-                                    </thead>
-                                    <tbody id="crypto-table-body">
-                                        <tr><td colspan="3" class="text-center p-8 text-gray-500">Loading market data...</td></tr>
-                                    </tbody>
-                                </table>
-                            </div>
-                        </div>
-                        
-                        <!-- Live Collection Stats -->
-                        <div class="text-center">
-                            <div class="inline-block p-1 rounded-lg bg-gradient-to-r from-purple-800 to-purple-500">
-                                <div class="bg-[#111] rounded-md p-8 max-w-2xl">
-                                    <h3 class="text-2xl font-bold mb-4 text-white">Decent Ducks Analytics</h3>
-                                    <p class="text-gray-400 mb-8">Track the floor price, volume, and holder distribution in real-time.</p>
-                                    <a href="https://magiceden.us/marketplace/decent_ducks" target="_blank" class="btn-primary">
-                                        View on Magic Eden
-                                    </a>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </section>
+        <!-- Duckonomics Section Removed -->
 
         <!-- Jasmine Tribute Section -->
         <section id="jasmine-tribute" class="py-24 bg-[#080808] fade-in-section">
@@ -887,7 +835,7 @@
                         <!-- X -->
                         <div class="content-card group">
                             <div class="overflow-hidden h-48 relative">
-                                <img src="https://i.imgur.com/o32AjZE.jpg" alt="Duck on X" class="w-full h-full object-cover card-image">
+                                <img src="https://i.imgur.com/aJl6CuG.jpeg" alt="Duck on X" class="w-full h-full object-cover card-image">
                             </div>
                             <div class="p-6">
                                 <h3 class="text-xl font-bold mb-2 text-white group-hover:text-purple-400 transition-colors">@Ducksonx</h3>
@@ -898,12 +846,12 @@
                         <!-- TikTok -->
                         <div class="content-card group">
                             <div class="overflow-hidden h-48 relative">
-                                <img src="https://i.imgur.com/2Nyk3t7.jpeg" alt="Decent Duck Sanctuary" class="w-full h-full object-cover card-image">
+                                <img src="https://i.imgur.com/svuMCbo.jpeg" alt="Decent Duck Sanctuary" class="w-full h-full object-cover card-image">
                             </div>
                             <div class="p-6">
                                 <h3 class="text-xl font-bold mb-2 text-white group-hover:text-purple-400 transition-colors">TikTok</h3>
                                 <p class="text-gray-400 mb-4 text-xs leading-relaxed">Daily dose of serotonin. Watch the ducks live their best lives.</p>
-                                <a href="https://www.tiktok.com/@decentduckssanctuary?_r=1&_t=ZP-92Mdfdpadpv" target="_blank" class="text-xs font-bold text-white border-b-2 border-purple-600 pb-1 hover:text-purple-400">WATCH</a>
+                                <a href="https://www.tiktok.com/@just.duckit?_r=1&_t=ZP-93JqvRqIEUJ" target="_blank" class="text-xs font-bold text-white border-b-2 border-purple-600 pb-1 hover:text-purple-400">WATCH</a>
                             </div>
                         </div>
                         <!-- Twitch -->
@@ -926,6 +874,17 @@
                                 <h3 class="text-xl font-bold mb-2 text-white group-hover:text-purple-400 transition-colors">YouTube</h3>
                                 <p class="text-gray-400 mb-4 text-xs leading-relaxed">Watch extended sanctuary highlights, rescue stories, and vlogs.</p>
                                 <a href="https://www.youtube.com/@JusttDuckit" target="_blank" class="text-xs font-bold text-white border-b-2 border-purple-600 pb-1 hover:text-purple-400">SUBSCRIBE</a>
+                            </div>
+                        </div>
+                        <!-- Instagram (New) -->
+                        <div class="content-card group">
+                            <div class="overflow-hidden h-48 relative">
+                                <img src="https://i.imgur.com/o32AjZE.jpg" alt="JustDuckIt on Instagram" class="w-full h-full object-cover card-image">
+                            </div>
+                            <div class="p-6">
+                                <h3 class="text-xl font-bold mb-2 text-white group-hover:text-purple-400 transition-colors">Instagram</h3>
+                                <p class="text-gray-400 mb-4 text-xs leading-relaxed">Follow our daily stories, reels, and exclusive sanctuary updates.</p>
+                                <a href="https://www.instagram.com/duckxmeta?igsh=MWlqa3F1dGc1d24wdg%3D%3D&utm_source=qr" target="_blank" class="text-xs font-bold text-white border-b-2 border-purple-600 pb-1 hover:text-purple-400">FOLLOW</a>
                             </div>
                         </div>
                     </div>
@@ -971,47 +930,7 @@
             </div>
         </section>
 
-        <!-- Soundtrack Section -->
-        <section id="soundtrack" class="py-24 md:py-32 fade-in-section bg-[#050505]">
-            <div class="container mx-auto px-4">
-                <div class="max-w-4xl mx-auto music-player-container rounded-2xl p-6 md:p-10">
-                    <div class="text-center mb-10">
-                         <h2 class="text-3xl font-bold mb-2">Sanctuary <span class="text-purple-royal">Vibes</span></h2>
-                         <p class="text-gray-500">Curated sounds for duck watching.</p>
-                    </div>
-
-                    <div class="flex flex-col md:flex-row gap-8 items-start">
-                        <!-- Controls & Visual -->
-                        <div class="w-full md:w-1/3 flex flex-col items-center text-center">
-                            <div class="w-48 h-48 bg-black rounded-lg shadow-2xl overflow-hidden mb-6 border border-[#333] relative group">
-                                <img src="https://i.imgur.com/otNEI2M.png" class="w-full h-full object-cover opacity-80 group-hover:opacity-100 transition-opacity">
-                                <div class="absolute inset-0 flex items-center justify-center">
-                                    <button id="play-pause-btn" class="w-16 h-16 bg-[#9333ea] rounded-full flex items-center justify-center text-white shadow-lg hover:scale-110 transition-transform">
-                                        <svg id="play-icon" class="w-6 h-6 ml-1" fill="currentColor" viewBox="0 0 24 24"><path d="M8 5v14l11-7z"/></svg>
-                                        <svg id="pause-icon" class="w-6 h-6 hidden" fill="currentColor" viewBox="0 0 24 24"><path d="M6 19h4V5H6v14zm8-14v14h4V5h-4z"/></svg>
-                                    </button>
-                                </div>
-                            </div>
-                            <h3 id="song-title" class="text-xl font-bold text-white mb-1">Select a Track</h3>
-                            <p id="song-artist" class="text-sm text-purple-400">@Duckxmeta</p>
-                        </div>
-
-                        <!-- Lyrics & List -->
-                        <div class="w-full md:w-2/3">
-                            <!-- Lyrics -->
-                            <div id="lyrics-container" class="lyrics-scroll h-48 overflow-y-auto mb-8 text-center md:text-left pr-2 text-lg leading-loose text-gray-500 font-medium">
-                                <p>Select a track to view lyrics...</p>
-                            </div>
-                            
-                            <!-- Tracklist -->
-                            <div id="tracklist" class="space-y-2">
-                                <!-- Populated by JS -->
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </section>
+        <!-- Soundtrack Section Removed -->
 
         <!-- Community Section -->
         <section id="community" class="py-24 md:py-32 fade-in-section bg-[#0a0a0a]">
@@ -1178,7 +1097,7 @@
         </div>
     </a>
     
-    <audio id="background-music" loop></audio>
+    <!-- Audio Element Removed -->
 
 
     <script>
@@ -1258,306 +1177,9 @@
             videoObserver.observe(skaterVideo);
         }
 
-        // --- Duckonomics Accordion ---
-        const duckonomicsToggle = document.getElementById('duckonomics-toggle');
-        const duckonomicsContent = document.getElementById('duckonomics-content');
-        const duckonomicsArrow = document.getElementById('duckonomics-arrow');
+        // --- Duckonomics Logic Removed ---
 
-        duckonomicsToggle.addEventListener('click', () => {
-            if (duckonomicsContent.style.maxHeight) {
-                duckonomicsContent.style.maxHeight = null;
-                duckonomicsContent.style.opacity = '0';
-                duckonomicsArrow.classList.remove('rotate-180');
-            } else {
-                duckonomicsContent.style.maxHeight = duckonomicsContent.scrollHeight + "px";
-                duckonomicsContent.style.opacity = '1';
-                duckonomicsArrow.classList.add('rotate-180');
-            }
-        });
-
-
-        // --- Crypto Data Logic ---
-        async function fetchCryptoData() {
-            const url = 'https://api.coingecko.com/api/v3/coins/markets?vs_currency=usd&ids=bitcoin,ethereum,binancecoin,solana,ripple&order=market_cap_desc&per_page=5&page=1&sparkline=false';
-            const tableBody = document.getElementById('crypto-table-body');
-            try {
-                const response = await fetch(url);
-                if (!response.ok) throw new Error(`API request failed with status ${response.status}`);
-                const cryptoData = await response.json();
-                tableBody.innerHTML = '';
-                cryptoData.forEach(coin => {
-                    const row = document.createElement('tr');
-                    const isPositive = coin.price_change_percentage_24h >= 0;
-                    row.className = isPositive ? 'positive' : 'negative';
-                    row.innerHTML = `
-                        <td class="flex items-center gap-2">
-                             <img src="${coin.image}" class="w-6 h-6" alt="${coin.name}"> 
-                             <span class="font-bold text-white">${coin.symbol.toUpperCase()}</span>
-                        </td>
-                        <td>$${coin.current_price.toLocaleString('en-US', { minimumFractionDigits: 2, maximumFractionDigits: 2 })}</td>
-                        <td>${isPositive ? '+' : ''}${coin.price_change_percentage_24h.toFixed(2)}%</td>
-                    `;
-                    tableBody.appendChild(row);
-                });
-            } catch (error) {
-                console.error('Error fetching crypto data:', error);
-                tableBody.innerHTML = `<tr><td colspan="3" class="text-center p-8 text-gray-500">Live data temporarily unavailable.</td></tr>`;
-            }
-        }
-        
-        // Initial data fetch for crypto section
-        fetchCryptoData();
-        
-        // --- Music Player Logic ---
-        const music = document.getElementById('background-music');
-        const playPauseBtn = document.getElementById('play-pause-btn');
-        const playIcon = document.getElementById('play-icon');
-        const pauseIcon = document.getElementById('pause-icon');
-        const lyricsContainer = document.getElementById('lyrics-container');
-        const songTitleEl = document.getElementById('song-title');
-        const songArtistEl = document.getElementById('song-artist');
-        const tracklistContainer = document.getElementById('tracklist');
-
-        const playlist = [
-            {
-                title: "Decent Ducks",
-                artist: "@Duckxmeta",
-                src: "https://files.catbox.moe/lpxaiv.wav",
-                lyrics: [
-                    { time: 0, text: "[Intro]" },
-                    { time: 5, text: "Wait for it..." },
-                    { time: 10, text: "Just Duck It!" }
-                ]
-            },
-            {
-                title: "Damn, you can grow",
-                artist: "@Duckxmeta",
-                src: "https://files.catbox.moe/rob100.wav",
-                lyrics: [
-                    { time: 0, text: "(Intro Music)" },
-                    { time: 13, text: "Kettle screams the start of the scene," },
-                    { time: 15, text: "fill up cracked ceramic with what if and has been." },
-                    { time: 18, text: "Got this blueprint I drew with a younger hand," },
-                    { time: 21, text: "now the architect's building on shifting sand." },
-                    { time: 24, text: "Every open tab is a different door," },
-                    { time: 27, text: "a thousand lives I'm not living and a thousand more." },
-                    { time: 30, text: "They're all posted at the summit, the view from the peak," },
-                    { time: 33, text: "I'm just trying to survive the middle of the week." },
-                    { time: 36, text: "But there's a rhythm that's beating a steady sound," },
-                    { time: 39, text: "on this beautiful, terrifying, familiar ground." },
-                    { time: 42, text: "And I'm finding my footing in the push and the pull," },
-                    { time: 45, text: "my hope is half empty, my hope is half full." },
-                    { time: 48, text: "Just leaning into the motion," },
-                    { time: 51, text: "trusting the flow," },
-                    { time: 54, text: "got a long way to go..." },
-                    { time: 58, text: "But damn, I can grow." },
-                    { time: 61, text: "(Music)" },
-                    { time: 76, text: "Took a midnight walk past the city canal," },
-                    { time: 79, text: "to silence the static and the digital drawl." },
-                    { time: 82, text: "Orange street lights were slick on the water's dark face," },
-                    { time: 85, text: "the whole world was sleeping but I felt out of place." },
-                    { time: 88, text: "Then a duck cut the surface, a silent design," },
-                    { time: 91, text: "leaving a clean, steady V and a confident line." },
-                    { time: 94, text: "No thrashing, no questions, just cleaving the black," },
-                    { time: 97, text: "a quiet lesson in never looking back." },
-                    { time: 100, text: "And that rhythm starts beating that steady old sound," },
-                    { time: 103, text: "on this beautiful, terrifying, familiar ground." },
-                    { time: 106, text: "And I'm finding my footing in the push and the pull," },
-                    { time: 109, text: "my hope is half empty, my hope is half full." },
-                    { time: 112, text: "Just leaning into the motion," },
-                    { time: 115, text: "trusting the flow," },
-                    { time: 118, text: "got a long way to go..." },
-                    { time: 122, text: "But damn, I can grow." },
-                    { time: 125, text: "(Music)" },
-                    { time: 140, text: "They don't tell you the map is a thing that you create," },
-                    { time: 144, text: "with every small victory and every mistake." },
-                    { time: 147, text: "That perfection's a phantom, a well-marketed lie," },
-                    { time: 150, text: "the real work of art is the reason you try." },
-                    { time: 153, text: "A beautiful chaos, the color, the ache," },
-                    { time: 156, text: "it's all in the wake that you make." },
-                    { time: 159, text: "(Music Outro)" }
-                ]
-            },
-            {
-                title: "No turning back",
-                artist: "@Duckxmeta",
-                src: "https://files.catbox.moe/q4q9vf.wav",
-                lyrics: [
-                      { time: 0, text: "[Music Intro]" },
-                    { time: 10, text: "Feel the fire in my soul, a story to be told" },
-                    { time: 15, text: "Every step a new design, a future to unfold" },
-                    { time: 20, text: "No turning back from the path I'm on" },
-                    { time: 25, text: "With every beat, a victory's won" },
-                ]
-            },
-            {
-                title: "Calm",
-                artist: "@Duckxmeta",
-                src: "https://files.catbox.moe/6x70e9.wav",
-                lyrics: [
-                    { time: 0, text: "[Instrumental]" },
-                    { time: 5, text: "Relax and enjoy the sanctuary." }
-                ]
-            }
-        ];
-
-        let currentTrackIndex = 0;
-
-        function loadTrack(trackIndex) {
-            const track = playlist[trackIndex];
-            if (!track.src) {
-                alert("The audio for '" + track.title + "' is not available yet.");
-                return;
-            }
-            // Only update src if it's different to prevent full reload on pause/play
-            if (music.src !== track.src) {
-                music.src = track.src;
-            }
-            
-            songTitleEl.textContent = track.title;
-            songArtistEl.textContent = track.artist;
-            
-            populateLyrics(track.lyrics);
-            
-            updateTracklistUI();
-        }
-
-        function populateTracklist() {
-             tracklistContainer.innerHTML = '';
-            playlist.forEach((song, index) => {
-                const trackItem = document.createElement('div');
-                trackItem.className = 'track-item p-3 rounded-md cursor-pointer flex justify-between items-center transition-colors';
-                trackItem.dataset.index = index;
-
-                let titleHtml = `
-                    <div class="flex items-center gap-3">
-                        <span class="text-gray-600 text-xs font-mono">${index + 1}</span>
-                        <div>
-                            <p class="font-bold text-gray-200 text-sm">${song.title}</p>
-                            <p class="text-xs text-gray-500">${song.artist}</p>
-                        </div>
-                    </div>`;
-
-                trackItem.innerHTML = `
-                    ${titleHtml}
-                    <div class="track-status-icon"></div>
-                `;
-
-                trackItem.addEventListener('click', () => {
-                    const wasPlaying = !music.paused;
-                    // If clicking same track
-                    if (currentTrackIndex === index) {
-                         if (music.paused) music.play();
-                         else music.pause();
-                         return;
-                    }
-                    
-                    currentTrackIndex = index;
-                    loadTrack(currentTrackIndex);
-                    music.play();
-                });
-                tracklistContainer.appendChild(trackItem);
-            });
-            updateTracklistUI();
-        }
-
-        function updateTracklistUI() {
-            const trackItems = tracklistContainer.querySelectorAll('.track-item');
-            trackItems.forEach((item, index) => {
-                const iconContainer = item.querySelector('.track-status-icon');
-                item.classList.remove('active');
-                if (iconContainer) iconContainer.innerHTML = '';
-                
-                if (index === currentTrackIndex) {
-                    item.classList.add('active');
-                     if (!music.paused) {
-                         if (iconContainer) iconContainer.innerHTML = `<div class="flex gap-1 h-3 items-end"><div class="w-1 bg-purple-500 h-full animate-bounce"></div><div class="w-1 bg-purple-500 h-2/3 animate-bounce" style="animation-delay:0.1s"></div><div class="w-1 bg-purple-500 h-1/2 animate-bounce" style="animation-delay:0.2s"></div></div>`;
-                     } else {
-                         if (iconContainer) iconContainer.innerHTML = `<svg class="w-4 h-4 text-gray-400" fill="currentColor" viewBox="0 0 20 20"><path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zM9.555 7.168A1 1 0 008 8v4a1 1 0 001.555.832l3-2a1 1 0 000-1.664l-3-2z" clip-rule="evenodd"></path></svg>`;
-                     }
-                }
-            });
-            
-            // Toggle Main Play/Pause Button
-            if (music.paused) {
-                playIcon.classList.remove('hidden');
-                pauseIcon.classList.add('hidden');
-            } else {
-                playIcon.classList.add('hidden');
-                pauseIcon.classList.remove('hidden');
-            }
-        }
-
-
-        function populateLyrics(lyrics) {
-            lyricsContainer.innerHTML = '';
-            lyrics.forEach(line => {
-                const p = document.createElement('p');
-                p.textContent = line.text;
-                p.dataset.time = line.time;
-                p.className = 'transition-all duration-300 py-1 opacity-40';
-                lyricsContainer.appendChild(p);
-            });
-        }
-
-        let currentLine = null;
-
-        function updateLyrics() {
-            const lyrics = playlist[currentTrackIndex].lyrics;
-            const currentTime = music.currentTime;
-            
-            // Find active line
-            let activeIndex = -1;
-            for (let i = 0; i < lyrics.length; i++) {
-                if (currentTime >= lyrics[i].time) {
-                    activeIndex = i;
-                }
-            }
-
-            if (activeIndex !== -1) {
-                const activeLine = lyricsContainer.children[activeIndex];
-                if (currentLine !== activeLine) {
-                    if (currentLine) {
-                        currentLine.classList.remove('text-purple-400', 'opacity-100', 'scale-105');
-                        currentLine.classList.add('opacity-40');
-                    }
-                    activeLine.classList.remove('opacity-40');
-                    activeLine.classList.add('text-purple-400', 'opacity-100', 'scale-105');
-                    currentLine = activeLine;
-                    activeLine.scrollIntoView({ behavior: 'smooth', block: 'center' });
-                }
-            }
-        }
-
-        if (playPauseBtn && music) {
-            loadTrack(currentTrackIndex); // Load initial track
-            populateTracklist();
-            
-            playPauseBtn.addEventListener('click', () => {
-                if (!music.src) return;
-                if (music.paused) {
-                    music.play();
-                } else {
-                    music.pause();
-                }
-                updateTracklistUI();
-            });
-            
-            music.addEventListener('play', updateTracklistUI);
-            music.addEventListener('pause', updateTracklistUI);
-            music.addEventListener('timeupdate', updateLyrics);
-
-            music.onended = function() {
-                updateTracklistUI();
-                if(currentLine) {
-                    currentLine.classList.remove('text-purple-400', 'opacity-100', 'scale-105');
-                    currentLine.classList.add('opacity-40');
-                }
-                if (lyricsContainer.children[0]) {
-                     lyricsContainer.children[0].scrollIntoView({ behavior: 'smooth', block: 'center' });
-                }
-            };
-        }
+        // --- Music Player Logic Removed ---
         
         // --- Clipboard Function ---
         function copyToClipboard(text, feedbackEl) {
