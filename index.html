@@ -288,7 +288,8 @@
                     <span class="text-[10px] font-bold uppercase tracking-[0.4em] opacity-40">Traditional Support</span>
                     <div class="h-[1px] flex-1 bg-white/10"></div>
                 </div>
-                <div class="grid md:grid-cols-2 gap-4 max-w-3xl mx-auto">
+                <div class="grid md:grid-cols-3 gap-4 max-w-5xl mx-auto">
+                    <!-- CashApp -->
                     <a href="https://cash.app/$Duckxmeta" target="_blank" class="glass p-8 rounded-[2rem] flex items-center justify-between group hover:bg-[#00D632]/5 transition-all">
                         <div class="flex items-center gap-6">
                             <div class="w-14 h-14 bg-[#00D632]/10 rounded-2xl flex items-center justify-center">
@@ -301,6 +302,20 @@
                         </div>
                         <i class="fa-solid fa-arrow-right opacity-20 group-hover:opacity-100 transition-all"></i>
                     </a>
+                    <!-- Buy Me a Coffee -->
+                    <a href="https://www.buymeacoffee.com/justduckit" target="_blank" class="glass p-8 rounded-[2rem] flex items-center justify-between group hover:bg-[#FFDD00]/5 transition-all">
+                        <div class="flex items-center gap-6">
+                            <div class="w-14 h-14 bg-[#FFDD00]/10 rounded-2xl flex items-center justify-center">
+                                <i class="fa-solid fa-mug-hot text-2xl text-[#FFDD00]"></i>
+                            </div>
+                            <div>
+                                <h4 class="font-bold text-base uppercase">Coffee</h4>
+                                <p class="text-[10px] opacity-40 tracking-widest">BUY A COFFEE</p>
+                            </div>
+                        </div>
+                        <i class="fa-solid fa-arrow-right opacity-20 group-hover:opacity-100 transition-all"></i>
+                    </a>
+                    <!-- PayPal -->
                     <a href="https://www.paypal.com/donate/?hosted_button_id=RG9T939ERXZB8" target="_blank" class="glass p-8 rounded-[2rem] flex items-center justify-between group hover:bg-[#00457C]/5 transition-all">
                         <div class="flex items-center gap-6">
                             <div class="w-14 h-14 bg-[#00457C]/10 rounded-2xl flex items-center justify-center">
@@ -511,13 +526,13 @@
         const menuLinks = document.querySelectorAll('.menu-link');
 
         menuToggle.addEventListener('click', () => {
-            menuOverlay.classList.toggle('active');
+            const isActive = menuOverlay.classList.toggle('active');
             menuToggle.classList.toggle('active');
-            document.body.style.overflow = menuOverlay.classList.contains('active') ? 'hidden' : '';
+            document.body.style.overflow = isActive ? 'hidden' : '';
             
             // Hamburger animation
             const spans = menuToggle.querySelectorAll('span');
-            if (menuOverlay.classList.contains('active')) {
+            if (isActive) {
                 spans[0].style.transform = 'translateY(8px) rotate(45deg)';
                 spans[1].style.opacity = '0';
                 spans[2].style.transform = 'translateY(-8px) rotate(-45deg)';
@@ -533,8 +548,8 @@
         menuLinks.forEach(link => {
             link.addEventListener('click', () => {
                 menuOverlay.classList.remove('active');
+                menuToggle.classList.remove('active');
                 document.body.style.overflow = '';
-                // Reset hamburger
                 const spans = menuToggle.querySelectorAll('span');
                 spans[0].style.transform = 'none';
                 spans[1].style.opacity = '1';
@@ -543,32 +558,33 @@
             });
         });
 
-        // Sticky Nav Blur
+        // Copy Address Helper
+        function copyAddr(addr, feedbackId) {
+            const el = document.createElement('textarea');
+            el.value = addr;
+            document.body.appendChild(el);
+            el.select();
+            document.execCommand('copy');
+            document.body.removeChild(el);
+
+            const feedback = document.getElementById(feedbackId);
+            feedback.style.opacity = '1';
+            setTimeout(() => {
+                feedback.style.opacity = '0';
+            }, 2000);
+        }
+
+        // Navbar scroll effect
         window.addEventListener('scroll', () => {
             const nav = document.getElementById('navbar');
             if (window.scrollY > 50) {
-                nav.classList.add('glass');
+                nav.classList.add('glass', 'py-4');
+                nav.classList.remove('py-5');
             } else {
-                nav.classList.remove('glass');
+                nav.classList.remove('glass', 'py-4');
+                nav.classList.add('py-5');
             }
         });
-
-        // Copy Address Function (Fallback version for iframe)
-        function copyAddr(text, fbId) {
-            const tempTextArea = document.createElement("textarea");
-            tempTextArea.value = text;
-            document.body.appendChild(tempTextArea);
-            tempTextArea.select();
-            try {
-                document.execCommand('copy');
-                const fb = document.getElementById(fbId);
-                fb.style.opacity = '1';
-                setTimeout(() => fb.style.opacity = '0', 2000);
-            } catch (err) {
-                console.error("Copy failed", err);
-            }
-            document.body.removeChild(tempTextArea);
-        }
     </script>
 </body>
 </html>
