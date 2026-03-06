@@ -218,7 +218,6 @@
             </div>
             <div class="relative reveal">
                 <div class="absolute -inset-10 bg-brand-accent/10 blur-[100px] rounded-full"></div>
-                <!-- Jasmine Baby Picture Updated - Grayscale Removed -->
                 <img src="https://i.imgur.com/XIzfnh5.jpeg" class="relative rounded-[3rem] w-full aspect-[4/5] object-cover transition-all duration-1000 shadow-2xl" alt="Jasmine the duckling">
                 <div class="absolute -bottom-6 -right-6 glass p-8 rounded-[2rem] max-w-xs">
                     <p class="italic text-sm opacity-80">"Web3 allows us to scale empathy. Every mint fuels a better life for our birds."</p>
@@ -341,26 +340,33 @@
                 <p class="text-gray-400 max-w-xl mx-auto font-light">Help maintain the sanctuary via direct on-chain support. Every transaction fuels food and premium care.</p>
             </div>
 
-            <div class="grid grid-cols-1 md:grid-cols-2 gap-8 max-w-4xl mx-auto reveal">
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-8 max-w-6xl mx-auto reveal">
                 <!-- Solana -->
-                <button onclick="copyAddr('AKkgD4kg8bq7sPUXhqWLqNPBcvtXXhevx3TQCkuxpUQY', 'sol-fb')" class="glass p-12 rounded-[3rem] text-center card-hover transition-all relative overflow-hidden group">
+                <button onclick="copyAddr('AKkgD4kg8bq7sPUXhqWLqNPBcvtXXhevx3TQCkuxpUQY', 'sol-fb')" class="glass p-10 rounded-[3rem] text-center card-hover transition-all relative overflow-hidden group">
                     <span id="sol-fb" class="absolute inset-0 bg-brand-accent flex items-center justify-center opacity-0 transition-opacity font-bold">Address Copied!</span>
-                    <div class="w-20 h-20 bg-white/5 rounded-full flex items-center justify-center mx-auto mb-6">
+                    <div class="w-16 h-16 bg-white/5 rounded-full flex items-center justify-center mx-auto mb-6">
                         <img src="https://i.imgur.com/fdAeIGs.png" class="w-10 h-10 grayscale group-hover:grayscale-0 transition-all">
                     </div>
-                    <h4 class="font-black text-2xl italic uppercase tracking-tighter">Solana</h4>
-                    <p class="text-sm opacity-40 mt-2 font-mono">AKkg...UQY</p>
-                    <div class="mt-6 inline-block px-6 py-2 border border-white/10 rounded-full text-[10px] font-bold uppercase tracking-widest">Click to Copy</div>
+                    <h4 class="font-black text-xl italic uppercase tracking-tighter">Solana</h4>
+                    <p class="text-xs opacity-40 mt-2 font-mono">AKkg...UQY</p>
                 </button>
                 <!-- Ethereum -->
-                <button onclick="copyAddr('0xd15D984C4BB474b0f60247f29c87cEEB9c92253e', 'eth-fb')" class="glass p-12 rounded-[3rem] text-center card-hover transition-all relative overflow-hidden group">
+                <button onclick="copyAddr('0x30B52ee50E3C4176071E4fF6D010c28e54164788', 'eth-fb')" class="glass p-10 rounded-[3rem] text-center card-hover transition-all relative overflow-hidden group">
                     <span id="eth-fb" class="absolute inset-0 bg-brand-accent flex items-center justify-center opacity-0 transition-opacity font-bold">Address Copied!</span>
-                    <div class="w-20 h-20 bg-white/5 rounded-full flex items-center justify-center mx-auto mb-6">
-                        <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/6/6f/Ethereum-icon-purple.svg/480px-Ethereum-icon-purple.svg.png" class="w-8 h-12 grayscale group-hover:grayscale-0 transition-all">
+                    <div class="w-16 h-16 bg-white/5 rounded-full flex items-center justify-center mx-auto mb-6">
+                        <i class="fa-brands fa-ethereum text-5xl text-[#627EEA] grayscale group-hover:grayscale-0 transition-all"></i>
                     </div>
-                    <h4 class="font-black text-2xl italic uppercase tracking-tighter">Ethereum</h4>
-                    <p class="text-sm opacity-40 mt-2 font-mono">0xd1...53e</p>
-                    <div class="mt-6 inline-block px-6 py-2 border border-white/10 rounded-full text-[10px] font-bold uppercase tracking-widest">Click to Copy</div>
+                    <h4 class="font-black text-xl italic uppercase tracking-tighter">Ethereum</h4>
+                    <p class="text-xs opacity-40 mt-2 font-mono">0x30...4788</p>
+                </button>
+                <!-- USDC -->
+                <button onclick="copyAddr('0xd15D984C4BB474b0f60247f29c87cEEB9c92253e', 'usdc-fb')" class="glass p-10 rounded-[3rem] text-center card-hover transition-all relative overflow-hidden group">
+                    <span id="usdc-fb" class="absolute inset-0 bg-brand-accent flex items-center justify-center opacity-0 transition-opacity font-bold">Address Copied!</span>
+                    <div class="w-16 h-16 bg-white/5 rounded-full flex items-center justify-center mx-auto mb-6">
+                        <i class="fa-solid fa-circle-dollar-to-slot text-4xl text-blue-400 grayscale group-hover:grayscale-0 transition-all"></i>
+                    </div>
+                    <h4 class="font-black text-xl italic uppercase tracking-tighter">USDC</h4>
+                    <p class="text-xs opacity-40 mt-2 font-mono">0xd1...53e</p>
                 </button>
             </div>
         </div>
