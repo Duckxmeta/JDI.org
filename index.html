@@ -12,11 +12,11 @@
 
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>JustDuckit | Decent Duck Sanctuary</title>
+    <title>JustDuckit | Web3 Sanctuary Ecosystem</title>
     
     <!-- SEO & Social -->
-    <meta property="og:title" content="JustDuckit - Decent Duck Sanctuary">
-    <meta property="og:description" content="A chill sanctuary for our flock. Simple, quiet, and community powered.">
+    <meta property="og:title" content="JustDuckit - Web3 Animal Sanctuary">
+    <meta property="og:description" content="Integrating real-world animal rescue with blockchain technology. Explore the legacy of V1 and the future of the V2 Egg collection.">
     <meta property="og:image" content="https://i.imgur.com/26hkHfq.jpeg">
     <meta name="twitter:card" content="summary_large_image">
     
@@ -59,7 +59,7 @@
         }
 
         .hero-text {
-            font-size: clamp(3.5rem, 12vw, 8.5rem);
+            font-size: clamp(3rem, 10vw, 7rem);
             line-height: 0.9;
             letter-spacing: -0.06em;
         }
@@ -85,6 +85,18 @@
             background: radial-gradient(circle at center, transparent 0%, #020202 95%);
         }
 
+        .text-gradient {
+            background: linear-gradient(to right, #9333ea, #a855f7);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+        }
+
+        .border-gradient {
+            border: 1px solid;
+            border-image-source: linear-gradient(to right, rgba(147, 51, 234, 0.3), transparent);
+            border-image-slice: 1;
+        }
+
         #menu-overlay {
             position: fixed;
             inset: 0;
@@ -99,36 +111,6 @@
         #menu-overlay.active {
             opacity: 1;
             visibility: visible;
-        }
-
-        .btn-primary {
-            background: #9333ea;
-            box-shadow: 0 0 20px rgba(147, 51, 234, 0.3);
-            transition: all 0.3s ease;
-        }
-
-        .btn-primary:hover {
-            transform: scale(1.05);
-            box-shadow: 0 0 30px rgba(147, 51, 234, 0.5);
-        }
-
-        .card-hover:hover {
-            transform: translateY(-5px);
-            border-color: rgba(147, 51, 234, 0.3);
-        }
-
-        .circle-icon {
-            width: 48px;
-            height: 48px;
-            border-radius: 50%;
-            object-fit: cover;
-            border: 2px solid rgba(147, 51, 234, 0.3);
-        }
-
-        .text-gradient {
-            background: linear-gradient(to r, #9333ea, #a855f7);
-            -webkit-background-clip: text;
-            -webkit-text-fill-color: transparent;
         }
     </style>
 </head>
@@ -153,37 +135,36 @@
     <!-- Full Screen Menu -->
     <div id="menu-overlay" class="flex items-center justify-center">
         <nav class="text-center space-y-8">
-            <a href="#story" class="menu-link block text-4xl md:text-6xl font-black uppercase tracking-tighter hover:text-brand-accent transition-colors">Our Story</a>
-            <a href="#v2-mint" class="menu-link block text-4xl md:text-6xl font-black uppercase tracking-tighter hover:text-brand-accent transition-colors">V2 Mint</a>
-            <a href="#sanctuary" class="menu-link block text-4xl md:text-6xl font-black uppercase tracking-tighter hover:text-brand-accent transition-colors">Sanctuary</a>
-            <a href="#ecosystem" class="menu-link block text-4xl md:text-6xl font-black uppercase tracking-tighter hover:text-brand-accent transition-colors">Ecosystem</a>
-            <a href="#essentials" class="menu-link block text-4xl md:text-6xl font-black uppercase tracking-tighter hover:text-brand-accent transition-colors">Dax's Essentials</a>
-            <a href="#premium-product" class="menu-link block text-4xl md:text-6xl font-black uppercase tracking-tighter hover:text-brand-accent transition-colors">Premium Shit</a>
-            <a href="#support" class="menu-link block text-4xl md:text-6xl font-black uppercase tracking-tighter hover:text-brand-accent transition-colors">Donate</a>
-            <a href="#community" class="menu-link block text-4xl md:text-6xl font-black uppercase tracking-tighter hover:text-brand-accent transition-colors">Connect</a>
+            <a href="#vision" class="menu-link block text-4xl md:text-6xl font-black uppercase tracking-tighter hover:text-brand-accent transition-colors">The Vision</a>
+            <a href="#legacy" class="menu-link block text-4xl md:text-6xl font-black uppercase tracking-tighter hover:text-brand-accent transition-colors">Legacy V1</a>
+            <a href="#ownership" class="menu-link block text-4xl md:text-6xl font-black uppercase tracking-tighter hover:text-brand-accent transition-colors">Digital Ownership</a>
+            <a href="#mint" class="menu-link block text-4xl md:text-6xl font-black uppercase tracking-tighter hover:text-brand-accent transition-colors">Mint V2</a>
+            <a href="#virtual" class="menu-link block text-4xl md:text-6xl font-black uppercase tracking-tighter hover:text-brand-accent transition-colors">Virtual Sanctuary</a>
         </nav>
     </div>
 
     <!-- Hero -->
     <header class="relative h-screen flex flex-col justify-center items-center text-center px-4 overflow-hidden">
-        <div class="absolute inset-0 z-0 video-container opacity-40">
+        <div class="absolute inset-0 z-0 video-container opacity-30">
             <video autoplay loop muted playsinline class="w-full h-full object-cover">
                 <source src="https://i.imgur.com/5yRqKas.mp4" type="video/mp4">
             </video>
         </div>
         
         <div class="relative z-10 reveal">
-            <h1 class="font-black mb-8 text-white flex flex-col items-center">
-                <span class="hero-text text-transparent bg-clip-text bg-gradient-to-r from-brand-accent to-brand-accentLight uppercase italic">JustDuckit</span>
-                <span class="text-xl md:text-4xl mt-4 opacity-60 font-medium tracking-[0.2em] uppercase text-white">The Decent Duck Sanctuary</span>
+            <h1 class="font-black mb-6 text-white flex flex-col items-center">
+                <span class="hero-text text-gradient uppercase italic">The Evolution</span>
+                <span class="text-xl md:text-3xl mt-4 opacity-70 font-medium tracking-[0.3em] uppercase text-white">Of Animal Sanctuary Care</span>
             </h1>
-            <div class="flex flex-wrap gap-4 justify-center mt-6">
-                <a href="https://justduckeggs.com" target="_blank" class="btn-primary text-white px-10 py-4 rounded-full font-bold uppercase text-[11px] tracking-widest flex items-center gap-2">
-                    <img src="https://i.imgur.com/7BiW2OG.gif" class="w-5 h-5 rounded-full" alt="Egg">
-                    Mint V2 Eggs
+            <p class="max-w-2xl mx-auto text-gray-400 text-lg md:text-xl font-light leading-relaxed mb-10">
+                Bridging real-world rescue operations with decentralized technology to build a sustainable future for our flock.
+            </p>
+            <div class="flex flex-wrap gap-4 justify-center">
+                <a href="#mint" class="bg-brand-accent text-white px-10 py-4 rounded-full font-bold uppercase text-[11px] tracking-widest shadow-[0_0_30px_rgba(147,51,234,0.3)] hover:scale-105 transition-all">
+                    Explore Ecosystem
                 </a>
-                <a href="https://magiceden.us/marketplace/decent_ducks" target="_blank" class="glass px-10 py-4 rounded-full font-bold uppercase text-[11px] tracking-widest hover:bg-white hover:text-black transition-all">
-                    Adopt V1 Ducks
+                <a href="https://adoptaduck.org" target="_blank" class="glass px-10 py-4 rounded-full font-bold uppercase text-[11px] tracking-widest hover:bg-white hover:text-black transition-all">
+                    Visit Sanctuary
                 </a>
             </div>
         </div>
@@ -193,292 +174,224 @@
         </div>
     </header>
 
-    <!-- Our Story Section -->
-    <section id="story" class="py-32 container mx-auto px-6 overflow-hidden">
-        <div class="grid lg:grid-cols-2 gap-20 items-center">
-            <div class="reveal">
+    <!-- The Core Vision -->
+    <section id="vision" class="py-32 container mx-auto px-6">
+        <div class="max-w-6xl mx-auto flex flex-col lg:flex-row items-center gap-16 reveal">
+            <div class="flex-1">
                 <div class="inline-block px-4 py-1 bg-brand-accent/20 rounded-full text-brand-accent text-[10px] font-bold uppercase tracking-widest mb-6">
-                    Origin Story
+                    Integrating IRL & Web3
                 </div>
-                <h2 class="text-5xl md:text-7xl font-black italic uppercase tracking-tighter leading-none mb-8">From One Duck to <br><span class="text-brand-accent">A Digital Flock.</span></h2>
+                <h2 class="text-5xl md:text-7xl font-black italic uppercase tracking-tighter leading-none mb-10">Beyond the <br><span class="text-gradient">Digital Screen.</span></h2>
                 <div class="space-y-6 text-gray-400 text-lg font-light leading-relaxed">
-                    <p>It all started with Jasmine—a single duck who needed a home and found a sanctuary. What began as a local mission to provide premium care for rescue birds quickly evolved through the power of the community.</p>
-                    <p>By merging real-world sanctuary operations with Web3 technology, we've created a sustainable ecosystem where every NFT represents a real-world impact. We aren't just building a project; we're building a home.</p>
-                </div>
-                <div class="mt-10 flex items-center gap-6">
-                    <div class="flex -space-x-4">
-                        <img src="https://i.imgur.com/otNEI2M.png" class="w-12 h-12 rounded-full border-2 border-black">
-                        <img src="https://i.imgur.com/KDhLLz2.jpeg" class="w-12 h-12 rounded-full border-2 border-black object-cover">
-                        <img src="https://i.imgur.com/K7CdYVS.jpeg" class="w-12 h-12 rounded-full border-2 border-black">
-                    </div>
-                    <p class="text-xs font-bold uppercase tracking-widest opacity-40">100% Community Driven</p>
+                    <p>Most Web3 projects start with a JPEG and try to find a mission. We did the opposite. JustDuckit began as a physical mission—rescuing birds, providing premium care, and building a quiet place for animals in need.</p>
+                    <p>We realized that Web3 technology wasn't just a trend; it was the ultimate tool for scaling our real-world impact. By integrating our real-life operations with the blockchain, we create a transparent, community-powered ecosystem that is truly ahead of its time.</p>
                 </div>
             </div>
-            <div class="relative reveal">
-                <div class="absolute -inset-10 bg-brand-accent/10 blur-[100px] rounded-full"></div>
-                <img src="https://i.imgur.com/XIzfnh5.jpeg" class="relative rounded-[3rem] w-full aspect-[4/5] object-cover transition-all duration-1000 shadow-2xl" alt="Jasmine the duckling">
-                <div class="absolute -bottom-6 -right-6 glass p-8 rounded-[2rem] max-w-xs">
-                    <p class="italic text-sm opacity-80">"Web3 allows us to scale empathy. Every mint fuels a better life for our birds."</p>
-                    <p class="mt-4 font-black uppercase text-[10px] tracking-widest text-brand-accent">— JustDuckit Founder</p>
+            <div class="flex-1 w-full relative">
+                <div class="absolute -inset-10 bg-brand-accent/5 blur-[100px] rounded-full"></div>
+                <img src="https://i.imgur.com/XIzfnh5.jpeg" class="relative rounded-[3rem] shadow-2xl transition-all duration-700" alt="Jasmine - The Inspiration">
+                <div class="absolute bottom-6 left-6 glass px-6 py-3 rounded-2xl">
+                    <p class="text-[10px] font-black uppercase tracking-widest text-brand-accent italic">The Muse: Jasmine</p>
                 </div>
             </div>
         </div>
     </section>
 
-    <!-- The V2 Egg Push -->
-    <section id="v2-mint" class="py-32 bg-[#050505] relative overflow-hidden">
-        <div class="absolute inset-0 opacity-10 pointer-events-none">
-            <div class="absolute top-0 left-0 w-full h-full bg-[radial-gradient(circle_at_center,_var(--tw-gradient-stops))] from-brand-accent/20 via-transparent to-transparent"></div>
-        </div>
-        
-        <div class="container mx-auto px-6 text-center relative z-10 reveal">
-            <div class="max-w-4xl mx-auto">
-                <img src="https://i.imgur.com/7BiW2OG.gif" class="w-32 h-32 mx-auto mb-10 rounded-full border-4 border-brand-accent shadow-[0_0_50px_rgba(147,51,234,0.3)]">
-                <h2 class="text-5xl md:text-8xl font-black italic uppercase tracking-tighter mb-6 leading-none">V2 Egg <br><span class="text-gradient">Collection</span></h2>
-                <p class="text-xl md:text-2xl text-gray-300 font-light mb-12 max-w-2xl mx-auto">This is the engine for our future. Minting a V2 Egg is the single most effective way to help us expand the sanctuary, improve bird habitats, and grow the flock.</p>
-                
-                <div class="flex flex-col md:flex-row justify-center items-center gap-6">
-                    <a href="https://justduckeggs.com" target="_blank" class="btn-primary w-full md:w-auto px-16 py-6 rounded-full font-black uppercase text-sm tracking-[0.2em] transition-all">
-                        Mint Now on justduckeggs.com
-                    </a>
-                    <a href="https://duckxmeta.github.io/Ducklopedia/" target="_blank" class="glass w-full md:w-auto px-10 py-6 rounded-full font-bold uppercase text-xs tracking-widest hover:bg-white hover:text-black transition-all">
-                        View Ducklopedia
+    <!-- Legacy V1 Breakdown -->
+    <section id="legacy" class="py-32 bg-[#050505] relative overflow-hidden">
+        <div class="container mx-auto px-6">
+            <div class="flex flex-col lg:flex-row items-center gap-16 reveal">
+                <div class="flex-1">
+                    <h3 class="text-brand-accent text-xs font-black uppercase tracking-[0.4em] mb-4">Phase One</h3>
+                    <h2 class="text-5xl md:text-7xl font-black italic uppercase tracking-tighter mb-8">Decent Ducks <br><span class="text-brand-accent">Legacy Collection</span></h2>
+                    <p class="text-gray-400 text-xl font-light leading-relaxed mb-8">
+                        The V1 collection was "gifted" upon us as a reward for the work we were already doing on the ground. It serves as our genesis—a mark of honor for those who supported the sanctuary before it was even a digital ecosystem.
+                    </p>
+                    <ul class="space-y-4 mb-10">
+                        <li class="flex items-center gap-4 text-sm font-bold uppercase tracking-widest text-white/60">
+                            <i class="fa-solid fa-award text-brand-accent"></i> The Foundation of our Flock
+                        </li>
+                        <li class="flex items-center gap-4 text-sm font-bold uppercase tracking-widest text-white/60">
+                            <i class="fa-solid fa-feather text-brand-accent"></i> Originally focused on birds
+                        </li>
+                        <li class="flex items-center gap-4 text-sm font-bold uppercase tracking-widest text-white/60">
+                            <i class="fa-solid fa-expand text-brand-accent"></i> Now expanding to all animals
+                        </li>
+                    </ul>
+                    <a href="https://magiceden.us/marketplace/decent_ducks" target="_blank" class="glass px-8 py-4 rounded-xl font-black uppercase text-xs tracking-widest hover:text-brand-accent transition-all inline-block">
+                        View V1 on Magic Eden
                     </a>
                 </div>
-                
-                <div class="mt-20 grid grid-cols-2 md:grid-cols-4 gap-8">
+                <div class="flex-1 grid grid-cols-2 gap-4">
+                    <img src="https://i.imgur.com/otNEI2M.png" class="rounded-[2rem] shadow-2xl card-hover transition-all">
+                    <img src="https://i.imgur.com/K7CdYVS.jpeg" class="rounded-[2rem] shadow-2xl mt-8 card-hover transition-all">
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Digital Ownership Explanation -->
+    <section id="ownership" class="py-32 container mx-auto px-6">
+        <div class="glass p-12 md:p-24 rounded-[4rem] reveal relative overflow-hidden border-gradient">
+            <div class="absolute top-0 right-0 p-12 opacity-5 hidden md:block">
+                <i class="fa-solid fa-cube text-[15rem]"></i>
+            </div>
+            <div class="max-w-3xl relative z-10">
+                <h2 class="text-4xl md:text-6xl font-black italic uppercase tracking-tighter mb-8">What is <br><span class="text-gradient">Digital Ownership?</span></h2>
+                <p class="text-gray-300 text-xl font-light leading-relaxed mb-10">
+                    Think of an NFT as a digital deed to a real-world impact. By owning a piece of the JustDuckit ecosystem, you aren't just buying a picture—you are securing a stake in our sanctuary’s growth.
+                </p>
+                <div class="grid sm:grid-cols-2 gap-8">
                     <div>
-                        <p class="text-4xl font-black italic text-brand-accent">Phase 2</p>
-                        <p class="text-[10px] uppercase font-bold tracking-widest opacity-40 mt-2">Current Mission</p>
+                        <h4 class="font-black uppercase text-brand-accent text-sm tracking-widest mb-2">Immutable Proof</h4>
+                        <p class="text-gray-400 text-sm font-light">Your support is recorded forever on the Solana blockchain, transparent and unchangeable.</p>
                     </div>
                     <div>
-                        <p class="text-4xl font-black italic">Solana</p>
-                        <p class="text-[10px] uppercase font-bold tracking-widest opacity-40 mt-2">Network</p>
-                    </div>
-                    <div>
-                        <p class="text-4xl font-black italic">100%</p>
-                        <p class="text-[10px] uppercase font-bold tracking-widest opacity-40 mt-2">Utility Driven</p>
-                    </div>
-                    <div>
-                        <p class="text-4xl font-black italic">Live</p>
-                        <p class="text-[10px] uppercase font-bold tracking-widest opacity-40 mt-2">Mint Status</p>
+                        <h4 class="font-black uppercase text-brand-accent text-sm tracking-widest mb-2">Direct Utility</h4>
+                        <p class="text-gray-400 text-sm font-light">Holders get exclusive access to our virtual experiences, merch drops, and IRL sanctuary visits.</p>
                     </div>
                 </div>
             </div>
         </div>
     </section>
 
-    <!-- Sanctuary Mission -->
-    <section id="sanctuary" class="py-32 container mx-auto px-6">
-        <div class="max-w-4xl mx-auto text-center reveal">
-            <h2 class="text-5xl md:text-7xl font-black mb-10 tracking-tighter italic uppercase">The Physical <span class="text-brand-accent">Sanctuary.</span></h2>
-            <p class="text-gray-400 text-xl mb-12 leading-relaxed font-light">
-                Our digital success funds a quiet, high-quality home for our real-world flock. We prioritize stress-free environments and dedicated daily care, supported entirely by you.
+    <!-- V2 Mint Push -->
+    <section id="mint" class="py-32 bg-[#020202] relative overflow-hidden">
+        <div class="container mx-auto px-6 text-center reveal">
+            <img src="https://i.imgur.com/7BiW2OG.gif" class="w-32 h-32 mx-auto mb-10 rounded-full border-4 border-brand-accent shadow-[0_0_50px_rgba(147,51,234,0.3)]">
+            <h2 class="text-5xl md:text-8xl font-black italic uppercase tracking-tighter mb-6 leading-none">The V2 Egg <br><span class="text-gradient">Collection</span></h2>
+            <p class="text-xl md:text-2xl text-gray-300 font-light mb-12 max-w-3xl mx-auto">
+                Minting an egg is the single most powerful way to fuel the growth of the sanctuary. These eggs represent the next phase of our mission: bigger habitats, more rescues, and advanced animal tech.
             </p>
-            <div class="flex flex-wrap justify-center gap-6 items-center">
-                <a href="https://magiceden.us/marketplace/decent_ducks" target="_blank" class="btn-primary px-8 py-3 rounded-xl font-bold uppercase text-xs flex items-center gap-3">
-                    <img src="https://i.imgur.com/K7CdYVS.jpeg" class="w-6 h-6 rounded-full border border-white/20" alt="Jasmine">
-                    Secondary Market
+            
+            <div class="flex flex-col md:flex-row justify-center items-center gap-6 mb-16">
+                <a href="https://justduckeggs.com" target="_blank" class="bg-brand-accent text-white px-12 py-6 rounded-full font-black uppercase text-sm tracking-[0.2em] shadow-[0_0_50px_rgba(147,51,234,0.4)] hover:scale-105 transition-all">
+                    Mint V2 on justduckeggs.com
                 </a>
             </div>
+            
+            <div class="max-w-4xl mx-auto border-t border-white/5 pt-16">
+                <div class="flex flex-wrap justify-center gap-12 mb-12">
+                    <div class="text-center">
+                        <p class="text-3xl md:text-4xl font-black italic text-brand-accent">May 31 2026</p>
+                        <p class="text-[10px] uppercase font-bold tracking-widest mt-2 opacity-50">Hatch Date</p>
+                    </div>
+                    <div class="text-center border-x border-white/10 px-12">
+                        <p class="text-3xl md:text-4xl font-black italic">SOL</p>
+                        <p class="text-[10px] uppercase font-bold tracking-widest mt-2 opacity-50">Native Network</p>
+                    </div>
+                    <div class="text-center">
+                        <p class="text-3xl md:text-4xl font-black italic">Utility</p>
+                        <p class="text-[10px] uppercase font-bold tracking-widest mt-2 opacity-50">High Priority</p>
+                    </div>
+                </div>
+
+                <!-- Omnichain Integration Section -->
+                <div class="glass p-8 rounded-[2rem] border border-brand-accent/10">
+                    <p class="text-[10px] uppercase font-black tracking-[0.4em] text-brand-accent mb-6">Omnichain Enabled — Mint SOL on any chain:</p>
+                    <div class="flex flex-wrap justify-center items-center gap-x-4 gap-y-3 text-[10px] font-black uppercase tracking-widest text-white/40 italic">
+                        <span>Solana</span>
+                        <span class="w-1 h-1 bg-white/20 rounded-full"></span>
+                        <span>Ethereum</span>
+                        <span class="w-1 h-1 bg-white/20 rounded-full"></span>
+                        <span>Polygon</span>
+                        <span class="w-1 h-1 bg-white/20 rounded-full"></span>
+                        <span>Base</span>
+                        <span class="w-1 h-1 bg-white/20 rounded-full"></span>
+                        <span>ApeChain</span>
+                        <span class="w-1 h-1 bg-white/20 rounded-full"></span>
+                        <span>Abstract</span>
+                        <span class="w-1 h-1 bg-white/20 rounded-full"></span>
+                        <span>Cronos</span>
+                        <span class="w-1 h-1 bg-white/20 rounded-full"></span>
+                        <span>Avalanche</span>
+                        <span class="w-1 h-1 bg-white/20 rounded-full"></span>
+                        <span>OP Mainnet</span>
+                        <span class="w-1 h-1 bg-white/20 rounded-full"></span>
+                        <span>Berachain</span>
+                        <span class="w-1 h-1 bg-white/20 rounded-full"></span>
+                        <span>BNB Smart Chain</span>
+                        <span class="w-1 h-1 bg-white/20 rounded-full"></span>
+                        <span>SUI</span>
+                    </div>
+                </div>
+            </div>
         </div>
     </section>
 
-    <!-- Digital Ecosystem / Arcade -->
-    <section id="ecosystem" class="py-32 container mx-auto px-6">
+    <!-- Virtual Sanctuary / Adoption Hub -->
+    <section id="virtual" class="py-32 container mx-auto px-6">
+        <div class="glass p-12 md:p-20 rounded-[4rem] reveal flex flex-col lg:flex-row items-center gap-16">
+            <div class="flex-1">
+                <h2 class="text-4xl md:text-6xl font-black italic uppercase tracking-tighter mb-8">Virtual <br><span class="text-brand-accent">Sanctuary.</span></h2>
+                <p class="text-gray-400 text-lg font-light leading-relaxed mb-8">
+                    Can't visit us in person? Our virtual sanctuary at **adoptaduck.org** allows you to virtually adopt a real-life resident. Experience the sanctuary through immersive digital eyes and support your favorite animals from anywhere in the world.
+                </p>
+                <div class="mb-8 p-4 bg-brand-accent/10 rounded-2xl border border-brand-accent/20">
+                    <p class="text-xs font-bold text-brand-accentLight uppercase tracking-widest">
+                        <i class="fa-solid fa-sparkles"></i> Expansion Coming: We plan on adding more animals to the site on launch!
+                    </p>
+                </div>
+                <div class="flex gap-4">
+                    <a href="https://adoptaduck.org" target="_blank" class="bg-white text-black px-10 py-4 rounded-full font-black uppercase text-[10px] tracking-widest hover:bg-brand-accent hover:text-white transition-all">
+                        Virtually Adopt Now
+                    </a>
+                </div>
+            </div>
+            <div class="flex-1 w-full relative">
+                <div class="absolute -inset-10 bg-brand-accent/10 blur-[100px] rounded-full"></div>
+                <img src="https://i.imgur.com/zlVWXNd.jpeg" class="relative rounded-[3rem] shadow-2xl" alt="Sanctuary Residents">
+                <div class="absolute bottom-6 right-6 glass px-6 py-3 rounded-2xl">
+                    <p class="text-[10px] font-black uppercase tracking-widest text-white italic">The Flock Awaits</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Roadmap & Integration -->
+    <section class="py-32 container mx-auto px-6">
         <div class="text-center mb-16 reveal">
-            <h2 class="text-5xl font-black uppercase italic tracking-tighter">The Ecosystem</h2>
-            <p class="opacity-40 text-sm mt-2">Digital experiences from the flock.</p>
+            <h2 class="text-5xl font-black uppercase italic tracking-tighter">The Integration</h2>
+            <p class="opacity-40 text-sm mt-2">Building a bridge between the blockchain and the barn.</p>
         </div>
-        <!-- Grid layout updated to 4 columns since Dax's Essentials moved -->
-        <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8 reveal max-w-7xl mx-auto">
-            <!-- Virtual Sanctuary (Coming Soon) -->
-            <div class="glass p-5 rounded-[2.5rem] card-hover transition-all group relative overflow-hidden border border-brand-accent/20">
-                <div class="absolute top-4 right-4 z-20 bg-brand-accent text-white text-[8px] font-black uppercase px-3 py-1 rounded-full tracking-widest">
-                    Coming Soon
-                </div>
-                <div class="overflow-hidden rounded-[2rem] relative aspect-video grayscale opacity-50">
-                    <img src="https://i.imgur.com/otNEI2M.png" class="w-full h-full object-cover" alt="Virtual Sanctuary">
-                    <div class="absolute inset-0 flex items-center justify-center">
-                        <i class="fa-solid fa-lock text-4xl opacity-20"></i>
-                    </div>
-                </div>
-                <div class="p-6">
-                    <h3 class="text-2xl font-bold italic uppercase tracking-tighter">Virtual Sanctuary</h3>
-                    <p class="text-sm opacity-50 mt-2 mb-6">Explore the sanctuary in an immersive digital environment. Stay tuned.</p>
-                    <span class="text-[10px] font-black uppercase tracking-widest opacity-20 italic">Under Construction</span>
-                </div>
+        <div class="grid md:grid-cols-2 lg:grid-cols-4 gap-8 reveal">
+            <!-- Real-Time Updates Card -->
+            <div class="glass p-8 rounded-[2.5rem] space-y-6 card-hover transition-all">
+                <div class="text-3xl text-brand-accent"><i class="fa-solid fa-clipboard-list"></i></div>
+                <h4 class="text-xl font-black uppercase italic tracking-tighter leading-tight">Live Vibe Board</h4>
+                <p class="text-gray-400 text-sm font-light">Track our live vibe board and daily care checklists as they update in real-time throughout the day.</p>
             </div>
-            <!-- Duck Joyride -->
-            <div class="glass p-5 rounded-[2.5rem] card-hover transition-all group">
-                <div class="overflow-hidden rounded-[2rem] relative aspect-video">
-                    <img src="https://i.imgur.com/JuDDwQ7.jpeg" class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-110">
-                    <div class="absolute inset-0 bg-brand-accent/20 opacity-0 group-hover:opacity-100 transition-opacity flex items-center justify-center">
-                        <i class="fa-solid fa-play text-4xl"></i>
-                    </div>
-                </div>
-                <div class="p-6">
-                    <h3 class="text-2xl font-bold italic uppercase tracking-tighter">Duck Joyride</h3>
-                    <p class="text-sm opacity-50 mt-2 mb-6">Our flagship arcade side-scroller. High scores and chill vibes.</p>
-                    <a href="https://duckxmeta.github.io/DuckJoyrideV2/" target="_blank" class="text-xs font-black uppercase tracking-widest text-brand-accent">Play Now &rarr;</a>
-                </div>
+            <!-- DuckTV Card -->
+            <div class="glass p-8 rounded-[2.5rem] space-y-6 card-hover transition-all">
+                <div class="text-3xl text-brand-accent"><i class="fa-solid fa-tv"></i></div>
+                <h4 class="text-xl font-black uppercase italic tracking-tighter leading-tight">DuckTV 24/7</h4>
+                <p class="text-gray-400 text-sm font-light">Coming soon: A 24/7 live stream check-in to see what the ducks and residents are up to on the grounds.</p>
             </div>
-            <!-- Ground Rangers -->
-            <div class="glass p-5 rounded-[2.5rem] card-hover transition-all group">
-                <div class="overflow-hidden rounded-[2rem] relative aspect-video">
-                    <img src="https://i.imgur.com/braneXY.jpeg" class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-110">
-                </div>
-                <div class="p-6">
-                    <h3 class="text-2xl font-bold italic uppercase tracking-tighter">Ground Rangers</h3>
-                    <p class="text-sm opacity-50 mt-2 mb-6">A legendary arcade classic developed by @Monkeybizio.</p>
-                    <a href="https://decentducks.netlify.app/" target="_blank" class="text-xs font-black uppercase tracking-widest text-brand-accent">Play Now &rarr;</a>
-                </div>
+            <!-- Transparency Card - Heading Color Changed to White -->
+            <div class="glass p-8 rounded-[2.5rem] border border-brand-accent/20 space-y-6 card-hover transition-all">
+                <div class="text-3xl text-brand-accent"><i class="fa-solid fa-file-invoice-dollar"></i></div>
+                <h4 class="text-xl font-black uppercase italic tracking-tighter leading-tight text-white">Clear Transparency</h4>
+                <p class="text-gray-400 text-sm font-light">Monthly and yearly adoptaduck subscribers get full access to our expense sheets—see exactly how we spend on care.</p>
             </div>
-            <!-- Chess -->
-            <div class="glass p-5 rounded-[2.5rem] card-hover transition-all group">
-                <div class="overflow-hidden rounded-[2rem] relative aspect-video">
-                    <img src="https://i.imgur.com/hOWQbzH.jpeg" class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-110">
-                </div>
-                <div class="p-6">
-                    <h3 class="text-2xl font-bold italic uppercase tracking-tighter">Decent Chess</h3>
-                    <p class="text-sm opacity-50 mt-2 mb-6">Classic strategy reimagined with sanctuary aesthetic.</p>
-                    <a href="https://duckxmeta.github.io/Decent-Chess/" target="_blank" class="text-xs font-black uppercase tracking-widest text-brand-accent">Play Now &rarr;</a>
-                </div>
+            <!-- Holder Suggestion Card -->
+            <div class="glass p-8 rounded-[2.5rem] space-y-6 card-hover transition-all">
+                <div class="text-3xl text-brand-accent"><i class="fa-solid fa-comments"></i></div>
+                <h4 class="text-xl font-black uppercase italic tracking-tighter leading-tight">Direct Line</h4>
+                <p class="text-gray-400 text-sm font-light">Holders get direct messaging access to the founder to offer suggestions for grounds and rescues.</p>
             </div>
-        </div>
-    </section>
-
-    <!-- Dax's Essentials (Amazon Storefront) Moved Section -->
-    <section id="essentials" class="py-16 container mx-auto px-6">
-        <div class="glass p-8 md:p-12 rounded-[3rem] md:rounded-[4rem] reveal flex flex-col md:flex-row items-center gap-12 overflow-hidden relative border border-brand-accent/10">
-            <div class="flex-1 w-full max-w-md relative">
-                <div class="absolute -inset-10 bg-brand-accent/5 blur-[80px] rounded-full"></div>
-                <img src="https://i.imgur.com/JTU40x3.jpeg" class="relative rounded-[2.5rem] shadow-2xl transition-transform duration-1000 hover:scale-105" alt="Dax's Essentials">
-            </div>
-            <div class="flex-1 space-y-6 text-center md:text-left">
-                <div class="inline-block px-4 py-1 bg-brand-accent/20 rounded-full text-brand-accent text-[10px] font-bold uppercase tracking-widest">
-                    Amazon Storefront
-                </div>
-                <h2 class="text-4xl md:text-6xl font-black italic uppercase tracking-tighter leading-none">Dax's <br><span class="text-brand-accent">Essentials</span></h2>
-                <p class="text-gray-400 text-lg font-light leading-relaxed max-w-xl mx-auto md:mx-0">
-                    Curated sanctuary supplies and bird essentials. Everything we use to keep the flock happy and healthy, hand-picked for our community birds.
-                </p>
-                <div class="pt-4">
-                    <a href="https://amzn.to/4sCtk0B" target="_blank" class="btn-primary inline-flex items-center gap-4 px-10 py-4 rounded-full font-bold uppercase text-[11px] tracking-[0.2em] transition-all">
-                        SHOP ON AMAZON <i class="fa-solid fa-arrow-up-right-from-square text-[10px]"></i>
-                    </a>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <!-- Premium Shit Section (Exclusivo) -->
-    <section id="premium-product" class="py-16 container mx-auto px-6">
-        <div class="glass p-8 md:p-20 rounded-[3rem] md:rounded-[5rem] reveal flex flex-col lg:flex-row items-center gap-12 lg:gap-24 overflow-hidden relative">
-            <div class="absolute top-0 right-0 p-8 hidden md:block">
-                <span class="text-[10px] font-bold uppercase tracking-[0.4em] opacity-20">Sanctuary Sourced</span>
-            </div>
-            
-            <div class="flex-1 space-y-10 text-center lg:text-left">
-                <div class="inline-block px-4 py-1 bg-brand-accent/20 rounded-full text-brand-accent text-[10px] font-bold uppercase tracking-widest">
-                    Exclusive
-                </div>
-                <h2 class="text-5xl md:text-8xl font-black italic uppercase tracking-tighter leading-[0.85]">Decent Ducks <br><span class="text-brand-accent">Premium Shit</span></h2>
-                <p class="text-gray-400 text-xl font-light leading-relaxed max-w-xl mx-auto lg:mx-0">
-                    Our sanctuary-sourced, high-grade duck fertilizer. Hand-packed in premium jars to help your garden thrive while supporting our flock. It makes a great gag gift for anyone, ships anon.
-                </p>
-                <div class="pt-4">
-                    <a href="https://app.exclusivo.one/invite/store/duck/E6dU-3Md7BuEoCVF0etEG1DXROmJtqRq" target="_blank" class="btn-primary inline-flex items-center gap-6 px-12 py-5 rounded-full font-bold uppercase text-[11px] tracking-[0.2em] transition-all">
-                        ORDER ON EXCLUSIVO <i class="fa-solid fa-arrow-right text-xs"></i>
-                    </a>
-                </div>
-            </div>
-            
-            <div class="flex-1 w-full max-w-md relative">
-                <div class="absolute -inset-10 bg-brand-accent/15 blur-[100px] rounded-full"></div>
-                <img src="https://i.imgur.com/7xHKV61.jpeg" class="relative rounded-[3rem] shadow-2xl transition-transform duration-1000 hover:scale-105" alt="Decent Ducks Premium Shit Jar">
-            </div>
-        </div>
-    </section>
-
-    <!-- Support Section (Crypto Only) -->
-    <section id="support" class="py-32 bg-[#020202]">
-        <div class="container mx-auto px-6">
-            <div class="text-center mb-16 reveal">
-                <h2 class="text-5xl font-black uppercase italic tracking-tighter mb-4">Direct Contributions</h2>
-                <p class="text-gray-400 max-w-xl mx-auto font-light">Help maintain the sanctuary via direct on-chain support. Every transaction fuels food and premium care.</p>
-            </div>
-
-            <div class="grid grid-cols-1 md:grid-cols-3 gap-8 max-w-6xl mx-auto reveal">
-                <!-- Solana -->
-                <button onclick="copyAddr('AKkgD4kg8bq7sPUXhqWLqNPBcvtXXhevx3TQCkuxpUQY', 'sol-fb')" class="glass p-10 rounded-[3rem] text-center card-hover transition-all relative overflow-hidden group">
-                    <span id="sol-fb" class="absolute inset-0 bg-brand-accent flex items-center justify-center opacity-0 transition-opacity font-bold">Address Copied!</span>
-                    <div class="w-16 h-16 bg-white/5 rounded-full flex items-center justify-center mx-auto mb-6">
-                        <img src="https://i.imgur.com/fdAeIGs.png" class="w-10 h-10 grayscale group-hover:grayscale-0 transition-all">
-                    </div>
-                    <h4 class="font-black text-xl italic uppercase tracking-tighter">Solana</h4>
-                    <p class="text-xs opacity-40 mt-2 font-mono">AKkg...UQY</p>
-                </button>
-                <!-- Ethereum -->
-                <button onclick="copyAddr('0x30B52ee50E3C4176071E4fF6D010c28e54164788', 'eth-fb')" class="glass p-10 rounded-[3rem] text-center card-hover transition-all relative overflow-hidden group">
-                    <span id="eth-fb" class="absolute inset-0 bg-brand-accent flex items-center justify-center opacity-0 transition-opacity font-bold">Address Copied!</span>
-                    <div class="w-16 h-16 bg-white/5 rounded-full flex items-center justify-center mx-auto mb-6">
-                        <i class="fa-brands fa-ethereum text-5xl text-[#627EEA] grayscale group-hover:grayscale-0 transition-all"></i>
-                    </div>
-                    <h4 class="font-black text-xl italic uppercase tracking-tighter">Ethereum</h4>
-                    <p class="text-xs opacity-40 mt-2 font-mono">0x30...4788</p>
-                </button>
-                <!-- USDC -->
-                <button onclick="copyAddr('0xd15D984C4BB474b0f60247f29c87cEEB9c92253e', 'usdc-fb')" class="glass p-10 rounded-[3rem] text-center card-hover transition-all relative overflow-hidden group">
-                    <span id="usdc-fb" class="absolute inset-0 bg-brand-accent flex items-center justify-center opacity-0 transition-opacity font-bold">Address Copied!</span>
-                    <div class="w-16 h-16 bg-white/5 rounded-full flex items-center justify-center mx-auto mb-6">
-                        <i class="fa-solid fa-circle-dollar-to-slot text-4xl text-blue-400 grayscale group-hover:grayscale-0 transition-all"></i>
-                    </div>
-                    <h4 class="font-black text-xl italic uppercase tracking-tighter">USDC</h4>
-                    <p class="text-xs opacity-40 mt-2 font-mono">0xd1...53e</p>
-                </button>
-            </div>
-        </div>
-    </section>
-
-    <!-- Social Hub -->
-    <section id="community" class="py-24 bg-[#050505] overflow-hidden">
-        <div class="container mx-auto px-6 text-center mb-16 reveal">
-            <h2 class="text-4xl font-black uppercase tracking-tighter italic">Connect with the Flock</h2>
-        </div>
-        <div class="flex flex-wrap justify-center gap-6 reveal px-6">
-            <a href="https://x.com/ducksonx" target="_blank" class="glass w-20 h-20 md:w-28 md:h-28 rounded-3xl flex items-center justify-center text-3xl hover:bg-brand-accent/20 transition-all hover:-translate-y-2">
-                <svg class="w-8 h-8 fill-current" viewBox="0 0 512 512"><path d="M389.2 48h70.6L305.6 224.2 487 464H345L233.7 318.6 106.5 464H35.8L200.7 275.5 26.8 48H172.4L272.9 180.9 389.2 48zM364.4 421.8h39.1L151.1 88h-42L364.4 421.8z"/></svg>
-            </a>
-            <a href="https://discord.com/invite/e6b4RnXRkE" target="_blank" class="glass w-20 h-20 md:w-28 md:h-28 rounded-3xl flex items-center justify-center text-3xl hover:bg-brand-accent/20 transition-all hover:-translate-y-2">
-                <i class="fa-brands fa-discord"></i>
-            </a>
-            <a href="https://www.youtube.com/@JusttDuckit" target="_blank" class="glass w-20 h-20 md:w-28 md:h-28 rounded-3xl flex items-center justify-center text-3xl hover:bg-brand-accent/20 transition-all hover:-translate-y-2">
-                <i class="fa-brands fa-youtube"></i>
-            </a>
-            <a href="https://www.tiktok.com/@just.duckit" target="_blank" class="glass w-20 h-20 md:w-28 md:h-28 rounded-3xl flex items-center justify-center text-3xl hover:bg-brand-accent/20 transition-all hover:-translate-y-2">
-                <i class="fa-brands fa-tiktok"></i>
-            </a>
         </div>
     </section>
 
     <!-- Footer -->
     <footer class="py-20 bg-black text-center">
-        <h2 class="text-3xl font-black text-transparent bg-clip-text bg-gradient-to-r from-brand-accent to-brand-accentLight uppercase italic tracking-tighter mb-4">JustDuckit</h2>
-        <p class="text-[9px] font-bold tracking-[0.4em] opacity-20 mb-2">&copy; 2026 JUSTDUCKIT SANCTUARY</p>
+        <h2 class="text-3xl font-black text-gradient uppercase italic tracking-tighter mb-4">JustDuckit</h2>
+        <p class="text-[9px] font-bold tracking-[0.4em] opacity-20 mb-4">&copy; 2026 JUSTDUCKIT SANCTUARY</p>
+        <div class="flex justify-center gap-6 mb-8">
+            <a href="https://x.com/ducksonx" target="_blank" class="opacity-40 hover:opacity-100 hover:text-brand-accent transition-all text-xl"><i class="fa-brands fa-x-twitter"></i></a>
+            <a href="https://discord.com/invite/e6b4RnXRkE" target="_blank" class="opacity-40 hover:opacity-100 hover:text-brand-accent transition-all text-xl"><i class="fa-brands fa-discord"></i></a>
+        </div>
         <a href="https://docs.google.com/document/d/1HdIWuyAOu7OFDdbJUMToHLa1UwwW237TkwuUJj61-nI/edit?usp=sharing" target="_blank" class="text-[8px] uppercase tracking-widest opacity-20 hover:opacity-50 transition-opacity">Privacy Policy</a>
     </footer>
-
-    <!-- Floating Live Link -->
-    <a href="https://x.com/ducksonx" target="_blank" class="fixed bottom-10 right-10 z-[160] group">
-        <div class="relative w-16 h-16 md:w-20 md:h-20">
-            <div class="absolute -top-3 left-1/2 -translate-x-1/2 z-20 bg-red-600 rounded-full p-1.5 shadow-lg animate-pulse">
-                <svg class="w-3 h-3 text-white" fill="currentColor" viewBox="0 0 20 20"><path d="M7 4a3 3 0 016 0v4a3 3 0 11-6 0V4zm4 10.93A7.001 7.001 0 0017 8a1 1 0 10-2 0a5 5 0 01-4.5 4.93V17a1 1 0 102 0v-2.07zM4 8a1 1 0 10-2 0a7.001 7.001 0 006 6.93V17a1 1 0 102 0v-2.07A5 5 0 015 8z"></path></svg>
-            </div>
-            <img src="https://i.imgur.com/K7CdYVS.jpeg" class="w-full h-full rounded-full border-4 border-red-600 shadow-2xl transition-transform group-hover:scale-110">
-            <div class="absolute inset-0 bg-red-600 rounded-full opacity-30 animate-ping -z-10"></div>
-        </div>
-    </a>
 
     <script>
         // Reveal Logic
@@ -499,7 +412,6 @@
             menuToggle.classList.toggle('active');
             document.body.style.overflow = isActive ? 'hidden' : '';
             
-            // Hamburger animation
             const spans = menuToggle.querySelectorAll('span');
             if (isActive) {
                 spans[0].style.transform = 'translateY(8px) rotate(45deg)';
@@ -526,22 +438,6 @@
                 spans[2].style.width = '1.75rem';
             });
         });
-
-        // Copy Address Helper
-        function copyAddr(addr, feedbackId) {
-            const el = document.createElement('textarea');
-            el.value = addr;
-            document.body.appendChild(el);
-            el.select();
-            document.execCommand('copy');
-            document.body.removeChild(el);
-
-            const feedback = document.getElementById(feedbackId);
-            feedback.style.opacity = '1';
-            setTimeout(() => {
-                feedback.style.opacity = '0';
-            }, 2000);
-        }
 
         // Navbar scroll effect
         window.addEventListener('scroll', () => {
