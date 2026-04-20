@@ -112,6 +112,11 @@
             opacity: 1;
             visibility: visible;
         }
+
+        .card-hover:hover {
+            transform: translateY(-5px);
+            border-color: rgba(147, 51, 234, 0.3);
+        }
     </style>
 </head>
 <body class="font-sans">
@@ -218,9 +223,14 @@
                             <i class="fa-solid fa-expand text-brand-accent"></i> Now expanding to all animals
                         </li>
                     </ul>
-                    <a href="https://magiceden.us/marketplace/decent_ducks" target="_blank" class="glass px-8 py-4 rounded-xl font-black uppercase text-xs tracking-widest hover:text-brand-accent transition-all inline-block">
-                        View V1 on Magic Eden
-                    </a>
+                    <div class="flex flex-wrap gap-4">
+                        <a href="https://magiceden.us/marketplace/decent_ducks" target="_blank" class="glass px-8 py-4 rounded-xl font-black uppercase text-xs tracking-widest hover:text-brand-accent transition-all inline-block">
+                            <i class="fa-solid fa-shop mr-2"></i> Magic Eden
+                        </a>
+                        <a href="https://duckxmeta.github.io/Ducklopedia/" target="_blank" class="glass px-8 py-4 rounded-xl font-black uppercase text-xs tracking-widest hover:text-brand-accent transition-all inline-block border border-brand-accent/20">
+                            <i class="fa-solid fa-book mr-2"></i> Ducklopedia
+                        </a>
+                    </div>
                 </div>
                 <div class="flex-1 grid grid-cols-2 gap-4">
                     <img src="https://i.imgur.com/otNEI2M.png" class="rounded-[2rem] shadow-2xl card-hover transition-all">
@@ -367,7 +377,7 @@
                 <h4 class="text-xl font-black uppercase italic tracking-tighter leading-tight">DuckTV 24/7</h4>
                 <p class="text-gray-400 text-sm font-light">Coming soon: A 24/7 live stream check-in to see what the ducks and residents are up to on the grounds.</p>
             </div>
-            <!-- Transparency Card - Heading Color Changed to White -->
+            <!-- Transparency Card -->
             <div class="glass p-8 rounded-[2.5rem] border border-brand-accent/20 space-y-6 card-hover transition-all">
                 <div class="text-3xl text-brand-accent"><i class="fa-solid fa-file-invoice-dollar"></i></div>
                 <h4 class="text-xl font-black uppercase italic tracking-tighter leading-tight text-white">Clear Transparency</h4>
