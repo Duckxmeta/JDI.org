@@ -1,465 +1,544 @@
-<!DOCTYPE html>
-<html lang="en" class="scroll-smooth">
-<head>
-    <!-- Google tag (gtag.js) -->
-    <script async src="https://www.googletagmanager.com/gtag/js?id=G-WM5MPDK7WE"></script>
-    <script>
-      window.dataLayer = window.dataLayer || [];
-      function gtag(){dataLayer.push(arguments);}
-      gtag('js', new Date());
-      gtag('config', 'G-WM5MPDK7WE');
-    </script>
+import React, { useState } from 'react';
+import { 
+  Shield, 
+  ArrowRight, 
+  CheckCircle, 
+  Lock, 
+  Wallet, 
+  Zap, 
+  Award, 
+  BarChart3, 
+  Globe, 
+  TrendingUp, 
+  ExternalLink, 
+  Cpu, 
+  Mail, 
+  XCircle, 
+  MinusCircle, 
+  Heart, 
+  Calculator, 
+  Clock, 
+  Brain,
+  Users,
+  Building2
+} from 'lucide-react';
 
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>JustDuckit | Web3 Sanctuary Ecosystem</title>
-    
-    <!-- SEO & Social -->
-    <meta property="og:title" content="JustDuckit - Web3 Animal Sanctuary">
-    <meta property="og:description" content="Integrating real-world animal rescue with blockchain technology. Explore the legacy of V1 and the future of the V2 Egg collection.">
-    <meta property="og:image" content="https://i.imgur.com/26hkHfq.jpeg">
-    <meta name="twitter:card" content="summary_large_image">
-    
-    <script src="https://cdn.tailwindcss.com"></script>
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
-    
-    <script>
-        tailwind.config = {
-            theme: {
-                extend: {
-                    colors: {
-                        brand: {
-                            base: '#020202',
-                            card: 'rgba(20, 20, 20, 0.6)',
-                            accent: '#9333ea',
-                            accentLight: '#a855f7',
-                        }
-                    },
-                    fontFamily: {
-                        sans: ['Inter', 'sans-serif'],
-                    },
-                }
-            }
-        }
-    </script>
+const App = () => {
+  const [formData, setFormData] = useState({ name: '', email: '', url: '' });
+  const [submitted, setSubmitted] = useState(false);
 
-    <style>
-        body {
-            background-color: #020202;
-            color: #f8fafc;
-            -webkit-font-smoothing: antialiased;
-            overflow-x: hidden;
-        }
+  const handleSubmit = (e) => {
+    e.preventDefault();
+    console.log("Form data directed to: justduckitsolutions@duck.com", formData);
+    setSubmitted(true);
+  };
 
-        .glass {
-            background: rgba(15, 15, 15, 0.6);
-            backdrop-filter: blur(12px);
-            border: 1px solid rgba(255, 255, 255, 0.05);
-        }
-
-        .hero-text {
-            font-size: clamp(3rem, 10vw, 7rem);
-            line-height: 0.9;
-            letter-spacing: -0.06em;
-        }
-
-        .reveal {
-            opacity: 0;
-            transform: translateY(30px);
-            transition: all 0.8s cubic-bezier(0.22, 1, 0.36, 1);
-        }
-
-        .reveal.active {
-            opacity: 1;
-            transform: translateY(0);
-        }
-
-        .no-scrollbar::-webkit-scrollbar { display: none; }
-        .no-scrollbar { -ms-overflow-style: none; scrollbar-width: none; }
-
-        .video-container::after {
-            content: '';
-            position: absolute;
-            inset: 0;
-            background: radial-gradient(circle at center, transparent 0%, #020202 95%);
-        }
-
-        .text-gradient {
-            background: linear-gradient(to right, #9333ea, #a855f7);
-            -webkit-background-clip: text;
-            -webkit-text-fill-color: transparent;
-        }
-
-        .border-gradient {
-            border: 1px solid;
-            border-image-source: linear-gradient(to right, rgba(147, 51, 234, 0.3), transparent);
-            border-image-slice: 1;
-        }
-
-        #menu-overlay {
-            position: fixed;
-            inset: 0;
-            background: rgba(2, 2, 2, 0.98);
-            backdrop-filter: blur(20px);
-            z-index: 150;
-            opacity: 0;
-            visibility: hidden;
-            transition: all 0.4s ease;
-        }
-
-        #menu-overlay.active {
-            opacity: 1;
-            visibility: visible;
-        }
-
-        .card-hover:hover {
-            transform: translateY(-5px);
-            border-color: rgba(147, 51, 234, 0.3);
-        }
-    </style>
-</head>
-<body class="font-sans">
-
-    <!-- Header / Nav -->
-    <nav id="navbar" class="fixed top-0 w-full z-[200] px-6 py-5 flex justify-between items-center transition-all duration-300">
-        <a href="#" class="flex items-center gap-3 group">
-            <div class="relative">
-                <div class="absolute inset-0 bg-brand-accent blur-lg opacity-0 group-hover:opacity-40 transition-opacity rounded-full"></div>
-                <img src="https://i.imgur.com/otNEI2M.png" class="relative w-10 h-10 rounded-full border border-white/20" alt="JDI">
-            </div>
-            <span class="font-black tracking-tighter text-xl uppercase italic">JustDuckit</span>
-        </a>
-        <button id="menu-toggle" class="w-10 h-10 flex flex-col justify-center items-end gap-1.5 z-[210]">
-            <span class="block w-8 h-0.5 bg-white transition-all duration-300"></span>
-            <span class="block w-5 h-0.5 bg-white transition-all duration-300"></span>
-            <span class="block w-7 h-0.5 bg-white transition-all duration-300"></span>
-        </button>
-    </nav>
-
-    <!-- Full Screen Menu -->
-    <div id="menu-overlay" class="flex items-center justify-center">
-        <nav class="text-center space-y-8">
-            <a href="#vision" class="menu-link block text-4xl md:text-6xl font-black uppercase tracking-tighter hover:text-brand-accent transition-colors">The Vision</a>
-            <a href="#legacy" class="menu-link block text-4xl md:text-6xl font-black uppercase tracking-tighter hover:text-brand-accent transition-colors">Legacy V1</a>
-            <a href="#ownership" class="menu-link block text-4xl md:text-6xl font-black uppercase tracking-tighter hover:text-brand-accent transition-colors">Digital Ownership</a>
-            <a href="#mint" class="menu-link block text-4xl md:text-6xl font-black uppercase tracking-tighter hover:text-brand-accent transition-colors">Mint V2</a>
-            <a href="#virtual" class="menu-link block text-4xl md:text-6xl font-black uppercase tracking-tighter hover:text-brand-accent transition-colors">Virtual Sanctuary</a>
-        </nav>
+  const FeatureCard = ({ icon: Icon, title, description }) => (
+    <div className="bg-slate-900 p-8 rounded-3xl shadow-sm border border-slate-800 hover:border-slate-700 hover:-translate-y-1 transition-all duration-300">
+      <div className="w-14 h-14 bg-amber-500 bg-opacity-10 rounded-2xl flex items-center justify-center mb-6 text-amber-500">
+        <Icon size={28} />
+      </div>
+      <h3 className="text-xl font-black mb-3 text-white uppercase tracking-tight">{title}</h3>
+      <p className="text-slate-400 leading-relaxed font-medium">{description}</p>
     </div>
+  );
 
-    <!-- Hero -->
-    <header class="relative h-screen flex flex-col justify-center items-center text-center px-4 overflow-hidden">
-        <div class="absolute inset-0 z-0 video-container opacity-30">
-            <video autoplay loop muted playsinline class="w-full h-full object-cover">
-                <source src="https://i.imgur.com/5yRqKas.mp4" type="video/mp4">
-            </video>
+  const ProjectCard = ({ title, tag, description, link, stats }) => (
+    <div className="group bg-slate-900 bg-opacity-50 border border-slate-800 rounded-3xl overflow-hidden hover:border-amber-500 hover:border-opacity-30 transition-all duration-500 flex flex-col h-full text-left">
+      <div className="p-8 md:p-10 flex flex-col h-full">
+        <div className="flex justify-between items-start mb-6">
+          <div>
+            <span className="text-xs font-black uppercase tracking-widest text-amber-500 bg-amber-500 bg-opacity-10 px-3 py-1 rounded-full mb-3 inline-block font-sans text-[10px]">
+              {tag}
+            </span>
+            <h3 className="text-2xl font-black text-white uppercase italic leading-none">{title}</h3>
+          </div>
+          <a href={link} target="_blank" rel="noopener noreferrer" className="text-slate-500 hover:text-white transition-colors">
+            <ExternalLink size={24} />
+          </a>
         </div>
-        
-        <div class="relative z-10 reveal">
-            <h1 class="font-black mb-6 text-white flex flex-col items-center">
-                <span class="hero-text text-gradient uppercase italic">The Evolution</span>
-                <span class="text-xl md:text-3xl mt-4 opacity-70 font-medium tracking-[0.3em] uppercase text-white">Of Animal Sanctuary Care</span>
-            </h1>
-            <p class="max-w-2xl mx-auto text-gray-400 text-lg md:text-xl font-light leading-relaxed mb-10">
-                Bridging real-world rescue operations with decentralized technology to build a sustainable future for our flock.
-            </p>
-            <div class="flex flex-wrap gap-4 justify-center">
-                <a href="#mint" class="bg-brand-accent text-white px-10 py-4 rounded-full font-bold uppercase text-[11px] tracking-widest shadow-[0_0_30px_rgba(147,51,234,0.3)] hover:scale-105 transition-all">
-                    Explore Ecosystem
-                </a>
-                <a href="https://adoptaduck.org" target="_blank" class="glass px-10 py-4 rounded-full font-bold uppercase text-[11px] tracking-widest hover:bg-white hover:text-black transition-all">
-                    Visit Sanctuary
-                </a>
+        <p className="text-slate-400 mb-8 font-medium leading-relaxed flex-grow">
+          {description}
+        </p>
+        <div className="flex gap-6 border-t border-slate-800 pt-8 mt-auto">
+          {stats.map((stat, i) => (
+            <div key={i}>
+              <div className="text-white font-black text-xl leading-none">{stat.v}</div>
+              <div className="text-slate-600 text-[10px] font-black uppercase tracking-widest mt-1">{stat.l}</div>
             </div>
+          ))}
         </div>
+      </div>
+    </div>
+  );
 
-        <div class="absolute bottom-10 animate-bounce opacity-30">
-            <i class="fa-solid fa-chevron-down text-2xl"></i>
+  return (
+    <div className="min-h-screen bg-slate-950 text-slate-200 font-sans selection:bg-amber-500 selection:bg-opacity-30">
+      {/* Navigation */}
+      <nav className="sticky top-0 z-50 bg-slate-950 bg-opacity-95 backdrop-blur-lg border-b border-slate-900 font-black italic">
+        <div className="max-w-7xl mx-auto px-6 h-20 flex items-center justify-between">
+          <div className="flex items-center gap-3 group cursor-pointer">
+            <img 
+              src="https://i.imgur.com/HROOZq0.png" 
+              alt="JustDuckit Logo" 
+              className="h-10 w-auto group-hover:scale-105 transition-transform"
+            />
+            <div className="flex flex-col leading-none text-left">
+              <span className="text-xl font-black tracking-tighter uppercase text-white not-italic">
+                JustDuck<span className="text-amber-500 font-black italic">it</span>
+              </span>
+              <span className="text-[10px] font-black uppercase tracking-[0.3em] text-slate-500 not-italic leading-none mt-1 text-nowrap">Simple Web Solutions</span>
+            </div>
+          </div>
+          <div className="hidden lg:flex items-center gap-10 text-[10px] font-black uppercase tracking-widest text-slate-500">
+            <a href="#mission" className="hover:text-amber-500 transition">Our Goal</a>
+            <a href="#illusion" className="hover:text-amber-500 transition">The Trap</a>
+            <a href="#roi" className="hover:text-amber-500 transition">The Math</a>
+            <a href="#proof" className="hover:text-amber-500 transition">What We've Built</a>
+          </div>
+          <div className="flex items-center gap-4">
+            <a href="mailto:justduckitsolutions@duck.com" className="p-2 text-slate-400 hover:text-amber-500 transition hidden sm:block">
+              <Mail size={20} />
+            </a>
+            <a href="#audit" className="bg-white text-slate-950 px-8 py-3.5 rounded-full text-[10px] font-black uppercase tracking-widest hover:bg-amber-500 hover:text-white transition-all shadow-lg">
+              Check My Site
+            </a>
+          </div>
         </div>
-    </header>
+      </nav>
 
-    <!-- The Core Vision -->
-    <section id="vision" class="py-32 container mx-auto px-6">
-        <div class="max-w-6xl mx-auto flex flex-col lg:flex-row items-center gap-16 reveal">
-            <div class="flex-1">
-                <div class="inline-block px-4 py-1 bg-brand-accent/20 rounded-full text-brand-accent text-[10px] font-bold uppercase tracking-widest mb-6">
-                    Integrating IRL & Web3
-                </div>
-                <h2 class="text-5xl md:text-7xl font-black italic uppercase tracking-tighter leading-none mb-10">Beyond the <br><span class="text-gradient">Digital Screen.</span></h2>
-                <div class="space-y-6 text-gray-400 text-lg font-light leading-relaxed">
-                    <p>Most Web3 projects start with a JPEG and try to find a mission. We did the opposite. JustDuckit began as a physical mission—rescuing birds, providing premium care, and building a quiet place for animals in need.</p>
-                    <p>We realized that Web3 technology wasn't just a trend; it was the ultimate tool for scaling our real-world impact. By integrating our real-life operations with the blockchain, we create a transparent, community-powered ecosystem that is truly ahead of its time.</p>
-                </div>
-            </div>
-            <div class="flex-1 w-full relative">
-                <div class="absolute -inset-10 bg-brand-accent/5 blur-[100px] rounded-full"></div>
-                <img src="https://i.imgur.com/XIzfnh5.jpeg" class="relative rounded-[3rem] shadow-2xl transition-all duration-700" alt="Jasmine - The Inspiration">
-                <div class="absolute bottom-6 left-6 glass px-6 py-3 rounded-2xl">
-                    <p class="text-[10px] font-black uppercase tracking-widest text-brand-accent italic">The Muse: Jasmine</p>
-                </div>
-            </div>
+      {/* Hero Section */}
+      <section className="relative pt-24 pb-40 overflow-hidden">
+        <div className="max-w-7xl mx-auto px-6 text-center relative z-10">
+          <div className="inline-flex items-center gap-3 bg-slate-900 border border-slate-800 px-5 py-2 rounded-full text-slate-400 text-[10px] font-black uppercase tracking-widest mb-10 shadow-sm">
+            <Zap size={14} className="text-amber-500" /> Professional Websites • Built To Last
+          </div>
+          <h1 className="text-5xl md:text-8xl font-black text-white mb-8 leading-[1.1] tracking-tighter uppercase italic">
+            Stop <span className="text-transparent bg-clip-text bg-gradient-to-br from-amber-400 to-amber-600 uppercase">Renting</span> <br />Your Website.
+          </h1>
+          <p className="text-xl md:text-3xl text-slate-400 max-w-4xl mx-auto mb-14 leading-tight font-medium px-4">
+            Stop paying monthly fees for a website you don't even own. We build professional sites that <span className="text-white font-black italic">you own forever</span>. No monthly rent. No technical headaches. <span className="text-white font-black italic underline underline-offset-8 decoration-amber-500 uppercase">JustDuckit</span>.
+          </p>
+          <div className="flex flex-col sm:flex-row items-center justify-center gap-6">
+            <a href="#audit" className="group w-full sm:w-auto bg-white text-slate-950 px-12 py-6 rounded-2xl text-lg font-black uppercase tracking-widest hover:bg-amber-500 hover:text-white transition-all shadow-2xl flex items-center justify-center gap-3">
+              Fix My Website <ArrowRight className="group-hover:translate-x-1 transition-transform" />
+            </a>
+            <a href="#roi" className="w-full sm:w-auto bg-transparent border-2 border-slate-800 text-white px-12 py-6 rounded-2xl text-lg font-black uppercase tracking-widest hover:border-amber-500 transition-all">
+              See the Savings
+            </a>
+          </div>
         </div>
-    </section>
+      </section>
 
-    <!-- Legacy V1 Breakdown -->
-    <section id="legacy" class="py-32 bg-[#050505] relative overflow-hidden">
-        <div class="container mx-auto px-6">
-            <div class="flex flex-col lg:flex-row items-center gap-16 reveal">
-                <div class="flex-1">
-                    <h3 class="text-brand-accent text-xs font-black uppercase tracking-[0.4em] mb-4">Phase One</h3>
-                    <h2 class="text-5xl md:text-7xl font-black italic uppercase tracking-tighter mb-8">Decent Ducks <br><span class="text-brand-accent">Legacy Collection</span></h2>
-                    <p class="text-gray-400 text-xl font-light leading-relaxed mb-8">
-                        The V1 collection was "gifted" upon us as a reward for the work we were already doing on the ground. It serves as our genesis—a mark of honor for those who supported the sanctuary before it was even a digital ecosystem.
-                    </p>
-                    <ul class="space-y-4 mb-10">
-                        <li class="flex items-center gap-4 text-sm font-bold uppercase tracking-widest text-white/60">
-                            <i class="fa-solid fa-award text-brand-accent"></i> The Foundation of our Flock
-                        </li>
-                        <li class="flex items-center gap-4 text-sm font-bold uppercase tracking-widest text-white/60">
-                            <i class="fa-solid fa-feather text-brand-accent"></i> Originally focused on birds
-                        </li>
-                        <li class="flex items-center gap-4 text-sm font-bold uppercase tracking-widest text-white/60">
-                            <i class="fa-solid fa-expand text-brand-accent"></i> Now expanding to all animals
-                        </li>
-                    </ul>
-                    <div class="flex flex-wrap gap-4">
-                        <a href="https://magiceden.us/marketplace/decent_ducks" target="_blank" class="glass px-8 py-4 rounded-xl font-black uppercase text-xs tracking-widest hover:text-brand-accent transition-all inline-block">
-                            <i class="fa-solid fa-shop mr-2"></i> Magic Eden
-                        </a>
-                        <a href="https://duckxmeta.github.io/Ducklopedia/" target="_blank" class="glass px-8 py-4 rounded-xl font-black uppercase text-xs tracking-widest hover:text-brand-accent transition-all inline-block border border-brand-accent/20">
-                            <i class="fa-solid fa-book mr-2"></i> Ducklopedia
-                        </a>
-                    </div>
-                </div>
-                <div class="flex-1 grid grid-cols-2 gap-4">
-                    <img src="https://i.imgur.com/otNEI2M.png" class="rounded-[2rem] shadow-2xl card-hover transition-all">
-                    <img src="https://i.imgur.com/K7CdYVS.jpeg" class="rounded-[2rem] shadow-2xl mt-8 card-hover transition-all">
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <!-- Digital Ownership Explanation -->
-    <section id="ownership" class="py-32 container mx-auto px-6">
-        <div class="glass p-12 md:p-24 rounded-[4rem] reveal relative overflow-hidden border-gradient">
-            <div class="absolute top-0 right-0 p-12 opacity-5 hidden md:block">
-                <i class="fa-solid fa-cube text-[15rem]"></i>
-            </div>
-            <div class="max-w-3xl relative z-10">
-                <h2 class="text-4xl md:text-6xl font-black italic uppercase tracking-tighter mb-8">What is <br><span class="text-gradient">Digital Ownership?</span></h2>
-                <p class="text-gray-300 text-xl font-light leading-relaxed mb-10">
-                    Think of an NFT as a digital deed to a real-world impact. By owning a piece of the JustDuckit ecosystem, you aren't just buying a picture—you are securing a stake in our sanctuary’s growth.
-                </p>
-                <div class="grid sm:grid-cols-2 gap-8">
+      {/* The Mission Section */}
+      <section id="mission" className="py-32 bg-slate-950">
+        <div className="max-w-7xl mx-auto px-6">
+          <div className="grid lg:grid-cols-2 gap-20 items-center">
+            <div className="text-left">
+              <h2 className="text-4xl md:text-5xl font-black uppercase mb-8 leading-none text-white italic">Own Your Results, <br /><span className="text-amber-500 tracking-tighter not-italic">Don't Lease Them.</span></h2>
+              <p className="text-xl text-slate-400 leading-relaxed mb-10 font-medium italic">
+                Most companies treat your website like a monthly bill. We treat it like digital property. Once it's built, it belongs to you—period.
+              </p>
+              <div className="space-y-6">
+                {[
+                  { t: "Spend Smarter", d: "Stop throwing money away on monthly 'rental' fees. Put that budget back into your business." },
+                  { t: "Focus on Your Business", d: "Stop playing IT guy on the weekends. We build it right so you don't have to touch it." },
+                  { t: "Look Like a Pro", d: "Custom-made sites that look better and load faster than generic templates." }
+                ].map((item, i) => (
+                  <div key={i} className="flex gap-4">
+                    <div className="mt-1 text-amber-500"><CheckCircle size={20} /></div>
                     <div>
-                        <h4 class="font-black uppercase text-brand-accent text-sm tracking-widest mb-2">Immutable Proof</h4>
-                        <p class="text-gray-400 text-sm font-light">Your support is recorded forever on the Solana blockchain, transparent and unchangeable.</p>
+                      <h4 className="font-black uppercase text-sm tracking-widest text-white italic leading-none mb-1">{item.t}</h4>
+                      <p className="text-slate-500 text-sm leading-relaxed">{item.d}</p>
                     </div>
-                    <div>
-                        <h4 class="font-black uppercase text-brand-accent text-sm tracking-widest mb-2">Direct Utility</h4>
-                        <p class="text-gray-400 text-sm font-light">Holders get exclusive access to our virtual experiences, merch drops, and IRL sanctuary visits.</p>
-                    </div>
-                </div>
+                  </div>
+                ))}
+              </div>
             </div>
+            <div className="grid sm:grid-cols-2 gap-6 text-left">
+              <FeatureCard icon={Lock} title="Total Ownership" description="We hand you the keys. You own the code, the domain, and the content forever." />
+              <FeatureCard icon={Zap} title="Blazing Fast" description="No more slow-loading pages. Our sites are built for speed and mobile performance." />
+              <FeatureCard icon={Award} title="Built for You" description="No generic templates. Your site is built exactly for what your business needs." />
+              <FeatureCard icon={BarChart3} title="Real Value" description="Save thousands of dollars over time by cutting out endless subscriptions." />
+            </div>
+          </div>
         </div>
-    </section>
+      </section>
 
-    <!-- V2 Mint Push -->
-    <section id="mint" class="py-32 bg-[#020202] relative overflow-hidden">
-        <div class="container mx-auto px-6 text-center reveal">
-            <img src="https://i.imgur.com/7BiW2OG.gif" class="w-32 h-32 mx-auto mb-10 rounded-full border-4 border-brand-accent shadow-[0_0_50px_rgba(147,51,234,0.3)]">
-            <h2 class="text-5xl md:text-8xl font-black italic uppercase tracking-tighter mb-6 leading-none">The V2 Egg <br><span class="text-gradient">Collection</span></h2>
-            <p class="text-xl md:text-2xl text-gray-300 font-light mb-12 max-w-3xl mx-auto">
-                Minting an egg is the single most powerful way to fuel the growth of the sanctuary. These eggs represent the next phase of our mission: bigger habitats, more rescues, and advanced animal tech.
+      {/* The Industry Illusion Section */}
+      <section id="illusion" className="py-32 bg-slate-900 bg-opacity-30 border-y border-slate-900">
+        <div className="max-w-7xl mx-auto px-6 text-left">
+          <div className="mb-20">
+            <h2 className="text-4xl md:text-6xl font-black uppercase mb-6 tracking-tight italic text-white leading-none">The Subscription Trap</h2>
+            <p className="text-slate-400 max-w-3xl text-lg font-medium mt-4">
+              Big website companies count on you not knowing how the tech works. They lure you in with a low price, then tack on "extra" fees for things that should be free.
             </p>
+          </div>
+
+          <div className="grid md:grid-cols-3 gap-8">
+            <div className="bg-slate-950 p-10 rounded-3xl border border-slate-800 relative overflow-hidden group hover:border-red-500/30 transition-all">
+              <h3 className="text-xl font-black text-white uppercase italic mb-4">The "Privacy" Scam</h3>
+              <p className="text-slate-400 leading-relaxed text-sm font-medium">
+                Registrars often charge $15-$30 a year just to keep your phone number private. On our sites, that level of privacy is standard and costs <span className="text-amber-500 font-bold">$0.00</span>.
+              </p>
+            </div>
+
+            <div className="bg-slate-950 p-10 rounded-3xl border border-slate-800 relative overflow-hidden group hover:border-red-500/30 transition-all">
+              <h3 className="text-xl font-black text-white uppercase italic mb-4">The Golden Cage</h3>
+              <p className="text-slate-400 leading-relaxed text-sm font-medium">
+                Most builders use their own special code. If you want to move your site to a different company later, you can't. You're stuck. We build sites that are <span className="text-amber-500 font-bold">100% portable</span>.
+              </p>
+            </div>
+
+            <div className="bg-slate-950 p-10 rounded-3xl border border-slate-800 relative overflow-hidden group hover:border-red-500/30 transition-all">
+              <h3 className="text-xl font-black text-white uppercase italic mb-4">Hidden Charges</h3>
+              <p className="text-slate-400 leading-relaxed text-sm font-medium">
+                They charge extra for security (SSL), SEO tools, and faster loading. We include all of that from day one because <span className="text-amber-500 font-bold">that's how a website should be built</span>.
+              </p>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      {/* THE OPPORTUNITY: Owner's Time vs. Expert Build */}
+      <section id="opportunity" className="py-32 bg-slate-950 border-b border-slate-900">
+        <div className="max-w-7xl mx-auto px-6 text-left">
+          <div className="mb-20 text-center">
+            <h2 className="text-4xl md:text-6xl font-black uppercase mb-6 tracking-tight italic text-white leading-none">The Owner's Headache</h2>
+            <p className="text-slate-400 max-w-3xl mx-auto text-lg font-medium mt-4">
+              Your time is money. Every hour you spend fighting with a "DIY" website builder is an hour you aren't making sales or serving customers.
+            </p>
+          </div>
+
+          <div className="grid md:grid-cols-2 gap-8">
+            <div className="bg-slate-900 bg-opacity-40 p-10 rounded-[2.5rem] border border-slate-800 relative overflow-hidden group hover:border-red-500/20 transition-all">
+              <h3 className="text-2xl font-black text-white uppercase italic mb-4 flex items-center gap-3">
+                <MinusCircle className="text-red-500" /> The DIY Headache
+              </h3>
+              <p className="text-slate-400 leading-relaxed font-medium mb-6">
+                Generic builders look easy, but they end up taking hours of your time. You spend your weekends trying to fix layouts, update plugins, and figure out Google settings.
+              </p>
+              <div className="text-sm font-black text-red-400 uppercase tracking-widest">
+                Result: Wasted time + frustration.
+              </div>
+            </div>
+
+            <div className="bg-slate-900 bg-opacity-40 p-10 rounded-[2.5rem] border border-slate-800 relative overflow-hidden group hover:border-amber-500/20 transition-all">
+              <h3 className="text-2xl font-black text-white uppercase italic mb-4 flex items-center gap-3">
+                <CheckCircle className="text-amber-500" /> The Pro Build
+              </h3>
+              <p className="text-slate-400 leading-relaxed font-medium mb-6">
+                We handle the tech while you focus on what you're good at. You get a professional website that works perfectly on every phone and computer.
+              </p>
+              <div className="text-sm font-black text-amber-500 uppercase tracking-widest">
+                Result: A better brand + zero stress.
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      {/* TWO-PATH ROI SECTION */}
+      <section id="roi" className="py-32 bg-slate-900 bg-opacity-30 border-b border-slate-900">
+        <div className="max-w-7xl mx-auto px-6 text-left">
+          <div className="mb-20 text-center lg:text-left">
+            <h2 className="text-4xl md:text-6xl font-black uppercase mb-6 tracking-tight italic text-white leading-none">The True Cost</h2>
+            <p className="text-slate-400 max-w-2xl text-lg font-medium mt-4">We show you exactly what you're paying now versus what you'll get with us.</p>
+          </div>
+
+          <div className="grid lg:grid-cols-2 gap-12 text-left">
             
-            <div class="flex flex-col md:flex-row justify-center items-center gap-6 mb-16">
-                <a href="https://justduckeggs.com" target="_blank" class="bg-brand-accent text-white px-12 py-6 rounded-full font-black uppercase text-sm tracking-[0.2em] shadow-[0_0_50px_rgba(147,51,234,0.4)] hover:scale-105 transition-all">
-                    Mint V2 on justduckeggs.com
-                </a>
+            {/* PATH 1: THE INDEPENDENT SHOP */}
+            <div className="bg-slate-950 p-10 rounded-[2.5rem] border border-slate-800 flex flex-col hover:border-slate-700 transition-all">
+              <div className="flex items-center gap-4 mb-8">
+                <div className="w-12 h-12 bg-white bg-opacity-5 rounded-xl flex items-center justify-center text-white italic font-black">
+                  <Users size={24} />
+                </div>
+                <div>
+                  <h3 className="text-2xl font-black text-white uppercase italic leading-none">Small Business</h3>
+                  <p className="text-slate-500 text-[10px] font-black uppercase tracking-widest mt-1">For DIY Site-Builder Users</p>
+                </div>
+              </div>
+              
+              <div className="space-y-4 mb-10 border-b border-slate-800 pb-10">
+                <div className="flex justify-between items-center text-sm font-medium">
+                  <span className="text-slate-400 uppercase italic">Your Monthly Bill</span>
+                  <span className="text-red-400">~$40 - $80 / mo</span>
+                </div>
+                <div className="flex justify-between items-center text-sm font-medium">
+                  <span className="text-slate-400 uppercase italic flex items-center gap-2 font-sans"><Clock size={14} /> Time Spent Fixing It</span>
+                  <span className="text-red-400 italic font-sans font-bold">Too Much</span>
+                </div>
+                <div className="flex justify-between items-center text-sm font-black border-t border-slate-800 pt-4">
+                  <span className="text-white uppercase italic">The JustDuckit Way</span>
+                  <span className="text-amber-500">You Own the Asset</span>
+                </div>
+              </div>
+
+              <div className="mt-auto">
+                 <div className="bg-slate-900 bg-opacity-50 p-6 rounded-2xl border border-slate-800 text-center">
+                    <p className="text-3xl font-black text-white italic tracking-tighter mb-1 font-sans">Stop Paying Rent</p>
+                    <p className="text-[10px] text-amber-500 uppercase font-black tracking-widest">Get a Pro Site You Actually Own</p>
+                 </div>
+              </div>
             </div>
+
+            {/* PATH 2: THE INSTITUTION */}
+            <div className="bg-slate-950 p-10 rounded-[2.5rem] border border-slate-800 flex flex-col hover:border-amber-500/20 transition-all">
+              <div className="flex items-center gap-4 mb-8">
+                <div className="w-12 h-12 bg-amber-500 bg-opacity-5 rounded-xl flex items-center justify-center text-amber-500 italic font-black">
+                  <Building2 size={24} />
+                </div>
+                <div>
+                  <h3 className="text-2xl font-black text-white uppercase italic leading-none">The High-End Firm</h3>
+                  <p className="text-slate-500 text-[10px] font-black uppercase tracking-widest mt-1">For Managed Agency Clients</p>
+                </div>
+              </div>
+              
+              <div className="space-y-4 mb-10 border-b border-slate-800 pb-10">
+                <div className="flex justify-between items-center text-sm font-medium">
+                  <span className="text-slate-400 uppercase italic font-sans">Monthly Agency Rent</span>
+                  <span className="text-red-400">~$400 - $1,500 / mo</span>
+                </div>
+                <div className="flex justify-between items-center text-sm font-medium">
+                  <span className="text-slate-400 uppercase italic font-sans">Customer Support Wait</span>
+                  <span className="text-red-400 italic font-sans font-bold">Days / Weeks</span>
+                </div>
+                <div className="flex justify-between items-center text-sm font-black border-t border-slate-800 pt-4">
+                  <span className="text-white uppercase italic font-sans">The JustDuckit Way</span>
+                  <span className="text-amber-500">$0.00 Hosting Forever</span>
+                </div>
+              </div>
+
+              <div className="mt-auto">
+                 <div className="bg-slate-900 bg-opacity-50 p-6 rounded-2xl border border-amber-500/30 text-center shadow-lg shadow-amber-500/5">
+                    <span className="text-[10px] font-black uppercase tracking-widest text-slate-500 mb-2 block">1-Year Savings</span>
+                    <p className="text-3xl font-black text-white italic tracking-tighter mb-1 font-sans">$4,800 - $15,000+</p>
+                    <p className="text-[10px] text-amber-500 uppercase font-black tracking-widest">Money back in your pocket</p>
+                 </div>
+              </div>
+            </div>
+
+          </div>
+        </div>
+      </section>
+
+      {/* Proof of Work Section */}
+      <section id="proof" className="py-32 bg-slate-950">
+        <div className="max-w-7xl mx-auto px-6 text-left">
+          <div className="mb-24 text-center lg:text-left">
+            <h2 className="text-4xl md:text-6xl font-black uppercase mb-6 tracking-tight italic text-white leading-none">What We've Built</h2>
+            <p className="text-slate-400 max-w-2xl text-lg font-medium mt-4 text-balance">
+              We don't just talk. We build websites that handle thousands of visitors every single day.
+            </p>
+          </div>
+          <div className="grid lg:grid-cols-3 gap-8">
+            <ProjectCard 
+              title="DecentDucks.org"
+              tag="International Hub"
+              description="A global website for our sanctuary fans. Built to handle visitors from all over the world without crashing or slowing down."
+              link="https://decentducks.org"
+              stats={[
+                { v: "Global", l: "Network" },
+                { v: "$0", l: "Monthly Fee" }
+              ]}
+            />
+            <ProjectCard 
+              title="AdoptADuck.org"
+              tag="Local Operations"
+              description="The main site for our local duck rescue. Neighbors use this to report birds and help us with our daily missions."
+              link="https://adoptaduck.org"
+              stats={[
+                { v: "Live", l: "System" },
+                { v: "$0", l: "Monthly Fee" }
+              ]}
+            />
+            <ProjectCard 
+              title="KitKatAlleyRescue"
+              tag="Customer Success"
+              description="We moved this local rescue from an expensive platform to their own site. They saved thousands in their first year."
+              link="https://kitkatalleyrescue.org/"
+              stats={[
+                { v: "Client", l: "Save" },
+                { v: "$0", l: "Monthly Fee" }
+              ]}
+            />
+          </div>
+        </div>
+      </section>
+
+      {/* Simple Pricing Tiers */}
+      <section id="tiers" className="py-32 bg-slate-900 bg-opacity-50">
+        <div className="max-w-7xl mx-auto px-6 text-left">
+          <div className="mb-24 text-center lg:text-left">
+            <h2 className="text-4xl md:text-6xl font-black uppercase mb-6 tracking-tight italic text-white leading-none">Simple Pricing</h2>
+            <p className="text-slate-400 max-w-2xl mx-auto lg:mx-0 text-lg font-medium mt-6 leading-snug text-balance">Professional websites for a fair price. No hidden fees. No endless contracts.</p>
+          </div>
+          <div className="grid md:grid-cols-2 gap-10 items-stretch max-w-5xl mx-auto text-left">
             
-            <div class="max-w-4xl mx-auto border-t border-white/5 pt-16">
-                <div class="flex flex-wrap justify-center gap-12 mb-12">
-                    <div class="text-center">
-                        <p class="text-3xl md:text-4xl font-black italic text-brand-accent">May 31 2026</p>
-                        <p class="text-[10px] uppercase font-bold tracking-widest mt-2 opacity-50">Hatch Date</p>
-                    </div>
-                    <div class="text-center border-x border-white/10 px-12">
-                        <p class="text-3xl md:text-4xl font-black italic">SOL</p>
-                        <p class="text-[10px] uppercase font-bold tracking-widest mt-2 opacity-50">Native Network</p>
-                    </div>
-                    <div class="text-center">
-                        <p class="text-3xl md:text-4xl font-black italic">Utility</p>
-                        <p class="text-[10px] uppercase font-bold tracking-widest mt-2 opacity-50">High Priority</p>
-                    </div>
+            {/* Growth Tier */}
+            <div className="bg-slate-950 p-12 rounded-3xl border border-slate-800 flex flex-col hover:border-amber-500 transition-all duration-300">
+              <div className="mb-10 text-left">
+                <div className="flex items-center gap-2 mb-2">
+                    <TrendingUp size={20} className="text-amber-500" />
+                    <h3 className="text-2xl font-black uppercase italic text-white leading-none">The Basic Build</h3>
                 </div>
+                <p className="text-slate-500 text-sm font-medium">Perfect for local shops and solo professionals.</p>
+              </div>
+              <div className="mb-10 font-black text-left">
+                <div className="text-5xl font-black text-white italic">$199 <span className="text-slate-600 text-xs uppercase tracking-widest font-sans not-italic font-bold">One-Time Fee</span></div>
+                <div className="text-2xl font-black text-amber-500 mt-2 italic">$49 <span className="text-slate-600 text-xs uppercase tracking-widest font-sans not-italic font-bold">/ Month Support</span></div>
+              </div>
+              <ul className="space-y-5 mb-12 flex-grow font-medium text-left">
+                {[ 'Custom Website Design', 'Works Great on Phones', 'You Own Everything', 'Security Included', 'We Handle Updates'].map((item, i) => (
+                  <li key={i} className="flex items-center gap-3 text-sm font-bold uppercase tracking-wide">
+                    <CheckCircle size={16} className="text-amber-500" /> {item}
+                  </li>
+                ))}
+              </ul>
+              <div className="mt-4 mb-6 p-4 bg-slate-900 rounded-2xl border border-slate-800 border-dashed">
+                <p className="text-[10px] font-black uppercase tracking-widest text-slate-500 leading-none mb-1">Domain Name</p>
+                <p className="text-xs text-white mt-1 font-bold">+$25 to buy your address <span className="text-slate-600 font-normal">(if you don't have one)</span></p>
+              </div>
+              <button onClick={() => window.location.href="#audit"} className="w-full py-5 rounded-2xl bg-slate-900 border border-slate-700 text-white font-black uppercase tracking-widest hover:border-amber-500 transition shadow-xl">Get Started</button>
+            </div>
 
-                <!-- Omnichain Integration Section -->
-                <div class="glass p-8 rounded-[2rem] border border-brand-accent/10">
-                    <p class="text-[10px] uppercase font-black tracking-[0.4em] text-brand-accent mb-6">Omnichain Enabled — Mint SOL on any chain:</p>
-                    <div class="flex flex-wrap justify-center items-center gap-x-4 gap-y-3 text-[10px] font-black uppercase tracking-widest text-white/40 italic">
-                        <span>Solana</span>
-                        <span class="w-1 h-1 bg-white/20 rounded-full"></span>
-                        <span>Ethereum</span>
-                        <span class="w-1 h-1 bg-white/20 rounded-full"></span>
-                        <span>Polygon</span>
-                        <span class="w-1 h-1 bg-white/20 rounded-full"></span>
-                        <span>Base</span>
-                        <span class="w-1 h-1 bg-white/20 rounded-full"></span>
-                        <span>ApeChain</span>
-                        <span class="w-1 h-1 bg-white/20 rounded-full"></span>
-                        <span>Abstract</span>
-                        <span class="w-1 h-1 bg-white/20 rounded-full"></span>
-                        <span>Cronos</span>
-                        <span class="w-1 h-1 bg-white/20 rounded-full"></span>
-                        <span>Avalanche</span>
-                        <span class="w-1 h-1 bg-white/20 rounded-full"></span>
-                        <span>OP Mainnet</span>
-                        <span class="w-1 h-1 bg-white/20 rounded-full"></span>
-                        <span>Berachain</span>
-                        <span class="w-1 h-1 bg-white/20 rounded-full"></span>
-                        <span>BNB Smart Chain</span>
-                        <span class="w-1 h-1 bg-white/20 rounded-full"></span>
-                        <span>SUI</span>
-                    </div>
+            {/* Performance Tier */}
+            <div className="bg-gradient-to-b from-amber-500 to-amber-600 p-12 rounded-3xl flex flex-col shadow-2xl relative">
+              <div className="absolute -top-5 left-1/2 -translate-x-1/2 bg-white text-amber-600 px-6 py-2 rounded-full text-[10px] font-black uppercase tracking-widest shadow-lg">Highest Value</div>
+              <div className="mb-10 text-left">
+                <div className="flex items-center gap-2 mb-2 text-white">
+                    <Award size={20} />
+                    <h3 className="text-2xl font-black uppercase italic text-white leading-none">The Pro Build</h3>
                 </div>
+                <p className="text-amber-100 text-sm font-medium text-left">For Firms and Clinics ready to save big on monthly fees.</p>
+              </div>
+              <div className="mb-10 font-black text-slate-950 text-left">
+                <div className="text-5xl italic font-black">$499 <span className="text-slate-900 text-xs uppercase tracking-widest font-sans not-italic font-bold">One-Time Fee</span></div>
+                <div className="text-2xl italic font-black mt-2">$99 <span className="text-slate-900 text-xs uppercase tracking-widest font-sans not-italic font-bold">/ Month Support</span></div>
+              </div>
+              <ul className="space-y-5 mb-12 flex-grow text-white font-medium text-left font-sans">
+                {[ 'Move Your Old Site to Us', 'Zero Monthly Rent Fees', 'High Security Hardening', 'Priority Support', 'Full Content Ownership' ].map((item, i) => (
+                  <li key={i} className="flex items-center gap-3 text-sm font-black uppercase tracking-wide">
+                    <CheckCircle size={16} className="text-white" /> {item}
+                  </li>
+                ))}
+              </ul>
+              <div className="mt-4 mb-6 p-4 bg-amber-600 bg-opacity-20 rounded-2xl border border-white border-opacity-20 border-dashed text-left">
+                <p className="text-[10px] font-black uppercase tracking-widest text-white leading-none mb-1">Setup</p>
+                <p className="text-xs text-amber-100 font-bold italic">We handle the switch for you</p>
+              </div>
+              <button onClick={() => window.location.href="#audit"} className="w-full py-6 rounded-2xl bg-slate-950 text-white font-black uppercase tracking-widest hover:bg-slate-900 transition shadow-2xl">Start Saving</button>
             </div>
-        </div>
-    </section>
 
-    <!-- Virtual Sanctuary / Adoption Hub -->
-    <section id="virtual" class="py-32 container mx-auto px-6">
-        <div class="glass p-12 md:p-20 rounded-[4rem] reveal flex flex-col lg:flex-row items-center gap-16">
-            <div class="flex-1">
-                <h2 class="text-4xl md:text-6xl font-black italic uppercase tracking-tighter mb-8">Virtual <br><span class="text-brand-accent">Sanctuary.</span></h2>
-                <p class="text-gray-400 text-lg font-light leading-relaxed mb-8">
-                    Can't visit us in person? Our virtual sanctuary at **adoptaduck.org** allows you to virtually adopt a real-life resident. Experience the sanctuary through immersive digital eyes and support your favorite animals from anywhere in the world.
-                </p>
-                <div class="mb-8 p-4 bg-brand-accent/10 rounded-2xl border border-brand-accent/20">
-                    <p class="text-xs font-bold text-brand-accentLight uppercase tracking-widest">
-                        <i class="fa-solid fa-sparkles"></i> Expansion Coming: We plan on adding more animals to the site on launch!
-                    </p>
+          </div>
+        </div>
+      </section>
+
+      {/* Origin Story */}
+      <section id="origin" className="py-40 bg-slate-950 relative overflow-hidden">
+        <div className="max-w-5xl mx-auto px-6 text-center relative z-10">
+          <div className="w-20 h-20 bg-amber-500 bg-opacity-10 rounded-full flex items-center justify-center mx-auto mb-10 text-amber-500">
+            <Heart size={40} />
+          </div>
+          <h2 className="text-4xl md:text-5xl font-black uppercase mb-10 italic text-white leading-none text-balance">From the Sanctuary <br />to the Screen.</h2>
+          <div className="bg-slate-900 bg-opacity-40 p-12 md:p-20 rounded-3xl border border-slate-800 shadow-inner backdrop-blur-sm text-balance">
+            <p className="text-2xl md:text-3xl text-slate-300 leading-snug italic font-medium">
+              "I didn't start in a boardroom. I started at our animal sanctuary. When I saw how big tech companies were draining money from people with real missions through 'rented' websites, I decided to fix it. **JustDuck<span className="text-amber-500 italic font-black">it</span>** is the result. We build websites you own, so your money stays where it belongs—in your business."
+            </p>
+            <div className="mt-12 flex flex-col items-center gap-2">
+              <div className="h-px w-20 bg-amber-500 mb-4"></div>
+              <span className="text-lg font-black uppercase tracking-widest text-white italic leading-none">Kyle</span>
+              <span className="text-slate-500 text-[10px] font-black uppercase tracking-widest leading-none mt-2 font-sans">Founder & Sanctuary Keeper</span>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      {/* Audit Form */}
+      <section id="audit" className="py-32 bg-slate-950 text-white border-t border-slate-900">
+        <div className="max-w-xl mx-auto px-6 text-left">
+          {submitted ? (
+            <div className="text-center py-20 bg-slate-900 rounded-3xl border-2 border-amber-500 shadow-2xl">
+              <CheckCircle size={80} className="mx-auto text-amber-500 mb-8" />
+              <h3 className="text-4xl font-black uppercase mb-4 italic leading-none">Talk Soon.</h3>
+              <p className="text-slate-400 font-bold uppercase tracking-widest text-[10px] mt-4 leading-relaxed">We're looking over your site. I'll email you a simple report within 24 hours.</p>
+              <a href="mailto:justduckitsolutions@duck.com" className="text-amber-500 font-black text-xs uppercase tracking-widest mt-8 block hover:underline italic">
+                justduckitsolutions@duck.com
+              </a>
+            </div>
+          ) : (
+            <>
+              <div className="text-center mb-16">
+                <h2 className="text-4xl md:text-5xl font-black uppercase mb-4 italic leading-none">Check My Site.</h2>
+                <p className="text-slate-400 font-medium text-lg mt-4 leading-relaxed px-4">Send me your website link. I’ll look at it for free and tell you exactly how much money you could be saving and how to own your site forever.</p>
+              </div>
+              <form onSubmit={handleSubmit} className="space-y-6">
+                <div className="space-y-4">
+                  <input 
+                    type="text" 
+                    required
+                    placeholder="YOUR NAME" 
+                    className="w-full px-8 py-5 rounded-2xl bg-slate-900 border-2 border-slate-800 focus:outline-none focus:border-amber-500 transition text-white placeholder:text-slate-600 font-black uppercase text-xs tracking-widest"
+                    onChange={(e) => setFormData({...formData, name: e.target.value})}
+                  />
+                  <input 
+                    type="email" 
+                    required
+                    placeholder="EMAIL ADDRESS" 
+                    className="w-full px-8 py-5 rounded-2xl bg-slate-900 border-2 border-slate-800 focus:outline-none focus:border-amber-500 transition text-white placeholder:text-slate-600 font-black uppercase text-xs tracking-widest"
+                    onChange={(e) => setFormData({...formData, email: e.target.value})}
+                  />
+                  <input 
+                    type="text" 
+                    required
+                    placeholder="YOUR CURRENT WEBSITE" 
+                    className="w-full px-8 py-5 rounded-2xl bg-slate-900 border-2 border-slate-800 focus:outline-none focus:border-amber-500 transition text-white placeholder:text-slate-600 font-black uppercase text-xs tracking-widest"
+                    onChange={(e) => setFormData({...formData, url: e.target.value})}
+                  />
                 </div>
-                <div class="flex gap-4">
-                    <a href="https://adoptaduck.org" target="_blank" class="bg-white text-black px-10 py-4 rounded-full font-black uppercase text-[10px] tracking-widest hover:bg-brand-accent hover:text-white transition-all">
-                        Virtually Adopt Now
-                    </a>
-                </div>
-            </div>
-            <div class="flex-1 w-full relative">
-                <div class="absolute -inset-10 bg-brand-accent/10 blur-[100px] rounded-full"></div>
-                <img src="https://i.imgur.com/zlVWXNd.jpeg" class="relative rounded-[3rem] shadow-2xl" alt="Sanctuary Residents">
-                <div class="absolute bottom-6 right-6 glass px-6 py-3 rounded-2xl">
-                    <p class="text-[10px] font-black uppercase tracking-widest text-white italic">The Flock Awaits</p>
-                </div>
-            </div>
+                <button type="submit" className="w-full bg-amber-500 hover:bg-amber-600 py-6 rounded-2xl font-black text-xl uppercase tracking-widest transition shadow-2xl">
+                  Check My Website
+                </button>
+              </form>
+            </>
+          )}
         </div>
-    </section>
+      </section>
 
-    <!-- Roadmap & Integration -->
-    <section class="py-32 container mx-auto px-6">
-        <div class="text-center mb-16 reveal">
-            <h2 class="text-5xl font-black uppercase italic tracking-tighter">The Integration</h2>
-            <p class="opacity-40 text-sm mt-2">Building a bridge between the blockchain and the barn.</p>
+      {/* Global Footer */}
+      <footer className="py-20 bg-slate-950 text-center border-t border-slate-900 font-black italic">
+        <div className="max-w-7xl mx-auto px-6">
+          <div className="flex flex-col items-center justify-center gap-2 mb-10">
+            <img 
+              src="https://i.imgur.com/HROOZq0.png" 
+              alt="JustDuckit Logo" 
+              className="h-10 w-auto mb-2"
+            />
+            <div className="flex flex-col leading-none text-center">
+              <span className="text-2xl font-black uppercase tracking-tighter text-white not-italic">
+                JustDuck<span className="text-amber-500 font-black italic leading-none">it</span>
+              </span>
+              <span className="text-[10px] font-black uppercase tracking-[0.3em] text-slate-500 not-italic leading-none mt-2">Simple Web Solutions</span>
+            </div>
+          </div>
+          <div className="flex flex-wrap justify-center gap-8 text-[10px] font-black uppercase tracking-widest text-slate-600 mb-10">
+            <a href="mailto:justduckitsolutions@duck.com" className="flex items-center gap-2 font-bold uppercase tracking-widest hover:text-amber-500 transition not-italic">
+              <Mail size={12} className="text-amber-500"/> justduckitsolutions@duck.com
+            </a>
+            <span className="flex items-center gap-2 font-bold uppercase tracking-widest not-italic">
+              <Globe size={12} className="text-amber-500"/> Global Quality • Local Service
+            </span>
+            <span className="not-italic opacity-50 uppercase tracking-[0.3em] font-sans">Est. 2024</span>
+          </div>
+          <div className="h-px w-20 bg-slate-900 mx-auto mb-10"></div>
+          <p className="text-slate-700 text-[10px] uppercase tracking-widest leading-relaxed not-italic font-sans">
+            © 2026 JUSTDUCKIT SOLUTIONS | POWERED BY THE MISSION OF THE DECENT DUCKS SANCTUARY
+          </p>
         </div>
-        <div class="grid md:grid-cols-2 lg:grid-cols-4 gap-8 reveal">
-            <!-- Real-Time Updates Card -->
-            <div class="glass p-8 rounded-[2.5rem] space-y-6 card-hover transition-all">
-                <div class="text-3xl text-brand-accent"><i class="fa-solid fa-clipboard-list"></i></div>
-                <h4 class="text-xl font-black uppercase italic tracking-tighter leading-tight">Live Vibe Board</h4>
-                <p class="text-gray-400 text-sm font-light">Track our live vibe board and daily care checklists as they update in real-time throughout the day.</p>
-            </div>
-            <!-- DuckTV Card -->
-            <div class="glass p-8 rounded-[2.5rem] space-y-6 card-hover transition-all">
-                <div class="text-3xl text-brand-accent"><i class="fa-solid fa-tv"></i></div>
-                <h4 class="text-xl font-black uppercase italic tracking-tighter leading-tight">DuckTV 24/7</h4>
-                <p class="text-gray-400 text-sm font-light">Coming soon: A 24/7 live stream check-in to see what the ducks and residents are up to on the grounds.</p>
-            </div>
-            <!-- Transparency Card -->
-            <div class="glass p-8 rounded-[2.5rem] border border-brand-accent/20 space-y-6 card-hover transition-all">
-                <div class="text-3xl text-brand-accent"><i class="fa-solid fa-file-invoice-dollar"></i></div>
-                <h4 class="text-xl font-black uppercase italic tracking-tighter leading-tight text-white">Clear Transparency</h4>
-                <p class="text-gray-400 text-sm font-light">Monthly and yearly adoptaduck subscribers get full access to our expense sheets—see exactly how we spend on care.</p>
-            </div>
-            <!-- Holder Suggestion Card -->
-            <div class="glass p-8 rounded-[2.5rem] space-y-6 card-hover transition-all">
-                <div class="text-3xl text-brand-accent"><i class="fa-solid fa-comments"></i></div>
-                <h4 class="text-xl font-black uppercase italic tracking-tighter leading-tight">Direct Line</h4>
-                <p class="text-gray-400 text-sm font-light">Holders get direct messaging access to the founder to offer suggestions for grounds and rescues.</p>
-            </div>
-        </div>
-    </section>
+      </footer>
+    </div>
+  );
+};
 
-    <!-- Footer -->
-    <footer class="py-20 bg-black text-center">
-        <h2 class="text-3xl font-black text-gradient uppercase italic tracking-tighter mb-4">JustDuckit</h2>
-        <p class="text-[9px] font-bold tracking-[0.4em] opacity-20 mb-4">&copy; 2026 JUSTDUCKIT SANCTUARY</p>
-        <div class="flex justify-center gap-6 mb-8">
-            <a href="https://x.com/ducksonx" target="_blank" class="opacity-40 hover:opacity-100 hover:text-brand-accent transition-all text-xl"><i class="fa-brands fa-x-twitter"></i></a>
-            <a href="https://discord.com/invite/e6b4RnXRkE" target="_blank" class="opacity-40 hover:opacity-100 hover:text-brand-accent transition-all text-xl"><i class="fa-brands fa-discord"></i></a>
-        </div>
-        <a href="https://docs.google.com/document/d/1HdIWuyAOu7OFDdbJUMToHLa1UwwW237TkwuUJj61-nI/edit?usp=sharing" target="_blank" class="text-[8px] uppercase tracking-widest opacity-20 hover:opacity-50 transition-opacity">Privacy Policy</a>
-    </footer>
-
-    <script>
-        // Reveal Logic
-        const observer = new IntersectionObserver((entries) => {
-            entries.forEach(entry => {
-                if (entry.isIntersecting) entry.target.classList.add('active');
-            });
-        }, { threshold: 0.1 });
-        document.querySelectorAll('.reveal').forEach(el => observer.observe(el));
-
-        // Navigation Toggle
-        const menuToggle = document.getElementById('menu-toggle');
-        const menuOverlay = document.getElementById('menu-overlay');
-        const menuLinks = document.querySelectorAll('.menu-link');
-
-        menuToggle.addEventListener('click', () => {
-            const isActive = menuOverlay.classList.toggle('active');
-            menuToggle.classList.toggle('active');
-            document.body.style.overflow = isActive ? 'hidden' : '';
-            
-            const spans = menuToggle.querySelectorAll('span');
-            if (isActive) {
-                spans[0].style.transform = 'translateY(8px) rotate(45deg)';
-                spans[1].style.opacity = '0';
-                spans[2].style.transform = 'translateY(-8px) rotate(-45deg)';
-                spans[2].style.width = '2rem';
-            } else {
-                spans[0].style.transform = 'none';
-                spans[1].style.opacity = '1';
-                spans[2].style.transform = 'none';
-                spans[2].style.width = '1.75rem';
-            }
-        });
-
-        menuLinks.forEach(link => {
-            link.addEventListener('click', () => {
-                menuOverlay.classList.remove('active');
-                menuToggle.classList.remove('active');
-                document.body.style.overflow = '';
-                const spans = menuToggle.querySelectorAll('span');
-                spans[0].style.transform = 'none';
-                spans[1].style.opacity = '1';
-                spans[2].style.transform = 'none';
-                spans[2].style.width = '1.75rem';
-            });
-        });
-
-        // Navbar scroll effect
-        window.addEventListener('scroll', () => {
-            const nav = document.getElementById('navbar');
-            if (window.scrollY > 50) {
-                nav.classList.add('glass', 'py-4');
-                nav.classList.remove('py-5');
-            } else {
-                nav.classList.remove('glass', 'py-4');
-                nav.classList.add('py-5');
-            }
-        });
-    </script>
-</body>
-</html>
+export default App;
