@@ -4,6 +4,21 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>JustDuckit | Your Local Tech Team & Web Solutions</title>
+
+    <!-- Social Media Thumbnails (Open Graph) -->
+    <meta property="og:title" content="JustDuckit | Local Tech Team & Web Solutions">
+    <meta property="og:description" content="Simple, patient tech support for neighbors and professional web solutions for local businesses. Powered by the mission of Decent Ducks Sanctuary.">
+    <meta property="og:image" content="https://i.imgur.com/HROOZq0.png">
+    <meta property="og:url" content="https://justduckit.org">
+    <meta property="og:type" content="website">
+
+    <!-- Twitter/X Card -->
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="JustDuckit | Local Tech Team">
+    <meta name="twitter:description" content="Your neighborly tech experts. From Wi-Fi fixes to complex business apps.">
+    <meta name="twitter:image" content="https://i.imgur.com/HROOZq0.png">
+
+    <!-- Tailwind CSS Play CDN -->
     <script src="https://cdn.tailwindcss.com"></script>
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;700;900&display=swap" rel="stylesheet">
     <script src="https://unpkg.com/lucide@latest"></script>
@@ -156,16 +171,16 @@
                 <div class="h-1.5 w-24 bg-amber-500 mx-auto rounded-full"></div>
                 <p class="text-slate-400 max-w-2xl mx-auto text-lg font-medium italic mt-8 text-balance">Professional solutions for every scale. We focus on ownership and simple solutions while supporting our sanctuary mission.</p>
             </div>
-            <div class="grid md:grid-cols-2 lg:grid-cols-4 gap-6">
+            <div class="grid md:grid-cols-2 lg:grid-cols-4 gap-6 text-left">
                 <!-- Service 1: Local Support -->
-                <div class="bg-slate-900/40 p-8 rounded-[2.5rem] border border-slate-800 flex flex-col hover:border-amber-500/30 transition-all group relative overflow-hidden text-left text-balance">
+                <div class="bg-slate-900/40 p-8 rounded-[2.5rem] border border-slate-800 flex flex-col hover:border-amber-500/30 transition-all group relative overflow-hidden text-balance">
                     <div class="mb-8 relative z-10">
                         <div class="flex items-center gap-2 mb-2 text-slate-400 font-black uppercase italic text-lg group-hover:text-amber-500 transition-colors">
                             <i data-lucide="home" class="w-5 h-5"></i> Local Team
                         </div>
                         <p class="text-slate-600 text-[10px] font-black uppercase tracking-widest leading-none">In-Home App & Tech Help</p>
                     </div>
-                    <div class="mb-10 font-black relative z-10 text-balance">
+                    <div class="mb-10 font-black relative z-10">
                         <div class="text-4xl font-black text-white italic">$50 <span class="text-slate-600 text-[10px] uppercase tracking-widest not-italic font-bold">Visit Fee</span></div>
                         <p class="text-slate-500 text-[10px] mt-4 italic uppercase tracking-[0.2em] font-black leading-relaxed">
                             Includes 1st hour. <br>
@@ -181,7 +196,7 @@
                 </div>
 
                 <!-- Service 2: Basic Website -->
-                <div class="bg-slate-900/40 p-8 rounded-[2.5rem] border border-slate-800 flex flex-col hover:border-amber-500/30 transition-all duration-300 group relative overflow-hidden text-left">
+                <div class="bg-slate-900/40 p-8 rounded-[2.5rem] border border-slate-800 flex flex-col hover:border-amber-500/30 transition-all duration-300 group relative overflow-hidden">
                     <div class="mb-8 relative z-10">
                         <div class="flex items-center gap-2 mb-2 text-amber-500 font-black uppercase italic text-lg">
                             <i data-lucide="layout" class="w-5 h-5"></i> Basic Web
@@ -206,7 +221,7 @@
                 </div>
 
                 <!-- Service 3: Pro Website -->
-                <div class="bg-slate-900/40 p-8 rounded-[2.5rem] border border-slate-800 flex flex-col hover:border-amber-500/30 transition-all duration-300 group relative overflow-hidden border-amber-500/10 text-left">
+                <div class="bg-slate-900/40 p-8 rounded-[2.5rem] border border-slate-800 flex flex-col hover:border-amber-500/30 transition-all duration-300 group relative overflow-hidden border-amber-500/10">
                     <div class="mb-8 relative z-10">
                         <div class="flex items-center gap-2 mb-2 text-white font-black uppercase italic text-lg">
                             <i data-lucide="zap" class="w-5 h-5 text-amber-500"></i> Pro Web
@@ -226,7 +241,7 @@
                 </div>
 
                 <!-- Service 4: Custom Apps -->
-                <div class="bg-gradient-to-br from-amber-500 to-amber-600 p-8 rounded-[2.5rem] flex flex-col shadow-2xl relative text-slate-950 group text-left">
+                <div class="bg-gradient-to-br from-amber-500 to-amber-600 p-8 rounded-[2.5rem] flex flex-col shadow-2xl relative text-slate-950 group">
                     <div class="absolute -top-3 left-1/2 -translate-x-1/2 bg-white text-amber-600 px-4 py-1 rounded-full text-[8px] font-black uppercase tracking-widest shadow-lg z-20">Complex Logic</div>
                     <div class="mb-8 relative z-10">
                         <div class="flex items-center gap-2 mb-2 font-black uppercase italic text-lg"><i data-lucide="database" class="w-5 h-5"></i> Custom Apps</div>
@@ -309,14 +324,14 @@
                 </div>
                 <form class="space-y-6" onsubmit="event.preventDefault(); document.getElementById('form-container').innerHTML = '<div class=\'text-center py-20 bg-slate-900 rounded-3xl border-2 border-amber-500 shadow-2xl\'><i data-lucide=\'check-circle\' class=\'mx-auto text-amber-500 w-20 h-20 mb-8\'></i><h3 class=\'text-4xl font-black uppercase mb-4 italic\'>We\'re On It.</h3><p class=\'text-slate-400 font-bold uppercase tracking-widest text-[10px]\'>We will get back to you within 24 hours.</p></div>'; lucide.createIcons();">
                     <div class="space-y-4">
-                        <input type="text" required placeholder="YOUR NAME" class="w-full px-8 py-5 rounded-2xl bg-slate-900 border-2 border-slate-800 focus:outline-none focus:border-amber-500 transition text-white placeholder:text-slate-600 font-black uppercase text-xs tracking-widest">
-                        <select class="w-full px-8 py-5 rounded-2xl bg-slate-900 border-2 border-slate-800 focus:outline-none focus:border-amber-500 transition text-slate-400 font-black uppercase text-xs tracking-widest cursor-pointer">
+                        <input type="text" required placeholder="YOUR NAME" class="w-full px-8 py-5 rounded-2xl bg-slate-900 border-2 border-slate-800 focus:outline-none focus:border-amber-500 transition text-white placeholder:text-slate-600 font-black uppercase text-xs tracking-widest text-left">
+                        <select class="w-full px-8 py-5 rounded-2xl bg-slate-900 border-2 border-slate-800 focus:outline-none focus:border-amber-500 transition text-slate-400 font-black uppercase text-xs tracking-widest cursor-pointer text-left">
                             <option>I NEED HELP WITH AN APP / SMART TECH</option>
                             <option>I NEED A CUSTOM APP (COMPLEX LOGIC)</option>
                             <option>I NEED A NEW WEBSITE</option>
                             <option>WEBSITE REVISION / UPDATE</option>
                         </select>
-                        <textarea placeholder="HOW CAN WE HELP YOUR TEAM?" class="w-full px-8 py-5 rounded-2xl bg-slate-900 border-2 border-slate-800 focus:outline-none focus:border-amber-500 transition text-white placeholder:text-slate-600 font-black uppercase text-xs tracking-widest h-32"></textarea>
+                        <textarea placeholder="HOW CAN WE HELP YOUR TEAM?" class="w-full px-8 py-5 rounded-2xl bg-slate-900 border-2 border-slate-800 focus:outline-none focus:border-amber-500 transition text-white placeholder:text-slate-600 font-black uppercase text-xs tracking-widest h-32 text-left"></textarea>
                     </div>
                     <button type="submit" class="w-full bg-amber-500 hover:bg-amber-600 py-6 rounded-2xl font-black text-xl uppercase tracking-widest transition shadow-2xl">Send Message</button>
                 </form>
