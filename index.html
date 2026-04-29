@@ -3,28 +3,19 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>JustDuckit | Digital Sovereignty</title>
-    <!-- Tailwind CSS Play CDN -->
+    <title>JustDuckit | Your Local Tech Team & Web Solutions</title>
     <script src="https://cdn.tailwindcss.com"></script>
-    <!-- Google Fonts -->
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;700;900&display=swap" rel="stylesheet">
-    <!-- Lucide Icons -->
     <script src="https://unpkg.com/lucide@latest"></script>
     <script>
         tailwind.config = {
             theme: {
                 extend: {
                     colors: {
-                        slate: {
-                            950: '#020617',
-                        },
-                        amber: {
-                            500: '#f59e0b',
-                        }
+                        slate: { 950: '#020617' },
+                        amber: { 500: '#f59e0b' }
                     },
-                    fontFamily: {
-                        sans: ['Inter', 'sans-serif'],
-                    },
+                    fontFamily: { sans: ['Inter', 'sans-serif'] },
                 }
             }
         }
@@ -37,6 +28,7 @@
             border: 1px solid rgba(30, 41, 59, 1);
         }
         .text-balance { text-wrap: balance; }
+        select { -webkit-appearance: none; -moz-appearance: none; appearance: none; }
     </style>
 </head>
 <body class="bg-slate-950 text-slate-200 selection:bg-amber-500 selection:bg-opacity-30 overflow-x-hidden">
@@ -44,25 +36,25 @@
     <!-- Navigation -->
     <nav class="sticky top-0 z-50 bg-slate-950/90 backdrop-blur-lg border-b border-slate-900 font-black italic">
         <div class="max-w-7xl mx-auto px-6 h-20 flex items-center justify-between">
-            <div class="flex items-center gap-3 cursor-pointer group">
+            <div class="flex items-center gap-3 cursor-pointer group" onclick="window.scrollTo(0,0)">
                 <img src="https://i.imgur.com/HROOZq0.png" alt="JustDuckit Logo" class="h-10 w-auto group-hover:scale-105 transition-transform">
                 <div class="flex flex-col leading-none text-left">
                     <span class="text-xl font-black uppercase text-white not-italic">JustDuck<span class="text-amber-500 italic">it</span></span>
-                    <span class="text-[10px] font-black uppercase tracking-[0.3em] text-slate-500 not-italic leading-none mt-1">Simple Web Solutions</span>
+                    <span class="text-[10px] font-black uppercase tracking-[0.3em] text-slate-500 not-italic leading-none mt-1">Professional Solutions</span>
                 </div>
             </div>
             <div class="hidden lg:flex items-center gap-10 text-[10px] font-black uppercase tracking-widest text-slate-500">
-                <a href="#mission" class="hover:text-amber-500 transition">Our Goal</a>
-                <a href="#illusion" class="hover:text-amber-500 transition">The Trap</a>
-                <a href="#roi" class="hover:text-amber-500 transition">The Math</a>
-                <a href="#proof" class="hover:text-amber-500 transition">Proof</a>
+                <a href="#mission" class="hover:text-amber-500 transition">The Goal</a>
+                <a href="#local" class="hover:text-amber-500 transition text-amber-500/80">Local Help</a>
+                <a href="#tiers" class="hover:text-amber-500 transition">Services</a>
+                <a href="#request" class="hover:text-amber-500 transition">Contact</a>
             </div>
-            <div class="flex items-center gap-4">
-                <a href="mailto:justduckitsolutions@duck.com" class="p-2 text-slate-400 hover:text-amber-500 transition hidden sm:block">
-                    <i data-lucide="mail"></i>
+            <div class="flex items-center gap-6">
+                <a href="tel:6156694135" class="hidden md:flex items-center gap-2 text-white hover:text-amber-500 transition not-italic text-sm">
+                    <i data-lucide="phone" class="w-4 h-4 text-amber-500"></i> (615) 669-4135
                 </a>
-                <a href="#audit" class="bg-white text-slate-950 px-6 py-3 rounded-full text-[10px] font-black uppercase tracking-widest hover:bg-amber-500 hover:text-white transition-all shadow-lg">
-                    Check My Site
+                <a href="#request" class="bg-white text-slate-950 px-6 py-3 rounded-full text-[10px] font-black uppercase tracking-widest hover:bg-amber-500 hover:text-white transition-all shadow-lg">
+                    Get Help
                 </a>
             </div>
         </div>
@@ -72,316 +64,201 @@
     <section class="relative pt-24 pb-40 px-6 text-center">
         <div class="max-w-7xl mx-auto relative z-10">
             <div class="inline-flex items-center gap-3 bg-slate-900 border border-slate-800 px-5 py-2 rounded-full text-slate-400 text-[10px] font-black uppercase tracking-widest mb-10 shadow-sm">
-                <i data-lucide="zap" class="w-3.5 h-3.5 text-amber-500"></i> Professional Websites • Built To Last
+                <i data-lucide="zap" class="w-3.5 h-3.5 text-amber-500"></i> Patient Support • Simple Solutions
             </div>
-            <h1 class="text-5xl md:text-8xl font-black text-white mb-8 leading-tight tracking-tighter uppercase italic">
-                Stop <span class="text-transparent bg-clip-text bg-gradient-to-br from-amber-400 to-amber-600 uppercase">Renting</span> <br>Your Website.
+            <h1 class="text-5xl md:text-8xl font-black text-white mb-8 leading-tight tracking-tighter uppercase italic text-balance">
+                The Local <span class="text-transparent bg-clip-text bg-gradient-to-br from-amber-400 to-amber-600 uppercase">Tech Team.</span>
             </h1>
             <p class="text-xl md:text-3xl text-slate-400 max-w-4xl mx-auto mb-14 leading-tight font-medium text-balance">
-                Stop paying monthly fees for a website you don't even own. We build professional sites that <span class="text-white font-black italic">you own forever</span>. No monthly rent. No technical headaches. <span class="text-white font-black italic underline underline-offset-8 decoration-amber-500 uppercase">JustDuckit</span>.
+                Whether you need help with a new app, your Wi-Fi, or a professional website for your business—we're your neighbors with the answers. Simple, quick, and <span class="text-white font-black italic underline underline-offset-8 decoration-amber-500 uppercase">patient</span>.
             </p>
             <div class="flex flex-col sm:flex-row items-center justify-center gap-6">
-                <a href="#audit" class="w-full sm:w-auto bg-white text-slate-950 px-12 py-6 rounded-2xl text-lg font-black uppercase tracking-widest hover:bg-amber-500 hover:text-white transition-all shadow-2xl flex items-center justify-center gap-3">
-                    Fix My Website <i data-lucide="arrow-right"></i>
+                <a href="tel:6156694135" class="w-full sm:w-auto bg-white text-slate-950 px-12 py-6 rounded-2xl text-lg font-black uppercase tracking-widest hover:bg-amber-500 hover:text-white transition-all shadow-2xl flex items-center justify-center gap-3">
+                    Call (615) 669-4135
                 </a>
-                <a href="#roi" class="w-full sm:w-auto bg-transparent border-2 border-slate-800 text-white px-12 py-6 rounded-2xl text-lg font-black uppercase tracking-widest hover:border-amber-500 transition-all">
-                    See the Savings
+                <a href="#local" class="w-full sm:w-auto bg-transparent border-2 border-slate-800 text-white px-12 py-6 rounded-2xl text-lg font-black uppercase tracking-widest hover:border-amber-500 transition-all">
+                    In-Home Service
                 </a>
             </div>
         </div>
     </section>
 
-    <!-- Our Goal Section -->
-    <section id="mission" class="py-32 px-6 bg-slate-950">
+    <!-- Local Section -->
+    <section id="local" class="py-32 px-6 bg-slate-900 bg-opacity-30 border-y border-slate-900">
         <div class="max-w-7xl mx-auto grid lg:grid-cols-2 gap-20 items-center">
-            <div class="text-left">
-                <h2 class="text-4xl md:text-5xl font-black uppercase mb-8 leading-none text-white italic">Own Your Results, <br><span class="text-amber-500 tracking-tighter not-italic">Don't Lease Them.</span></h2>
-                <p class="text-xl text-slate-400 leading-relaxed mb-10 font-medium italic">
-                    Most companies treat your website like a monthly bill. We treat it like digital property. Once it's built, it belongs to you—period.
-                </p>
-                <div class="space-y-8">
-                    <div class="flex gap-4">
-                        <div class="mt-1 text-amber-500"><i data-lucide="check-circle"></i></div>
-                        <div>
-                            <h4 class="font-black uppercase text-sm tracking-widest text-white italic">Spend Smarter</h4>
-                            <p class="text-slate-500 text-sm leading-relaxed">Stop throwing money away on monthly fees. Put that budget back into your business.</p>
-                        </div>
-                    </div>
-                    <div class="flex gap-4">
-                        <div class="mt-1 text-amber-500"><i data-lucide="check-circle"></i></div>
-                        <div>
-                            <h4 class="font-black uppercase text-sm tracking-widest text-white italic">Focus on Growth</h4>
-                            <p class="text-slate-500 text-sm leading-relaxed">Stop playing IT guy. We build it right so you can focus on making money.</p>
-                        </div>
-                    </div>
-                </div>
-            </div>
-            <div class="grid sm:grid-cols-2 gap-6">
-                <div class="bg-slate-900 p-8 rounded-3xl border border-slate-800 hover:-translate-y-1 transition-all">
-                    <div class="w-12 h-12 bg-amber-500/10 rounded-xl flex items-center justify-center mb-6 text-amber-500">
-                        <i data-lucide="lock"></i>
-                    </div>
-                    <h3 class="text-lg font-black text-white uppercase italic mb-2">Total Ownership</h3>
-                    <p class="text-slate-500 text-sm font-medium">You own the code, the domain, and the content forever.</p>
-                </div>
-                <div class="bg-slate-900 p-8 rounded-3xl border border-slate-800 hover:-translate-y-1 transition-all">
-                    <div class="w-12 h-12 bg-amber-500/10 rounded-xl flex items-center justify-center mb-6 text-amber-500">
-                        <i data-lucide="zap"></i>
-                    </div>
-                    <h3 class="text-lg font-black text-white uppercase italic mb-2">Blazing Fast</h3>
-                    <p class="text-slate-500 text-sm font-medium">Built for speed to ensure you never lose a customer to a slow load.</p>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <!-- The Trap Section -->
-    <section id="illusion" class="py-32 px-6 bg-slate-900 bg-opacity-30 border-y border-slate-900">
-        <div class="max-w-7xl mx-auto text-left">
-            <div class="mb-20">
-                <h2 class="text-4xl md:text-6xl font-black uppercase mb-6 tracking-tight italic text-white leading-none">The Subscription Trap</h2>
-                <p class="text-slate-400 max-w-3xl text-lg font-medium mt-4">
-                    Big website companies count on you not knowing how the tech works. They lure you in with a low price, then tack on "extra" fees for things that should be free.
-                </p>
-            </div>
-            <div class="grid md:grid-cols-3 gap-8">
-                <div class="glass-card p-10 rounded-3xl">
-                    <h3 class="text-xl font-black text-white uppercase italic mb-4">The "Privacy" Scam</h3>
-                    <p class="text-slate-400 leading-relaxed text-sm font-medium">Registrars often charge $15-$30/yr just to keep your phone number private. On our sites, that level of privacy is standard and costs <span class="text-amber-500 font-bold">$0.00</span>.</p>
-                </div>
-                <div class="glass-card p-10 rounded-3xl">
-                    <h3 class="text-xl font-black text-white uppercase italic mb-4">The Golden Cage</h3>
-                    <p class="text-slate-400 leading-relaxed text-sm font-medium">Most builders use proprietary code. If you try to leave, you lose your site. We build sites that are <span class="text-amber-500 font-bold">100% portable</span>.</p>
-                </div>
-                <div class="glass-card p-10 rounded-3xl">
-                    <h3 class="text-xl font-black text-white uppercase italic mb-4">Hidden Charges</h3>
-                    <p class="text-slate-400 leading-relaxed text-sm font-medium">They charge for SSL security, SEO tools, and faster loading. We include all of that from day one because <span class="text-amber-500 font-bold">it's the right way</span>.</p>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <!-- Opportunity Section -->
-    <section id="opportunity" class="py-32 px-6 bg-slate-950 border-b border-slate-900">
-        <div class="max-w-7xl mx-auto text-center">
-            <h2 class="text-4xl md:text-6xl font-black uppercase mb-6 tracking-tight italic text-white leading-none">The Owner's Headache</h2>
-            <p class="text-slate-400 max-w-3xl mx-auto text-lg font-medium mt-4 mb-20">
-                Your time is money. Every hour you spend fighting with a "DIY" website builder is an hour you aren't making sales or serving customers.
-            </p>
-            <div class="grid md:grid-cols-2 gap-8 text-left">
-                <div class="bg-slate-900/40 p-10 rounded-[2.5rem] border border-slate-800">
-                    <h3 class="text-2xl font-black text-white uppercase italic mb-4 flex items-center gap-3">
-                        <i data-lucide="minus-circle" class="text-red-500"></i> The DIY Headache
-                    </h3>
-                    <p class="text-slate-400 leading-relaxed font-medium mb-6">Generic builders look easy, but they take hours. You spend weekends fixing layouts instead of growing your business.</p>
-                    <div class="text-sm font-black text-red-400 uppercase tracking-widest">Result: Wasted time + frustration.</div>
-                </div>
-                <div class="bg-slate-900/40 p-10 rounded-[2.5rem] border border-slate-800">
-                    <h3 class="text-2xl font-black text-white uppercase italic mb-4 flex items-center gap-3">
-                        <i data-lucide="check-circle" class="text-amber-500"></i> The Pro Build
-                    </h3>
-                    <p class="text-slate-400 leading-relaxed font-medium mb-6">We handle the tech while you focus on what you're good at. You get a professional site that works on every phone.</p>
-                    <div class="text-sm font-black text-amber-500 uppercase tracking-widest">Result: Better brand + zero stress.</div>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <!-- ROI Math Section -->
-    <section id="roi" class="py-32 px-6 bg-slate-900 bg-opacity-30 border-b border-slate-900">
-        <div class="max-w-7xl mx-auto text-left">
-            <div class="mb-20">
-                <h2 class="text-4xl md:text-6xl font-black uppercase mb-6 tracking-tight italic text-white leading-none">The True Cost</h2>
-                <p class="text-slate-400 max-w-2xl text-lg font-medium mt-4">We show you exactly what you're paying now versus what you'll get with us.</p>
-            </div>
-            <div class="grid lg:grid-cols-2 gap-12">
-                <!-- Path 1 -->
-                <div class="glass-card p-10 rounded-[2.5rem] border border-slate-800 flex flex-col">
+            <div class="order-2 lg:order-1">
+                <div class="glass-card p-10 rounded-[2.5rem] border border-slate-800 shadow-2xl">
                     <div class="flex items-center gap-4 mb-8">
-                        <div class="w-12 h-12 bg-white/5 rounded-xl flex items-center justify-center text-white italic font-black"><i data-lucide="users"></i></div>
-                        <div>
-                            <h3 class="text-2xl font-black text-white uppercase italic leading-none">Small Business</h3>
-                            <p class="text-slate-500 text-[10px] font-black uppercase tracking-widest mt-1">For DIY Site-Builder Users</p>
+                        <div class="w-16 h-16 bg-amber-500/10 rounded-2xl flex items-center justify-center text-amber-500">
+                            <i data-lucide="smartphone" class="w-8 h-8"></i>
                         </div>
+                        <h2 class="text-3xl font-black text-white uppercase italic leading-none">Smart Tech <br><span class="text-amber-500">Simplified.</span></h2>
                     </div>
-                    <div class="space-y-4 mb-10 border-b border-slate-800 pb-10">
-                        <div class="flex justify-between items-center text-sm font-medium"><span class="text-slate-400 uppercase italic">Monthly Bill</span><span class="text-red-400">~$40 - $80 / mo</span></div>
-                        <div class="flex justify-between items-center text-sm font-medium"><span class="text-slate-400 uppercase italic">Time Spent Fixing</span><span class="text-red-400 italic font-bold">Too Much</span></div>
-                        <div class="flex justify-between items-center text-sm font-black border-t border-slate-800 pt-4"><span class="text-white uppercase italic">The JustDuckit Way</span><span class="text-amber-500">You Own the Asset</span></div>
-                    </div>
-                    <div class="bg-slate-900/50 p-6 rounded-2xl border border-slate-800 text-center">
-                        <p class="text-3xl font-black text-white italic tracking-tighter mb-1 uppercase">Stop Paying Rent</p>
-                        <p class="text-[10px] text-amber-500 uppercase font-black tracking-widest">Ownership ROI is Immediate</p>
+                    <p class="text-slate-400 text-lg mb-8 italic">If it's tech-related, we're the local team. From using new apps to setting up your home, we handle it all.</p>
+                    <div class="grid grid-cols-1 sm:grid-cols-2 gap-4">
+                        <div class="p-5 bg-slate-950/50 rounded-2xl border border-slate-800 flex items-start gap-3">
+                            <i data-lucide="smartphone" class="text-amber-500 w-5 h-5 mt-1"></i>
+                            <div>
+                                <h4 class="text-white font-black uppercase text-xs">App Support</h4>
+                                <p class="text-slate-500 text-[10px] uppercase font-bold mt-1">Learning to use new tools.</p>
+                            </div>
+                        </div>
+                        <div class="p-5 bg-slate-950/50 rounded-2xl border border-slate-800 flex items-start gap-3">
+                            <i data-lucide="cpu" class="text-amber-500 w-5 h-5 mt-1"></i>
+                            <div>
+                                <h4 class="text-white font-black uppercase text-xs">Smart Home</h4>
+                                <p class="text-slate-500 text-[10px] uppercase font-bold mt-1">Connecting your new tech.</p>
+                            </div>
+                        </div>
+                        <div class="p-5 bg-slate-950/50 rounded-2xl border border-slate-800 flex items-start gap-3">
+                            <i data-lucide="wifi" class="text-amber-500 w-5 h-5 mt-1"></i>
+                            <div>
+                                <h4 class="text-white font-black uppercase text-xs">Home Wi-Fi</h4>
+                                <p class="text-slate-500 text-[10px] uppercase font-bold mt-1">Fixing dead zones & speed.</p>
+                            </div>
+                        </div>
+                        <div class="p-5 bg-slate-950/50 rounded-2xl border border-slate-800 flex items-start gap-3">
+                            <i data-lucide="bird" class="text-amber-500 w-5 h-5 mt-1"></i>
+                            <div>
+                                <h4 class="text-white font-black uppercase text-xs">Rescue Funding</h4>
+                                <p class="text-slate-500 text-[10px] uppercase font-bold mt-1">Every visit helps our birds.</p>
+                            </div>
+                        </div>
                     </div>
                 </div>
-                <!-- Path 2 -->
-                <div class="glass-card p-10 rounded-[2.5rem] border border-slate-800 flex flex-col border-amber-500/10">
-                    <div class="flex items-center gap-4 mb-8">
-                        <div class="w-12 h-12 bg-amber-500/5 rounded-xl flex items-center justify-center text-amber-500 italic font-black"><i data-lucide="building-2"></i></div>
-                        <div>
-                            <h3 class="text-2xl font-black text-white uppercase italic leading-none">The High-End Firm</h3>
-                            <p class="text-slate-500 text-[10px] font-black uppercase tracking-widest mt-1">For Managed Agency Clients</p>
-                        </div>
+            </div>
+            <div class="order-1 lg:order-2 text-left">
+                <h2 class="text-4xl md:text-6xl font-black uppercase mb-8 italic text-white leading-none">Your Neighborly <br><span class="text-amber-500">Tech Experts.</span></h2>
+                <p class="text-xl text-slate-400 mb-10 font-medium italic text-balance">
+                    Just bought a new device and don't know how the apps work? Wi-Fi acting up? We provide simple, patient solutions for neighbors of all ages. No jargon, just results.
+                </p>
+                <div class="flex flex-col gap-4">
+                    <div class="flex items-center gap-4 text-white font-black italic uppercase tracking-widest text-lg">
+                        <i data-lucide="phone" class="text-amber-500"></i> (615) 669-4135
                     </div>
-                    <div class="space-y-4 mb-10 border-b border-slate-800 pb-10">
-                        <div class="flex justify-between items-center text-sm font-medium"><span class="text-slate-400 uppercase italic">Agency Rent</span><span class="text-red-400">~$400 - $1,500 / mo</span></div>
-                        <div class="flex justify-between items-center text-sm font-medium"><span class="text-slate-400 uppercase italic">Support Wait</span><span class="text-red-400 italic font-bold">Days / Weeks</span></div>
-                        <div class="flex justify-between items-center text-sm font-black border-t border-slate-800 pt-4"><span class="text-white uppercase italic">The JustDuckit Way</span><span class="text-amber-500">$0.00 Hosting Forever</span></div>
-                    </div>
-                    <div class="bg-slate-900/50 p-6 rounded-2xl border border-amber-500/30 text-center shadow-lg">
-                        <span class="text-[10px] font-black uppercase tracking-widest text-slate-500 mb-2 block">1-Year Savings</span>
-                        <p class="text-3xl font-black text-white italic tracking-tighter mb-1">$4,800 - $15,000+</p>
-                        <p className="text-[10px] text-amber-500 uppercase font-black tracking-widest">Money back in your pocket</p>
+                    <div class="inline-block p-6 bg-amber-500/5 border border-amber-500/20 rounded-2xl italic">
+                        <p class="text-sm text-slate-300 font-bold uppercase tracking-widest">
+                            <i data-lucide="info" class="inline w-4 h-4 mr-2 mb-1 text-amber-500"></i>
+                            Proceeds help feed the birds at Decent Ducks Sanctuary.
+                        </p>
                     </div>
                 </div>
             </div>
         </div>
     </section>
 
-    <!-- Proof Section -->
-    <section id="proof" class="py-32 px-6 bg-slate-950">
-        <div class="max-w-7xl mx-auto text-left">
-            <div class="mb-24">
-                <h2 class="text-4xl md:text-6xl font-black uppercase mb-6 tracking-tight italic text-white leading-none">What We've Built</h2>
-                <p class="text-slate-400 max-w-2xl text-lg font-medium mt-4">We don't just talk. We build websites that handle thousands of visitors every day.</p>
+    <!-- Services Section -->
+    <section id="tiers" class="py-32 px-6 bg-slate-950">
+        <div class="max-w-7xl mx-auto">
+            <div class="mb-24 text-center">
+                <h2 class="text-4xl md:text-7xl font-black uppercase mb-6 tracking-tight italic text-white">Our Services</h2>
+                <div class="h-1.5 w-24 bg-amber-500 mx-auto rounded-full"></div>
+                <p class="text-slate-400 max-w-2xl mx-auto text-lg font-medium italic mt-8 text-balance">Honest help without hidden costs. We focus on ownership and simple solutions while supporting our sanctuary mission.</p>
             </div>
             <div class="grid lg:grid-cols-3 gap-8">
-                <!-- Card 1 -->
-                <div class="bg-slate-900/50 border border-slate-800 rounded-3xl p-8 flex flex-col h-full hover:border-amber-500/30 transition-all group">
-                    <div class="flex justify-between mb-6">
-                        <span class="text-[10px] font-black uppercase tracking-widest text-amber-500 bg-amber-500/10 px-3 py-1 rounded-full">International Hub</span>
-                        <a href="https://decentducks.org" target="_blank" class="text-slate-500 hover:text-white"><i data-lucide="external-link"></i></a>
+                <!-- Service 1: Local Support -->
+                <div class="bg-slate-900/40 p-10 rounded-[2.5rem] border border-slate-800 flex flex-col hover:border-amber-500/30 transition-all group relative overflow-hidden">
+                    <div class="absolute top-0 right-0 p-8 opacity-5 group-hover:opacity-10 transition-opacity">
+                        <i data-lucide="home" class="w-32 h-32"></i>
                     </div>
-                    <h3 class="text-2xl font-black text-white uppercase italic mb-4">DecentDucks.org</h3>
-                    <p class="text-slate-400 mb-8 text-sm flex-grow">A global site for our sanctuary fans. Built to handle visitors from all over the world without slowing down.</p>
-                    <div class="flex gap-6 border-t border-slate-800 pt-6">
-                        <div><div class="text-white font-black text-xl leading-none">Global</div><div class="text-[10px] text-slate-600 font-black uppercase mt-1">Network</div></div>
-                        <div><div class="text-white font-black text-xl leading-none">$0</div><div class="text-[10px] text-slate-600 font-black uppercase mt-1">Monthly Fee</div></div>
-                    </div>
-                </div>
-                <!-- Card 2 -->
-                <div class="bg-slate-900/50 border border-slate-800 rounded-3xl p-8 flex flex-col h-full hover:border-amber-500/30 transition-all">
-                    <div class="flex justify-between mb-6">
-                        <span class="text-[10px] font-black uppercase tracking-widest text-amber-500 bg-amber-500/10 px-3 py-1 rounded-full">Local Operations</span>
-                        <a href="https://adoptaduck.org" target="_blank" class="text-slate-500 hover:text-white"><i data-lucide="external-link"></i></a>
-                    </div>
-                    <h3 class="text-2xl font-black text-white uppercase italic mb-4">AdoptADuck.org</h3>
-                    <p class="text-slate-400 mb-8 text-sm flex-grow">The main site for our local duck rescue. Neighbors use this to report birds and help our mission.</p>
-                    <div class="flex gap-6 border-t border-slate-800 pt-6">
-                        <div><div class="text-white font-black text-xl leading-none">Live</div><div class="text-[10px] text-slate-600 font-black uppercase mt-1">System</div></div>
-                        <div><div class="text-white font-black text-xl leading-none">$0</div><div class="text-[10px] text-slate-600 font-black uppercase mt-1">Monthly Fee</div></div>
-                    </div>
-                </div>
-                <!-- Card 3 -->
-                <div class="bg-slate-900/50 border border-slate-800 rounded-3xl p-8 flex flex-col h-full hover:border-amber-500/30 transition-all">
-                    <div class="flex justify-between mb-6">
-                        <span class="text-[10px] font-black uppercase tracking-widest text-amber-500 bg-amber-500/10 px-3 py-1 rounded-full">Customer Success</span>
-                        <a href="https://kitkatalleyrescue.org/" target="_blank" class="text-slate-500 hover:text-white"><i data-lucide="external-link"></i></a>
-                    </div>
-                    <h3 class="text-2xl font-black text-white uppercase italic mb-4">KitKatAlleyRescue</h3>
-                    <p class="text-slate-400 mb-8 text-sm flex-grow">We moved this rescue from an expensive platform. They saved thousands in their first year.</p>
-                    <div class="flex gap-6 border-t border-slate-800 pt-6">
-                        <div><div class="text-white font-black text-xl leading-none">Client</div><div class="text-[10px] text-slate-600 font-black uppercase mt-1">Save</div></div>
-                        <div><div class="text-white font-black text-xl leading-none">$0</div><div class="text-[10px] text-slate-600 font-black uppercase mt-1">Monthly Fee</div></div>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <!-- Pricing Section -->
-    <section id="tiers" class="py-32 px-6 bg-slate-900 bg-opacity-50">
-        <div class="max-w-7xl mx-auto text-left">
-            <div class="mb-24 text-center lg:text-left">
-                <h2 class="text-4xl md:text-6xl font-black uppercase mb-6 tracking-tight italic text-white">Simple Pricing</h2>
-                <p class="text-slate-400 max-w-2xl text-lg font-medium mt-6 leading-snug">Professional websites for a fair price. No hidden fees. No endless contracts.</p>
-            </div>
-            <div class="grid md:grid-cols-2 gap-10 max-w-5xl mx-auto">
-                <!-- Tier 1 -->
-                <div class="bg-slate-950 p-12 rounded-3xl border border-slate-800 flex flex-col hover:border-amber-500 transition-all duration-300">
-                    <div class="mb-10">
-                        <div class="flex items-center gap-2 mb-2 text-amber-500 font-black uppercase italic text-2xl">
-                            <i data-lucide="trending-up"></i> The Basic Build
+                    <div class="mb-8 relative z-10">
+                        <div class="flex items-center gap-2 mb-2 text-slate-400 font-black uppercase italic text-xl group-hover:text-amber-500 transition-colors">
+                            <i data-lucide="home" class="w-6 h-6"></i> Local Tech Team
                         </div>
-                        <p class="text-slate-500 text-sm font-medium">Perfect for local shops and solo professionals.</p>
+                        <p class="text-slate-600 text-[10px] font-black uppercase tracking-widest">In-Home Help & App Support</p>
                     </div>
-                    <div class="mb-10 font-black">
-                        <div class="text-5xl font-black text-white italic">$199 <span class="text-slate-600 text-xs uppercase tracking-widest not-italic font-bold">One-Time Fee</span></div>
-                        <div class="text-2xl font-black text-amber-500 mt-2 italic">$49 <span class="text-slate-600 text-xs uppercase tracking-widest not-italic font-bold">/ Mo Support</span></div>
+                    <div class="mb-10 font-black relative z-10">
+                        <div class="text-5xl font-black text-white italic">$50 <span class="text-slate-600 text-[10px] uppercase tracking-widest not-italic font-bold">Visit Fee</span></div>
+                        <p class="text-slate-500 text-xs mt-4 italic uppercase tracking-[0.2em] font-black leading-relaxed">
+                            Includes the first hour. <br>
+                            <span class="text-amber-500/80 text-[10px]">Only $40/hr if we need more time.</span>
+                        </p>
                     </div>
-                    <ul class="space-y-5 mb-12 flex-grow text-sm font-bold uppercase tracking-wide">
-                        <li class="flex items-center gap-3 text-white"><i data-lucide="check-circle" class="text-amber-500 w-4 h-4"></i> Custom Design</li>
-                        <li class="flex items-center gap-3 text-white"><i data-lucide="check-circle" class="text-amber-500 w-4 h-4"></i> Works Great on Phones</li>
-                        <li class="flex items-center gap-3 text-white"><i data-lucide="check-circle" class="text-amber-500 w-4 h-4"></i> You Own Everything</li>
-                        <li class="flex items-center gap-3 text-white"><i data-lucide="check-circle" class="text-amber-500 w-4 h-4"></i> We Handle Updates</li>
+                    <ul class="space-y-4 mb-12 flex-grow text-[10px] font-black uppercase tracking-widest text-slate-400 relative z-10">
+                        <li class="flex items-center gap-3"><i data-lucide="check" class="text-amber-500 w-4 h-4"></i> Help Using New Apps</li>
+                        <li class="flex items-center gap-3"><i data-lucide="check" class="text-amber-500 w-4 h-4"></i> Smart Device Setup</li>
+                        <li class="flex items-center gap-3"><i data-lucide="check" class="text-amber-500 w-4 h-4"></i> Patient Tech Training</li>
+                        <li class="flex items-center gap-3"><i data-lucide="check" class="text-amber-500 w-4 h-4"></i> General Troubleshooting</li>
                     </ul>
-                    <div class="mt-4 mb-6 p-4 bg-slate-900 rounded-2xl border border-slate-800 border-dashed">
-                        <p class="text-[10px] font-black uppercase tracking-widest text-slate-500 mb-1">Domain Name</p>
-                        <p class="text-xs text-white mt-1 font-bold">+$25 to buy your address <span class="text-slate-600 font-normal">(if you don't have one)</span></p>
-                    </div>
-                    <a href="#audit" class="block w-full py-5 rounded-2xl bg-slate-900 border border-slate-700 text-white font-black text-center uppercase tracking-widest hover:border-amber-500 transition shadow-xl">Get Started</a>
+                    <a href="tel:6156694135" class="block w-full py-5 rounded-2xl bg-slate-900 border border-slate-800 text-white font-black text-center uppercase tracking-widest text-xs hover:border-amber-500 transition shadow-xl relative z-10">Call (615) 669-4135</a>
                 </div>
-                <!-- Tier 2 -->
-                <div class="bg-gradient-to-b from-amber-500 to-amber-600 p-12 rounded-3xl flex flex-col shadow-2xl relative">
-                    <div class="absolute -top-5 left-1/2 -translate-x-1/2 bg-white text-amber-600 px-6 py-2 rounded-full text-[10px] font-black uppercase tracking-widest shadow-lg">Highest Value</div>
-                    <div class="mb-10 text-white">
-                        <div class="flex items-center gap-2 mb-2 font-black uppercase italic text-2xl"><i data-lucide="award"></i> The Pro Build</div>
-                        <p class="text-amber-100 text-sm font-medium">For Firms ready to save big on monthly fees.</p>
+
+                <!-- Service 2: Basic Website -->
+                <div class="bg-slate-900/40 p-10 rounded-[2.5rem] border border-slate-800 flex flex-col hover:border-amber-500/30 transition-all duration-300 group relative overflow-hidden">
+                    <div class="absolute top-0 right-0 p-8 opacity-5 group-hover:opacity-10 transition-opacity">
+                        <i data-lucide="layout" class="w-32 h-32"></i>
                     </div>
-                    <div class="mb-10 font-black text-slate-950">
-                        <div class="text-5xl italic font-black">$499 <span class="text-slate-900 text-xs uppercase tracking-widest not-italic font-bold">One-Time Fee</span></div>
-                        <div class="text-2xl italic font-black mt-2">$99 <span class="text-slate-900 text-xs uppercase tracking-widest not-italic font-bold">/ Mo Support</span></div>
+                    <div class="mb-8 relative z-10">
+                        <div class="flex items-center gap-2 mb-2 text-amber-500 font-black uppercase italic text-xl">
+                            <i data-lucide="layout" class="w-6 h-6"></i> Basic Website
+                        </div>
+                        <p class="text-slate-500 text-[10px] font-black uppercase tracking-widest">Perfect for Local Shops</p>
                     </div>
-                    <ul class="space-y-5 mb-12 flex-grow text-sm font-black uppercase tracking-wide">
-                        <li class="flex items-center gap-3 text-white"><i data-lucide="check-circle" class="text-white w-4 h-4"></i> Move Your Old Site</li>
-                        <li class="flex items-center gap-3 text-white"><i data-lucide="check-circle" class="text-white w-4 h-4"></i> Zero Monthly Rent Fees</li>
-                        <li class="flex items-center gap-3 text-white"><i data-lucide="check-circle" class="text-white w-4 h-4"></i> High Security</li>
-                        <li class="flex items-center gap-3 text-white"><i data-lucide="check-circle" class="text-white w-4 h-4"></i> Full Ownership</li>
+                    <div class="mb-10 font-black relative z-10">
+                        <div class="text-5xl font-black text-white italic">$199 <span class="text-slate-600 text-[10px] uppercase tracking-widest not-italic font-bold">One-Time Build</span></div>
+                        <p class="text-slate-500 text-xs mt-4 italic uppercase tracking-[0.2em] font-black leading-relaxed">
+                            +$25 if domain is needed <br>
+                            <span class="text-amber-500/80 text-[10px]">No recurring rental fees.</span>
+                        </p>
+                    </div>
+                    <ul class="space-y-4 mb-12 flex-grow text-[10px] font-black uppercase tracking-widest text-slate-400 relative z-10">
+                        <li class="flex items-center gap-3"><i data-lucide="check-circle" class="text-amber-500 w-4 h-4"></i> Custom Pro Design</li>
+                        <li class="flex items-center gap-3"><i data-lucide="check-circle" class="text-amber-500 w-4 h-4"></i> Total Ownership (No Rent)</li>
+                        <li class="flex items-center gap-3"><i data-lucide="check-circle" class="text-amber-500 w-4 h-4"></i> Works on All Devices</li>
+                        <li class="flex items-center gap-4 p-4 bg-slate-950 rounded-2xl border border-slate-800 border-dashed text-slate-300 mt-2">
+                             <i data-lucide="alert-circle" class="text-amber-500 w-6 h-6 flex-shrink-0"></i>
+                             <span class="leading-tight">$49 Support Fee ONLY when revisions are needed</span>
+                        </li>
                     </ul>
-                    <div class="mt-4 mb-6 p-4 bg-amber-600 bg-opacity-20 rounded-2xl border border-white/30 border-dashed text-left">
-                        <p class="text-[10px] font-black uppercase tracking-widest text-white mb-1">Setup</p>
-                        <p class="text-xs text-amber-100 font-bold italic">We handle the switch for you</p>
+                    <a href="#request" class="block w-full py-5 rounded-2xl bg-slate-950 border border-slate-800 text-white font-black text-center uppercase tracking-widest text-xs hover:border-amber-500 transition relative z-10">Get Started</a>
+                </div>
+
+                <!-- Service 3: Pro Website -->
+                <div class="bg-gradient-to-br from-amber-500 to-amber-600 p-10 rounded-[2.5rem] flex flex-col shadow-2xl relative text-slate-950 group">
+                    <div class="absolute -top-5 left-1/2 -translate-x-1/2 bg-white text-amber-600 px-6 py-2 rounded-full text-[10px] font-black uppercase tracking-widest shadow-lg z-20">Full Scale</div>
+                    <div class="absolute top-0 right-0 p-8 opacity-10">
+                        <i data-lucide="zap" class="w-32 h-32"></i>
                     </div>
-                    <a href="#audit" class="block w-full py-6 rounded-2xl bg-slate-950 text-white font-black text-center uppercase tracking-widest hover:bg-slate-900 transition shadow-2xl">Start Saving</a>
+                    <div class="mb-8 relative z-10">
+                        <div class="flex items-center gap-2 mb-2 font-black uppercase italic text-xl"><i data-lucide="zap" class="w-6 h-6"></i> Pro Website</div>
+                        <p class="text-slate-900 text-[10px] font-black uppercase tracking-widest opacity-70">Business Growth Support</p>
+                    </div>
+                    <div class="mb-10 font-black relative z-10">
+                        <div class="text-5xl italic font-black">$499 <span class="text-slate-900 text-[10px] uppercase tracking-widest not-italic font-bold">One-Time Build</span></div>
+                        <div class="text-2xl italic font-black mt-2 tracking-tighter">$99 <span class="text-slate-900 text-[10px] uppercase tracking-widest not-italic font-bold">/ Mo Support</span></div>
+                    </div>
+                    <ul class="space-y-4 mb-12 flex-grow text-[10px] font-black uppercase tracking-widest relative z-10">
+                        <li class="flex items-center gap-3"><i data-lucide="check-circle" class="w-4 h-4"></i> We Move Your Old Site</li>
+                        <li class="flex items-center gap-3"><i data-lucide="check-circle" class="w-4 h-4"></i> Zero Rental Fees</li>
+                        <li class="flex items-center gap-3"><i data-lucide="check-circle" class="w-4 h-4"></i> Top Tier Security</li>
+                        <li class="flex items-center gap-3"><i data-lucide="check-circle" class="w-4 h-4"></i> Full Code Access</li>
+                    </ul>
+                    <a href="#request" class="block w-full py-5 rounded-2xl bg-slate-950 text-white font-black text-center uppercase tracking-widest text-xs hover:bg-slate-900 transition shadow-xl relative z-10">Contact Us</a>
                 </div>
             </div>
-            <p class="text-center mt-16 text-slate-500 text-sm font-bold uppercase tracking-widest">Moving from $500/mo to $99/mo saves you <span class="text-amber-500 italic">$4,800 a year</span>.</p>
         </div>
     </section>
 
-    <!-- Origin Story -->
-    <section class="py-40 px-6 bg-slate-950 relative overflow-hidden">
-        <div class="max-w-5xl mx-auto text-center relative z-10">
-            <div class="w-20 h-20 bg-amber-500/10 rounded-full flex items-center justify-center mx-auto mb-10 text-amber-500">
-                <i data-lucide="heart" class="w-10 h-10"></i>
-            </div>
-            <h2 class="text-4xl md:text-5xl font-black uppercase mb-10 italic text-white leading-none">From the Sanctuary <br>to the Screen.</h2>
-            <div class="glass-card p-12 md:p-20 rounded-3xl shadow-inner text-balance">
-                <p class="text-2xl md:text-3xl text-slate-300 leading-snug italic font-medium">"I didn't start in a boardroom. I started at our animal sanctuary. When I saw how big tech companies were draining money from people with real missions through 'rented' websites, I decided to fix it. **JustDuck<span class="text-amber-500 italic font-black">it</span>** is the result. We build websites you own, so your money stays in your business."</p>
-                <div class="mt-12 flex flex-col items-center gap-2">
-                    <div class="h-px w-20 bg-amber-500 mb-4"></div>
-                    <span class="text-lg font-black uppercase tracking-widest text-white italic">Kyle</span>
-                    <span class="text-slate-500 text-[10px] font-black uppercase tracking-widest">Founder & Sanctuary Keeper</span>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <!-- Audit Form -->
-    <section id="audit" class="py-32 px-6 bg-slate-950 text-white border-t border-slate-900">
+    <!-- Request Form -->
+    <section id="request" class="py-32 px-6 bg-slate-950 text-white border-t border-slate-900">
         <div class="max-w-xl mx-auto">
             <div id="form-container">
                 <div class="text-center mb-16">
-                    <h2 class="text-4xl md:text-5xl font-black uppercase mb-4 italic leading-none">Check My Site.</h2>
-                    <p class="text-slate-400 font-medium text-lg mt-4 leading-relaxed">Send me your website link. I’ll look at it for free and tell you exactly how much money you could be saving.</p>
+                    <h2 class="text-4xl md:text-5xl font-black uppercase mb-4 italic leading-none">Contact Us.</h2>
+                    <p class="text-slate-400 font-medium text-lg mt-4 italic text-balance">Need app help, tech setup, or a new site? Call <span class="text-white">(615) 669-4135</span> or message our team below.</p>
                 </div>
-                <form class="space-y-6" onsubmit="event.preventDefault(); document.getElementById('form-container').innerHTML = '<div class=\'text-center py-20 bg-slate-900 rounded-3xl border-2 border-amber-500 shadow-2xl\'><i data-lucide=\'check-circle\' class=\'mx-auto text-amber-500 w-20 h-20 mb-8\'></i><h3 class=\'text-4xl font-black uppercase mb-4 italic\'>Talk Soon.</h3><p class=\'text-slate-400 font-bold uppercase tracking-widest text-[10px]\'>Report headed to your inbox within 24 hours.</p></div>'; lucide.createIcons();">
+                <form class="space-y-6" onsubmit="event.preventDefault(); document.getElementById('form-container').innerHTML = '<div class=\'text-center py-20 bg-slate-900 rounded-3xl border-2 border-amber-500 shadow-2xl\'><i data-lucide=\'check-circle\' class=\'mx-auto text-amber-500 w-20 h-20 mb-8\'></i><h3 class=\'text-4xl font-black uppercase mb-4 italic\'>We\'re On It.</h3><p class=\'text-slate-400 font-bold uppercase tracking-widest text-[10px]\'>We will get back to you within 24 hours.</p></div>'; lucide.createIcons();">
                     <div class="space-y-4">
                         <input type="text" required placeholder="YOUR NAME" class="w-full px-8 py-5 rounded-2xl bg-slate-900 border-2 border-slate-800 focus:outline-none focus:border-amber-500 transition text-white placeholder:text-slate-600 font-black uppercase text-xs tracking-widest">
-                        <input type="email" required placeholder="EMAIL ADDRESS" class="w-full px-8 py-5 rounded-2xl bg-slate-900 border-2 border-slate-800 focus:outline-none focus:border-amber-500 transition text-white placeholder:text-slate-600 font-black uppercase text-xs tracking-widest">
-                        <input type="text" required placeholder="YOUR CURRENT WEBSITE" class="w-full px-8 py-5 rounded-2xl bg-slate-900 border-2 border-slate-800 focus:outline-none focus:border-amber-500 transition text-white placeholder:text-slate-600 font-black uppercase text-xs tracking-widest">
+                        <select class="w-full px-8 py-5 rounded-2xl bg-slate-900 border-2 border-slate-800 focus:outline-none focus:border-amber-500 transition text-slate-400 font-black uppercase text-xs tracking-widest cursor-pointer">
+                            <option>I NEED HELP WITH AN APP / SMART TECH</option>
+                            <option>I NEED A NEW WEBSITE</option>
+                            <option>WEBSITE REVISION / UPDATE</option>
+                            <option>FREE WEBSITE AUDIT</option>
+                        </select>
+                        <textarea placeholder="HOW CAN WE HELP YOUR TEAM?" class="w-full px-8 py-5 rounded-2xl bg-slate-900 border-2 border-slate-800 focus:outline-none focus:border-amber-500 transition text-white placeholder:text-slate-600 font-black uppercase text-xs tracking-widest h-32"></textarea>
                     </div>
-                    <button type="submit" class="w-full bg-amber-500 hover:bg-amber-600 py-6 rounded-2xl font-black text-xl uppercase tracking-widest transition shadow-2xl">Check My Website</button>
+                    <button type="submit" class="w-full bg-amber-500 hover:bg-amber-600 py-6 rounded-2xl font-black text-xl uppercase tracking-widest transition shadow-2xl">Send Message</button>
                 </form>
             </div>
         </div>
@@ -394,15 +271,14 @@
                 <img src="https://i.imgur.com/HROOZq0.png" alt="JustDuckit Logo" class="h-10 w-auto mb-2">
                 <div class="flex flex-col leading-none">
                     <span class="text-2xl font-black uppercase text-white not-italic">JustDuck<span class="text-amber-500 italic">it</span></span>
-                    <span class="text-[10px] font-black uppercase tracking-[0.3em] text-slate-500 not-italic leading-none mt-2">Simple Web Solutions</span>
+                    <span class="text-[10px] font-black uppercase tracking-[0.3em] text-slate-500 not-italic leading-none mt-2">Professional Solutions</span>
                 </div>
             </div>
             <div class="flex flex-wrap justify-center gap-8 text-[10px] font-black uppercase tracking-widest text-slate-600 mb-10">
+                <a href="tel:6156694135" class="flex items-center gap-2 hover:text-amber-500 transition not-italic"><i data-lucide="phone" class="w-4 h-4 text-amber-500"></i> (615) 669-4135</a>
                 <a href="mailto:justduckitsolutions@duck.com" class="flex items-center gap-2 hover:text-amber-500 transition not-italic"><i data-lucide="mail" class="w-4 h-4 text-amber-500"></i> justduckitsolutions@duck.com</a>
-                <span class="flex items-center gap-2 not-italic"><i data-lucide="globe" class="w-4 h-4 text-amber-500"></i> Global Quality • Local Service</span>
-                <span class="not-italic opacity-50">Est. 2024</span>
+                <span class="flex items-center gap-2 not-italic"><i data-lucide="globe" class="w-4 h-4 text-amber-500"></i> Local Service • Simple Support</span>
             </div>
-            <div class="h-px w-20 bg-slate-900 mx-auto mb-10"></div>
             <p class="text-slate-700 text-[10px] uppercase tracking-widest leading-relaxed not-italic">© 2026 JUSTDUCKIT SOLUTIONS | POWERED BY THE MISSION OF THE DECENT DUCKS SANCTUARY</p>
         </div>
     </footer>
